@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign in to manage your ResumeNowOnline résumé downloads." />
+    <title>Your Account — ResumeNowOnline</title>
+    <link rel="stylesheet" href="styles.css?v=31" />
+  </head>
+  <body class="account-page">
+    <div class="account-shell">
+      <header class="account-header"><a class="brand" href="index.html">ResumeNowOnline</a><a class="account-back" href="templates.html">Browse templates <span>→</span></a></header>
+      <main class="account-main">
+        <section class="account-intro animate-in">
+          <span class="account-eyebrow">YOUR RESUME WORKSPACE</span>
+          <h1>Pick up where<br />you left off.</h1>
+          <p>Your edits stay free. Sign in to purchase, track and use your PDF downloads on any device.</p>
+          <div class="account-value-list"><span><i>✓</i> 105 editable templates</span><span><i>✓</i> $5 for 3 PDF downloads</span><span><i>✓</i> Secure Creem checkout</span></div>
+        </section>
+
+        <section class="auth-card animate-in animate-delay-1" id="authCard" aria-live="polite">
+          <div class="auth-loading" id="authLoading"><span></span><p>Loading your account…</p></div>
+          <div id="authForms" hidden>
+            <div class="auth-tabs" role="tablist"><button class="active" type="button" data-auth-tab="login" role="tab">Sign in</button><button type="button" data-auth-tab="register" role="tab">Create account</button></div>
+            <div class="auth-heading"><h2 id="authTitle">Welcome back</h2><p id="authSubtitle">Sign in to access your downloads.</p></div>
+            <form class="auth-form" id="loginForm">
+              <label><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+              <label><span>Password</span><input name="password" type="password" autocomplete="current-password" placeholder="Your password" required /></label>
+              <button class="button button--primary button--wide" type="submit">Sign in</button>
+            </form>
+            <form class="auth-form" id="registerForm" hidden>
+              <label><span>Name</span><input name="name" autocomplete="name" placeholder="Your name" minlength="2" maxlength="80" required /></label>
+              <label><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+              <label><span>Password</span><input name="password" type="password" autocomplete="new-password" placeholder="At least 10 characters" minlength="10" maxlength="128" required /></label>
+              <button class="button button--primary button--wide" type="submit">Create free account</button>
+            </form>
+            <p class="auth-error" id="authError" role="alert"></p>
+            <p class="auth-terms">By continuing, you agree to the <a href="terms.html">Terms of Service</a> and acknowledge the <a href="privacy.html">Privacy Policy</a>.</p>
+          </div>
+
+          <div class="account-dashboard" id="accountDashboard" hidden>
+            <span class="dashboard-kicker">SIGNED IN</span><h2 id="dashboardName">Your account</h2><p id="dashboardEmail"></p>
+            <div class="credit-card"><div><span>PDF DOWNLOADS</span><strong id="dashboardCredits">0</strong></div><p>One download is used each time you export a PDF.</p></div>
+            <a class="button button--primary button--wide" id="continueEditing" href="builder.html">Continue editing</a>
+            <button class="account-logout" id="logoutButton" type="button">Sign out</button>
+          </div>
+        </section>
+      </main>
+      <footer class="account-footer"><span>© 2026 ResumeNowOnline</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · <a href="contact.html">Contact</a></span></footer>
+    </div>
+    <script src="account.js?v=1"></script>
+  </body>
+</html>

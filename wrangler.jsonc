@@ -1,10 +1,24 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "resume-now",
-  "compatibility_date": "2026-08-09",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-08",
+  "vars": {
+    "CREEM_TEST_MODE": "true",
+    "CREEM_PRODUCT_ID": "prod_4rMvovCkBiYL9B4RqyvEk1"
+  },
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "none"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "resume-now",
+      "database_id": "433e5db0-ee7a-41c2-9c5f-56136821d9b4",
+      "migrations_dir": "migrations"
+    }
+  ]
 }

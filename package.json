@@ -5,7 +5,9 @@
   "scripts": {
     "build": "bash tools/build_cloudflare_dist.sh",
     "deploy": "npm run build && wrangler deploy",
-    "dev": "npm run build && wrangler dev"
+    "dev": "npm run build && wrangler dev",
+    "db:migrate:local": "wrangler d1 migrations apply resume-now --local",
+    "db:migrate:remote": "wrangler d1 migrations apply resume-now --remote"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"

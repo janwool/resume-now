@@ -16,3 +16,4 @@ assets/template-overlays/
 # Builds can deploy even when no separate build command is configured.
 node_modules/
 .wrangler/
+.dev.vars

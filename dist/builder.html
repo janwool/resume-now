@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Build and customize your resume online." />
-    <title>Resume Builder — First Draft</title><link rel="stylesheet" href="styles.css?v=29" />
+    <title>Resume Builder — ResumeNowOnline</title><link rel="stylesheet" href="styles.css?v=31" />
   </head>
   <body class="builder-page">
     <header class="app-bar">
-      <div class="app-brand"><a class="brand" href="index.html">FIRST DRAFT</a><strong id="builderTemplateName">The Strategist · Editor</strong><span class="app-free-badge">Free editing</span></div>
+      <div class="app-brand"><a class="brand" href="index.html">ResumeNowOnline</a><strong id="builderTemplateName">The Strategist · Editor</strong><span class="app-free-badge">Free editing</span></div>
       <div class="save-state"><i class="save-dot"></i><span>Saved</span></div>
       <div class="app-actions">
         <button class="icon-button" aria-label="Undo"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h9a6 6 0 0 1 6 6"/></svg></button>
         <button class="icon-button" aria-label="Redo"><svg class="icon" viewBox="0 0 24 24"><path d="m15 7 5 5-5 5"/><path d="M20 12h-9a6 6 0 0 0-6 6"/></svg></button>
         <button id="previewButton" class="button button--outline button--small"><svg class="icon" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></svg>Preview</button>
-        <button id="downloadPdf" class="button button--primary button--small"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download · $1</button>
+        <button id="downloadPdf" class="button button--primary button--small"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span id="downloadButtonLabel">3 downloads · $5</span></button>
       </div>
     </header>
 
@@ -106,14 +106,15 @@
       <section class="download-dialog">
         <button class="download-close" data-close-download aria-label="Close">×</button>
         <div class="download-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></div>
-        <h2 id="downloadTitle">Download your résumé</h2>
-        <p>Editing and previewing are free. Export your finished document for one simple payment.</p>
-        <div class="download-formats" role="group" aria-label="Download format"><button class="active">PDF</button><button>Microsoft Word</button></div>
-        <div class="download-summary"><span>One-time download</span><strong>$1.00</strong></div>
-        <button id="payDownload" class="button button--primary button--wide">Pay $1 &amp; download</button>
-        <small>Secure payment · No subscription</small>
+        <span class="download-kicker">PDF EXPORT PACK</span>
+        <h2 id="downloadTitle">Download with confidence</h2>
+        <p>Edit and preview for free. One purchase gives you three PDF downloads for tailored applications.</p>
+        <div class="download-benefits" aria-label="Purchase benefits"><span><b>3</b> PDF downloads</span><span><b>$5</b> one-time payment</span><span><b>0</b> subscriptions</span></div>
+        <div class="download-credit-status" id="downloadCreditStatus"><span>Download pack</span><strong>$5.00</strong></div>
+        <button id="payDownload" class="button button--primary button--wide" type="button">Pay $5 with Creem</button>
+        <small><span class="secure-mark">✓</span> Secure checkout by Creem · <a href="refunds.html">Refund Policy</a> · <a href="terms.html">Terms</a></small>
       </section>
     </div>
-    <div class="toast" role="status" aria-live="polite"></div><script src="template-manifest.js?v=3"></script><script src="template-overlays.js?v=5"></script><script src="script.js?v=35"></script>
+    <div class="toast" role="status" aria-live="polite"></div><script src="payment-config.js?v=2"></script><script src="template-manifest.js?v=4"></script><script src="template-overlays.js?v=5"></script><script src="script.js?v=39"></script>
   </body>
 </html>
