@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="nancy"/>
+	<meta name="created" content="2018-12-12T03:29:00"/>
+	<meta name="changedby" content="K"/>
+	<meta name="changed" content="2018-12-12T05:23:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Company" content="Kingsoft"/>
+	<meta name="KSOProductBuildVer" content="2052-10.1.0.7698"/>
+	<meta name="KSORubyTemplateID" content="4"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 2; orphans: 2; line-height: 115%; margin-bottom: 0.25cm; text-align: start; background: transparent }
+		p.western { font-size: 11pt; so-language: en-GB }
+		p.cjk { font-family: "Calibri"; font-size: 11pt; so-language: en-US }
+		p.ctl { font-size: 11pt }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" bgcolor="#ffffff" dir="ltr"><p lang="en-US" class="cjk" style="margin-bottom: 0.28cm; line-height: 108%">
+<br/>
+<br/>
+
+</p>
+<p lang="en-US" class="cjk" style="margin-bottom: 0.28cm; line-height: 108%">
+<img src="template-086_html_c8c9473d.gif" name="Shape81" alt="Shape81" align="left" hspace="1" vspace="1" width="24" height="24"/>
+<img src="template-086_html_a766150a.gif" name="Shape82" alt="Shape82" align="left" hspace="1" vspace="1" width="24" height="24"/>
+<img src="template-086_html_ded1cf12.gif" name="Shape83" alt="Shape83" align="left" hspace="1" vspace="1" width="24" height="24"/>
+<img src="template-086_html_ddf92505.gif" name="Shape2" alt="Shape2" align="left" hspace="1" width="353" height="49"/>
+<img src="template-086_html_b4fc3a07.gif" name="Shape88" alt="Shape88" align="left" width="699" height="1"/>
+<img src="template-086_html_dc9e3864.gif" name="Shape86" alt="Shape86" align="left" width="126" height="27"/>
+<img src="template-086_html_211b3b1a.gif" name="Shape87" alt="Shape87" align="left" width="185" height="196"/>
+<img src="template-086_html_3687be2d.gif" name="Shape85" alt="Shape85" align="left" width="179" height="1"/>
+<img src="template-086_html_8ffeb0c3.gif" name="Shape84" alt="Shape84" align="left" width="213" height="35"/>
+<img src="template-086_html_298a7818.gif" name="Shape79" alt="Shape79" align="left" width="180" height="27"/>
+<img src="template-086_html_662fefe7.gif" name="Shape77" alt="Shape77" align="left" width="201" height="30"/>
+<img src="template-086_html_f599fe28.gif" name="Shape78" alt="Shape78" align="left" hspace="1" vspace="1" width="7" height="7"/>
+<img src="template-086_html_f599fe28.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="7" height="7"/>
+<img src="template-086_html_f599fe28.gif" name="Shape9" alt="Shape9" align="left" hspace="1" vspace="1" width="7" height="7"/>
+<img src="template-086_html_102649cb.gif" name="Shape76" alt="Shape76" align="left" width="472" height="1"/>
+<img src="template-086_html_9c6e504e.gif" name="Shape15" alt="Shape15" align="left" hspace="1" vspace="1" width="7" height="7"/>
+<img src="template-086_html_ea2f60.gif" name="Shape18" alt="Shape18" align="left" width="92" height="24"/>
+<img src="template-086_html_a6b9c82d.gif" name="Shape20" alt="Shape20" align="left" width="140" height="33"/>
+<img src="template-086_html_719e797c.gif" name="Shape51" alt="Shape51" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_9f3f03ad.gif" name="Shape52" alt="Shape52" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_9f3f03ad.gif" name="Shape53" alt="Shape53" align="left" vspace="1" width="12" height="12"/>
+<img src="template-086_html_9f3f03ad.gif" name="Shape54" alt="Shape54" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_9f3f03ad.gif" name="Shape55" alt="Shape55" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_65037ff1.gif" name="Shape56" alt="Shape56" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_65037ff1.gif" name="Shape57" alt="Shape57" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape58" alt="Shape58" align="left" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape59" alt="Shape59" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape60" alt="Shape60" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_81c44f98.gif" name="Shape61" alt="Shape61" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape62" alt="Shape62" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_aa75650b.gif" name="Shape63" alt="Shape63" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape64" alt="Shape64" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape65" alt="Shape65" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_65037ff1.gif" name="Shape66" alt="Shape66" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_65037ff1.gif" name="Shape67" alt="Shape67" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_aa75650b.gif" name="Shape68" alt="Shape68" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape69" alt="Shape69" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape70" alt="Shape70" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6147fa94.gif" name="Shape71" alt="Shape71" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_849e4fa4.gif" name="Shape72" alt="Shape72" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_d893bc40.gif" name="Shape73" alt="Shape73" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_849e4fa4.gif" name="Shape74" alt="Shape74" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_849e4fa4.gif" name="Shape75" alt="Shape75" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_9c6e504e.gif" name="Shape16" alt="Shape16" align="left" hspace="1" vspace="1" width="6" height="7"/>
+<img src="template-086_html_65037ff1.gif" name="Shape31" alt="Shape31" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_65037ff1.gif" name="Shape32" alt="Shape32" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape33" alt="Shape33" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape34" alt="Shape34" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape35" alt="Shape35" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_81c44f98.gif" name="Shape36" alt="Shape36" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape37" alt="Shape37" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape38" alt="Shape38" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_aa75650b.gif" name="Shape39" alt="Shape39" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape40" alt="Shape40" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_65037ff1.gif" name="Shape41" alt="Shape41" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_65037ff1.gif" name="Shape42" alt="Shape42" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape43" alt="Shape43" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_aa75650b.gif" name="Shape44" alt="Shape44" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6d102e5c.gif" name="Shape45" alt="Shape45" align="left" hspace="1" vspace="1" width="12" height="13"/>
+<img src="template-086_html_6147fa94.gif" name="Shape46" alt="Shape46" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_849e4fa4.gif" name="Shape47" alt="Shape47" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_849e4fa4.gif" name="Shape48" alt="Shape48" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_d893bc40.gif" name="Shape49" alt="Shape49" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_849e4fa4.gif" name="Shape50" alt="Shape50" align="left" hspace="1" vspace="1" width="12" height="12"/>
+<img src="template-086_html_9c6e504e.gif" name="Shape13" alt="Shape13" align="left" hspace="1" vspace="1" width="6" height="7"/>
+<img src="template-086_html_9c6e504e.gif" name="Shape14" alt="Shape14" align="left" hspace="1" vspace="1" width="7" height="7"/>
+<img src="template-086_html_a205cd5a.gif" name="Shape30" alt="Shape30" align="left" width="198" height="31"/>
+<img src="template-086_html_102649cb.gif" name="Shape29" alt="Shape29" align="left" width="472" height="1"/>
+<img src="template-086_html_102649cb.gif" name="Shape28" alt="Shape28" align="left" width="472" height="1"/>
+<img src="template-086_html_9c6e504e.gif" name="Shape27" alt="Shape27" align="left" hspace="1" vspace="1" width="6" height="7"/>
+<img src="template-086_html_23929f58.gif" name="Shape26" alt="Shape26" align="left" width="176" height="30"/>
+<img src="template-086_html_baf9a5ab.gif" name="图片 0" alt="图片 0" align="left" width="152" height="152"/>
+<img src="template-086_html_f5835eee.gif" name="Shape1" alt="Shape1" align="left" width="216" height="96"/>
+<img src="template-086_html_e03d014c.gif" name="Shape25" alt="Shape25" align="left" width="187" height="77"/>
+<img src="template-086_html_a9df0d21.gif" name="Shape24" alt="Shape24" align="left" width="161" height="74"/>
+<img src="template-086_html_3717bca6.gif" name="Shape23" alt="Shape23" align="left" width="193" height="74"/>
+<img src="template-086_html_11b75b17.gif" name="Shape22" alt="Shape22" align="left" width="121" height="128"/>
+<img src="template-086_html_6ad83f3a.gif" name="Shape21" alt="Shape21" align="left" width="111" height="128"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 5.72cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-GB" style="margin-bottom: 0cm; line-height: 107%">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>1234
+	Avenue, </b></span></font></font></font><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>State</b></span></font></font></font><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>,
+	Melbourne</b></span></font></font></font></font></font></p>
+	<p lang="en-GB" style="margin-bottom: 0cm; line-height: 107%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Australia
+	AB 223</b></span></font></font></font></font></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Phone:</b></span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">
+	 +00 1234 567 889</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Mail:</b></span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">
+	 </span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">1906222627@qq</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">.com</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Web:</b></span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">
+	 www.aleson.com</span></font></font></font></span></font></p>
+</span>
+<img src="template-086_html_92ff6c96.gif" name="Shape89" alt="Shape89" align="left" width="465" height="104"/>
+
+<img src="template-086_html_45d57ebb.gif" name="Shape17" alt="Shape17" align="left" width="86" height="24"/>
+
+<img src="template-086_html_1a515fd4.gif" name="Shape3" alt="Shape3" align="left" width="159" height="43"/>
+
+<img src="template-086_html_f861eb1b.gif" name="Shape4" alt="Shape4" align="left" width="104" height="25"/>
+
+<img src="template-086_html_48d4616a.gif" name="Shape19" alt="Shape19" align="left" hspace="1" vspace="1" width="1" height="863"/>
+
+<img src="template-086_html_8091ed9a.gif" name="Shape5" alt="Shape5" align="left" width="79" height="25"/>
+
+<img src="template-086_html_87145eec.gif" name="Shape6" alt="Shape6" align="left" width="88" height="25"/>
+
+<img src="template-086_html_da3d0373.gif" name="Shape7" alt="Shape7" align="left" width="125" height="25"/>
+
+<img src="template-086_html_9c6e504e.gif" name="Shape12" alt="Shape12" align="left" hspace="1" vspace="1" width="6" height="7"/>
+
+<img src="template-086_html_9c6e504e.gif" name="Shape11" alt="Shape11" align="left" hspace="1" vspace="1" width="6" height="7"/>
+
+<img src="template-086_html_9c6e504e.gif" name="Shape10" alt="Shape10" align="left" hspace="1" vspace="1" width="6" height="7"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 9.34cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.92cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="7" style="font-size: 31pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>STEVEN
+	BRAIN</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="Frame3" dir="ltr" style="float: left; width: 4.22cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Behance</b></span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Behance.com/username</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Twitter</b></span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Twitter.com/username</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Linkedin</b></span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">linkedin.com/username</span></font></font></font></span></font></p>
+</span>
+<span id="Frame4" dir="ltr" style="float: left; width: 2.76cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">W</span></font></font></font><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">ORDPRESS
+	   </span></font></font></font></span></font>
+	</p>
+</span>
+<span id="Frame5" dir="ltr" style="float: left; width: 2.09cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">PINBALL</span></font></font></font></span></font></p>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 2.32cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">CHESS
+	PIE</span></font></font></font><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">
+	</span></font></font></font></span></font>
+	</p>
+</span>
+<span id="Frame7" dir="ltr" style="float: left; width: 3.31cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">PHOTOGRAPHY</span></font></font></font></span></font></p>
+</span>
+<span id="Frame8" dir="ltr" style="float: left; width: 2.27cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>SOFT</b></span></font></font></font></span></font></p>
+</span>
+<span id="Frame9" dir="ltr" style="float: left; width: 2.43cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>HARD</b></span></font></font></font></span></font></p>
+</span>
+<span id="Frame10" dir="ltr" style="float: left; width: 3.71cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>SKILL</b></span></span></font></font></font><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>S</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="Frame11" dir="ltr" style="float: left; width: 2.95cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.6cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Creativity</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.6cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Hare
+	Work</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.6cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Team
+	Work</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.6cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Flexibility</span></font></font></font></span></font></p>
+</span>
+<span id="Frame12" dir="ltr" style="float: left; width: 3.21cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.6cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Wordpress</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.6cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">HTML
+	CSS</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.6cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Adobe
+	Photoshop</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.6cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Joomla</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.6cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Adobe
+	Indesign</span></font></font></font></span></font></p>
+</span>
+<span id="Frame13" dir="ltr" style="float: left; width: 5.12cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Master
+	In Web Technology</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">CREATIVE
+	ART INSTITUTE</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2001
+	- 2004</span></font></font></font></span></font></p>
+</span>
+<span id="Frame14" dir="ltr" style="float: left; width: 4.27cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Bachelor
+	Of Arts</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">WORLD
+	MAT UNIVERSITY</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2005
+	- 2008</span></font></font></font></span></font></p>
+</span>
+<span id="Frame15" dir="ltr" style="float: left; width: 4.94cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.46cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Jonathon
+	Deo</b></span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.46cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Director</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.35cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>P:</b></span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">
+	+555 123 5566</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.35cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>E:</b></span></font></font></font><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>
+	</b></span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">1906222627</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">@</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">qq</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">.com</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.35cm"><br/>
+
+	</p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.46cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Jabin
+	Smith</b></span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.46cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Web
+	developer</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.35cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>P:</b></span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">
+	+</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">123
+	5556 4455</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.35cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>E:</b></span></font></font></font><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>
+	</b></span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">jensonsmith@gmail.com</span></font></font></font></span></font></p>
+</span>
+<span id="Frame16" dir="ltr" style="float: left; width: 4.66cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 109%">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>HOBBIES</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="Frame17" dir="ltr" style="float: left; width: 5.25cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>EDUCATION</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="Frame18" dir="ltr" style="float: left; width: 5.33cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>EXPERIENC</b></span></span></font></font></font><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>E</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="Frame19" dir="ltr" style="float: left; width: 4.77cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>REFERENCES</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="Frame20" dir="ltr" style="float: left; width: 5.64cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>FOLLOW
+	ME</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="Frame21" dir="ltr" style="float: left; width: 3.33cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>ABOUT</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="Frame22" dir="ltr" style="float: left; width: 4.9cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.46cm"><a name="_GoBack"></a>
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">I‘m
+	graduating form Jilin Normal University this June which has a
+	history of 50 years. It shares many same characteristics with Jilin
+	University.</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.46cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Both
+	of them have a refreshing and scholarly atmosphere.Four years'
+	studying there made me an independent, optimistic and strict girl. </span></font></font></font></span></font>
+	</p>
+</span>
+<span id="Frame23" dir="ltr" style="float: left; width: 12.3cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Data
+	Tech  Service</span></font></font></font><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+	                                      </span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2013
+	- 2015</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">LEAD
+	WEB DEVELOPER</span></font></font></font></span></font></p>
+	<p lang="en-US" align="justify" style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Planned
+	and wrote lots of documents and manuals for members to detail
+	</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">instructions</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">
+	of rule or activity.Read English technical manuals and supporting
+	materials to design HTML web pages PHP script and security problems.</span></font></font></font></span></font></p>
+	<p lang="en-US" align="justify" style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Soft
+	Development Corporation</span></font></font></font><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+	                            </span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2013
+	- 2015</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">WEB
+	&amp; UX DESIGNER</span></font></font></font></span></font></p>
+	<p lang="en-US" align="justify" style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Planned
+	and wrote lots of documents and manuals for members to detail
+	</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">instructions</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">
+	of rule or activity.Read English technical manuals and supporting
+	materials to design HTML web pages PHP script and security problems.</span></font></font></font></span></font></p>
+	<p lang="en-US" align="justify" style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Loyal
+	Development Service Company</span></font></font></font><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+	                      </span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2013
+	- 2015</span></font></font></font></span></font></p>
+	<p lang="en-US" style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">WEB
+	DESIGNER</span></font></font></font></span></font></p>
+	<p lang="en-US" align="justify" style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Planned
+	and wrote lots of documents and manuals for members to detail
+	</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">instructions</span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">
+	of rule or activity.Read English technical manuals and supporting
+	materials to design HTML web pages PHP script and security problems.</span></font></font></font></span></font></p>
+</span><br/>
+<br/>
+
+</p>
+<p lang="en-US" class="cjk" style="margin-bottom: 0.28cm; line-height: 108%">
+<br/>
+<br/>
+
+</p>
+<p lang="en-US" class="cjk" style="margin-bottom: 0.28cm; line-height: 108%">
+<img src="template-086_html_fd33719d.gif" name="Shape90" alt="Shape90" align="left" hspace="1" vspace="1" width="305" height="32"/>
+<span id="Frame24" dir="ltr" style="float: left; width: 8.07cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="margin-bottom: 0.28cm; line-height: 108%">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: 0.4pt"><span lang="en-US"><b>Graphic
+	&amp; Web Designer</b></span></span></font></font></font></span></font></p>
+</span><br/>
+<br/>
+
+</p>
+</body>
+</html>

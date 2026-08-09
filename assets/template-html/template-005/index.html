@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Cover Letter Vol.2 (US Letter)</title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Ze"/>
+	<meta name="created" content="2020-05-01T17:01:00"/>
+	<meta name="changedby" content="Ze"/>
+	<meta name="changed" content="2020-05-01T17:02:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Creator" content="Adobe Illustrator CC 22.0 (Windows)"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 2.12cm; margin-right: 2.08cm; margin-top: 1.69cm; margin-bottom: 0.49cm }
+		p { direction: ltr; margin-top: 0.04cm; margin-bottom: 0cm; widows: 0; orphans: 0; line-height: 100%; text-align: start; margin-left: 0.04cm; background: transparent }
+		p.western { font-family: "Roboto", serif; font-size: 8pt }
+		p.cjk { font-size: 8pt; so-language: en-US }
+		p.ctl { font-family: "Roboto"; font-size: 8pt }
+		a:link { color: #000080; text-decoration: underline }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" dir="ltr"><p lang="en-US" class="cjk" style="margin-top: 0cm; margin-left: 0cm">
+<span class="sd-abs-pos" style="position: absolute; top: 0.1cm; left: -0.32cm; width: 189px"><img src="template-005_html_ef7852af.gif" name="Shape1" alt="Shape1" align="left" width="189" height="189"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 4.5cm; left: 6.16cm; width: 23px"><img src="template-005_html_f130197a.gif" name="Shape2" alt="Shape2" align="left" width="23" height="21"/>
+</span><span id="Frame1" dir="ltr" style="position: absolute; top: 6.19cm; left: 8.28cm; width: 0.6cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="line-height: 0.56cm; orphans: 2; margin-top: 0cm; margin-left: 0cm; widows: 2">
+	<img src="template-005_html_58afb14b.png" name="图片 2" align="bottom" width="22" height="21" border="0"/>
+</p>
+	<p lang="en-US" style="margin-top: 0cm; margin-left: 0cm"><br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 3.36cm; left: 6.16cm; width: 23px">
+<img src="template-005_html_f130197a.gif" name="Shape3" alt="Shape3" align="left" width="23" height="21"/>
+</span>
+<span id="Frame2" dir="ltr" style="position: absolute; top: 5.06cm; left: 8.27cm; width: 0.6cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="line-height: 0.56cm; orphans: 2; margin-top: 0cm; margin-left: 0cm; widows: 2">
+	<img src="template-005_html_1e50886f.png" name="图片 4" align="bottom" width="22" height="21" border="0"/>
+</p>
+	<p lang="en-US" style="margin-top: 0cm; margin-left: 0cm"><br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -0.01cm; left: 6.05cm; width: 417px">
+<img src="template-005_html_89f5f448.gif" name="Shape6" alt="Shape6" align="left" width="417" height="95"/>
+</span>
+<span id="Frame3" dir="ltr" style="position: absolute; top: 1.69cm; left: 8.17cm; width: 11.02cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk">
+	<font face="Roboto, serif"><font color="#e0821b"><font size="7" style="font-size: 32pt"><span style="letter-spacing: 3.6pt"><b>CHRIS	</b></span></font></font><font color="#e0821b"><font size="7" style="font-size: 32pt"><span style="letter-spacing: 3.8pt"><b>JOHNSON</b></span></font></font><font color="#e0821b"><font size="7" style="font-size: 32pt"><span style="letter-spacing: -3.5pt"><b>
+	</b></span></font></font></font>
+	</p>
+	<p lang="en-US" class="cjk" style="margin-left: 0.11cm; margin-top: 0.2cm">
+	<font face="Roboto, serif"><font color="#58595b"><font size="4" style="font-size: 16pt">Marketing
+	Manager</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 3.29cm; left: 7.24cm; width: 243px">
+<img src="template-005_html_e94bfa3a.gif" name="Shape7" alt="Shape7" align="left" width="243" height="24"/>
+</span>
+<span id="Frame4" dir="ltr" style="position: absolute; top: 4.98cm; left: 9.36cm; width: 6.42cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk">
+	<font face="Roboto, serif"><a href="http://www.instagram.com/yourname"><font color="#58595b"><font face="Roboto Light, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: 0.4pt">www.instagram.com/yourname</span></font></font></font></a></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 4.42cm; left: 7.24cm; width: 224px">
+<img src="template-005_html_8061a3fd.gif" name="Shape8" alt="Shape8" align="left" width="224" height="24"/>
+</span>
+<span id="Frame5" dir="ltr" style="position: absolute; top: 6.12cm; left: 9.36cm; width: 5.92cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk">
+	<font face="Roboto, serif"><a href="http://www.linkedin.com/yourname"><font color="#58595b"><font face="Roboto Light, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: 0.4pt">www.linkedin.com/yourname</span></font></font></font></a></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.76cm; left: 0.18cm; width: 138px">
+<img src="template-005_html_baffd621.gif" name="Shape9" alt="Shape9" align="left" width="138" height="24"/>
+</span>
+<span id="Frame6" dir="ltr" style="position: absolute; top: 9.45cm; left: 2.3cm; width: 3.66cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk">
+	<font face="Roboto, serif"><font color="#414042"><font size="3" style="font-size: 12pt">October,
+	7th 2019</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.8cm; left: 12.61cm; width: 172px">
+<img src="template-005_html_6c313980.gif" name="Shape10" alt="Shape10" align="left" width="172" height="100"/>
+</span>
+<span id="Frame7" dir="ltr" style="position: absolute; top: 9.49cm; left: 14.73cm; width: 4.56cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk" style="margin-right: 0.02cm; line-height: 152%; text-indent: 0.43cm">
+	<font face="Roboto, serif"><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">6969
+	Company </span></font></font><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.4pt">Address
+	</span></font></font><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Street
+	</span></font></font><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Name,
+	</span></font></font><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">State,</span></font></font><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 2.3pt">
+	</span></font></font><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.4pt">01234</span></font></font></font></p>
+	<p lang="en-US" class="cjk" style="margin-left: 1.61cm; margin-top: 0cm; line-height: 0.46cm">
+	<font face="Roboto, serif"><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">(+01)
+	234 567</span></font></font><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 2.2pt">
+	</span></font></font><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.4pt">89</span></font></font></font></p>
+	<p lang="en-US" class="cjk" style="margin-left: 0.83cm; margin-top: 0.24cm">
+	<font face="Roboto, serif"><font color="#414042"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.4pt"><a href="mailto:employer@email.com">employ</a><a href="mailto:er@email.com">er@email.com</a></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 9.56cm; left: 0.18cm; width: 123px">
+<img src="template-005_html_63cc1555.gif" name="Shape11" alt="Shape11" align="left" width="123" height="24"/>
+</span>
+<span id="Frame8" dir="ltr" style="position: absolute; top: 11.25cm; left: 2.3cm; width: 3.26cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk">
+	<font face="Roboto, serif"><font color="#414042"><font size="3" style="font-size: 12pt">Company
+	Name</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 11.75cm; left: 0.18cm; width: 160px">
+<img src="template-005_html_d6bcc5ba.gif" name="Shape12" alt="Shape12" align="left" width="160" height="20"/>
+</span>
+<span id="Frame9" dir="ltr" style="position: absolute; top: 13.45cm; left: 2.3cm; width: 4.22cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk">
+	<font face="Roboto, serif"><font color="#414042"><font size="2" style="font-size: 10pt">Dear
+	Mr. Employer Name</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.94cm; left: 0.18cm; width: 628px">
+<img src="template-005_html_9a37ae69.gif" name="Shape13" alt="Shape13" align="left" width="628" height="59"/>
+</span>
+<span id="Frame10" dir="ltr" style="position: absolute; top: 14.63cm; left: 2.3cm; width: 16.62cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk" style="line-height: 152%; margin-right: 0.01cm">
+	<font face="Roboto, serif"><font color="#58595b">In my years career
+	as a your job position, lorem ipsum dolor sit amet consectetur
+	adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+	dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+	exercitation ullamco laboris nisi ut</font></font></p>
+	<p lang="en-US" class="cjk" style="line-height: 0.37cm; margin-top: 0cm">
+	<font face="Roboto, serif"><font color="#58595b">aliquip ex ea
+	commodo consequat.</font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.2cm; left: 0.18cm; width: 640px">
+<img src="template-005_html_302fc747.gif" name="Shape14" alt="Shape14" align="left" width="640" height="59"/>
+</span>
+<span id="Frame11" dir="ltr" style="position: absolute; top: 16.89cm; left: 2.3cm; width: 16.93cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk" style="line-height: 152%; margin-right: 0.02cm">
+	<font face="Roboto, serif"><font color="#58595b">I currently being
+	your job at some company lorem ipsum dolor sit amet, consectetur
+	adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore
+	magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+	ullamco laboris nisi ut</font></font></p>
+	<p lang="en-US" class="cjk" style="line-height: 0.37cm; margin-top: 0cm">
+	<font face="Roboto, serif"><font color="#58595b">aliquip ex ea
+	commodo consequat.</font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.4cm; left: 0.18cm; width: 643px">
+<img src="template-005_html_b3251287.gif" name="Shape15" alt="Shape15" align="left" width="643" height="38"/>
+</span>
+<span id="Frame12" dir="ltr" style="position: absolute; top: 19.09cm; left: 2.3cm; width: 17.02cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk">
+	<font face="Roboto, serif"><font color="#58595b">I would love the
+	opportunity to discuss how I can contribute to your company. Thank
+	you in advance for your consideration,</font></font></p>
+	<p lang="en-US" class="cjk" style="margin-top: 0.19cm"><font face="Roboto, serif"><font color="#58595b">and
+	I look forward to hearing from you.</font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.55cm; left: 13.2cm; width: 64px">
+<img src="template-005_html_6b3cce6a.gif" name="Shape16" alt="Shape16" align="left" width="64" height="20"/>
+</span>
+<span id="Frame13" dir="ltr" style="position: absolute; top: 21.24cm; left: 15.32cm; width: 1.69cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk">
+	<font face="Roboto, serif"><font color="#414042"><font size="2" style="font-size: 10pt">Sincerely,</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.37cm; left: 13.2cm; width: 147px">
+<img src="template-005_html_842f741d.gif" name="Shape17" alt="Shape17" align="left" width="147" height="74"/>
+</span>
+<span id="Frame14" dir="ltr" style="position: absolute; top: 24.06cm; left: 15.32cm; width: 3.88cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk">
+	<font face="Roboto, serif"><font color="#414042"><font size="2" style="font-size: 10pt">Your
+	Fullname</font></font></font></p>
+	<p lang="en-US" class="cjk" style="margin-top: 0cm; line-height: 0.71cm">
+	<font face="Roboto, serif"><font color="#414042"><font size="2" style="font-size: 10pt"><a href="mailto:yourname@email.com">yourname@email.com</a>
+	(+01) 234 567 89</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.1cm; left: -0.32cm; width: 189px">
+<img src="template-005_html_93fea64f.gif" name="Shape18" alt="Shape18" align="left" hspace="1" vspace="1" width="189" height="189"/>
+</span>
+<span id="Frame15" dir="ltr" style="position: absolute; top: 1.8cm; left: 1.8cm; width: 5cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk" style="margin-top: 0.01cm; margin-left: 0.07cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.05cm; left: -0.57cm; width: 699px">
+<img src="template-005_html_16310081.gif" name="Shape19" alt="Shape19" align="left" width="699" height="16"/>
+</span>
+<span id="Frame16" dir="ltr" style="position: absolute; top: 7.74cm; left: 1.55cm; width: 18.5cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk" style="margin-top: 0.01cm; margin-left: 0.07cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.66cm; left: 13.17cm; width: 84px">
+<img src="template-005_html_3ceb5d5.gif" name="Shape5" alt="Shape5" align="left" width="84" height="47"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.44cm; left: -0.57cm; width: 699px">
+<img src="template-005_html_a19d0d9b.gif" name="Shape4" alt="Shape4" align="left" width="699" height="1"/>
+</span><br/>
+
+</p>
+</body>
+</html>

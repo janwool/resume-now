@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="nancy"/>
+	<meta name="created" content="2018-12-12T02:49:00"/>
+	<meta name="changedby" content="nancy"/>
+	<meta name="changed" content="2018-12-12T03:09:56"/>
+	<meta name="Company" content="Kingsoft"/>
+	<meta name="KSOProductBuildVer" content="2052-10.1.0.7698"/>
+	<meta name="KSORubyTemplateID" content="4"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { text-align: justify; widows: 0; orphans: 0; line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		p.western { font-family: "Calibri", serif; so-language: en-US; font-size: 10pt }
+		p.cjk { font-family: "宋体"; font-size: 10pt; so-language: zh-CN }
+		p.ctl { so-language: ar-SA; font-size: 11pt; font-family:  }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" bgcolor="#ffffff" dir="ltr"><p class="cjk" style="line-height: 100%; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm"><a name="_GoBack"></a>
+ <img src="template-103_html_72322b3b.gif" name="Shape1" alt="Shape1" align="left" hspace="1" vspace="1" width="298" height="1129"/>
+<img src="template-103_html_8362b4f4.gif" name="Shape14" alt="Shape14" align="left" hspace="1" vspace="1" width="35" height="35"/>
+<img src="template-103_html_8362b4f4.gif" name="Shape20" alt="Shape20" align="left" hspace="1" vspace="1" width="35" height="35"/>
+<img src="template-103_html_8362b4f4.gif" name="Shape17" alt="Shape17" align="left" hspace="1" vspace="1" width="35" height="35"/>
+<img src="template-103_html_7dff99c9.gif" name="Shape25" alt="Shape25" align="left" hspace="1" vspace="1" width="24" height="24"/>
+<img src="template-103_html_7dff99c9.gif" name="Shape29" alt="Shape29" align="left" hspace="1" vspace="1" width="24" height="24"/>
+<img src="template-103_html_7dff99c9.gif" name="Shape31" alt="Shape31" align="left" hspace="1" vspace="1" width="24" height="24"/>
+<img src="template-103_html_7dff99c9.gif" name="Shape27" alt="Shape27" align="left" hspace="1" vspace="1" width="24" height="24"/>
+<img src="template-103_html_7dff99c9.gif" name="Shape23" alt="Shape23" align="left" hspace="1" vspace="1" width="24" height="24"/>
+<img src="template-103_html_1f61b868.gif" name="Shape6" alt="Shape6" align="left" hspace="1" vspace="1" width="202" height="8"/>
+<img src="template-103_html_1f61b868.gif" name="Shape12" alt="Shape12" align="left" hspace="1" vspace="1" width="202" height="8"/>
+<img src="template-103_html_1f61b868.gif" name="Shape10" alt="Shape10" align="left" hspace="1" vspace="1" width="202" height="8"/>
+<img src="template-103_html_1f61b868.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="202" height="8"/>
+<img src="template-103_html_1f61b868.gif" name="Shape4" alt="Shape4" align="left" hspace="1" vspace="1" width="202" height="8"/>
+<img src="template-103_html_e1a4a6cf.gif" name="Shape34" alt="Shape34" align="left" width="447" height="137"/>
+<img src="template-103_html_eafd18a2.gif" name="Shape46" alt="Shape46" align="left" width="131" height="68"/>
+<img src="template-103_html_c869678a.gif" name="Shape41" alt="Shape41" align="left" width="447" height="31"/>
+<img src="template-103_html_1e722ee1.gif" name="Shape50" alt="Shape50" align="left" width="224" height="32"/>
+<img src="template-103_html_a7b17b1.gif" name="Shape2" alt="Shape2" align="left" width="263" height="82"/>
+<img src="template-103_html_21e192f7.gif" name="Shape42" alt="Shape42" align="left" width="249" height="49"/>
+<img src="template-103_html_3f0040c1.gif" name="Shape43" alt="Shape43" align="left" width="434" height="128"/>
+<img src="template-103_html_401f48a6.gif" name="Shape33" alt="Shape33" align="left" width="447" height="114"/>
+<img src="template-103_html_3c23461d.gif" name="Shape49" alt="Shape49" align="left" width="133" height="32"/>
+<img src="template-103_html_9a82a48b.gif" name="Shape24" alt="Shape24" align="left" hspace="1" vspace="1" width="11" height="15"/>
+<img src="template-103_html_7a84cea7.gif" name="Shape28" alt="Shape28" align="left" hspace="1" vspace="1" width="15" height="11"/>
+<img src="template-103_html_6ebd16e2.gif" name="Shape30" alt="Shape30" align="left" hspace="1" vspace="1" width="13" height="13"/>
+<img src="template-103_html_b83953a4.gif" name="Shape26" alt="Shape26" align="left" hspace="1" vspace="1" width="14" height="9"/>
+<img src="template-103_html_b3cd34b5.gif" name="Shape37" alt="Shape37" align="left" width="267" height="35"/>
+<img src="template-103_html_8b53e3ea.gif" name="Shape22" alt="Shape22" align="left" hspace="1" vspace="1" width="13" height="13"/>
+<img src="template-103_html_d160f903.gif" name="Shape5" alt="Shape5" align="left" hspace="1" vspace="1" width="159" height="8"/>
+<img src="template-103_html_66820b09.gif" name="Shape48" alt="Shape48" align="left" width="114" height="33"/>
+<img src="template-103_html_a982dfa5.gif" name="Shape40" alt="Shape40" align="left" width="267" height="28"/>
+<img src="template-103_html_b3cd34b5.gif" name="Shape39" alt="Shape39" align="left" width="267" height="35"/>
+<img src="template-103_html_d160f903.gif" name="Shape11" alt="Shape11" align="left" hspace="1" vspace="1" width="159" height="8"/>
+<img src="template-103_html_d160f903.gif" name="Shape9" alt="Shape9" align="left" hspace="1" vspace="1" width="159" height="8"/>
+<img src="template-103_html_b3cd34b5.gif" name="Shape38" alt="Shape38" align="left" width="267" height="35"/>
+<img src="template-103_html_d160f903.gif" name="Shape7" alt="Shape7" align="left" hspace="1" vspace="1" width="159" height="8"/>
+<img src="template-103_html_eea161de.gif" name="Shape45" alt="Shape45" align="left" width="189"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 6.96cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 1.41cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#006891"><font face="微软雅黑, serif"><font size="7" style="font-size: 32pt">John
+	Doe</font></font></font></span></font></p>
+</span>
+<img src="template-103_html_e8e3231a.gif" name="Shape44" alt="Shape44" align="left" width="147" height="1"/>
+
+<img src="template-103_html_dc0b8ee6.gif" name="Shape19" alt="Shape19" align="left" hspace="1" vspace="1" width="22" height="22"/>
+
+<img src="template-103_html_743b486.gif" name="Shape35" alt="Shape35" align="left" width="201" height="223"/>
+
+<img src="template-103_html_d183083e.gif" name="Shape21" alt="Shape21" align="left" width="219" height="1"/>
+
+<img src="template-103_html_4328e9cc.gif" name="Shape32" alt="Shape32" align="left" width="248" height="180"/>
+
+<img src="template-103_html_ba5b4037.gif" name="图片 72" alt="图片 72" align="left" hspace="1" vspace="1" width="175" height="175"/>
+
+<img src="template-103_html_b3e0f084.gif" name="Shape18" alt="Shape18" align="left" width="249" height="1"/>
+
+<img src="template-103_html_8d4e9b4b.gif" name="Shape16" alt="Shape16" align="left" hspace="1" vspace="1" width="26" height="15"/>
+
+<img src="template-103_html_27f87156.gif" name="Shape47" alt="Shape47" align="left" width="131" height="37"/>
+
+<img src="template-103_html_288a84bc.gif" name="Shape15" alt="Shape15" align="left" width="268" height="1"/>
+
+<img src="template-103_html_b3cd34b5.gif" name="Shape36" alt="Shape36" align="left" width="267" height="35"/>
+
+<img src="template-103_html_6b6ae501.gif" name="Shape13" alt="Shape13" align="left" vspace="1" width="20" height="19"/>
+
+<img src="template-103_html_d160f903.gif" name="Shape3" alt="Shape3" align="left" hspace="1" vspace="1" width="159" height="8"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 6.56cm; border: none; padding: 0cm; background: #ffffff">
+	<ul><li><p style="line-height: 1.06cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">Enjoy
+		many types of music</font></font></font></span></font></p></li>
+		<li><p style="line-height: 1.06cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">have
+		travelled to Southeast Asia</font></font></font></span></font></p></li>
+		<li><p style="line-height: 1.06cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">Studied
+		Cantonese</font></font></font></span></font></p></li>
+		<li><p style="line-height: 1.06cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">Badminton,
+		English salon</font></font></font></span></font></p></li>
+	</ul>
+</span>
+<span id="Frame3" dir="ltr" style="float: left; width: 11.82cm; border: none; padding: 0cm; background: #ffffff">
+	<ul><li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">15th
+		International Economic and Trade College Academic Thesis (Prize for
+		Excellence)</font></font></span></font></p></li>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Outstanding
+		Captain of Volunteer Training School</font></font></span></font></p></li>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">The
+		national college students business plan competition </font></font></span></font>
+		</p></li>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Second
+		Prize of postgraduate Curricular Academic Competition</font></font></span></font></p></li>
+	</ul>
+</span>
+<span id="Frame4" dir="ltr" style="float: left; width: 11.82cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#595959"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>Sun
+	Yat-sen University </b></font></font></font><font color="#2d2c2b"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>
+	 </b></font></font></font><font color="#878787"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">ACCOUNTING
+	(BACHELOR), 2013</font></font></font></span></font></p>
+	<ul>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Major
+		Courses:western economics, accounting computerization, marketing,
+		intermediate financial accounting, advanced financial accounting,
+		international finance.</font></font></span></font></p></li>
+	</ul>
+	<p style="line-height: 100%; margin-top: 0.28cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#595959"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>Georgia
+	Institute</b></font></font></font><font color="#2d2c2b"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>
+	  </b></font></font></font><font color="#878787"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">ACCOUNTING
+	(BACHELOR), 2013</font></font></font><font color="#2d2c2b"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">
+	</font></font></font></span></font>
+	</p>
+	<ul>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#2d2c2b">
+		</font><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Top
+		10%. (Expected Graduation Date: March 2012)</font></font></span></font></p></li>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Second
+		prize Scholarship (awarded to the top 10%)</font></font></span></font></p></li>
+	</ul>
+</span>
+<span id="Frame5" dir="ltr" style="float: left; width: 5.32cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 1.02cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">28
+	February 1989</font></font></font></span></font></p>
+	<p style="line-height: 1.02cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">+1
+	212-941-5823</font></font></font></span></font></p>
+	<p style="line-height: 1.02cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">1906222627</span></font></font></font><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">@</font></font></font><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">qq</span></font></font></font><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">.com</font></font></font></span></font></p>
+	<p style="line-height: 1.02cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">262
+	Canal St, New York, NY</font></font></font></span></font></p>
+	<p style="line-height: 1.02cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">www.josign.com</font></font></font></span></font></p>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 7.07cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">Javascript</font></font></font></span></font></p>
+</span>
+<span id="Frame7" dir="ltr" style="float: left; width: 7.07cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">HTML5/CSS3</font></font></font></span></font></p>
+</span>
+<span id="Frame8" dir="ltr" style="float: left; width: 7.07cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">Cinema
+	4D</font></font></font></span></font></p>
+</span>
+<span id="Frame9" dir="ltr" style="float: left; width: 7.07cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">Adobe
+	Creative Cloud</font></font></font></span></font></p>
+</span>
+<span id="Frame10" dir="ltr" style="float: left; width: 7.07cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">Flash/Animation</font></font></font></span></font></p>
+</span>
+<span id="Frame11" dir="ltr" style="float: left; width: 11.82cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#595959"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>Art
+	Director </b></font></font></font><font color="#2d2c2b"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>
+	</b></font></font></font><font color="#878787"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt">CREATIVE
+	DESIGN LAB, 2017</font></font></font></span></font></p>
+	<ul>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Coordinated
+		and supported events or activities by senior planners and other
+		functional departments.</font></font></span></font></p></li>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Handled
+		basic office functions as needed, i.e. data entry, file management
+		and meeting room reservation.</font></font><font color="#2d2c2b"><font face="Exo, serif"><font size="2" style="font-size: 10pt">
+		</font></font></font></span></font>
+		</p></li>
+	</ul>
+	<p style="line-height: 100%; margin-top: 0.28cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#595959"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>Journalist
+	</b></font></font></font><font color="#2d2c2b"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>
+	</b></font></font></font><font color="#878787"><font face="微软雅黑, serif"><font size="2" style="font-size: 10pt">TECHNOLOGY
+	NEWS AGENCY, 2015</font></font></font><font color="#2d2c2b"><font face="微软雅黑, serif"><font size="2" style="font-size: 10pt">
+	</font></font></font></span></font>
+	</p>
+	<ul>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Wrote
+		press releases and interviewed with several figures as a
+		journalist.</font></font></span></font></p></li>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Communicated
+		and cooperated with Outreach Department and other departments.</font></font></span></font></p></li>
+	</ul>
+	<p style="line-height: 100%; margin-top: 0.28cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#595959"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>Graphic
+	Artist </b></font></font></font><font color="#2d2c2b"><font face="Arial Unicode MS, sans-serif"><font size="2" style="font-size: 10pt"><b>
+	</b></font></font></font><font color="#878787"><font face="微软雅黑, serif"><font size="2" style="font-size: 10pt">TBWA
+	GROUP CHINA , 2013</font></font></font><font color="#2d2c2b"><font face="微软雅黑, serif"><font size="2" style="font-size: 10pt">
+	</font></font></font></span></font>
+	</p>
+	<ul>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Collect
+		newly issued tax legislation, regulations and circulars and analyze
+		them from technical perspectives.</font></font></span></font></p></li>
+		<li><p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">Conducts
+		research studies and analysis and provides professional opinions on
+		ambiguous and complex issues.</font></font></span></font></p></li>
+	</ul>
+</span>
+<span id="Frame12" dir="ltr" style="float: left; width: 6.58cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 1.06cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#006891"><font face="微软雅黑, serif"><font size="6" style="font-size: 24pt"><b>Art
+	Director</b></font></font></font></span></font></p>
+</span>
+<span id="Frame13" dir="ltr" style="float: left; width: 11.48cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif">I
+	just work in that era, the financial professional to the only person
+	impression is abacus accounting,there is no certified public
+	accountants,and no one heard four,no financial director.</font></font></span></font></p>
+	<p style="line-height: 0.49cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font face="Arial Unicode MS, sans-serif"><br/>
+I’m
+	familiar to related regulations and institutions, thus able to
+	control the risk of bank operation. </font></font></span></font>
+	</p>
+</span>
+<span id="Frame14" dir="ltr" style="float: left; width: 3.46cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#006891"><font face="微软雅黑, serif"><font size="4" style="font-size: 14pt"><b>SKILLS</b></font></font></font></span></font></p>
+</span>
+<span id="Frame15" dir="ltr" style="float: left; width: 3.46cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#006891"><font face="微软雅黑, serif"><font size="4" style="font-size: 14pt"><b>INTERESTS</b></font></font></font></span></font></p>
+</span>
+<span id="Frame16" dir="ltr" style="float: left; width: 3.02cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#006891"><font size="4" style="font-size: 14pt"><b>AWARDS</b></font></font><font color="#006891"><font face="Exo, serif"><font size="4" style="font-size: 14pt"><b><br/>
+</b></font></font></font></span></font><br/>
+
+	</p>
+</span>
+<span id="Frame17" dir="ltr" style="float: left; width: 3.53cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#006891"><font size="4" style="font-size: 14pt"><b>EDUCATION</b></font></font><font color="#006891"><font face="Exo, serif"><font size="4" style="font-size: 14pt"><b><br/>
+</b></font></font></font></span></font><br/>
+
+	</p>
+</span>
+<span id="Frame18" dir="ltr" style="float: left; width: 5.92cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#006891"><font size="4" style="font-size: 14pt"><b>JOB
+	EXPERIENCE</b></font></font></span></font></p>
+</span>   
+</p>
+</body>
+</html>

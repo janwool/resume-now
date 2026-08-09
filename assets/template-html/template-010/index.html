@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>cv Cover</title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Ze"/>
+	<meta name="created" content="2020-05-23T15:21:00"/>
+	<meta name="changedby" content="Ze"/>
+	<meta name="changed" content="2020-05-23T15:23:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Creator" content="Adobe Illustrator CC 23.0 (Windows)"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-bottom: 0.49cm }
+		p { direction: ltr; widows: 0; margin-bottom: 0cm; orphans: 0; text-align: start; background: transparent }
+		p.western { font-family: "Open Sans", sans-serif; font-size: 9pt }
+		p.cjk { font-family: "Open Sans"; font-size: 9pt }
+		p.ctl { font-family: "Open Sans"; font-size: 9pt }
+		a:link { color: #000080; text-decoration: underline }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr">
+<div id="TextSection" dir="ltr"><p class="cjk"><img src="template-010_html_419e525e.gif" name="Shape2" alt="Shape2" align="left" hspace="1" width="794" height="354"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 21cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.01cm">
+		<br/>
+
+		</p>
+		<p align="center" style="line-height: 1.59cm; margin-right: 1.87cm; margin-left: 9.89cm">
+		<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#25282a"><font size="7" style="font-size: 34pt"><b>STEVE
+		JACKSON</b></font></font></font></font></p>
+		<p align="center" style="margin-right: 1.87cm; line-height: 0.48cm; margin-left: 9.89cm">
+		<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#25282a"><span style="letter-spacing: 1.8pt">CONTEN</span></font><font color="#25282a"><span style="letter-spacing: 4.5pt">
+		</span></font><font color="#25282a"><span style="letter-spacing: 1.9pt">CREATOR</span></font><font color="#25282a"><span style="letter-spacing: -0.7pt">
+		</span></font></font></font>
+		</p>
+	</span>
+	<img src="template-010_html_9cbe1196.gif" name="Shape1" alt="Shape1" align="left" hspace="1" width="305" height="226"/>
+<br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><img src="template-010_html_91c7f0ef.gif" name="Shape3" alt="Shape3" align="left" hspace="1" width="793" height="128"/>
+<br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><img src="template-010_html_15597522.png" name="Picture 12" align="left" width="15" height="16" border="0"/>
+<img src="template-010_html_28fe556e.png" name="Picture 11" align="left" width="16" height="16" border="0"/>
+<img src="template-010_html_94d4c723.gif" name="Shape4" alt="Shape4" align="left" hspace="1" vspace="1" width="97" height="30"/>
+<span id="Frame2" dir="ltr" style="float: left; width: 2.58cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.4cm">
+		<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font face="Open Sans SemiBold, sans-serif"><font size="2" style="font-size: 9pt"><b>Website</b></font></font></font></font></font></p>
+		<p style="line-height: 0.4cm"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font size="2" style="font-size: 9pt">yourwebsite.com</font></font></font></font></p>
+	</span>
+	<img src="template-010_html_149c9f5b.gif" name="Shape5" alt="Shape5" align="left" hspace="1" vspace="1" width="104" height="30"/>
+
+	<span id="Frame3" dir="ltr" style="float: left; width: 2.74cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.4cm">
+		<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font face="Open Sans SemiBold, sans-serif"><font size="2" style="font-size: 9pt"><b>Phone</b></font></font></font></font></font></p>
+		<p style="line-height: 0.4cm"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font size="2" style="font-size: 9pt">+62
+		85 743041777</font></font></font></font></p>
+	</span><br/>
+
+	</p>
+	<p class="cjk"><img src="template-010_html_402d6d80.gif" name="Shape6" alt="Shape6" align="left" hspace="1" vspace="1" width="92" height="38"/>
+<span id="Frame4" dir="ltr" style="float: left; width: 2.44cm; border: none; padding: 0cm; background: #ffffff"><p>
+		<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font face="Open Sans SemiBold, sans-serif"><font size="5" style="font-size: 21pt"><b>COVER</b></font></font></font></font></font></p>
+	</span><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><img src="template-010_html_e513e63a.png" name="Picture 9" align="left" width="10" height="16" border="0"/>
+<img src="template-010_html_fdcce2b3.gif" name="Shape7" alt="Shape7" align="left" hspace="1" vspace="1" width="85" height="30"/>
+<span id="Frame5" dir="ltr" style="float: left; width: 2.24cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.4cm">
+		<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font face="Open Sans SemiBold, sans-serif"><font size="2" style="font-size: 9pt"><b>Address</b></font></font></font></font></font></p>
+		<p style="line-height: 0.4cm"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font size="2" style="font-size: 9pt">yourcityaddres</font></font></font></font></p>
+	</span>
+	<img src="template-010_html_c6ca3042.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="126" height="30"/>
+
+	<span id="Frame6" dir="ltr" style="float: left; width: 3.34cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.4cm">
+		<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font face="Open Sans SemiBold, sans-serif"><font size="2" style="font-size: 9pt"><b>Email</b></font></font></font></font></font></p>
+		<p style="line-height: 0.4cm"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><a href="mailto:youremail@gmail.com"><font color="#ffffff"><font size="2" style="font-size: 9pt">youremail@gmail.com</font></font></a></font></font></p>
+	</span><br/>
+
+	</p>
+	<p class="cjk"><img src="template-010_html_a842bb1b.png" name="Picture 10" align="left" width="20" height="13" border="0"/>
+<br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-top: 0.01cm"><br/>
+
+	</p>
+	<p class="cjk" align="center" style="margin-top: 0.18cm; margin-right: 9.19cm; margin-left: 8.33cm">
+	<span class="sd-abs-pos" style="position: absolute; top: 1.02cm; left: 8.13cm; width: 375px"><img src="template-010_html_7b6163f3.gif" name="Shape9" alt="Shape9" align="left" hspace="1" vspace="1" width="375">
+  <br clear="left"/>
+</img>
+</span><font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#020509"><font face="Open Sans SemiBold, sans-serif"><font size="4" style="font-size: 14pt"><b>COVER
+	LETTER</b></font></font></font></font></font></p>
+	<p class="cjk" style="margin-top: 0.01cm"><br/>
+
+	</p>
+</div>
+<div id="Section1" dir="ltr" gutter="5" style="column-count: 2"><p class="cjk" style="margin-top: 0.18cm; margin-left: 2.83cm">
+	<font face="Open Sans, sans-serif"><font color="#343839"><font face="Open Sans SemiBold, sans-serif"><b>TO</b></font></font></font></p>
+	<p class="cjk" style="margin-top: 0cm"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 2.83cm; line-height: 114%; margin-right: 0.12cm">
+	<font face="Open Sans, sans-serif"><font color="#343839">HR
+	Departement Company Name City Adress</font></font></p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 2.83cm"><font face="Open Sans, sans-serif"><font color="#343839">08
+	February 2018</font></font></p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 2.83cm"><font face="Open Sans, sans-serif"><font color="#343839"><font face="Open Sans SemiBold, sans-serif"><b>FROM</b></font></font></font></p>
+	<p class="cjk" style="margin-top: 0cm"><br/>
+
+	</p>
+	<p class="cjk" style="margin-top: 0cm; margin-right: 0.42cm; margin-left: 2.83cm; line-height: 114%">
+	<font face="Open Sans, sans-serif"><font color="#343839">Steven
+	Jackson Art Director</font></font></p>
+	<p class="cjk" style="margin-right: 2.98cm; margin-left: 2.83cm; line-height: 114%">
+	<font face="Open Sans, sans-serif"><font color="#343839">Lorem ipsum
+	dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+	euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
+	wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+	suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis
+	autem vel eum iriure dolor in hendrerit in vulputate velit esse
+	molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+	vero eros et accumsan et iusto odio dignissim qui blandit praesent
+	luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</font></font></p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 2.83cm; line-height: 114%; margin-right: 3.14cm">
+	<font face="Open Sans, sans-serif"><font color="#343839"><font face="Open Sans SemiBold, sans-serif"><b>Lorem
+	ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam
+	nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+	volutpat. .</b></font></font></font></p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 2.83cm; line-height: 114%; margin-right: 3.05cm">
+	<font face="Open Sans, sans-serif"><font color="#343839">Lorem ipsum
+	dolor sit amet, consectetuer adipiscing elit, blandit praesent
+	luptatum zzril delenit augue duis</font></font></p>
+</div>
+<div id="Section2" dir="ltr"><p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+	<p class="cjk" align="center" style="margin-right: 9.19cm; margin-left: 6.94cm; margin-top: 0.18cm">
+	<font face="Open Sans, sans-serif"><font color="#343839"><font face="Open Sans Light, sans-serif">Sincerely
+	</font></font></font>
+	</p>
+	<p class="cjk" style="margin-top: 0.17cm; margin-left: 8.02cm"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#343839"><font face="Myriad Pro, sans-serif"><font size="7" style="font-size: 35pt">Steve
+	Jackson</font></font></font></font></font></p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+	<p class="cjk" align="center" style="margin-left: 7.47cm; margin-right: 9.19cm; margin-top: 0.18cm">
+	<font face="Open Sans, sans-serif"><font color="#343839"><font face="Open Sans SemiBold, sans-serif"><b>STEVE
+	JACKSON</b></font></font></font></p>
+</div>
+</body>
+</html>

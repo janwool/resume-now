@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Build and customize your resume online." />
+    <title>Resume Builder — First Draft</title><link rel="stylesheet" href="styles.css?v=29" />
+  </head>
+  <body class="builder-page">
+    <header class="app-bar">
+      <div class="app-brand"><a class="brand" href="index.html">FIRST DRAFT</a><strong id="builderTemplateName">The Strategist · Editor</strong><span class="app-free-badge">Free editing</span></div>
+      <div class="save-state"><i class="save-dot"></i><span>Saved</span></div>
+      <div class="app-actions">
+        <button class="icon-button" aria-label="Undo"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h9a6 6 0 0 1 6 6"/></svg></button>
+        <button class="icon-button" aria-label="Redo"><svg class="icon" viewBox="0 0 24 24"><path d="m15 7 5 5-5 5"/><path d="M20 12h-9a6 6 0 0 0-6 6"/></svg></button>
+        <button id="previewButton" class="button button--outline button--small"><svg class="icon" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></svg>Preview</button>
+        <button id="downloadPdf" class="button button--primary button--small"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download · $1</button>
+      </div>
+    </header>
+
+    <main class="builder-workspace">
+      <aside class="builder-sidebar builder-sidebar--left">
+        <div class="builder-panel">
+          <div class="builder-progress"><h2>Your résumé</h2><p>82% complete</p><div class="progress"><span></span></div></div>
+          <section class="accordion">
+            <button class="accordion-header"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/></svg>Personal details<span>⌄</span></button>
+            <div class="accordion-body"><label class="field"><span>Full name</span><input id="nameInput" value="JONATHAN EDWARDS" /></label><label class="field"><span>Professional title</span><input id="titleInput" value="Creative Director" /></label></div>
+          </section>
+          <section class="accordion">
+            <button class="accordion-header"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6z"/><path d="M15 2v4h4"/></svg>Profile<span>⌄</span></button>
+            <div class="accordion-body"><label class="field"><span>About me</span><textarea id="summaryInput">This is a section where you describe your professional career. Let the potential employer know why they would want to hire you.</textarea></label></div>
+          </section>
+          <section class="accordion open">
+            <button class="accordion-header"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 12h18"/></svg>Experience<span>⌃</span></button>
+            <div class="accordion-body"><label class="field"><span>Current position</span><input id="jobInput" value="Creative Director" /></label><label class="field"><span>Company</span><input id="companyInput" value="Advertising Agency" /></label><div class="field-grid"><label class="field"><span>Location</span><input value="New York, USA" /></label><label class="field"><span>Dates</span><input value="2012–14" /></label></div></div>
+          </section>
+          <section class="accordion"><button class="accordion-header"><svg class="icon" viewBox="0 0 24 24"><path d="m3 10 9-6 9 6-9 6z"/><path d="M7 13v5c3 2 7 2 10 0v-5"/></svg>Education<span>⌄</span></button><div class="accordion-body"><label class="field"><span>School</span><input value="University/College London, UK" /></label></div></section>
+          <section class="accordion"><button class="accordion-header"><svg class="icon" viewBox="0 0 24 24"><path d="m12 2 3 6 7 .9-5 4.8 1.3 6.8L12 17l-6.3 3.5L7 13.7 2 8.9 9 8z"/></svg>Skills<span>⌄</span></button><div class="accordion-body"><label class="field"><span>Skills</span><input value="Adobe Illustrator, Photoshop, InDesign, HTML, CSS" /></label></div></section>
+        </div>
+        <button class="add-section">＋ &nbsp; Add section</button>
+      </aside>
+
+      <section class="builder-canvas">
+        <article class="resume-document template-flat" aria-label="Editable Flat resume template">
+          <header class="flat-resume-header">
+            <div class="flat-name-block"><h1 id="resumeName" contenteditable="true">JONATHAN EDWARDS</h1><h2 id="resumeTitle" contenteditable="true">Creative Director</h2></div>
+            <div class="flat-contact" contenteditable="true">123 Street Name,<br />Town/City,<br />State/County,<br />Post/Zip Code<br /><br />T: 028 1234 5678<br /><strong>E: jonathan@gmail.com</strong><br /><strong>www.yourwebsite.com</strong></div>
+          </header>
+          <div class="flat-resume-body">
+            <aside class="flat-about-column">
+              <h3 class="flat-section-title"><span class="flat-section-icon">●</span>ABOUT ME</h3>
+              <div class="flat-photo" aria-label="Profile photo placeholder"><span>DOUBLE CLICK<br />THE SMART OBJECT<br />LAYER ICON TO<br />ADD YOUR PHOTO</span></div>
+              <p id="resumeSummary" contenteditable="true">This is a section where you describe your professional career. Let the potential employer know why they would want to hire you. Use this section for particular career highlights, collaborations or stepping stones to where you are now as a professional.</p>
+              <p contenteditable="true">Describe yourself personally. Your goals, aspirations and why a particular company should choose you as an employee. Use this section to describe your hobbies and interests, show your potential employer that you are a well-rounded individual.</p>
+              <div class="flat-mini-list"><strong>Sports Clubs</strong><span>Club Name</span><strong>Organisations</strong><span>Organisation Name</span><strong>Volunteering</strong><span>Where you volunteered</span></div>
+              <h4 contenteditable="true">AWARDS</h4>
+              <div class="flat-mini-list" contenteditable="true"><strong>Your Award 2007</strong><span>Awarding Body</span><strong>Your Award 2007</strong><span>Awarding Body</span></div>
+            </aside>
+            <div class="flat-middle-column">
+              <section><h3 class="flat-section-title"><span class="flat-section-icon">⌂</span>PERSONAL</h3><dl class="flat-data" contenteditable="true"><dt>Name</dt><dd>Jonathan Edwards</dd><dt>D.O.B</dt><dd>4th January 1982</dd><dt>Address</dt><dd>123 Street Name,<br />Town/City,<br />State/County,<br />Post/Zip Code</dd><dt>Phone</dt><dd>028 1234 5678</dd><dt>Email</dt><dd>jonathan@gmail.com</dd><dt>Website</dt><dd>www.yourwebsite.com</dd></dl></section>
+              <section><h3 class="flat-section-title"><span class="flat-section-icon">▣</span>ONLINE</h3><ul class="flat-online" contenteditable="true"><li>behance.net/jonathan</li><li>facebook.com/jonathan</li><li>dribbble.com/jonathan</li></ul></section>
+              <section><h3 class="flat-section-title"><span class="flat-section-icon">⌂</span>EDUCATION</h3><div class="flat-entry" contenteditable="true"><strong>MA Advertising <time>2003–05</time></strong><span>University/College<br />London, UK</span></div><div class="flat-entry" contenteditable="true"><strong>BA (Hons) Graphic Design <time>2000–03</time></strong><span>University/College<br />London, UK</span></div></section>
+            </div>
+            <div class="flat-right-column">
+              <section><h3 class="flat-section-title"><span class="flat-section-icon">▦</span>EMPLOYMENT</h3><h4>CURRENT POSITION</h4><div class="flat-entry flat-current" contenteditable="true"><strong><span id="resumeJob">Creative Director</span><time>2012–14</time></strong><b id="resumeCompany">Advertising Agency</b><span>New York, USA</span></div><h4>PREVIOUS POSITIONS</h4><div class="flat-entry" contenteditable="true"><strong>UI Designer <time>2010–12</time></strong><b>Web Design Company</b><span>London, UK</span></div><div class="flat-entry" contenteditable="true"><strong>Graphic Designer <time>2007–10</time></strong><b>Design Company</b><span>Milan, Italy</span></div><div class="flat-entry" contenteditable="true"><strong>Junior Designer <time>2005–07</time></strong><b>Design Company</b><span>London, UK</span></div></section>
+              <section><h3 class="flat-section-title"><span class="flat-section-icon">✎</span>SKILLS</h3><div class="flat-skills" contenteditable="true"><span>Adobe Illustrator<i style="--skill:78%"></i></span><span>Adobe Photoshop<i style="--skill:70%"></i></span><span>Adobe InDesign<i style="--skill:84%"></i></span><span>Microsoft Office<i style="--skill:62%"></i></span><span>HTML (5)<i style="--skill:82%"></i></span><span>CSS (3)<i style="--skill:58%"></i></span></div></section>
+            </div>
+            <section class="flat-references"><h3 class="flat-section-title"><span class="flat-section-icon">⚑</span>REFERENCES</h3><div class="flat-reference-grid"><div contenteditable="true">Mr Smith<br /><strong>Position in Company</strong><br />Company Name<br />123 Street Name, Town/City,<br />State/County, Post/Zip Code<br /><br /><strong>T:</strong> 028 1234 5678<br /><strong>E:</strong> john.smith@gmail.com</div><div contenteditable="true">Mrs Jones<br /><strong>Position in Company</strong><br />Company Name<br />123 Street Name, Town/City,<br />State/County, Post/Zip Code<br /><br /><strong>T:</strong> 028 1234 5678<br /><strong>E:</strong> jane.jones@gmail.com</div></div></section>
+          </div>
+          <footer class="flat-resume-footer"><span><b>Website</b> www.yourwebsite.com</span><span><b>Phone</b> 028 1234 5678</span><span><b>Email</b> jonathan@gmail.com</span></footer>
+        </article>
+        <div class="canvas-footer"><div class="zoom-control"><button id="zoomOut" aria-label="Zoom out">−</button><span id="zoomLabel">100%</span><button id="zoomIn" aria-label="Zoom in">＋</button></div><span>Page 1 of 2</span></div>
+      </section>
+
+      <aside class="builder-sidebar builder-sidebar--right">
+        <div class="builder-panel element-inspector" id="elementInspector">
+          <div class="inspector-heading"><span class="inspector-kicker">FORMAT</span><h2>Element</h2></div>
+          <div class="inspector-empty" id="elementInspectorEmpty">
+            <span class="inspector-empty-icon">T</span>
+            <strong>Select an element</strong>
+            <p>Click text directly on the résumé to edit its appearance.</p>
+          </div>
+          <div class="element-tools" id="elementTools" hidden>
+            <div class="selected-element-chip"><span>Text</span><strong id="selectedElementName">Selected text</strong></div>
+            <label class="inspector-field" for="elementFont"><span>Typeface</span><select id="elementFont"><option value="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif">SF Pro</option><option value="Arial, Helvetica, sans-serif">Arial</option><option value="'Avenir Next', Avenir, sans-serif">Avenir Next</option><option value="Georgia, serif">Georgia</option><option value="'Times New Roman', serif">Times New Roman</option></select></label>
+            <div class="inspector-field-row">
+              <label class="inspector-field" for="elementFontSize"><span>Size</span><div class="number-field"><input id="elementFontSize" type="number" min="5" max="96" step="0.5" /><small>pt</small></div></label>
+              <label class="inspector-field" for="elementColor"><span>Color</span><span class="color-field"><input id="elementColor" type="color" value="#1d1d1f" /><i></i></span></label>
+            </div>
+            <div class="inspector-field"><span>Style</span><div class="format-segment" role="group" aria-label="Text style"><button type="button" data-element-style="bold" aria-label="Bold"><b>B</b></button><button type="button" data-element-style="italic" aria-label="Italic"><i>I</i></button><button type="button" data-element-style="underline" aria-label="Underline"><u>U</u></button></div></div>
+            <div class="inspector-field"><span>Alignment</span><div class="format-segment" role="group" aria-label="Text alignment"><button type="button" data-element-align="left" aria-label="Align left">≡</button><button type="button" data-element-align="center" aria-label="Align center">≡</button><button type="button" data-element-align="right" aria-label="Align right">≡</button></div></div>
+            <label class="inspector-field" for="elementLineHeight"><span><span>Line height</span><output id="elementLineHeightValue">1.0</output></span><input id="elementLineHeight" type="range" min="0.8" max="2" value="1" step="0.05" /></label>
+          </div>
+          <div class="photo-tools" id="photoTools" hidden>
+            <div class="selected-element-chip"><span>Image</span><strong>Profile photo</strong></div>
+            <button class="photo-change-button" id="changePhoto" type="button"><span>↥</span><strong>Choose photo</strong><small>JPG, PNG or WebP</small></button>
+            <label class="inspector-field" for="photoScale"><span><span>Scale</span><output id="photoScaleValue">100%</output></span><input id="photoScale" type="range" min="100" max="220" value="100" step="1" /></label>
+            <label class="inspector-field" for="photoPositionX"><span><span>Horizontal position</span><output id="photoPositionXValue">50%</output></span><input id="photoPositionX" type="range" min="0" max="100" value="50" step="1" /></label>
+            <label class="inspector-field" for="photoPositionY"><span><span>Vertical position</span><output id="photoPositionYValue">50%</output></span><input id="photoPositionY" type="range" min="0" max="100" value="50" step="1" /></label>
+            <button class="photo-remove-button" id="removePhoto" type="button">Remove uploaded photo</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <div class="download-modal" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="downloadTitle" aria-hidden="true">
+      <button class="download-backdrop" data-close-download aria-label="Close download dialog"></button>
+      <section class="download-dialog">
+        <button class="download-close" data-close-download aria-label="Close">×</button>
+        <div class="download-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></div>
+        <h2 id="downloadTitle">Download your résumé</h2>
+        <p>Editing and previewing are free. Export your finished document for one simple payment.</p>
+        <div class="download-formats" role="group" aria-label="Download format"><button class="active">PDF</button><button>Microsoft Word</button></div>
+        <div class="download-summary"><span>One-time download</span><strong>$1.00</strong></div>
+        <button id="payDownload" class="button button--primary button--wide">Pay $1 &amp; download</button>
+        <small>Secure payment · No subscription</small>
+      </section>
+    </div>
+    <div class="toast" role="status" aria-live="polite"></div><script src="template-manifest.js?v=3"></script><script src="template-overlays.js?v=5"></script><script src="script.js?v=35"></script>
+  </body>
+</html>

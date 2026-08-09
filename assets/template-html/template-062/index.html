@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Resume-CV - Slater</title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Bill Mawhinney"/>
+	<meta name="created" content="2016-08-24T12:54:00"/>
+	<meta name="changedby" content="Bill Mawhinney"/>
+	<meta name="changed" content="2017-01-04T10:58:00"/>
+	<meta name="classification" content="2017 © bilmaw creative"/>
+	<meta name="description" content="Resume"/>
+	<meta name="AppVersion" content="14.0000"/>
+	<meta name="Company" content="bilmaw creative"/>
+	<meta name="HyperlinkBase" content="www.bilmaw.com"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 1.55cm; margin-right: 1.55cm; margin-top: 1.54cm; margin-bottom: 1.93cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 100%; margin-bottom: 0cm"><a name="_GoBack"></a>
+<span class="sd-abs-pos" style="position: absolute; top: 5.38cm; left: 0.02cm; width: 205px"><img src="template-062_html_f3418f13.gif" name="Shape4" alt="Shape4" align="left" width="205" height="787"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.38cm; left: 0.01cm; width: 206px"><img src="template-062_html_cfdf25a5.gif" name="Shape16" alt="Shape16" align="left" vspace="1" width="206" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 11.94cm; left: 0.01cm; width: 206px"><img src="template-062_html_cfdf25a5.gif" name="Shape9" alt="Shape9" align="left" vspace="1" width="206" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.74cm; left: 0.01cm; width: 206px"><img src="template-062_html_cfdf25a5.gif" name="Shape5" alt="Shape5" align="left" vspace="1" width="206" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.9cm; left: 6.21cm; width: 442px"><img src="template-062_html_d044ff64.gif" name="Shape17" alt="Shape17" align="left" hspace="1" vspace="1" width="442" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.38cm; left: 6.21cm; width: 442px"><img src="template-062_html_42fece89.gif" name="Shape13" alt="Shape13" align="left" hspace="1" vspace="1" width="442" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 2.26cm; left: -0.03cm; width: 500px"><img src="template-062_html_116b461d.gif" name="Shape3" alt="Shape3" align="left" hspace="1" width="500" height="59"/>
+</span><span id="Frame3" dir="ltr" style="position: absolute; top: 3.8cm; left: 1.52cm; width: 13.23cm; border: none; padding: 0cm; background: #ffffff"><p style="text-transform: uppercase; widows: 0; orphans: 0; letter-spacing: 4.0pt; margin-bottom: 0cm; line-height: 0.77cm; text-align: start">
+	<font color="#000000"><font face="Raleway-SemiBold, serif"><font size="5" style="font-size: 20pt"><span lang="en-GB"><font face="Rubik Bold, serif"><font size="7" style="font-size: 36pt"><span style="letter-spacing: 1.0pt"><span style="font-weight: normal">YOUR
+	NAME</span></span></font></font></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 3.88cm; left: 0.01cm; width: 499px">
+<img src="template-062_html_e7f09095.gif" name="Shape2" alt="Shape2" align="left" hspace="1" vspace="1" width="499" height="20"/>
+</span>
+<span id="Frame2" dir="ltr" style="position: absolute; top: 5.42cm; left: 1.56cm; width: 13.2cm; border: none; padding: 0cm; background: #ffffff"><p style="text-transform: uppercase; widows: 0; orphans: 0; letter-spacing: 4.0pt; margin-bottom: 0cm; line-height: 100%; text-align: start">
+	<font color="#000000"><font face="Raleway-SemiBold, serif"><font size="5" style="font-size: 20pt"><span lang="en-GB"><font color="#cea624"><font face="Rubik, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.1pt"><span style="font-weight: normal">YOUR
+	PROFESSION / JOB TITLE</span></span></font></font></font></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.41cm; left: 0.78cm; width: 161px">
+<img src="template-062_html_a9df0d21.gif" name="Shape7" alt="Shape7" align="left" hspace="1" vspace="1" width="161" height="74"/>
+</span>
+<span id="Frame5" dir="ltr" style="position: absolute; top: 20.95cm; left: 2.34cm; width: 4.27cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">facebook.com/your.name</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">@username</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">uk.linkedin.com/in/your.name</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">dribbble.com/your.name</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">behance.net/your.name</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.93cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_3dad4920.png" name="Picture 289" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 21.3cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_5a5623d5.png" name="Picture 288" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 21.69cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_b5ee8698.png" name="Picture 222" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.07cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_a342d8ce.png" name="Picture 221" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.46cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_4af9c890.png" name="Picture 220" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 25.5cm; left: 6.21cm; width: 441px">
+<img src="template-062_html_caa4d747.gif" name="Shape1" alt="Shape1" align="left" hspace="1" vspace="1" width="441" height="34"/>
+</span>
+<span id="Frame1" dir="ltr" style="position: absolute; top: 27.04cm; left: 7.76cm; width: 11.68cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">123
+	Street Name, Town/City, State/County, Post/Zip Code</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">T:</span></font></font></font><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">
+	028 1234 5678    //    </span></font></font></font><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">E:
+	</span></font></font></font><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">yourname@email.com
+	   //    </span></font></font></font><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">www.yourwebsite.com</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.04cm; left: 0.01cm; width: 139px">
+<img src="template-062_html_ef994cfb.gif" name="Shape15" alt="Shape15" align="left" hspace="1" vspace="1" width="139" height="16"/>
+</span>
+<span id="Frame10" dir="ltr" style="position: absolute; top: 1.58cm; left: 1.56cm; width: 3.68cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#404040"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Cover
+	Letter</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -0.01cm; left: 13.62cm; width: 162px">
+<img src="template-062_html_868dad11.gif" name="Shape23" alt="Shape23" align="left" hspace="1" width="161" height="160"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.84cm; left: 1.19cm; width: 146px">
+<img src="template-062_html_52507b41.gif" name="Shape20" alt="Shape20" align="left" hspace="1" vspace="1" width="146" height="16"/>
+</span>
+<span id="Frame12" dir="ltr" style="position: absolute; top: 7.38cm; left: 2.74cm; width: 3.87cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#404040"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">About</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.99cm; left: 0.39cm; width: 176px">
+<img src="template-062_html_29a3b042.gif" name="Shape11" alt="Shape11" align="left" hspace="1" vspace="1" width="176" height="167"/>
+</span>
+<span id="Frame8" dir="ltr" style="position: absolute; top: 8.53cm; left: 1.94cm; width: 4.67cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Use
+	this section as a quick introduction to who you are and why you
+	would be suitable for this position. Keep it brief and use the next
+	few pages for more details. Core pos sum rem doles et latur as
+	molorerfero et periti ipitat aut alia sundi doluptioris simagnihil
+	mintorro exere cusapit, unt quam voluptaquiam fuga. Officip itatet
+	ipicab inimagn istiam.</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.99cm; left: 6.21cm; width: 441px">
+<img src="template-062_html_e7bbf032.gif" name="Shape12" alt="Shape12" align="left" hspace="1" vspace="1" width="441" height="625"/>
+</span>
+<span id="Frame9" dir="ltr" style="position: absolute; top: 8.53cm; left: 7.76cm; width: 11.67cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">30th
+	November 2020</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Mr
+	Smith</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Position
+	in Company</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Company
+	Name</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">123
+	Street Name, </span></font></font></font></font>
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Town/City,
+	</span></font></font></font></font>
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">State/County,
+	</span></font></font></font></font>
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Post/Zip
+	Code</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Dear
+	Mr Smith,</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">I
+	wish to apply for the role of [Job Title], currently being
+	advertised.  Please find enclosed my CV for your consideration. </span></font></font></font></font>
+	</p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">As
+	you can see from my attached CV, I have over [time period]
+	experience in the [Sector] industry, and I believe the knowledge and
+	skills built up during this time make me the right/perfect candidate
+	for the role.</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">In
+	my current role as a [job title] at [employer name], I have been
+	responsible for [Insert a quantifiable and notable achievement/s -
+	e.g. a x% increase in revenue], which when coupled with my
+	enthusiasm and dedication [insert skills relevant to the role –
+	usually found in the job description], has helped the business to
+	[measure of success].</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">I
+	am confident that I can bring this level of success with me to your
+	organisation and help [company name] build upon their reputation as
+	[state their position in market – learned through your research].
+	With my previous experience and expertise, I believe my contribution
+	will have an immediate impact on the business.</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Thank
+	you for your time and consideration. I look forward to meeting with
+	you to discuss my application further.</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Sincerely,</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Your
+	Name</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.84cm; left: 7.42cm; width: 370px">
+<img src="template-062_html_2b1d71c0.gif" name="Shape21" alt="Shape21" align="left" hspace="1" vspace="1" width="370" height="16"/>
+</span>
+<span id="Frame13" dir="ltr" style="position: absolute; top: 7.38cm; left: 8.97cm; width: 9.79cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#ffffff"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Position
+	Advertised</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.39cm; left: 1.19cm; width: 146px">
+<img src="template-062_html_52507b41.gif" name="Shape10" alt="Shape10" align="left" hspace="1" vspace="1" width="146" height="16"/>
+</span>
+<span id="Frame7" dir="ltr" style="position: absolute; top: 13.93cm; left: 2.74cm; width: 3.87cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#404040"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">References</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.59cm; left: 0.39cm; width: 176px">
+<img src="template-062_html_864c0cb8.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="176" height="137"/>
+</span>
+<span id="Frame6" dir="ltr" style="position: absolute; top: 15.13cm; left: 1.94cm; width: 4.67cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Reference
+	Name</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Job
+	Title</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">T:</span></font></font></font><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">
+	028 1234 5678</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">E:</span></font></font></font><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">
+	name@company.com</span></font></font></font></font></p>
+	<p style="orphans: 0; widows: 0; line-height: 115%; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Reference
+	Name</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Job
+	Title</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">T:</span></font></font></font><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">
+	028 1234 5678</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">E:</span></font></font></font><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">
+	name@company.com</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 27cm; left: -1.55cm; width: 794px">
+<img src="template-062_html_b740808c.gif" name="Shape19" alt="Shape19" align="left" hspace="1" width="794" height="43"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: -0.01cm; left: 3.9cm; width: 352px">
+<img src="template-062_html_e7d8523d.gif" name="Shape14" alt="Shape14" align="left" hspace="1" width="351" height="15"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: -0.01cm; left: -1.55cm; width: 44px">
+<img src="template-062_html_61bbe1a1.gif" name="Shape24" alt="Shape24" align="left" hspace="1" width="44" height="15"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: -0.01cm; left: 18.27cm; width: 44px">
+<img src="template-062_html_61bbe1a1.gif" name="Shape22" alt="Shape22" align="left" width="44" height="15"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 25.78cm; left: 8.15cm; width: 15px">
+<img src="template-062_html_4c6c01c1.gif" name="Picture 4" width="15" height="17" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 24.35cm; left: 7.42cm; width: 370px">
+<img src="template-062_html_2b1d71c0.gif" name="Shape18" alt="Shape18" align="left" hspace="1" vspace="1" width="370" height="16"/>
+</span>
+<span id="Frame11" dir="ltr" style="position: absolute; top: 25.89cm; left: 8.97cm; width: 9.79cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#ffffff"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Contact</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.61cm; left: 1.87cm; width: 20px">
+<img src="template-062_html_891238f5.gif" name="Picture 7" width="20" height="19" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 18.21cm; left: 1.19cm; width: 146px">
+<img src="template-062_html_52507b41.gif" name="Shape6" alt="Shape6" align="left" hspace="1" vspace="1" width="146" height="16"/>
+</span>
+<span id="Frame4" dir="ltr" style="position: absolute; top: 19.74cm; left: 2.74cm; width: 3.87cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#404040"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Social</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.26cm; left: 8.15cm; width: 15px">
+<img src="template-062_html_c4443b8a.gif" name="Picture 9" width="15" height="18" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.26cm; left: 1.85cm; width: 19px">
+<img src="template-062_html_c159ce24.gif" name="Picture 10" width="19" height="19" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.83cm; left: 1.89cm; width: 19px">
+<img src="template-062_html_5d7e9e63.gif" name="Picture 11" width="19" height="19" border="0"/>
+</span>
+<br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm; page-break-before: always">
+<span class="sd-abs-pos" style="position: absolute; top: 5.38cm; left: 0.02cm; width: 205px"><img src="template-062_html_f3418f13.gif" name="Shape28" alt="Shape28" align="left" width="205" height="787"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.38cm; left: 0.01cm; width: 206px"><img src="template-062_html_cfdf25a5.gif" name="Shape33" alt="Shape33" align="left" vspace="1" width="206" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.48cm; left: 0.01cm; width: 206px"><img src="template-062_html_cfdf25a5.gif" name="Shape32" alt="Shape32" align="left" vspace="1" width="206" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 18.87cm; left: 0.01cm; width: 206px"><img src="template-062_html_cfdf25a5.gif" name="Shape31" alt="Shape31" align="left" vspace="1" width="206" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.11cm; left: 0.01cm; width: 206px"><img src="template-062_html_cfdf25a5.gif" name="Shape30" alt="Shape30" align="left" vspace="1" width="206" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.9cm; left: 6.21cm; width: 442px"><img src="template-062_html_d044ff64.gif" name="Shape39" alt="Shape39" align="left" hspace="1" vspace="1" width="442" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 9.63cm; left: 6.21cm; width: 443px"><img src="template-062_html_d044ff64.gif" name="Shape58" alt="Shape58" align="left" hspace="1" vspace="1" width="442" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.38cm; left: 6.21cm; width: 442px"><img src="template-062_html_42fece89.gif" name="Shape29" alt="Shape29" align="left" hspace="1" vspace="1" width="442" height="45"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 2.26cm; left: -0.02cm; width: 500px"><img src="template-062_html_116b461d.gif" name="Shape27" alt="Shape27" align="left" hspace="1" width="500" height="59"/>
+</span><span id="Frame16" dir="ltr" style="position: absolute; top: 3.8cm; left: 1.53cm; width: 13.23cm; border: none; padding: 0cm; background: #ffffff"><p style="text-transform: uppercase; widows: 0; orphans: 0; letter-spacing: 4.0pt; margin-bottom: 0cm; line-height: 0.77cm; text-align: start">
+	<font color="#000000"><font face="Raleway-SemiBold, serif"><font size="5" style="font-size: 20pt"><span lang="en-GB"><font face="Rubik Bold, serif"><font size="7" style="font-size: 36pt"><span style="letter-spacing: 1.0pt"><span style="font-weight: normal">YOUR
+	NAME</span></span></font></font></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 3.88cm; left: 0.01cm; width: 499px">
+<img src="template-062_html_e7f09095.gif" name="Shape26" alt="Shape26" align="left" hspace="1" vspace="1" width="499" height="20"/>
+</span>
+<span id="Frame15" dir="ltr" style="position: absolute; top: 5.42cm; left: 1.56cm; width: 13.2cm; border: none; padding: 0cm; background: #ffffff"><p style="text-transform: uppercase; widows: 0; orphans: 0; letter-spacing: 4.0pt; margin-bottom: 0cm; line-height: 100%; text-align: start">
+	<font color="#000000"><font face="Raleway-SemiBold, serif"><font size="5" style="font-size: 20pt"><span lang="en-GB"><font color="#cea624"><font face="Rubik, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.1pt"><span style="font-weight: normal">YOUR
+	PROFESSION / JOB TITLE</span></span></font></font></font></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.04cm; left: 0.01cm; width: 80px">
+<img src="template-062_html_6b3cce6a.gif" name="Shape66" alt="Shape66" align="left" hspace="1" vspace="1" width="80" height="16"/>
+</span>
+<span id="Frame37" dir="ltr" style="position: absolute; top: 1.58cm; left: 1.56cm; width: 2.11cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#404040"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Resume</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -0.01cm; left: 13.62cm; width: 162px">
+<img src="template-062_html_868dad11.gif" name="Shape63" alt="Shape63" align="left" hspace="1" width="161" height="160"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.74cm; left: 1.87cm; width: 20px">
+<img src="template-062_html_891238f5.gif" name="Image2" width="20" height="19" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 11.23cm; left: 6.21cm; width: 95px">
+<img src="template-062_html_854a62b6.gif" name="Shape56" alt="Shape56" align="left" hspace="1" vspace="1" width="94" height="34"/>
+</span>
+<span id="Frame32" dir="ltr" style="position: absolute; top: 12.77cm; left: 7.76cm; width: 2.5cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">2012
+	- Present</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 11.23cm; left: 9.33cm; width: 324px">
+<img src="template-062_html_98fff815.gif" name="Shape57" alt="Shape57" align="left" hspace="1" vspace="1" width="324" height="103"/>
+</span>
+<span id="Frame33" dir="ltr" style="position: absolute; top: 12.77cm; left: 10.88cm; width: 8.58cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#000000"><font face="Rubik-Bold, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Company
+	Name</span></font></font></font></span></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Position
+	Held</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Ipicit quiam di aut facepudipsam sit alit vero quat earumquias
+	alit as quibus am quam fugias ipistiur, si ium, ommo moluptati
+	consequi officias quo ipsum quis suntur.</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Erume
+	nones ut as et ipsant quatus et est, tem arunt ium rem.</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.4cm; left: 6.21cm; width: 95px">
+<img src="template-062_html_854a62b6.gif" name="Shape44" alt="Shape44" align="left" hspace="1" vspace="1" width="94" height="34"/>
+</span>
+<span id="Frame25" dir="ltr" style="position: absolute; top: 18.94cm; left: 7.76cm; width: 2.5cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">2005
+	- 2007</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.32cm; left: 6.21cm; width: 95px">
+<img src="template-062_html_854a62b6.gif" name="Shape42" alt="Shape42" align="left" hspace="1" vspace="1" width="94" height="34"/>
+</span>
+<span id="Frame23" dir="ltr" style="position: absolute; top: 15.86cm; left: 7.76cm; width: 2.5cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">2009
+	- 2012</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.5cm; left: 6.21cm; width: 95px">
+<img src="template-062_html_854a62b6.gif" name="Shape43" alt="Shape43" align="left" hspace="1" vspace="1" width="94" height="34"/>
+</span>
+<span id="Frame24" dir="ltr" style="position: absolute; top: 22.04cm; left: 7.76cm; width: 2.5cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">2003
+	- 2005</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.99cm; left: 6.21cm; width: 441px">
+<img src="template-062_html_d0aa4933.gif" name="Shape60" alt="Shape60" align="left" hspace="1" vspace="1" width="441" height="74"/>
+</span>
+<span id="Frame35" dir="ltr" style="position: absolute; top: 8.53cm; left: 7.76cm; width: 11.67cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">This
+	is a section where you describe your professional career. Let the
+	potential employer know why they would want to hire you. Use this
+	section for particular career highlights, collaborations or stepping
+	stones to where you are now as a professional. Temperest, cusam,
+	officati volum quamusto ipsam is nes doloreium labo. Em volumquos
+	debit, optam, num cum harumque veritaspis volorum velendi
+	ciminvelicil molupti duciet doloreptae.</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.84cm; left: 7.42cm; width: 370px">
+<img src="template-062_html_2b1d71c0.gif" name="Shape61" alt="Shape61" align="left" hspace="1" vspace="1" width="370" height="16"/>
+</span>
+<span id="Frame36" dir="ltr" style="position: absolute; top: 7.38cm; left: 8.97cm; width: 9.79cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#ffffff"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Profile</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.34cm; left: 1.87cm; width: 20px">
+<img src="template-062_html_60cb8e5d.gif" name="Picture 8" width="20" height="21" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.93cm; left: 1.19cm; width: 146px">
+<img src="template-062_html_52507b41.gif" name="Shape49" alt="Shape49" align="left" hspace="1" vspace="1" width="146" height="16"/>
+</span>
+<span id="Frame30" dir="ltr" style="position: absolute; top: 15.47cm; left: 2.74cm; width: 3.87cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#404040"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Skills</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.84cm; left: 1.19cm; width: 146px">
+<img src="template-062_html_52507b41.gif" name="Shape48" alt="Shape48" align="left" hspace="1" vspace="1" width="146" height="16"/>
+</span>
+<span id="Frame29" dir="ltr" style="position: absolute; top: 7.38cm; left: 2.74cm; width: 3.87cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#404040"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Education</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.32cm; left: 9.33cm; width: 324px">
+<img src="template-062_html_98fff815.gif" name="Shape47" alt="Shape47" align="left" hspace="1" vspace="1" width="324" height="103"/>
+</span>
+<span id="Frame28" dir="ltr" style="position: absolute; top: 15.86cm; left: 10.88cm; width: 8.58cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#000000"><font face="Rubik-Bold, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Company
+	Name</span></font></font></font></span></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Position
+	Held</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Ro officipsam quibus. Oreic teseque non rerum eos es sus
+	aboreprovit ese repedignam dolectist, tem hil maio. Um fugit, ut
+	dolenisqui re lam lit, si autem ipsunt, sam quia pore ma sequoditio
+	ere sequi ut aliqui odi ne nusdae re venim eaquas.</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.99cm; left: 0.39cm; width: 176px">
+<img src="template-062_html_2fecdbc5.gif" name="Shape36" alt="Shape36" align="left" hspace="1" vspace="1" width="176" height="221"/>
+</span>
+<span id="Frame19" dir="ltr" style="position: absolute; top: 8.53cm; left: 1.94cm; width: 4.67cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#ffffff"><font face="Rubik-Bold, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">2000
+	- 2003</span></font></font></font></span></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#ffffff"><font face="Rubik-Bold, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Course
+	Studied</span></font></font></font></span></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik-Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">University/College
+	Details</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Brief
+	description of what </span></font></font></font></font>
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">you
+	learned/studied while </span></font></font></font></font>
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">on
+	your course.</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#ffffff"><font face="Rubik-Bold, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">1998
+	- 2000</span></font></font></font></span></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#ffffff"><font face="Rubik-Bold, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Course
+	Studied</span></font></font></font></span></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik-Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">University/College
+	Details</span></font></font></font></font></p>
+	<p style="orphans: 0; margin-bottom: 0cm; widows: 0; line-height: 0.39cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Brief
+	description of what </span></font></font></font></font>
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">you
+	learned/studied while </span></font></font></font></font>
+	</p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">on
+	your course.</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.7cm; left: 0.39cm; width: 89px">
+<img src="template-062_html_60992c4a.gif" name="Shape55" alt="Shape55" align="left" hspace="1" vspace="4" width="88"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.7cm; left: 0.39cm; width: 176px">
+<img src="template-062_html_c9445365.gif" name="Shape51" alt="Shape51" align="left" hspace="1" vspace="4" width="176" height="87"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.47cm; left: 0.39cm; width: 89px">
+<img src="template-062_html_60992c4a.gif" name="Shape54" alt="Shape54" align="left" hspace="1" vspace="4" width="88"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.4cm; left: 9.33cm; width: 324px">
+<img src="template-062_html_98fff815.gif" name="Shape46" alt="Shape46" align="left" hspace="1" vspace="1" width="324" height="103"/>
+</span>
+<span id="Frame27" dir="ltr" style="position: absolute; top: 18.94cm; left: 10.88cm; width: 8.58cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#000000"><font face="Rubik-Bold, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Company
+	Name</span></font></font></font></span></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Position
+	Held</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Temporia ssectat ibusanis eature exerumq uassimpor archil in
+	nos vel into expe ad experum quae pos expedicilia inum quaepudant
+	unture qui corem fugitasit ea con estrunt ibusam volor anim quaepud
+	icaboribus ipsus vidus.</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.24cm; left: 0.39cm; width: 89px">
+<img src="template-062_html_60992c4a.gif" name="Shape53" alt="Shape53" align="left" hspace="1" vspace="4" width="88" height="1"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.14cm; left: 0.39cm; width: 176px">
+<img src="template-062_html_eda896b1.gif" name="Shape50" alt="Shape50" align="left" hspace="1" vspace="1" width="176" height="104"/>
+</span>
+<span id="Frame31" dir="ltr" style="position: absolute; top: 16.68cm; left: 1.94cm; width: 4.67cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Skill
+	1</span></font></font></font></font></p>
+	<p style="orphans: 0; widows: 0; line-height: 115%; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Skill
+	2</span></font></font></font></font></p>
+	<p style="orphans: 0; widows: 0; line-height: 115%; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Skill
+	3</span></font></font></font></font></p>
+	<p style="orphans: 0; widows: 0; line-height: 115%; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Skill
+	4</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 18.01cm; left: 0.39cm; width: 89px">
+<img src="template-062_html_60992c4a.gif" name="Shape52" alt="Shape52" align="left" hspace="1" vspace="4" width="88"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 27cm; left: -1.55cm; width: 794px">
+<img src="template-062_html_b740808c.gif" name="Shape41" alt="Shape41" align="left" hspace="1" width="794" height="43"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: -0.01cm; left: 2.34cm; width: 411px">
+<img src="template-062_html_34df3950.gif" name="Shape64" alt="Shape64" align="left" width="411" height="15"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: -0.01cm; left: -1.55cm; width: 44px">
+<img src="template-062_html_61bbe1a1.gif" name="Shape65" alt="Shape65" align="left" hspace="1" width="44" height="15"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.5cm; left: 9.33cm; width: 324px">
+<img src="template-062_html_98fff815.gif" name="Shape45" alt="Shape45" align="left" hspace="1" vspace="1" width="324" height="103"/>
+</span>
+<span id="Frame26" dir="ltr" style="position: absolute; top: 22.04cm; left: 10.88cm; width: 8.58cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#000000"><font face="Rubik-Bold, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Company
+	Name</span></font></font></font></span></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Position
+	Held</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Quid maxim que velecaerum sa con corro ma velique volento
+	odiciis eos estempos eatae. Et volorunto tendiosandi rem siniminim
+	re ne velibusda voluptae sus acepro eum invelectiis eaquibus
+	venemque vel ex estem veligendi re, iuntium etur.</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -0.01cm; left: 18.27cm; width: 44px">
+<img src="template-062_html_61bbe1a1.gif" name="Shape62" alt="Shape62" align="left" width="44" height="15"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.3cm; left: 8.11cm; width: 19px">
+<img src="template-062_html_9d9fe30d.gif" name="Picture 2" width="19" height="15" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 11.56cm; left: 8.15cm; width: 15px">
+<img src="template-062_html_e91625a6.gif" name="Picture 3" width="15" height="15" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 25.78cm; left: 8.15cm; width: 15px">
+<img src="template-062_html_4c6c01c1.gif" name="Image3" width="15" height="17" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 10.08cm; left: 7.42cm; width: 370px">
+<img src="template-062_html_2b1d71c0.gif" name="Shape59" alt="Shape59" align="left" hspace="1" vspace="1" width="370" height="16"/>
+</span>
+<span id="Frame34" dir="ltr" style="position: absolute; top: 11.62cm; left: 8.97cm; width: 9.79cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#ffffff"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Experience</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 24.79cm; left: 0.39cm; width: 176px">
+<img src="template-062_html_91da9fe0.gif" name="Shape37" alt="Shape37" align="left" hspace="1" vspace="1" width="176" height="48"/>
+</span>
+<span id="Frame20" dir="ltr" style="position: absolute; top: 26.33cm; left: 1.94cm; width: 4.67cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Interest
+	/ Hobby 1</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Interest
+	/ Hobby 2</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">Interest
+	/ Hobby 3</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 24.35cm; left: 7.42cm; width: 370px">
+<img src="template-062_html_2b1d71c0.gif" name="Shape40" alt="Shape40" align="left" hspace="1" vspace="1" width="370" height="16"/>
+</span>
+<span id="Frame22" dir="ltr" style="position: absolute; top: 25.89cm; left: 8.97cm; width: 9.79cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#ffffff"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Contact</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.33cm; left: 1.85cm; width: 22px">
+<img src="template-062_html_fbe6fca6.gif" name="Picture 5" width="22" height="15" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 25.07cm; left: 1.92cm; width: 17px">
+<img src="template-062_html_1dee7ac5.gif" name="Picture 6" width="17" height="15" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.54cm; left: 0.78cm; width: 161px">
+<img src="template-062_html_a9df0d21.gif" name="Shape38" alt="Shape38" align="left" hspace="1" vspace="1" width="161" height="74"/>
+</span>
+<span id="Frame21" dir="ltr" style="position: absolute; top: 22.08cm; left: 2.34cm; width: 4.27cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">facebook.com/your.name</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">@username</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">uk.linkedin.com/in/your.name</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">dribbble.com/your.name</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 115%; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">behance.net/your.name</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.06cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_3dad4920.png" name="Picture 303" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.43cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_5a5623d5.png" name="Picture 304" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.82cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_b5ee8698.png" name="Picture 305" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.2cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_a342d8ce.png" name="Picture 306" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.59cm; left: 1.95cm; width: 12px">
+<img src="template-062_html_4af9c890.png" name="Picture 307" width="12" height="12" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.33cm; left: 1.19cm; width: 146px">
+<img src="template-062_html_52507b41.gif" name="Shape35" alt="Shape35" align="left" hspace="1" vspace="1" width="146" height="16"/>
+</span>
+<span id="Frame18" dir="ltr" style="position: absolute; top: 20.87cm; left: 2.74cm; width: 3.87cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#404040"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Social</span></font></font></font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 25.5cm; left: 6.21cm; width: 443px">
+<img src="template-062_html_7b2fcd14.gif" name="Shape25" alt="Shape25" align="left" vspace="1" width="443" height="34"/>
+</span>
+<span id="Frame14" dir="ltr" style="position: absolute; top: 27.04cm; left: 7.76cm; width: 11.71cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">123
+	Street Name, Town/City, State/County, Post/Zip Code</span></font></font></font></font></p>
+	<p style="widows: 0; line-height: 0.39cm; orphans: 0; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">T:</span></font></font></font><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">
+	028 1234 5678    //    </span></font></font></font><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">E:
+	</span></font></font></font><font color="#000000"><font face="Rubik-Light, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">yourname@email.com
+	   //    </span></font></font></font><font color="#000000"><font face="Rubik Medium, serif"><font size="1" style="font-size: 8pt"><span lang="en-GB">www.yourwebsite.com</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.56cm; left: 1.19cm; width: 146px">
+<img src="template-062_html_52507b41.gif" name="Shape34" alt="Shape34" align="left" hspace="1" vspace="1" width="146" height="16"/>
+</span>
+<span id="Frame17" dir="ltr" style="position: absolute; top: 25.1cm; left: 2.74cm; width: 3.87cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.39cm">
+	<font face="Cambria, serif"><span style="text-transform: uppercase"><font color="#404040"><font face="Rubik Bold, serif"><font size="2" style="font-size: 11pt"><span style="letter-spacing: 1.5pt">Interests</span></font></font></font></span></font></p>
+</span> 
+</p>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Admin"/>
+	<meta name="created" content="2016-09-24T07:26:00"/>
+	<meta name="changedby" content="Admin"/>
+	<meta name="changed" content="2016-09-24T09:23:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Company" content="CtrlSoft"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 108%; margin-bottom: 0cm">
+<img src="template-033_html_27aa334b.gif" name="Shape1" alt="Shape1" align="left" width="1049" height="1121"/>
+<span id="textbox48" dir="ltr" style="float: left; width: 11.6cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Porttitor
+	amet massa Done cporttitor dolor molestie pretium lore eliscon lore
+	imolestie pretium.ollicitudin est</span></font></font></font></span></font></p>
+</span>
+<span id="textbox47" dir="ltr" style="float: left; width: 11.6cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Porttitor
+	amet massa Done cporttitor dolor molestie pretium lore eliscon lore
+	imolestie pretium.ollicitudin est</span></font></font></font></span></font></p>
+</span>
+<span id="textbox46" dir="ltr" style="float: left; width: 11.6cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Porttitor
+	amet massa Done cporttitor dolor molestie pretium lore eliscon lore
+	imolestie pretium.ollicitudin est</span></font></font></font></span></font></p>
+</span>
+<span id="textbox45" dir="ltr" style="float: left; width: 4.77cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">2008
+	- 2010</span></font></font></font></span></font></p>
+</span>
+<span id="textbox44" dir="ltr" style="float: left; width: 4.77cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">2011
+	- 2014</span></font></font></font></span></font></p>
+</span>
+<span id="textbox43" dir="ltr" style="float: left; width: 4.77cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">2014
+	- Present</span></font></font></font></span></font></p>
+</span>
+<span id="textbox42" dir="ltr" style="float: left; width: 6.13cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 0.44cm; margin-bottom: 0.04cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Lorem
+	orem shit dolor is empus fringilla molestie ornare  molestie pretium
+	rosn road ollicitudin ttitor amet hitmassa Done  lorem e dolor
+	molster nisl one molestie pretium option on etfring the.</span></font></font></font></span></font></p>
+	<p align="justify" style="line-height: 0.44cm; margin-bottom: 0.04cm">
+	<br/>
+<br/>
+
+	</p>
+	<p align="justify" style="line-height: 0.44cm; margin-bottom: 0.04cm">
+	<font color="#414042"> </font><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">the
+	shitp lorem ipcum of  retiumci oles tium ipsu lorem olestie lore
+	pretium chapaza diam in molestie pretium lorem ispum ollicitudin
+	ametornare diam lorem on the ipsu molestie pretium rosn</span></font></font></font></span></font></p>
+</span>
+<span id="textbox41" dir="ltr" style="float: left; width: 4.2cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat, serif"><font size="4" style="font-size: 15pt"><span lang="en-US"><b>PROFILE</b></span></font></font></font></span></font></p>
+	<p lang="en-GB" align="center" style="line-height: 107%; margin-bottom: 0.28cm">
+	<br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox40" dir="ltr" style="float: left; width: 4.58cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-GB" align="center" style="line-height: 107%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat, serif"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 1.5pt"><span lang="en-US"><b>EDUCATION</b></span></span></font></font></font></font></font></p>
+</span>
+<span id="textbox39" dir="ltr" style="float: left; width: 7.59cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-GB" align="center" style="line-height: 0.42cm; margin-top: 0.49cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">2005
+	- 2007</span></font></font></font></font></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Certificate
+	Of Web Traning</span></font></font></font></font></font></p>
+</span>
+<span id="textbox38" dir="ltr" style="float: left; width: 7.59cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Name
+	of the Institute</span></font></font></font></span></font></p>
+	<p align="center" style="line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Melbourne
+	Australia</span></font></font></font></span></font></p>
+</span>
+<span id="textbox37" dir="ltr" style="float: left; width: 7.59cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">2001
+	- 2004</span></font></font></font></span></font></p>
+	<p align="center" style="line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Bachelors
+	Of Sciences- B.A</span></font></font></font></span></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span>
+<span id="textbox36" dir="ltr" style="float: left; width: 7.59cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Name
+	of the Versity</span></font></font></font></span></font></p>
+	<p align="center" style="line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">United
+	Kingdom</span></font></font></font></span></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span>
+<span id="textbox35" dir="ltr" style="float: left; width: 7.59cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Web
+	Page</b></span></font></font></font></font></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">www.yourdomainname.com</span></font></font></font></font></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">linkedin.com/username</span></font></font></font></font></font></p>
+</span>
+<span id="textbox34" dir="ltr" style="float: left; width: 7.59cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Mail</b></span></font></font></font></font></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">yourname@gmail.com</span></font></font></font></font></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font color="#414042">&nbsp;</font></p>
+</span>
+<span id="textbox33" dir="ltr" style="float: left; width: 7.59cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Phone</b></span></font></font></font></font></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">+00
+	556 234 998</span></font></font></font></font></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	&nbsp;</p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font color="#414042">&nbsp;</font></p>
+</span>
+<span id="textbox32" dir="ltr" style="float: left; width: 7.59cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Apartment,
+	223, Street Name</b></span></font></font></font></font></font></p>
+	<p lang="en-GB" align="center" style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>235
+	New york, USA</b></span></font></font></font></font></font></p>
+</span>
+<span id="textbox31" dir="ltr" style="float: left; width: 4.2cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-GB" align="center" style="line-height: 107%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Montserrat, serif"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 1.5pt"><span lang="en-US"><b>CONTACT</b></span></span></font></font></font></font></font></p>
+	<p lang="en-GB" align="center" style="line-height: 107%; margin-bottom: 0.28cm">
+	<font color="#414042"><span style="letter-spacing: 1.5pt">&nbsp;</span></font></p>
+</span>
+<span id="textbox30" dir="ltr" style="float: left; width: 7.88cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="7" style="font-size: 35pt"><span style="letter-spacing: 3.0pt"><span lang="en-US"><b>HARRISON</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox29" dir="ltr" style="float: left; width: 3.91cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="7" style="font-size: 35pt"><span style="letter-spacing: 3.0pt"><span lang="en-US"><b>JANE</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox28" dir="ltr" style="float: left; width: 4.52cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm"><a name="_GoBack"></a>
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: 1.5pt"><span lang="en-US">Creative
+	Director</span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox27" dir="ltr" style="float: left; width: 6.2cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat, serif"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 1.5pt"><span lang="en-US"><b>WORK
+	EXPERIENCE</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox26" dir="ltr" style="float: left; width: 5.72cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="3" style="font-size: 12pt"><span lang="en-US">Company
+	Name Goes Here</span></font></font></font></span></font></p>
+</span>
+<span id="textbox25" dir="ltr" style="float: left; width: 3.64cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat, serif"><font size="3" style="font-size: 12pt"><span lang="en-US">Job
+	Position here</span></font></font></font></span></font></p>
+</span>
+<span id="textbox24" dir="ltr" style="float: left; width: 9.19cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Done
+	cporttitor dolor molestie pretium eliscon lorem</span></font></font></font></span></font></p>
+</span>
+<span id="textbox23" dir="ltr" style="float: left; width: 9.65cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Lorem
+	molestie pretium ollicitudin ttitor amet hitmassa</span></font></font></font></span></font></p>
+</span>
+<span id="textbox22" dir="ltr" style="float: left; width: 8.45cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">molestie
+	pretium ollicitudin ttitor amet hitmassa</span></font></font></font></span></font></p>
+</span>
+<span id="textbox21" dir="ltr" style="float: left; width: 5.72cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="3" style="font-size: 12pt"><span lang="en-US">Company
+	Name Goes Here</span></font></font></font></span></font></p>
+</span>
+<span id="textbox20" dir="ltr" style="float: left; width: 3.64cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat, serif"><font size="3" style="font-size: 12pt"><span lang="en-US">Job
+	Position here</span></font></font></font></span></font></p>
+</span>
+<span id="textbox19" dir="ltr" style="float: left; width: 9.19cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Done
+	cporttitor dolor molestie pretium eliscon lorem</span></font></font></font></span></font></p>
+</span>
+<span id="textbox18" dir="ltr" style="float: left; width: 9.65cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Lorem
+	molestie pretium ollicitudin ttitor amet hitmassa</span></font></font></font></span></font></p>
+</span>
+<span id="textbox17" dir="ltr" style="float: left; width: 8.45cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">molestie
+	pretium ollicitudin ttitor amet hitmassa</span></font></font></font></span></font></p>
+</span>
+<span id="textbox16" dir="ltr" style="float: left; width: 5.72cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Semi Bold, serif"><font size="3" style="font-size: 12pt"><span lang="en-US">Company
+	Name Goes Here</span></font></font></font></span></font></p>
+</span>
+<span id="textbox15" dir="ltr" style="float: left; width: 3.64cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat, serif"><font size="3" style="font-size: 12pt"><span lang="en-US">Job
+	Position here</span></font></font></font></span></font></p>
+</span>
+<span id="textbox14" dir="ltr" style="float: left; width: 9.19cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Done
+	cporttitor dolor molestie pretium eliscon lorem</span></font></font></font></span></font></p>
+</span>
+<span id="textbox13" dir="ltr" style="float: left; width: 9.65cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Lorem
+	molestie pretium ollicitudin ttitor amet hitmassa</span></font></font></font></span></font></p>
+</span>
+<span id="textbox12" dir="ltr" style="float: left; width: 8.45cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">molestie
+	pretium ollicitudin ttitor amet hitmassa</span></font></font></font></span></font></p>
+</span>
+<span id="textbox11" dir="ltr" style="float: left; width: 6.45cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat, serif"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 1.5pt"><span lang="en-US"><b>SKILLS
+	&amp; EXPERTIZE</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox10" dir="ltr" style="float: left; width: 1.28cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Joomla</span></font></font></font></span></font></p>
+</span>
+<span id="textbox9" dir="ltr" style="float: left; width: 1.9cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Photoshop</span></font></font></font></span></font></p>
+</span>
+<span id="textbox8" dir="ltr" style="float: left; width: 1.16cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Jquery</span></font></font></font></span></font></p>
+</span>
+<span id="textbox7" dir="ltr" style="float: left; width: 0.99cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">HTML</span></font></font></font></span></font></p>
+</span>
+<span id="textbox6" dir="ltr" style="float: left; width: 1.85cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Wordpress</span></font></font></font></span></font></p>
+</span>
+<span id="textbox5" dir="ltr" style="float: left; width: 1.86cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Hard
+	Work</span></font></font></font></span></font></p>
+</span>
+<span id="textbox4" dir="ltr" style="float: left; width: 2.84cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Communication</span></font></font></font></span></font></p>
+</span>
+<span id="textbox3" dir="ltr" style="float: left; width: 1.99cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Team
+	Work</span></font></font></font></span></font></p>
+</span>
+<span id="textbox2" dir="ltr" style="float: left; width: 1.9cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Personality</span></font></font></font></span></font></p>
+</span>
+<span id="textbox1" dir="ltr" style="float: left; width: 1.61cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Montserrat Light, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Creativity</span></font></font></font></span></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

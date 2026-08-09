@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="SkyNet"/>
+	<meta name="created" content="2018-01-25T15:22:00"/>
+	<meta name="changedby" content="SkyNet"/>
+	<meta name="changed" content="2018-05-07T08:01:00"/>
+	<meta name="AppVersion" content="14.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2.54cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 150%; margin-bottom: 0.35cm"><a name="_GoBack"></a>
+<img src="template-057_html_5debb3a7.gif" name="Shape4" alt="Shape4" align="left" width="795" height="1124"/>
+<img src="template-057_html_2e140a3f.gif" name="Shape35" alt="Shape35" align="left" vspace="1" width="796" height="1125"/>
+<img src="template-057_html_7cf55cf4.gif" name="Shape5" alt="Shape5" align="left" hspace="1" width="795" height="214"/>
+<img src="template-057_html_79bb91b8.gif" name="Shape38" alt="Shape38" align="left" width="795" height="214"/>
+<img src="template-057_html_3d434ce9.gif" name="Shape6" alt="Shape6" align="left" hspace="1" width="795" height="54"/>
+<img src="template-057_html_8d852eb6.gif" name="Shape41" alt="Shape41" align="left" width="795" height="54"/>
+<img src="template-057_html_8a2d42bf.gif" name="Shape42" alt="Shape42" align="left" width="192" height="818"/>
+<img src="template-057_html_2bce395b.gif" name="Shape43" alt="Shape43" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_4f2b1a3c.gif" name="Shape44" alt="Shape44" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_2bce395b.gif" name="Shape45" alt="Shape45" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_2bce395b.gif" name="Shape46" alt="Shape46" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_2bce395b.gif" name="Shape47" alt="Shape47" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_4f2b1a3c.gif" name="Shape48" alt="Shape48" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_2bce395b.gif" name="Shape49" alt="Shape49" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_2bce395b.gif" name="Shape50" alt="Shape50" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_4f2b1a3c.gif" name="Shape51" alt="Shape51" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_2bce395b.gif" name="Shape52" alt="Shape52" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_2bce395b.gif" name="Shape53" alt="Shape53" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_2bce395b.gif" name="Shape54" alt="Shape54" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_4f2b1a3c.gif" name="Shape55" alt="Shape55" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_2bce395b.gif" name="Shape56" alt="Shape56" align="left" hspace="1" vspace="1" width="6" height="6"/>
+<img src="template-057_html_1bd4489c.gif" name="Shape57" alt="Shape57" align="left" width="429" height="36"/>
+<img src="template-057_html_cde7d90.gif" name="Shape58" alt="Shape58" align="left" width="3" height="40"/>
+<img src="template-057_html_15ccae47.gif" name="Shape59" alt="Shape59" align="left" width="103" height="3"/>
+<img src="template-057_html_99db8cd1.gif" name="Shape60" alt="Shape60" align="left" hspace="1" width="471" height="3"/>
+<img src="template-057_html_7ef04926.gif" name="Shape61" alt="Shape61" align="left" hspace="1" width="474" height="106"/>
+<img src="template-057_html_3e123d97.gif" name="Shape62" alt="Shape62" align="left" hspace="1" width="106" height="106"/>
+<img src="template-057_html_93193017.gif" name="Shape63" alt="Shape63" align="left" vspace="1" width="3" height="32"/>
+<img src="template-057_html_e5e10bac.gif" name="Shape64" alt="Shape64" align="left" hspace="1" width="149" height="36"/>
+<img src="template-057_html_1f584ea7.gif" name="Shape65" alt="Shape65" align="left" hspace="1" width="149" height="37"/>
+<img src="template-057_html_9bdb8ef.gif" name="Shape66" alt="Shape66" align="left" width="429" height="37"/>
+<img src="template-057_html_9041d99c.gif" name="Shape67" alt="Shape67" align="left" width="19" height="18"/>
+<img src="template-057_html_121632f1.gif" name="Shape68" alt="Shape68" align="left" vspace="1" width="19" height="14"/>
+<img src="template-057_html_b190a254.gif" name="Shape69" alt="Shape69" align="left" vspace="1" width="19" height="16"/>
+<img src="template-057_html_d2efbe7b.gif" name="Shape70" alt="Shape70" align="left" vspace="1" width="19" height="17"/>
+<img src="template-057_html_d8c2c99c.gif" name="Shape71" alt="Shape71" align="left" hspace="1" vspace="1" width="19" height="16"/>
+<img src="template-057_html_e4653eea.gif" name="Shape72" alt="Shape72" align="left" hspace="1" width="19" height="18"/>
+<img src="template-057_html_d9f318ab.gif" name="Shape73" alt="Shape73" align="left" hspace="1" width="19" height="19"/>
+<img src="template-057_html_56611da6.gif" name="Shape74" alt="Shape74" align="left" width="36" height="37"/>
+<img src="template-057_html_44c428c7.gif" name="Shape75" alt="Shape75" align="left" width="36" height="36"/>
+<img src="template-057_html_a433a847.gif" name="Shape76" alt="Shape76" align="left" width="133" height="133"/>
+<img src="template-057_html_a1cb38fc.gif" name="Shape33" alt="Shape33" align="left" width="41" height="37"/>
+<span id="Frame30" dir="ltr" style="float: left; width: 1.08cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#ffffff"><font face="Montserrat Semi Bold, serif"><font size="5" style="font-size: 20pt"><span style="letter-spacing: 2.0pt">D</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_a1cb38fc.gif" name="Shape34" alt="Shape34" align="left" width="41" height="37"/>
+
+<span id="Frame31" dir="ltr" style="float: left; width: 1.08cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#ffffff"><font face="Montserrat Semi Bold, serif"><font size="5" style="font-size: 20pt"><span style="letter-spacing: 2.0pt">C</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_e583807e.gif" name="Shape31" alt="Shape31" align="left" width="103" height="26"/>
+
+<span id="Frame28" dir="ltr" style="float: left; width: 2.72cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#ffffff"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 2.0pt">EST-1993</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_a910a124.gif" name="Shape32" alt="Shape32" align="left" width="420" height="37"/>
+
+<span id="Frame29" dir="ltr" style="float: left; width: 11.12cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#ffffff"><font face="Montserrat Semi Bold, serif"><font size="5" style="font-size: 20pt"><span style="letter-spacing: 6.0pt">DANIELLE
+	CONNELL</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_2ca7623f.gif" name="Shape30" alt="Shape30" align="left" width="217" height="26"/>
+
+<span id="Frame27" dir="ltr" style="float: left; width: 5.75cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#ffffff"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 2.0pt">FREELANCER
+	WRITER</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_4a9a43b6.gif" name="Shape29" alt="Shape29" align="left" width="180" height="26"/>
+
+<span id="Frame26" dir="ltr" style="float: left; width: 4.77cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#ffffff"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 2.0pt">T.
+	+600-222-4444</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_c35ab2af.gif" name="Shape12" alt="Shape12" align="left" width="236" height="26"/>
+
+<span id="Frame9" dir="ltr" style="float: left; width: 6.24cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Montserrat Semi Bold, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: 2.0pt">SKILLS
+	&amp; EXPERTIES</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_5efaf953.gif" name="Shape26" alt="Shape26" align="left" width="122" height="26"/>
+
+<span id="Frame23" dir="ltr" style="float: left; width: 3.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 2.0pt">PERSONAL</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_da379f3d.gif" name="Shape28" alt="Shape28" align="left" width="157" height="132"/>
+
+<span id="Frame25" dir="ltr" style="float: left; width: 4.15cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Time
+	Management</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Self-motivation
+	</span></font></font></font></font></font>
+	</p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Conflict
+	Resolution</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Leadership</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Adaptability
+	Creativity</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Innovative</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Team
+	Work</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_67c1d991.gif" name="Shape25" alt="Shape25" align="left" width="167" height="26"/>
+
+<span id="Frame22" dir="ltr" style="float: left; width: 4.41cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 2.0pt">PROFESSIONAL</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_da379f3d.gif" name="Shape27" alt="Shape27" align="left" width="157" height="132"/>
+
+<span id="Frame24" dir="ltr" style="float: left; width: 4.15cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Time
+	Management</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Self-motivation
+	</span></font></font></font></font></font>
+	</p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Conflict
+	Resolution</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Leadership</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Adaptability
+	Creativity</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Innovative</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Team
+	Work</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_c35ab2af.gif" name="Shape13" alt="Shape13" align="left" width="236" height="26"/>
+
+<span id="Frame10" dir="ltr" style="float: left; width: 6.24cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Montserrat Semi Bold, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: 2.0pt">WORK
+	EXPERIENCE</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_5f54e17b.gif" name="Shape23" alt="Shape23" align="left" width="84" height="48"/>
+
+<span id="Frame20" dir="ltr" style="float: left; width: 2.22cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">2012
+	- 09</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">2015
+	- 05</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_a390849c.gif" name="Shape24" alt="Shape24" align="left" width="213" height="48"/>
+
+<span id="Frame21" dir="ltr" style="float: left; width: 5.63cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Bold, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">DESIGNER
+	&amp; DEVELOPER</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Italic, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Creative
+	Company | America</span></font></font></font><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">
+	USA.</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_71da1375.gif" name="Shape22" alt="Shape22" align="left" width="424" height="118"/>
+
+<span id="Frame19" dir="ltr" style="float: left; width: 11.22cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">There
+	are many variations passage lorem Ipsum available it the majority
+	have offered alteration in some form, by injected humour randomised
+	words which don't handful of model sentence pese tting industry
+	lorem Ipsum has been the industry's the majority have suffered
+	alteration in some form there are many of variations mesage lorem
+	Ipsum ailable but the majority have suffered</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_5f54e17b.gif" name="Shape21" alt="Shape21" align="left" width="84" height="48"/>
+
+<span id="Frame18" dir="ltr" style="float: left; width: 2.22cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">2012
+	- 09</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">2015
+	- 05</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_a390849c.gif" name="Shape20" alt="Shape20" align="left" width="213" height="48"/>
+
+<span id="Frame17" dir="ltr" style="float: left; width: 5.63cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Bold, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">DESIGNER
+	&amp; DEVELOPER</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Italic, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Creative
+	Company | America</span></font></font></font><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">
+	USA.</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_71da1375.gif" name="Shape19" alt="Shape19" align="left" width="424" height="118"/>
+
+<span id="Frame16" dir="ltr" style="float: left; width: 11.22cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">There
+	are many variations passage lorem Ipsum available it the majority
+	have offered alteration in some form, by injected humour randomised
+	words which don't handful of model sentence pese tting industry
+	lorem Ipsum has been the industry's the majority have suffered
+	alteration in some form there are many of variations mesage lorem
+	Ipsum ailable but the majority have suffered</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_5f54e17b.gif" name="Shape17" alt="Shape17" align="left" width="84" height="48"/>
+
+<span id="Frame14" dir="ltr" style="float: left; width: 2.22cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">2012
+	- 09</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">2015
+	- 05</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_a390849c.gif" name="Shape18" alt="Shape18" align="left" width="213" height="48"/>
+
+<span id="Frame15" dir="ltr" style="float: left; width: 5.63cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Bold, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">DESIGNER
+	&amp; DEVELOPER</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Italic, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Creative
+	Company | America</span></font></font></font><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">
+	USA.</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_28cf9c76.gif" name="Shape16" alt="Shape16" align="left" vspace="1" width="424" height="100"/>
+
+<span id="Frame13" dir="ltr" style="float: left; width: 11.22cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">There
+	are many variations passage lorem Ipsum available it the majority
+	have offered alteration in some form by injected humour sed words
+	which don't handful of model sentence pese tting suffered alteration
+	in some form there are many of variations mesage lorem Ipsum ailable
+	but the majority have suffered form there are many</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_7ba07e07.gif" name="Shape14" alt="Shape14" align="left" width="121" height="26"/>
+
+<span id="Frame11" dir="ltr" style="float: left; width: 3.19cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Montserrat Semi Bold, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: 2.0pt">CONTACT</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_8140aa55.gif" name="Shape15" alt="Shape15" align="left" width="149" height="26"/>
+
+<span id="Frame12" dir="ltr" style="float: left; width: 3.95cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 150%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Montserrat Semi Bold, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: 2.0pt">EDUCATION</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_f2c42c5b.gif" name="Shape11" alt="Shape11" align="left" width="175" height="30"/>
+
+<span id="Frame8" dir="ltr" style="float: left; width: 4.63cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Street,
+	City, Country, #247</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_f2c42c5b.gif" name="Shape10" alt="Shape10" align="left" width="175" height="30"/>
+
+<span id="Frame7" dir="ltr" style="float: left; width: 4.63cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">+060-0(875)-757-699</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_f2c42c5b.gif" name="Shape9" alt="Shape9" align="left" width="175" height="30"/>
+
+<span id="Frame6" dir="ltr" style="float: left; width: 4.63cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">yourmailid@gmail.com</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_f2c42c5b.gif" name="Shape8" alt="Shape8" align="left" width="175" height="30"/>
+
+<span id="Frame5" dir="ltr" style="float: left; width: 4.63cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">www.yourwebsite.com</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_b6a16061.gif" name="Shape7" alt="Shape7" align="left" vspace="1" width="158" height="204"/>
+
+<span id="Frame4" dir="ltr" style="float: left; width: 4.19cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Bold, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">COURSE
+	STUDY NAME</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Italic, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Collage/University</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">17
+	- February - 2011</span></font></font></font></font></font></p>
+	<p style="letter-spacing: 0.3pt; line-height: 108%; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Bold, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">COURSE
+	STUDY NAME</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Italic, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Collage/University</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">17
+	- February - 2011</span></font></font></font></font></font></p>
+	<p style="letter-spacing: 0.3pt; line-height: 108%; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Bold, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">COURSE
+	STUDY NAME</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto Italic, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Collage/University</span></font></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#464c52"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">17
+	- February - 2011</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_f2c42c5b.gif" name="Shape3" alt="Shape3" align="left" width="175" height="30"/>
+
+<span id="Frame3" dir="ltr" style="float: left; width: 4.63cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#ffffff"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">username/twitterid.com</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_f2c42c5b.gif" name="Shape2" alt="Shape2" align="left" width="175" height="30"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 4.63cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#ffffff"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">username/linkedingid.com</span></font></font></font></font></font></p>
+</span>
+<img src="template-057_html_f2c42c5b.gif" name="Shape1" alt="Shape1" align="left" width="175" height="30"/>
+
+<span id="Frame1" dir="ltr" style="float: left; width: 4.63cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Tahoma, sans-serif"><font size="1" style="font-size: 8pt"><font color="#ffffff"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">username/instagramid.com</span></font></font></font></font></font></p>
+</span><br/>
+<br/>
+
+</p>
+</body>
+</html>

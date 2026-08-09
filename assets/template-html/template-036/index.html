@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Piash Ismail"/>
+	<meta name="created" content="2016-09-29T06:47:00"/>
+	<meta name="changedby" content="Piash Ismail"/>
+	<meta name="changed" content="2016-09-29T07:03:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Company" content="CtrlSoft"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 108%; margin-bottom: 0cm">
+<img src="template-036_html_f05722fe.gif" name="Shape1" alt="Shape1" align="left" width="1486" height="1120"/>
+<span id="textbox65" dir="ltr" style="float: left; width: 4.9cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.37cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">My
+	Name Is Steven Brain lorem empus id fringilla molestie ornare diam
+	in molestie pretium rosn ollicitudin est, lorem  porttitor amet
+	hitmassa Done is the  lorem cporttitor dolor molster nisl  sum
+	molestie pretium etfring. is the shitp lorem ipcum retiumci
+	tudinest. is the moles tium  lorem olestie more pretium ipsum is
+	rosenfringilla molestie ornare diam in molestie preSamth lorem 
+	empus id fringilla done the.</span></font></font></font></span></font></p>
+</span>
+<span id="textbox64" dir="ltr" style="float: left; width: 4.2cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2013
+	- 2015</span></font></font></font></span></font></p>
+	<p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<br/>
+<br/>
+
+	</p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox63" dir="ltr" style="float: left; width: 4.2cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2013
+	- 2015</span></font></font></font></span></font></p>
+	<p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<br/>
+<br/>
+
+	</p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox62" dir="ltr" style="float: left; width: 4.2cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2013
+	- 2015</span></font></font></font></span></font></p>
+	<p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<br/>
+<br/>
+
+	</p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox61" dir="ltr" style="float: left; width: 12.01cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Porttitor
+	amet massa Done cporttitor dolor et porttitor amet shit amet massa
+	Done cporttitor dolor molestie pretium feliscon lore imolestie
+	pretium. liberosn lorem ipcum retiumci tudinest ipsum done amet 
+	lorem ispum dolor shit.</span></font></font></font></span></font></p>
+</span>
+<span id="textbox60" dir="ltr" style="float: left; width: 12.01cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Porttitor
+	amet massa Done cporttitor dolor et porttitor amet shit amet massa
+	Done cporttitor dolor molestie pretium feliscon lore imolestie
+	pretium. liberosn lorem ipcum retiumci tudinest ipsum done amet 
+	lorem ispum dolor shit.</span></font></font></font></span></font></p>
+</span>
+<span id="textbox59" dir="ltr" style="float: left; width: 12.01cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Porttitor
+	amet massa Done cporttitor dolor et porttitor amet shit amet massa
+	Done cporttitor dolor molestie pretium feliscon lore imolestie
+	pretium. liberosn lorem ipcum retiumci tudinest ipsum done amet 
+	lorem ispum dolor shit.</span></font></font></font></span></font></p>
+</span>
+<span id="textbox58" dir="ltr" style="float: left; width: 4.62cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-GB" style="line-height: 107%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>1234
+	Avenue, Strate, Melbourne</b></span></font></font></font></font></font></p>
+	<p lang="en-GB" style="line-height: 107%; margin-bottom: 0cm"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Australia
+	AB 223</b></span></font></font></font></font></font></p>
+</span>
+<span id="textbox57" dir="ltr" style="float: left; width: 8.67cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="7" style="font-size: 31pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>STEVEN
+	BRAIN</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox56" dir="ltr" style="float: left; width: 5cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: 0.4pt"><span lang="en-US"><b>Graphic
+	&amp; Web Designer</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox55" dir="ltr" style="float: left; width: 2.11cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>ABOUT</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox54" dir="ltr" style="float: left; width: 3.64cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>FOLLOW
+	ME</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox53" dir="ltr" style="float: left; width: 3.26cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">linkedin.com/username</span></font></font></font></span></font></p>
+</span>
+<span id="textbox52" dir="ltr" style="float: left; width: 1.21cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Linkedin</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox51" dir="ltr" style="float: left; width: 3.2cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Twitter.com/username</span></font></font></font></span></font></p>
+</span>
+<span id="textbox50" dir="ltr" style="float: left; width: 1.05cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Twitter</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox49" dir="ltr" style="float: left; width: 3.38cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Behance.com/username</span></font></font></font></span></font></p>
+</span>
+<span id="textbox48" dir="ltr" style="float: left; width: 1.22cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Behance</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox47" dir="ltr" style="float: left; width: 3.75cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>REFERENCES</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox46" dir="ltr" style="float: left; width: 2.21cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Jonathon
+	Deo</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox45" dir="ltr" style="float: left; width: 3.75cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71"> <font face="Calibri, serif"><span lang="en-GB"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">dustinpaul332@gmail.com</span></font></font></span></font></font></p>
+</span>
+<span id="textbox44" dir="ltr" style="float: left; width: 0.27cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>E:</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox43" dir="ltr" style="float: left; width: 2.27cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71"> <font face="Calibri, serif"><span lang="en-GB"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">+555
+	123 5566</span></font></font></span></font></font></p>
+</span>
+<span id="textbox42" dir="ltr" style="float: left; width: 0.36cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>P:</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox41" dir="ltr" style="float: left; width: 1.16cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Director</span></font></font></font></span></font></p>
+</span>
+<span id="textbox40" dir="ltr" style="float: left; width: 1.82cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm"><a name="_GoBack"></a>
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Jabin
+	Smith</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox39" dir="ltr" style="float: left; width: 3.43cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71"> <font face="Calibri, serif"><span lang="en-GB"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">jensonsmith@gmail.com</span></font></font></span></font></font></p>
+</span>
+<span id="textbox38" dir="ltr" style="float: left; width: 0.27cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>E:</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox37" dir="ltr" style="float: left; width: 2.46cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71"> <font face="Calibri, serif"><span lang="en-GB"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">+123
+	5556 4455</span></font></font></span></font></font></p>
+</span>
+<span id="textbox36" dir="ltr" style="float: left; width: 0.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>P:</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox35" dir="ltr" style="float: left; width: 2.15cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Web
+	developer</span></font></font></font></span></font></p>
+</span>
+<span id="textbox34" dir="ltr" style="float: left; width: 2.91cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Data
+	Tech  Service</span></font></font></font></span></font></p>
+</span>
+<span id="textbox33" dir="ltr" style="float: left; width: 3.94cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">LEAD
+	WEB DEVELOPER</span></font></font></font></span></font></p>
+</span>
+<span id="textbox32" dir="ltr" style="float: left; width: 3.68cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>EXPERIENCE</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox31" dir="ltr" style="float: left; width: 4.8cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Soft
+	Development Corporation</span></font></font></font></span></font></p>
+</span>
+<span id="textbox30" dir="ltr" style="float: left; width: 3.57cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">WEB
+	&amp; UX DESIGNER</span></font></font></font></span></font></p>
+</span>
+<span id="textbox29" dir="ltr" style="float: left; width: 5.8cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Loyal
+	Development Service Company</span></font></font></font></span></font></p>
+</span>
+<span id="textbox28" dir="ltr" style="float: left; width: 2.64cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">WEB
+	DESIGNER</span></font></font></font></span></font></p>
+</span>
+<span id="textbox27" dir="ltr" style="float: left; width: 1.99cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>SKILLS</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox26" dir="ltr" style="float: left; width: 0.9cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>SOFT</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox25" dir="ltr" style="float: left; width: 1.03cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>HARD</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox24" dir="ltr" style="float: left; width: 1.54cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Wordpress</span></font></font></font></span></font></p>
+</span>
+<span id="textbox23" dir="ltr" style="float: left; width: 1.53cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">HTML
+	CSS</span></font></font></font></span></font></p>
+</span>
+<span id="textbox22" dir="ltr" style="float: left; width: 2.52cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Adobe
+	Photoshop</span></font></font></font></span></font></p>
+</span>
+<span id="textbox21" dir="ltr" style="float: left; width: 0.99cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Joomla</span></font></font></font></span></font></p>
+</span>
+<span id="textbox20" dir="ltr" style="float: left; width: 2.17cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Adobe
+	Indesign</span></font></font></font></span></font></p>
+</span>
+<span id="textbox19" dir="ltr" style="float: left; width: 1.36cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Creativity</span></font></font></font></span></font></p>
+</span>
+<span id="textbox18" dir="ltr" style="float: left; width: 1.55cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Hare
+	Work</span></font></font></font></span></font></p>
+</span>
+<span id="textbox17" dir="ltr" style="float: left; width: 1.64cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Team
+	Work</span></font></font></font></span></font></p>
+</span>
+<span id="textbox16" dir="ltr" style="float: left; width: 1.34cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">Flexibility</span></font></font></font></span></font></p>
+</span>
+<span id="textbox15" dir="ltr" style="float: left; width: 3.58cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>EDUCATION</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox14" dir="ltr" style="float: left; width: 2.6cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Bachelor
+	Of Arts</span></font></font></font></span></font></p>
+</span>
+<span id="textbox13" dir="ltr" style="float: left; width: 1.76cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2005
+	- 2008</span></font></font></font></span></font></p>
+</span>
+<span id="textbox12" dir="ltr" style="float: left; width: 4.41cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">WORLD
+	MAT UNIVERSITY</span></font></font></font></span></font></p>
+</span>
+<span id="textbox11" dir="ltr" style="float: left; width: 4.22cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Master
+	In Web Technology</span></font></font></font></span></font></p>
+</span>
+<span id="textbox10" dir="ltr" style="float: left; width: 4.36cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">CREATIVE
+	ART INSTITUTE</span></font></font></font></span></font></p>
+</span>
+<span id="textbox9" dir="ltr" style="float: left; width: 1.76cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">2001
+	- 2004</span></font></font></font></span></font></p>
+</span>
+<span id="textbox8" dir="ltr" style="float: left; width: 2.65cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato Black, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 2.0pt"><span lang="en-US"><b>HOBBIES</b></span></span></font></font></font></span></font></p>
+</span>
+<span id="textbox7" dir="ltr" style="float: left; width: 12.24cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">wordpress
+	           CHESS PIE             PINBALL             PHOTOGRAPHY    
+	         CYCLING</span></font></font></font></span></font></p>
+</span>
+<span id="textbox6" dir="ltr" style="float: left; width: 3.32cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71">  <font face="Calibri, serif"><span lang="en-GB"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">www.alexdowson.com</span></font></font></span></font></font></p>
+</span>
+<span id="textbox5" dir="ltr" style="float: left; width: 0.77cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Web:</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox4" dir="ltr" style="float: left; width: 3.49cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71">  <font face="Calibri, serif"><span lang="en-GB"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">alexdowson@gmail.com</span></font></font></span></font></font></p>
+</span>
+<span id="textbox3" dir="ltr" style="float: left; width: 0.71cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Mail:</b></span></font></font></font></span></font></p>
+</span>
+<span id="textbox2" dir="ltr" style="float: left; width: 2.8cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71">  <font face="Calibri, serif"><span lang="en-GB"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US">+00
+	1234 567 889</span></font></font></span></font></font></p>
+</span>
+<span id="textbox1" dir="ltr" style="float: left; width: 0.99cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><span lang="en-GB"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span lang="en-US"><b>Phone:</b></span></font></font></font></span></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

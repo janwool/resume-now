@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="小王子"/>
+	<meta name="created" content="2018-12-12T12:45:00"/>
+	<meta name="changedby" content="K"/>
+	<meta name="changed" content="2018-12-12T12:56:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="KSOProductBuildVer" content="2052-10.1.0.7698"/>
+	<meta name="KSORubyTemplateID" content="4"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 0; margin-bottom: 0.25cm; orphans: 0; line-height: 115%; text-align: justify; background: transparent }
+		p.western { font-size: 10pt }
+		p.cjk { font-size: 10pt }
+		p.ctl { font-size: 12pt }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" bgcolor="#ffffff" dir="ltr"><p class="cjk" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><img src="template-093_html_3d17e889.gif" name="Shape5" alt="Shape5" align="left" width="128" height="26"/>
+<img src="template-093_html_7bd84af5.gif" name="Shape21" alt="Shape21" align="left" width="492" height="104"/>
+<img src="template-093_html_d2d10e57.gif" name="Shape4" alt="Shape4" align="left" width="523" height="90"/>
+<img src="template-093_html_3d17e889.gif" name="Shape7" alt="Shape7" align="left" width="128" height="26"/>
+<img src="template-093_html_10701c3a.gif" name="Shape3" alt="Shape3" align="left" width="612" height="26"/>
+<img src="template-093_html_d2d10e57.gif" name="Shape6" alt="Shape6" align="left" width="523" height="90"/>
+<img src="template-093_html_10701c3a.gif" name="Shape2" alt="Shape2" align="left" width="612" height="26"/>
+<img src="template-093_html_6145f9ac.gif" name="Shape1" alt="Shape1" align="left" width="642" height="42"/>
+<img src="template-093_html_10701c3a.gif" name="Shape20" alt="Shape20" align="left" width="612" height="26"/>
+<img src="template-093_html_3d17e889.gif" name="Shape19" alt="Shape19" align="left" width="128" height="26"/>
+<img src="template-093_html_bf6a7582.gif" name="Shape18" alt="Shape18" align="left" width="523" height="50"/>
+<img src="template-093_html_10701c3a.gif" name="Shape14" alt="Shape14" align="left" width="612" height="26"/>
+<img src="template-093_html_3d17e889.gif" name="Shape13" alt="Shape13" align="left" width="128" height="26"/>
+<img src="template-093_html_3d17e889.gif" name="Shape11" alt="Shape11" align="left" width="128" height="26"/>
+<img src="template-093_html_f389e9bf.gif" name="Shape12" alt="Shape12" align="left" width="523" height="98"/>
+<img src="template-093_html_10701c3a.gif" name="Shape17" alt="Shape17" align="left" width="612" height="26"/>
+<img src="template-093_html_3d17e889.gif" name="Shape9" alt="Shape9" align="left" width="128" height="26"/>
+<img src="template-093_html_c66b9a02.gif" name="Shape10" alt="Shape10" align="left" width="523" height="114"/>
+<img src="template-093_html_e3d26ad1.jpg" name="图片 7" align="left" width="66" height="96" border="0"/>
+<img src="template-093_html_3d17e889.gif" name="Shape16" alt="Shape16" align="left" width="128" height="26"/>
+<img src="template-093_html_a84f6cf6.gif" name="Shape15" alt="Shape15" align="left" width="523" height="146"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 17cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Office
+	skills: </b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">proficient
+	in Word, Excel, PPT </font></font></font></span></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.42cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>English
+	skills: </b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">TEM8
+	Score:85  Fluent in both speaking and writing English</font></font></font></span></font></p>
+</span>
+<img src="template-093_html_d7ae7ea3.gif" name="Shape8" alt="Shape8" align="left" width="523" height="162"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 16.2cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><u><b>Skills
+	&amp; Certificates</b></u></font></font></span></font></font></p>
+</span>
+<span id="Frame3" dir="ltr" style="float: left; width: 16.2cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><u><b>Campus
+	Activities</b></u></font></font></span></font></font></p>
+</span>
+<span id="Frame4" dir="ltr" style="float: left; width: 13.85cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Undergraduate
+	Accounting Society   President/Founder</b></font></font></span></font></font></p>
+	<ul>
+		<li><p style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Used
+		my advantages in professional courses, took notes, explained
+		knowledge, trained the ability to precisely conclude and the skills
+		in expressing myself briefly</font></font></span></font></font></p></li>
+		<li><p style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Understood
+		the importance of teamwork through learning and sharing with
+		classmates </font></font></span></font></font>
+		</p></li>
+	</ul>
+</span>
+<span id="Frame5" dir="ltr" style="float: left; width: 3.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Aug.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">2-Oct.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">5</font></font></font></span></font></p>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 13.85cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>UTM
+	Investment Club   Charter member</b></font></font></span></font></font></p>
+	<ul>
+		<li><p style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Researched
+		other student clubs and collaborated with business professor to
+		draft charter. </font></font></span></font></font>
+		</p></li>
+		<li><p style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Researches
+		market sectors and presents appropriate investment recommendations
+		at club meetings</font></font></span></font></font></p></li>
+	</ul>
+</span>
+<span id="Frame7" dir="ltr" style="float: left; width: 3.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Mar.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">5-Aug.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">5</font></font></font></span></font></p>
+</span>
+<span id="Frame8" dir="ltr" style="float: left; width: 13.85cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"> </font><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>General
+	Mills Trading (Shanghai)   Cashier</b></font></font></font></span></font></p>
+	<ul>
+		<li><p style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Made
+		payments using online banking system</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Checked
+		the bank statement with cash account of the company</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Through
+		the comprehensive investigation and research, analyzed the
+		financial condition of the customer and risk tolerance</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Created
+		leveraged buyouts and merger models to assess proforma effects of
+		potential transactions on corporate earnings, capital structure,
+		credit ratios and ownership.</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Designed
+		complex leveraged buyout, recapitalization, valuation, merger, and
+		debt capacity analysis for Merrill Lynch clients.</font></font></span></font></font></p></li>
+	</ul>
+</span>
+<span id="Frame9" dir="ltr" style="float: left; width: 3.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Sep.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">4-Feb.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">5</font></font></font></span></font></p>
+</span>
+<span id="Frame10" dir="ltr" style="float: left; width: 13.85cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>General
+	Electric (China)</b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">
+	 </font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>
+	Junior Accountant</b></font></font></font></span></font></p>
+	<ul>
+		<li><p style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">General
+		Ledger team, expense booking, able to use Oracle skillfully</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Created
+		leveraged buyouts and merger models to assess proforma effects of
+		potential transactions on corporate earnings, capital structure,
+		credit ratios and ownership.</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Prepared
+		company calculations, including fairness opinions, based on
+		discounted cash flow, comparable company, precedent transactions
+		and break-up value analyses.</font></font></span></font></font></p></li>
+	</ul>
+</span>
+<span id="Frame11" dir="ltr" style="float: left; width: 3.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Sep.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">4-Jan.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">5</font></font></font></span></font></p>
+</span>
+<span id="Frame12" dir="ltr" style="float: left; width: 13.85cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Price
+	water house Coopers China    Summer Intern</b></font></font></span></font></font></p>
+	<ul>
+		<li><p style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Join
+		in the CCCC interim audit project</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Learn
+		the basic audit procedure for several accounts: cash, finance
+		expenses, etc</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">In
+		charge of the bank confirmation procedure</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Prepared
+		company calculations, including fairness opinions</font></font></span></font></font></p></li>
+	</ul>
+</span>
+<span id="Frame13" dir="ltr" style="float: left; width: 3.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">May.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">5-Aug.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">5</font></font></font></span></font></p>
+</span>
+<span id="Frame14" dir="ltr" style="float: left; width: 16.2cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><u><b>Internship
+	Experience</b></u></font></font></span></font></font></p>
+</span>
+<span id="Frame15" dir="ltr" style="float: left; width: 13.85cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>New
+	International Education Consulting Co.Ltd      Project Manager </b></font></font></span></font></font>
+	</p>
+	<ul>
+		<li><p style="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Take
+		charge of Oversea Study Consulting Department</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Draft
+		the marketing strategy with marketing director,including
+		TV,newspaper and interne strategies;execute the plan successfully
+		and boost sales by 28%</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Conduct
+		a systematic research on competitors and give competitive strategy
+		suggestions</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Coordinated
+		and implemented projects involving data collection, organization,
+		computer input and data analysis</font></font></span></font></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.42cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Followed
+		up on outstanding invoices by contacting customers</font></font></span></font></font></p></li>
+	</ul>
+</span>
+<span id="Frame16" dir="ltr" style="float: left; width: 3.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Mar.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">4-Jun.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">5</font></font></font></span></font></p>
+</span>
+<span id="Frame17" dir="ltr" style="float: left; width: 16.2cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><u><b>Work
+	Experience</b></u></font></font></span></font></font></p>
+</span>
+<span id="Frame18" dir="ltr" style="float: left; width: 13.85cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0.21cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>University
+	of California, Los Angeles       Bachelor of Management</b></font></font></span></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.42cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Major
+	in Accounting</font></font></font></span></font><font color="#000000"><font face="Arial Unicode MS"><font size="2" style="font-size: 9pt">丨</font></font></font><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Cumulative
+	GPA: 3.76 </font></font></font></span></font><font color="#000000"><font face="Arial Unicode MS"><font size="2" style="font-size: 9pt">丨</font></font></font><font color="#000000"><font size="2" style="font-size: 9pt">
+	</font><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Honors:
+	2011 William Sharpe Fellow</font></font></span></font></font></p>
+</span>
+<span id="Frame19" dir="ltr" style="float: left; width: 3.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Sept</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">4-</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Jun</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">.</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">201</font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">8</font></font></font></span></font></p>
+</span>
+<span id="Frame20" dir="ltr" style="float: left; width: 16.2cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><u><b>Education
+	Background</b></u></font></font></span></font></font></p>
+</span>
+<span id="Frame21" dir="ltr" style="float: left; width: 13.02cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Name:</b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>
+	Lin</b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>
+	</b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Youhan</b></font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Tel:
+	</b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>138-0010-8000</b></font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><a name="_GoBack"></a>
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Email:
+	</b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>19062</b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>2</b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>2627@qq.com</b></font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Address:
+	</b></font></font></font><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>No.67,
+	Lane123,Jiahui District, Shanghai, China</b></font></font></font></span></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

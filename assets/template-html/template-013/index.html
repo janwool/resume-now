@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Hidayatullah, Dodi   (CIFOR)"/>
+	<meta name="created" content="2020-05-28T15:41:00"/>
+	<meta name="changedby" content="Ze"/>
+	<meta name="changed" content="2020-05-28T15:41:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2.54cm }
+		p { direction: ltr; widows: 2; line-height: 0.42cm; margin-left: 0.64cm; margin-bottom: 0cm; text-align: start; orphans: 2; text-indent: -0.64cm; color: #000000; background: transparent }
+		p.western { font-size: 8pt; so-language: en-US; font-family: "Roboto", serif }
+		p.cjk { font-size: 8pt }
+		p.ctl { font-family: "Roboto"; font-size: 8pt }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_e568cc3e.gif" name="Shape2" alt="Shape2" align="left" vspace="1" width="792" height="252"/>
+<img src="template-013_html_8c95da6a.gif" name="Shape1" alt="Shape1" align="left" width="386" height="128"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 10.2cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#ffffff"><font face="Lato Black, sans-serif"><font size="6" style="font-size: 28pt"><span lang="en-US"><b>JOHN
+	LANISTER </b></span></font></font></font></span></font></font></font>
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#ffffff"><font face="Lato, sans-serif"><font size="4" style="font-size: 16pt"><span lang="en-US">MECANICAL
+	ENGINEERING</span></font></font></font></span></font></font></font></p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif">	</font></span></font></font></font><img src="template-013_html_f713e8d7.gif" name="Shape3" alt="Shape3" align="left" width="708" height="78"/>
+<span id="Frame2" dir="ltr" style="float: left; width: 18.74cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#ffffff">I
+	was engineer work in technical authorities base on my competence
+	skill for several companies in petrochemical,oil and gas,power plant
+	and mining since my first graduate in year of 1989 to about year
+	2012 last two years from today.</font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><br/>
+
+	</p>
+</span>
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_45a07c15.gif" name="Shape4" alt="Shape4" align="left" width="792" height="56"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_65eed3e2.gif" name="Shape6" alt="Shape6" align="left" width="205" height="22"/>
+<span id="Frame4" dir="ltr" style="float: left; width: 4.92cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#474648"><font face="Montserrat, serif"><font size="1" style="font-size: 7pt">+00
+	1234 5678 9000</font></font></font></span></font></font></font></p>
+</span>
+<img src="template-013_html_e96b62da.gif" name="Shape5" alt="Shape5" align="left" width="206" height="22"/>
+
+<span id="textbox1" dir="ltr" style="float: left; width: 4.92cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#474648"><font face="Montserrat, serif"><font size="1" style="font-size: 7pt">github.com/johndoe</font></font></font></span></font></font></font></p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_e065ba27.gif" name="Shape8" alt="Shape8" align="left" width="205" height="22"/>
+<span id="Frame6" dir="ltr" style="float: left; width: 4.92cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#474648"><font face="Montserrat, serif"><font size="1" style="font-size: 7pt">johndoe@yourwebsite.com</font></font></font></span></font></font></font></p>
+</span>
+<img src="template-013_html_519699e5.gif" name="Shape7" alt="Shape7" align="left" width="206" height="22"/>
+
+<span id="Frame5" dir="ltr" style="float: left; width: 4.92cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#474648"><font face="Montserrat, serif"><font size="1" style="font-size: 7pt">linkedin.com/johndoe</font></font></font></span></font></font></font></p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif">	</font></span></font></font></font><img src="template-013_html_89f4989c.gif" name="Shape9" alt="Shape9" align="left" hspace="1" vspace="1" height="903"/>
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_a2efe970.gif" name="Shape11" alt="Shape11" align="left" width="486" height="375"/>
+<span id="Frame7" dir="ltr" style="float: left; width: 12.85cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>PROFESSIONAL
+	EXPERIENCE</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Company
+	Name/Your job title</b></span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#767171"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><i>Bali,
+	Jan 2019 – Des 2025</i></span></font></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Lorem
+	ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+	nibh euismod tincidunt ut laoreet dolore consectetuer adipiscing
+	elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore </span></font></font></span></font></font></font>
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Company
+	Name/Your job title</b></span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#767171"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><i>Bali,
+	Jan 2019 – Des 2025</i></span></font></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Lorem
+	ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+	nibh euismod tincidunt ut laoreet dolore consectetuer adipiscing
+	elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore </span></font></font></span></font></font></font>
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Company
+	Name/Your job title</b></span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#767171"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><i>Bali,
+	Jan 2019 – Des 2025</i></span></font></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Lorem
+	ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+	nibh euismod tincidunt ut laoreet dolore consectetuer adipiscing
+	elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore </span></font></font></span></font></font></font>
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+</span>
+<img src="template-013_html_19bb255c.gif" name="Shape10" alt="Shape10" align="left" width="197" height="462"/>
+
+<span id="Frame3" dir="ltr" style="float: left; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>CONTACT</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">JHON
+	DOE</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">000-123-456-789</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">jhondoe@yourwebsite.com</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">yourwebsite.com</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>EDUCATION</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Master’s
+	degrees | Major</b></span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Air
+	University | Location</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">2019
+	- 2022</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>Bachelor
+	| Major</b></span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Air
+	University | Location</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">2019
+	– 2022</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>INTEREST</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Mural
+	painting</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Comic
+	book illustration</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Landscape
+	photography</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Volleyball
+	and tennis</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Rock
+	music</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_25b4277b.gif" name="Shape12" alt="Shape12" align="left" hspace="1" vspace="1" width="32"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_25b4277b.gif" name="Shape13" alt="Shape13" align="left" hspace="1" vspace="1" width="32"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif">	</font></span></font></font></font><img src="template-013_html_25b4277b.gif" name="Shape14" alt="Shape14" align="left" hspace="1" vspace="1" width="32" height="1"/>
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_25b4277b.gif" name="Shape15" alt="Shape15" align="left" hspace="1" vspace="1" width="32" height="1"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_669b3fa0.gif" name="Shape17" alt="Shape17" align="left" width="143" height="31"/>
+<span id="Frame9" dir="ltr" style="float: left; width: 3.78cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>ABILITIES</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+</span>
+<img src="template-013_html_669b3fa0.gif" name="Shape16" alt="Shape16" align="left" width="143" height="31"/>
+
+<span id="Frame8" dir="ltr" style="float: left; width: 3.78cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>ACHIEVEMENT</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_25b4277b.gif" name="Shape18" alt="Shape18" align="left" hspace="1" vspace="1" width="32"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_f798d5c8.gif" name="Shape19" alt="Shape19" align="left" width="243" height="214"/>
+<span id="Frame10" dir="ltr" style="float: left; width: 6.43cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; text-indent: 0cm">
+	<font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Design
+	Software’s:</b></font></font><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">
+	Adobe Photoshop, Adobe DreamWorks, InDesign, and Dreamweaver </font></font></font>
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"><font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Web-based
+	Application:</b></font></font><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">
+	Blogger, WordPress, Firefox, Chrome</font></font></font></p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"><font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Research
+	Tools:</b></font></font><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">
+	</font></font><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">SPSS,
+	Internet Explorer, Microsoft Edge, Google </font></font></font>
+	</p>
+</span>
+<img src="template-013_html_34999a37.gif" name="Shape20" alt="Shape20" align="left" width="247" height="216"/>
+
+<span id="Frame11" dir="ltr" style="float: left; width: 6.53cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; text-indent: 0cm">
+	<font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Best
+	web design awards 2015</b></font></font></font></p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"><font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Internasional
+	WebDev meetup</font></font></font></p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"><font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Chapter
+	Asia</font></font></font></p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"><font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Best
+	inovation 4.0 awards</b></font></font></font></p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"><font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Digital
+	transformation tech 2018</font></font></font></p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"><font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Best
+	creative director 2018</b></font></font></font></p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"><font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Global
+	designer forum europe – united</font></font></font></p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"><font face="Roboto, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">states</font></font></font></p>
+	<p class="cjk" style="margin-left: 0cm; text-indent: 0cm"> 
+	</p>
+</span>
+<img src="template-013_html_25b4277b.gif" name="Shape21" alt="Shape21" align="left" hspace="1" vspace="1" width="32" height="1"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_3c622f62.gif" name="Shape22" alt="Shape22" align="left" width="150" height="31"/>
+<span id="Frame12" dir="ltr" style="float: left; width: 3.97cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>PORTOFOLIO</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_240805c2.gif" name="Shape24" alt="Shape24" align="left" vspace="1" width="120" height="78"/>
+<img src="template-013_html_25b4277b.gif" name="Shape23" alt="Shape23" align="left" hspace="1" vspace="1" width="32" height="1"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_ba41bdf2.gif" name="Graphic 8" align="left" width="48" height="48" border="0"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_240805c2.gif" name="Shape25" alt="Shape25" align="left" width="120" height="78"/>
+<img src="template-013_html_ba41bdf2.gif" name="Image2" align="left" width="48" height="48" border="0"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_5ea7b26.gif" name="Shape26" alt="Shape26" align="left" width="407" height="31"/>
+<span id="Frame13" dir="ltr" style="float: left; width: 10.78cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><span lang="en-US"><b>REFERENCE</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_25b4277b.gif" name="Shape27" alt="Shape27" align="left" hspace="1" vspace="1" width="32"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_4b6c7b1f.gif" name="Shape28" alt="Shape28" align="left" width="150" height="91"/>
+<span id="Frame14" dir="ltr" style="float: left; width: 3.97cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>JHON
+	DOE</b></span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">GENERAL
+	MANAGER</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Company
+	name</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">000-123-456-789</span></font></font></span></font></font></font></p>
+</span>
+<img src="template-013_html_4b6c7b1f.gif" name="Shape29" alt="Shape29" align="left" width="150" height="91"/>
+
+<span id="Frame15" dir="ltr" style="float: left; width: 3.97cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>JHON
+	DOE</b></span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">GENERAL
+	MANAGER</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Company
+	name</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">000-123-456-789</span></font></font></span></font></font></font></p>
+</span>
+<img src="template-013_html_4b6c7b1f.gif" name="Shape30" alt="Shape30" align="left" width="150" height="91"/>
+
+<span id="Frame16" dir="ltr" style="float: left; width: 3.97cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>JHON
+	DOE</b></span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">GENERAL
+	MANAGER</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Company
+	name</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">000-123-456-789</span></font></font></span></font></font></font></p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_e568cc3e.gif" name="Shape38" alt="Shape38" align="left" vspace="1" width="792" height="252"/>
+<img src="template-013_html_45a07c15.gif" name="Shape32" alt="Shape32" align="left" width="792" height="56"/>
+<img src="template-013_html_8c95da6a.gif" name="Shape37" alt="Shape37" align="left" width="386" height="128"/>
+<span id="Frame22" dir="ltr" style="float: left; width: 10.2cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#ffffff"><font face="Lato Black, sans-serif"><font size="6" style="font-size: 28pt"><span lang="en-US"><b>JOHN
+	LANISTER </b></span></font></font></font></span></font></font></font>
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#ffffff"><font face="Lato, sans-serif"><font size="4" style="font-size: 16pt"><span lang="en-US">MECANICAL
+	ENGINEERING</span></font></font></font></span></font></font></font></p>
+</span>
+<img src="template-013_html_f713e8d7.gif" name="Shape36" alt="Shape36" align="left" width="708" height="78"/>
+
+<span id="Frame17" dir="ltr" style="float: left; width: 18.74cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#ffffff">I
+	was engineer work in technical authorities base on my competence
+	skill for several companies in petrochemical,oil and gas,power plant
+	and mining since my first graduate in year of 1989 to about year
+	2012 last two years from today.</font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><br/>
+
+	</p>
+</span>
+<img src="template-013_html_84735af6.gif" name="Shape35" alt="Shape35" align="left" width="205" height="22"/>
+
+<span id="Frame21" dir="ltr" style="float: left; width: 4.92cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#474648"><font face="Montserrat, serif"><font size="1" style="font-size: 7pt">+00
+	1234 5678 9000</font></font></font></span></font></font></font></p>
+</span>
+<img src="template-013_html_ec26f075.gif" name="Shape34" alt="Shape34" align="left" width="206" height="22"/>
+
+<span id="Frame20" dir="ltr" style="float: left; width: 4.92cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#474648"><font face="Montserrat, serif"><font size="1" style="font-size: 7pt">github.com/johndoe</font></font></font></span></font></font></font></p>
+</span>
+<img src="template-013_html_e065ba27.gif" name="Shape33" alt="Shape33" align="left" width="205" height="22"/>
+
+<span id="Frame19" dir="ltr" style="float: left; width: 4.92cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#474648"><font face="Montserrat, serif"><font size="1" style="font-size: 7pt">johndoe@yourwebsite.com</font></font></font></span></font></font></font></p>
+</span>
+<img src="template-013_html_519699e5.gif" name="Shape31" alt="Shape31" align="left" width="206" height="22"/>
+
+<span id="Frame18" dir="ltr" style="float: left; width: 4.92cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font color="#474648"><font face="Montserrat, serif"><font size="1" style="font-size: 7pt">linkedin.com/johndoe</font></font></font></span></font></font></font></p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_89f4989c.gif" name="Shape39" alt="Shape39" align="left" hspace="1" vspace="1" height="903"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_4f050123.gif" name="Shape42" alt="Shape42" align="left" width="197" height="271"/>
+<img src="template-013_html_8897566a.gif" name="Shape41" alt="Shape41" align="left" width="252" height="125"/>
+<img src="template-013_html_bb95cae6.gif" name="Shape40" alt="Shape40" align="left" width="252" height="35"/>
+<span id="Frame23" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">August
+	1st 2020</span></font></font></font></p>
+</span>
+<span id="Frame24" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">Application:
+	</span></font></font></font>
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">DATA
+	SCIENTIST MANAGER</span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">Tokopedia
+	Co.</span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">North
+	Street 197,</span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">Slipi
+	Jaya</span></font></font></font></p>
+</span>
+<span id="Frame25" dir="ltr" style="float: left; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>CONTACT</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">JHON
+	DOE</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">000-123-456-789</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">jhondoe@yourwebsite.com</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">yourwebsite.com</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>INTEREST</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Mural
+	painting</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Comic
+	book illustration</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Landscape
+	photography</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Volleyball
+	and tennis</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Rock
+	music</span></font></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_25b4277b.gif" name="Shape43" alt="Shape43" align="left" hspace="1" vspace="1" width="32" height="1"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_783a046d.gif" name="Shape44" alt="Shape44" align="left" width="477" height="507"/>
+<span id="Frame26" dir="ltr" style="float: left; width: 12.63cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">Dear
+	Jonathan Westdock,</span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">Lorem
+	ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
+	accumsan purus. Morbi eget semper enim. Proin vestibulum lacus et
+	varius aliquet. Donec nec tortor dui. Proin porttitor erat ac est
+	tincidunt, id viverra tortor pellentesque. Fusce rutrum.
+	tincidunt.magna a molestie. Suspendisse id laoreet nibh, sit amet
+	lacinia justo. Proin sed convallis justo. </span></font></font></font>
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">Sed
+	semper consequat lacus viverra placerat. Nulla mollis at velit non
+	commodo. Vestibulum mauris risus, malesuada sed vehicula ut, commodo
+	ac ipsum. Vestibulum placerat at lacus eget porttitor.</span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">Proin
+	porttitor erat ac est tincidunt, id viverra tortor pellentesque.
+	Fusce rutrum. tincidunt.magna a molestie. Suspendisse id laoreet
+	nibh, sit amet lacinia justo. Proin sed convallis justo. </span></font></font></font>
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">Sed
+	semper consequat lacus viverra placerat. Nulla mollis at velit non
+	commodo. Vestibulum mauris risus, malesuada sed vehicula ut, commodo
+	ac ipsum. Vestibulum placerat at lacus eget porttitor.</span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID">Sincerely,</span></font></font></font></p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_25b4277b.gif" name="Shape45" alt="Shape45" align="left" hspace="1" vspace="1" width="32"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_3c622f62.gif" name="Shape46" alt="Shape46" align="left" width="150" height="31"/>
+<span id="Frame27" dir="ltr" style="float: left; width: 3.97cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span lang="en-ID"><font face="Roboto, serif"><span lang="en-US"><b>PORTOFOLIO</b></span></font></span></font></font></font></p>
+	<p style="margin-left: 0cm; line-height: 115%; text-indent: 0cm"><br/>
+
+	</p>
+</span><br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_25b4277b.gif" name="Shape47" alt="Shape47" align="left" hspace="1" vspace="1" width="32"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_1aa8cdd.gif" name="Shape48" alt="Shape48" align="left" vspace="1" width="140" height="78"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_ba41bdf2.gif" name="Graphic 2" align="left" width="48" height="48" border="0"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_1aa8cdd.gif" name="Shape49" alt="Shape49" align="left" width="140" height="78"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_ba41bdf2.gif" name="Graphic 3" align="left" width="48" height="48" border="0"/>
+<br/>
+
+</p>
+<p class="cjk" align="center" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<br/>
+
+</p>
+<p class="cjk" style="margin-left: 0cm; line-height: 100%; text-indent: 0cm">
+<img src="template-013_html_1aa8cdd.gif" name="Shape50" alt="Shape50" align="left" width="140" height="78"/>
+<img src="template-013_html_ba41bdf2.gif" name="Graphic 4" align="left" width="48" height="48" border="0"/>
+<br/>
+
+</p>
+</body>
+</html>

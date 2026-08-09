@@ -1,0 +1,13 @@
+.DS_Store
+**/.DS_Store
+__pycache__/
+*.py[cod]
+*.downloading
+
+# Generated render caches; rebuilt by tools/build_template_catalog.py.
+assets/template-previews/.render-cache/
+assets/template-overlays/
+
+# Unused editable design source; the exported web assets are tracked.
+*.psd
+*.ai

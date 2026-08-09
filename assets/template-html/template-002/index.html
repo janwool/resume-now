@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Fun Memphis_Creative Agency_CV Resume Creative</title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="mrze"/>
+	<meta name="created" content="2020-04-30T08:34:00"/>
+	<meta name="changedby" content="mrze"/>
+	<meta name="changed" content="2020-04-30T08:49:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Creator" content="Adobe Illustrator CC 23.0 (Windows)"/>
+	<style type="text/css">
+		@page { size: 22.4cm 31.12cm; margin-left: 2.47cm; margin-right: 2.05cm; margin-top: 2.65cm; margin-bottom: 0.49cm }
+		p { direction: ltr; widows: 0; margin-top: 0.01cm; margin-bottom: 0cm; orphans: 0; text-align: start; margin-left: 0.07cm; background: transparent }
+		p.western { font-family: "SourceSansPro-Light", sans-serif; font-size: 9pt }
+		p.cjk { font-family: "SourceSansPro-Light"; font-size: 9pt }
+		p.ctl { font-family: "SourceSansPro-Light"; font-size: 9pt }
+		a:link { color: #000080; text-decoration: underline }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr">
+<div id="TextSection" dir="ltr"><p class="cjk" style="margin-top: 0cm; margin-left: 0cm">
+	<img src="template-002_html_1ae965b3.gif" name="Shape1" alt="Shape1" align="left" width="816" height="781"/>
+<img src="template-002_html_bd68ec7a.gif" name="Shape2" alt="Shape2" align="left" width="816" height="365"/>
+<img src="template-002_html_4e152816.gif" name="Shape3" alt="Shape3" align="left" width="816" height="365"/>
+<img src="template-002_html_4e4b88fa.png" name="图片 133" align="left" width="18" height="18" border="0"/>
+<img src="template-002_html_8da050a6.gif" name="Shape4" alt="Shape4" align="left" width="134" height="134"/>
+<img src="template-002_html_4ae061f.gif" name="Shape5" alt="Shape5" align="left" width="122" height="61"/>
+<img src="template-002_html_7553ee9.gif" name="Shape6" alt="Shape6" align="left" width="88" height="30"/>
+<img src="template-002_html_721c99a6.gif" name="Shape7" alt="Shape7" align="left" width="61" height="61"/>
+<img src="template-002_html_1155edb2.gif" name="Shape8" alt="Shape8" align="left" width="124" height="149"/>
+<img src="template-002_html_3f0b1e25.png" name="图片 127" align="left" width="18" height="18" border="0"/>
+<img src="template-002_html_b66cefa9.png" name="图片 126" align="left" width="19" height="19" border="0"/>
+<img src="template-002_html_2821e384.png" name="图片 125" align="left" width="18" height="17" border="0"/>
+<img src="template-002_html_4c04206a.gif" name="Shape9" alt="Shape9" align="left" width="151" height="220"/>
+<img src="template-002_html_c83a134a.gif" name="Shape10" alt="Shape10" align="left" width="1" height="218"/>
+<img src="template-002_html_31bf0e71.png" name="图片 122" align="left" width="11" height="15" border="0"/>
+<img src="template-002_html_5a5087b7.png" name="图片 121" align="left" width="15" height="15" border="0"/>
+<img src="template-002_html_4c66dcc5.png" name="图片 120" align="left" width="15" height="15" border="0"/>
+<img src="template-002_html_424476ca.png" name="图片 119" align="left" width="15" height="15" border="0"/>
+<img src="template-002_html_a599ef45.gif" name="Shape11" alt="Shape11" align="left" width="265" height="265"/>
+<img src="template-002_html_c6444f61.gif" name="Shape12" alt="Shape12" align="left" width="794" height="1175"/>
+<span class="sd-abs-pos" style="position: absolute; top: 0.03cm; left: 0.2cm; width: 220px"><img src="template-002_html_e3690a74.gif" name="Shape15" alt="Shape15" align="left" width="220" height="138"/>
+</span><span id="Frame1" dir="ltr" style="position: absolute; top: 2.68cm; left: 2.67cm; width: 5.83cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 80%; margin-right: -0.04cm; margin-top: 0.28cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="7" style="font-size: 32pt"><b>Leighton
+		Henderson</b></font></font></font></font></font></p>
+		<p style="margin-top: 0.15cm; margin-left: 0.06cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="4" style="font-size: 16pt"><b>Editorial
+		Photographer</b></font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 0.38cm; left: 13.19cm; width: 90px">
+	<img src="template-002_html_6154412.gif" name="Shape16" alt="Shape16" align="left" width="90" height="20"/>
+</span>
+	<span id="Frame2" dir="ltr" style="position: absolute; top: 3.03cm; left: 15.66cm; width: 2.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">+00
+		123 456 789</font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 1.26cm; left: 13.19cm; width: 134px">
+	<img src="template-002_html_2cfe98e0.gif" name="Shape17" alt="Shape17" align="left" width="134" height="20"/>
+</span>
+	<span id="Frame3" dir="ltr" style="position: absolute; top: 3.9cm; left: 15.66cm; width: 3.55cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><a href="mailto:yourmail@domain.com"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">yourmail@domain.com</font></font></font></a></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 2.11cm; left: 13.19cm; width: 129px">
+	<img src="template-002_html_2c2481b8.gif" name="Shape18" alt="Shape18" align="left" width="129" height="20"/>
+</span>
+	<span id="Frame4" dir="ltr" style="position: absolute; top: 4.76cm; left: 15.66cm; width: 3.43cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><a href="http://www.yourdomain.com/"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">www.yourdomain.com</font></font></font></a></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 2.98cm; left: 13.18cm; width: 139px">
+	<img src="template-002_html_ff27bcf6.gif" name="Shape19" alt="Shape19" align="left" width="139" height="20"/>
+</span>
+	<span id="Frame5" dir="ltr" style="position: absolute; top: 5.62cm; left: 15.65cm; width: 3.68cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">246
+		Coolidge Street, NYC</font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 11.24cm; left: 0.19cm; width: 55px">
+	<img src="template-002_html_993ba9e4.gif" name="Shape20" alt="Shape20" align="left" width="54" height="24"/>
+</span>
+	<span id="Frame6" dir="ltr" style="position: absolute; top: 13.89cm; left: 2.66cm; width: 1.44cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>Proﬁle</b></font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 11.24cm; left: 10.2cm; width: 81px">
+	<img src="template-002_html_f7b374f.gif" name="Shape21" alt="Shape21" align="left" width="81" height="24"/>
+</span>
+	<span id="Frame7" dir="ltr" style="position: absolute; top: 13.89cm; left: 12.67cm; width: 2.15cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>Education</b></font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 12.3cm; left: 0.19cm; width: 314px">
+	<img src="template-002_html_3ac36445.gif" name="Shape22" alt="Shape22" align="left" width="314" height="124"/>
+</span>
+	<span id="Frame8" dir="ltr" style="position: absolute; top: 14.94cm; left: 2.66cm; width: 8.3cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-top: 0.02cm; margin-right: 0.02cm; margin-left: 0.04cm; line-height: 141%">
+		<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Elementum
+		integer enim neque volutpat tincidunt vitae semper quis. Mi proin
+		sed libero enim sed faucibus. Sit amet massa vitae tortor vitae
+		condimentum lacinia et quis vel eros. Maecenas sed pharetra
+		convallis posuerre morbi urna molestie at. Nibh tellus molestie
+		nunc sed non blandit massa enim nec. Ornare arcu dui</font></font></p>
+		<p class="cjk" style="margin-top: 0.01cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">vamus
+		sed vitae arcu felis bibendum eget lorem dolor sed vivera.</font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 12.29cm; left: 10.2cm; width: 250px">
+	<img src="template-002_html_165aecae.gif" name="Shape23" alt="Shape23" align="left" width="250" height="82"/>
+</span>
+	<span id="Frame9" dir="ltr" style="position: absolute; top: 14.93cm; left: 12.67cm; width: 6.61cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>Bachelor
+		Degree (2000 - 2005)</b></font></font></font></font></font></p>
+		<p style="margin-top: 0.11cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-LightIt, sans-serif"><font size="2" style="font-size: 9pt"><i>California
+		College of the Art</i></font></font></font></font></font></p>
+		<p class="cjk" style="margin-top: 0.13cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Pellentesque
+		diam volutpat commodo sed egestas.</font></font></p>
+		<p class="cjk" style="margin-top: 0.17cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Fames
+		ac turpis egestas integer eget aliquet nibh.</font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 15.29cm; left: 10.2cm; width: 250px">
+	<img src="template-002_html_165aecae.gif" name="Shape24" alt="Shape24" align="left" width="250" height="82"/>
+</span>
+	<span id="Frame10" dir="ltr" style="position: absolute; top: 17.93cm; left: 12.67cm; width: 6.61cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>Master
+		Degree (2007 - 2010)</b></font></font></font></font></font></p>
+		<p style="margin-top: 0.11cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-LightIt, sans-serif"><font size="2" style="font-size: 9pt"><i>Woodbury
+		University</i></font></font></font></font></font></p>
+		<p class="cjk" style="margin-top: 0.13cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">At
+		elementum eu facilisis sed odio morbi quis.</font></font></p>
+		<p class="cjk" style="margin-top: 0.17cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Pellentesque
+		diam volutpat commodo sed egestas.</font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 16.21cm; left: 0.2cm; width: 135px">
+	<img src="template-002_html_721a5121.gif" name="Shape25" alt="Shape25" align="left" width="135" height="24"/>
+</span>
+	<span id="Frame11" dir="ltr" style="position: absolute; top: 18.86cm; left: 2.67cm; width: 3.56cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>Work
+		Experience</b></font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 17.26cm; left: 0.2cm; width: 34px">
+	<img src="template-002_html_ef7ba65b.gif" name="Shape26" alt="Shape26" align="left" width="34" height="40"/>
+</span>
+	<span id="Frame12" dir="ltr" style="position: absolute; top: 19.9cm; left: 2.67cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>2005
+		-</b></font></font></font></font></font></p>
+		<p style="margin-top: 0.11cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>2010</b></font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 17.26cm; left: 2.18cm; width: 240px">
+	<img src="template-002_html_72a4b783.gif" name="Shape27" alt="Shape27" align="left" width="240" height="82"/>
+</span>
+	<span id="Frame13" dir="ltr" style="position: absolute; top: 19.91cm; left: 4.65cm; width: 6.34cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>Company
+		Name - </b></font></font></font><font color="#32363a"><font size="2" style="font-size: 9pt">Job
+		Position</font></font></font></font></p>
+		<p class="cjk" style="margin-top: 0.13cm; margin-left: 0.04cm; line-height: 141%">
+		<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Duis
+		convallis convallis tellus id interdum velit. Odio morbi quis
+		commodo odio aenean sed.</font><font color="#32363a"><span style="letter-spacing: -0.7pt">
+		</span></font><font color="#32363a"><span style="letter-spacing: -0.2pt">Nec</span></font></font></p>
+		<p class="cjk" style="margin-top: 0cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">feugiat
+		nisl pretium fusce id velit adipiscing</font><font color="#32363a"><span style="letter-spacing: -1.1pt">
+		</span></font><font color="#32363a">vitae.</font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 18.25cm; left: 10.2cm; width: 90px">
+	<img src="template-002_html_5b377094.gif" name="Shape28" alt="Shape28" align="left" width="90" height="24"/>
+</span>
+	<span id="Frame14" dir="ltr" style="position: absolute; top: 20.9cm; left: 12.66cm; width: 2.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>Proﬁciency</b></font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 19.31cm; left: 10.61cm; width: 90px">
+	<img src="template-002_html_31ca4f50.gif" name="Shape29" alt="Shape29" align="left" width="90" height="81"/>
+</span>
+	<span id="Frame15" dir="ltr" style="position: absolute; top: 21.95cm; left: 13.08cm; width: 2.39cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-top: 0.02cm; margin-left: 0.04cm; line-height: 141%">
+		<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Image
+		Processing Camera Setting Lighting Expert</font></font></p>
+		<p class="cjk" style="margin-top: 0.01cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Attention
+		to Detail</font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 19.31cm; left: 14.48cm; width: 122px">
+	<img src="template-002_html_f2791bc8.gif" name="Shape30" alt="Shape30" align="left" width="122" height="81"/>
+</span>
+	<span id="Frame16" dir="ltr" style="position: absolute; top: 21.95cm; left: 16.95cm; width: 3.22cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-top: 0.02cm; margin-right: 0.21cm; margin-left: 0.04cm; line-height: 141%">
+		<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Inventory
+		Maintenance Creativity</font></font></p>
+		<p class="cjk" style="margin-top: 0cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Lens
+		Adjusment</font></font></p>
+		<p class="cjk" style="margin-top: 0.16cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Photography
+		Equipment</font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 20.24cm; left: 2.18cm; width: 233px">
+	<img src="template-002_html_4aceb85e.gif" name="Shape31" alt="Shape31" align="left" width="233" height="82"/>
+</span>
+	<span id="Frame17" dir="ltr" style="position: absolute; top: 22.88cm; left: 4.65cm; width: 6.17cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>Company
+		Name - </b></font></font></font><font color="#32363a"><font size="2" style="font-size: 9pt">Job
+		Position</font></font></font></font></p>
+		<p class="cjk" style="margin-top: 0.13cm; margin-right: -0.03cm; margin-left: 0.04cm; line-height: 141%">
+		<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Eget
+		est lorem ipsum dolor sit amet consectetur adipiscing. Quis auctor
+		elit sed vulputate mi sit</font></font></p>
+		<p class="cjk" style="margin-top: 0cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">amet
+		mauris.</font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 20.83cm; left: 0.2cm; width: 34px">
+	<img src="template-002_html_ef7ba65b.gif" name="Shape32" alt="Shape32" align="left" width="34" height="40"/>
+</span>
+	<span id="Frame18" dir="ltr" style="position: absolute; top: 23.47cm; left: 2.67cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>2011
+		-</b></font></font></font></font></font></p>
+		<p style="margin-top: 0.11cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>2015</b></font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 22.26cm; left: 10.2cm; width: 110px">
+	<img src="template-002_html_f43c33a2.gif" name="Shape33" alt="Shape33" align="left" width="110" height="24"/>
+</span>
+	<span id="Frame19" dir="ltr" style="position: absolute; top: 24.9cm; left: 12.66cm; width: 2.91cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>Achievements</b></font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 23.23cm; left: 2.18cm; width: 239px">
+	<img src="template-002_html_dcf62d62.gif" name="Shape34" alt="Shape34" align="left" width="239" height="82"/>
+</span>
+	<span id="Frame20" dir="ltr" style="position: absolute; top: 25.88cm; left: 4.65cm; width: 6.31cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>Company
+		Name - </b></font></font></font><font color="#32363a"><font size="2" style="font-size: 9pt">Job
+		Position</font></font></font></font></p>
+		<p class="cjk" style="margin-top: 0.13cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Quis
+		auctor elit sed vulputate mi sit amet mauris.</font></font></p>
+		<p class="cjk" style="margin-top: 0cm; margin-left: 0.04cm; line-height: 0.56cm">
+		<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">In
+		est ante in nibh. Sed risus pretium amet quam vulputate dignissim.</font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 23.32cm; left: 10.69cm; width: 262px">
+	<img src="template-002_html_6cc041aa.gif" name="Shape35" alt="Shape35" align="left" width="262" height="81"/>
+</span>
+	<span id="Frame21" dir="ltr" style="position: absolute; top: 25.96cm; left: 13.16cm; width: 6.93cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-top: 0.02cm; margin-right: 0cm; margin-left: 0.04cm; line-height: 141%">
+		<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Duis
+		convallis convallis tellus id interdum velit bi quis. Odio morbi
+		quis commodo odio aenean sed aliquet. Sapien et ligula ullamcorper
+		malesuada proin libero.</font></font></p>
+		<p class="cjk" style="margin-top: 0.01cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Faucibus
+		nisl tincidunt sed eget nullam nisi est ravida.</font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 24.26cm; left: 0.2cm; width: 43px">
+	<img src="template-002_html_fe6c9a5.gif" name="Shape36" alt="Shape36" align="left" width="42" height="40"/>
+</span>
+	<span id="Frame22" dir="ltr" style="position: absolute; top: 26.9cm; left: 2.67cm; width: 1.13cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+		<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>2015
+		-</b></font></font></font></font></font></p>
+		<p style="margin-top: 0.11cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>Present</b></font></font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: -2.65cm; left: -2.47cm; width: 27px">
+	<img src="template-002_html_e96f8885.gif" name="Shape37" alt="Shape37" align="left" width="26" height="15"/>
+</span>
+	<span id="Frame23" dir="ltr" style="position: absolute; top: 0cm; left: 0cm; width: 0.7cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: -2.65cm; left: 19.23cm; width: 27px">
+	<img src="template-002_html_e96f8885.gif" name="Shape38" alt="Shape38" align="left" width="26" height="15"/>
+</span>
+	<span id="Frame24" dir="ltr" style="position: absolute; top: 0cm; left: 21.7cm; width: 0.7cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: -2.25cm; left: -2.47cm; width: 15px">
+	<img src="template-002_html_a81baf77.gif" name="Shape39" alt="Shape39" align="left" width="15" height="11"/>
+</span>
+	<span id="Frame25" dir="ltr" style="position: absolute; top: 0.4cm; left: 0cm; width: 0.4cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: -2.25cm; left: -2.07cm; width: 11px">
+	<img src="template-002_html_99dbf445.gif" name="Shape40" alt="Shape40" align="left" width="11" height="11"/>
+</span>
+	<span id="Frame26" dir="ltr" style="position: absolute; top: 0.4cm; left: 0.4cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: -2.25cm; left: 19.23cm; width: 11px">
+	<img src="template-002_html_99dbf445.gif" name="Shape41" alt="Shape41" align="left" width="11" height="11"/>
+</span>
+	<span id="Frame27" dir="ltr" style="position: absolute; top: 0.4cm; left: 21.7cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: -2.25cm; left: 19.53cm; width: 15px">
+	<img src="template-002_html_a81baf77.gif" name="Shape42" alt="Shape42" align="left" width="15" height="11"/>
+</span>
+	<span id="Frame28" dir="ltr" style="position: absolute; top: 0.4cm; left: 22cm; width: 0.4cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 27.75cm; left: -2.47cm; width: 15px">
+	<img src="template-002_html_a81baf77.gif" name="Shape43" alt="Shape43" align="left" width="15" height="11"/>
+</span>
+	<span id="Frame29" dir="ltr" style="position: absolute; top: 30.4cm; left: 0cm; width: 0.4cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 27.75cm; left: -2.07cm; width: 11px">
+	<img src="template-002_html_99dbf445.gif" name="Shape44" alt="Shape44" align="left" width="11" height="11"/>
+</span>
+	<span id="Frame30" dir="ltr" style="position: absolute; top: 30.4cm; left: 0.4cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 27.75cm; left: 19.23cm; width: 11px">
+	<img src="template-002_html_99dbf445.gif" name="Shape45" alt="Shape45" align="left" width="11" height="11"/>
+</span>
+	<span id="Frame31" dir="ltr" style="position: absolute; top: 30.4cm; left: 21.7cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 27.75cm; left: 19.53cm; width: 15px">
+	<img src="template-002_html_a81baf77.gif" name="Shape46" alt="Shape46" align="left" width="15" height="11"/>
+</span>
+	<span id="Frame32" dir="ltr" style="position: absolute; top: 30.4cm; left: 22cm; width: 0.4cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+		<br/>
+
+		</p>
+	</span><br/>
+
+	</p>
+</div>
+<p class="cjk" style="margin-top: 0cm; margin-left: 0cm; page-break-before: always">
+<img src="template-002_html_5df64e31.png" name="图片 79" align="left" width="18" height="18" border="0"/>
+<img src="template-002_html_de9be691.png" name="图片 73" align="left" width="18" height="18" border="0"/>
+<img src="template-002_html_d7e8d2ba.png" name="图片 72" align="left" width="19" height="19" border="0"/>
+<img src="template-002_html_1ef397f5.png" name="图片 71" align="left" width="18" height="17" border="0"/>
+<img src="template-002_html_376007b7.png" name="图片 70" align="left" width="11" height="15" border="0"/>
+<img src="template-002_html_9eb64ae5.png" name="图片 69" align="left" width="15" height="15" border="0"/>
+<img src="template-002_html_8f9f3f68.png" name="图片 68" align="left" width="15" height="15" border="0"/>
+<img src="template-002_html_3a5f41d.png" name="图片 67" align="left" width="15" height="15" border="0"/>
+<span class="sd-abs-pos" style="position: absolute; top: 0.03cm; left: 0.2cm; width: 220px"><img src="template-002_html_e3690a74.gif" name="Shape60" alt="Shape60" align="left" width="220" height="138"/>
+</span><span id="Frame33" dir="ltr" style="position: absolute; top: 2.68cm; left: 2.67cm; width: 5.83cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 80%; margin-right: -0.04cm; margin-top: 0.28cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="7" style="font-size: 32pt"><b>Leighton
+	Henderson</b></font></font></font></font></font></p>
+	<p style="margin-top: 0.15cm; margin-left: 0.06cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="4" style="font-size: 16pt"><b>Editorial
+	Photographer</b></font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.24cm; left: 12.19cm; width: 185px">
+<img src="template-002_html_8359d6d4.gif" name="Shape61" alt="Shape61" align="left" width="185" height="112"/>
+</span>
+<span id="Frame34" dir="ltr" style="position: absolute; top: 2.89cm; left: 14.66cm; width: 4.89cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>Proﬁle</b></font></font></font></font></font></p>
+	<p class="cjk" align="justify" style="margin-left: 0.04cm; line-height: 0.56cm; margin-top: 0.07cm; margin-right: 0.03cm">
+	<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Elementum
+	integer vitae enim neque volutpat tincidunt vitae semper quis. Mi
+	proin sed libero enim sed </font><font color="#32363a"><span style="letter-spacing: -0.2pt">faucibus.
+	</span></font><font color="#32363a">Maecenas vitae sed pharetra</font><font color="#32363a"><span style="letter-spacing: -1.1pt">
+	</span></font><font color="#32363a">convalis.</font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 11.24cm; left: 0.2cm; width: 124px">
+<img src="template-002_html_14a22329.gif" name="Shape62" alt="Shape62" align="left" width="123" height="83"/>
+</span>
+<span id="Frame35" dir="ltr" style="position: absolute; top: 13.88cm; left: 2.67cm; width: 3.27cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 121%; margin-right: 0.65cm; margin-top: 0.01cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: -0.3pt"><b>Mr.
+	</b></span></font></font></font><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 10pt"><b>John
+	Doe </b></font></font></font><font color="#32363a"><font size="2" style="font-size: 10pt">Senior
+	Manager 39 Souttar</font></font><font color="#32363a"><font size="2" style="font-size: 10pt"><span style="letter-spacing: -0.1pt">
+	</span></font></font><font color="#32363a"><font size="2" style="font-size: 10pt"><span style="letter-spacing: -0.3pt">Terrace</span></font></font></font></font></p>
+	<p style="margin-top: 0.03cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font size="2" style="font-size: 10pt">Mosman
+	Park WA 6012</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 11.25cm; left: 14.44cm; width: 105px">
+<img src="template-002_html_182bb1cb.gif" name="Shape63" alt="Shape63" align="left" width="105" height="19"/>
+</span>
+<span id="Frame36" dir="ltr" style="position: absolute; top: 13.9cm; left: 16.91cm; width: 2.77cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font size="2" style="font-size: 10pt">December
+	25, 2019</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.23cm; left: 0.24cm; width: 75px">
+<img src="template-002_html_fcdc0dc4.gif" name="Shape64" alt="Shape64" align="left" width="75" height="20"/>
+</span>
+<span id="Frame37" dir="ltr" style="position: absolute; top: 16.88cm; left: 2.71cm; width: 1.98cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.01cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 10pt"><b>Dear
+	Mr. Doe</b></font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.27cm; left: 0.24cm; width: 635px">
+<img src="template-002_html_2694ea61.gif" name="Shape65" alt="Shape65" align="left" width="635" height="60"/>
+</span>
+<span id="Frame38" dir="ltr" style="position: absolute; top: 17.92cm; left: 2.71cm; width: 16.81cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-top: 0.02cm; margin-right: 0.03cm; margin-left: 0.04cm; line-height: 141%">
+	<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Sit
+	amet justo donec enim diam vulputate ut pharetra sit. Vitae congue
+	mauris rhoncus aenean vel. Duis convallis convallis tellus interdum
+	velit. Odio morbi quis commodo odio aenean sed. Vitae aliquet nec
+	ullamcorper id sit amet risus nullam eget. Nec feugiat</font></font></p>
+	<p class="cjk" style="margin-top: 0cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">nisl
+	pretium fusce id velit. Lectus arcu bibendum at varius. Nisi quis
+	eleifend quam adipiscing vitae.</font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.53cm; left: 0.24cm; width: 633px">
+<img src="template-002_html_571d3d9c.gif" name="Shape66" alt="Shape66" align="left" width="633" height="60"/>
+</span>
+<span id="Frame39" dir="ltr" style="position: absolute; top: 20.18cm; left: 2.71cm; width: 16.76cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Facilisis</font><font color="#32363a"><span style="letter-spacing: -0.2pt">
+	</span></font><font color="#32363a">mauris</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">sit</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">amet</font><font color="#32363a"><span style="letter-spacing: -0.2pt">
+	</span></font><font color="#32363a">massa.</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">Tristique</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">sollicitudin</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">nibh</font><font color="#32363a"><span style="letter-spacing: -0.2pt">
+	</span></font><font color="#32363a">amet</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">commodo</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">nulla</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">facilisi</font><font color="#32363a"><span style="letter-spacing: -0.2pt">
+	</span></font><font color="#32363a">nullam</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">vehicula.</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">Aenean</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">pharetra</font><font color="#32363a"><span style="letter-spacing: -0.2pt">
+	</span></font><font color="#32363a">magna</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">ac</font></font></p>
+	<p class="cjk" style="margin-top: 0cm; margin-left: 0.04cm; line-height: 0.56cm">
+	<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">placerat
+	vestibulum lectus. Eleifend mi in nulla posuere solicitudin aliquam
+	ultrices. Id semper risus in hendrerit. Felis sit imperdiet proin
+	fermentum leo.</font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.79cm; left: 0.24cm; width: 638px">
+<img src="template-002_html_868fb634.gif" name="Shape67" alt="Shape67" align="left" width="638" height="60"/>
+</span>
+<span id="Frame40" dir="ltr" style="position: absolute; top: 22.43cm; left: 2.71cm; width: 16.88cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Eget</font><font color="#32363a"><span style="letter-spacing: -0.2pt">
+	</span></font><font color="#32363a">est</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">lorem</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">ipsum</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">dolor</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">sit</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">amet</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">consectetur</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">adipiscing.</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">Quis</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">auctor</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">elit</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">sed</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">vulputate</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">mi</font><font color="#32363a"><span style="letter-spacing: -0.2pt">
+	</span></font><font color="#32363a">sit</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">amet</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">mauris.</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">In</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">quisest</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">ante</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">in</font><font color="#32363a"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#32363a">nibh.</font></font></p>
+	<p class="cjk" style="margin-top: 0cm; margin-left: 0.04cm; line-height: 0.56cm">
+	<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Sed
+	risus pretium quam vulputate dignissim. Mi quis hendrerit dolor
+	magna eget est lorem ipsum. Odio euismod lacinia at risus sed
+	vulputate odio ut. Gravida cum sociis natoque penatibus et magnis
+	dis parturient. Enim eu turpis egestas pretium.</font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.27cm; left: 0.24cm; width: 78px">
+<img src="template-002_html_4790886f.gif" name="Shape68" alt="Shape68" align="left" width="78" height="17"/>
+</span>
+<span id="Frame41" dir="ltr" style="position: absolute; top: 24.92cm; left: 2.71cm; width: 2.06cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Sincerely
+	Yours,</font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.98cm; left: 7.19cm; width: 90px">
+<img src="template-002_html_6154412.gif" name="Shape69" alt="Shape69" align="left" width="90" height="20"/>
+</span>
+<span id="Frame42" dir="ltr" style="position: absolute; top: 26.62cm; left: 9.66cm; width: 2.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">+00
+	123 456 789</font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.98cm; left: 13.19cm; width: 129px">
+<img src="template-002_html_2c2481b8.gif" name="Shape70" alt="Shape70" align="left" width="129" height="20"/>
+</span>
+<span id="Frame43" dir="ltr" style="position: absolute; top: 26.62cm; left: 15.66cm; width: 3.43cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><a href="http://www.yourdomain.com/"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">www.yourdomain.com</font></font></font></a></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 24.38cm; left: 0.24cm; width: 113px">
+<img src="template-002_html_253f97ff.gif" name="Shape71" alt="Shape71" align="left" width="113" height="39"/>
+</span>
+<span id="Frame44" dir="ltr" style="position: absolute; top: 27.03cm; left: 2.71cm; width: 2.99cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="2" style="font-size: 9pt"><b>Leighton
+	Henderson</b></font></font></font></font></font></p>
+	<p class="cjk" style="margin-top: 0.13cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font color="#32363a">Editorial
+	Photographer</font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 24.91cm; left: 7.19cm; width: 134px">
+<img src="template-002_html_2cfe98e0.gif" name="Shape72" alt="Shape72" align="left" width="134" height="20"/>
+</span>
+<span id="Frame45" dir="ltr" style="position: absolute; top: 27.55cm; left: 9.66cm; width: 3.55cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><a href="mailto:yourmail@domain.com"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">yourmail@domain.com</font></font></font></a></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 24.91cm; left: 13.18cm; width: 139px">
+<img src="template-002_html_ff27bcf6.gif" name="Shape73" alt="Shape73" align="left" width="139" height="20"/>
+</span>
+<span id="Frame46" dir="ltr" style="position: absolute; top: 27.55cm; left: 15.65cm; width: 3.68cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">246
+	Coolidge Street, NYC</font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -2.65cm; left: -2.47cm; width: 27px">
+<img src="template-002_html_e96f8885.gif" name="Shape74" alt="Shape74" align="left" width="26" height="15"/>
+</span>
+<span id="Frame47" dir="ltr" style="position: absolute; top: 0cm; left: 0cm; width: 0.7cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -2.65cm; left: 19.23cm; width: 27px">
+<img src="template-002_html_e96f8885.gif" name="Shape75" alt="Shape75" align="left" width="26" height="15"/>
+</span>
+<span id="Frame48" dir="ltr" style="position: absolute; top: 0cm; left: 21.7cm; width: 0.7cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -2.25cm; left: -2.47cm; width: 15px">
+<img src="template-002_html_a81baf77.gif" name="Shape76" alt="Shape76" align="left" width="15" height="11"/>
+</span>
+<span id="Frame49" dir="ltr" style="position: absolute; top: 0.4cm; left: 0cm; width: 0.4cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -2.25cm; left: -2.07cm; width: 11px">
+<img src="template-002_html_99dbf445.gif" name="Shape77" alt="Shape77" align="left" width="11" height="11"/>
+</span>
+<span id="Frame50" dir="ltr" style="position: absolute; top: 0.4cm; left: 0.4cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -2.25cm; left: 19.23cm; width: 11px">
+<img src="template-002_html_99dbf445.gif" name="Shape78" alt="Shape78" align="left" width="11" height="11"/>
+</span>
+<span id="Frame51" dir="ltr" style="position: absolute; top: 0.4cm; left: 21.7cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -2.25cm; left: 19.53cm; width: 15px">
+<img src="template-002_html_a81baf77.gif" name="Shape79" alt="Shape79" align="left" width="15" height="11"/>
+</span>
+<span id="Frame52" dir="ltr" style="position: absolute; top: 0.4cm; left: 22cm; width: 0.4cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 27.75cm; left: -2.07cm; width: 11px">
+<img src="template-002_html_99dbf445.gif" name="Shape80" alt="Shape80" align="left" width="11" height="11"/>
+</span>
+<span id="Frame53" dir="ltr" style="position: absolute; top: 30.4cm; left: 0.4cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 27.75cm; left: 19.23cm; width: 11px">
+<img src="template-002_html_99dbf445.gif" name="Shape81" alt="Shape81" align="left" width="11" height="11"/>
+</span>
+<span id="Frame54" dir="ltr" style="position: absolute; top: 30.4cm; left: 21.7cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+</span>
+<img src="template-002_html_c6444f61.gif" name="Shape57" alt="Shape57" align="left" width="794" height="1175"/>
+
+<img src="template-002_html_a599ef45.gif" name="Shape56" alt="Shape56" align="left" width="265" height="265"/>
+
+<img src="template-002_html_8c1c25f1.gif" name="Shape55" alt="Shape55" align="left" width="101" height="61"/>
+
+<img src="template-002_html_1155edb2.gif" name="Shape54" alt="Shape54" align="left" width="124" height="149"/>
+
+<img src="template-002_html_17b4c4e1.gif" name="Shape53" alt="Shape53" align="left" width="61" height="61"/>
+
+<img src="template-002_html_f0187a45.gif" name="Shape52" alt="Shape52" align="left" width="88" height="30"/>
+
+<img src="template-002_html_4ae061f.gif" name="Shape51" alt="Shape51" align="left" width="122" height="61"/>
+
+<img src="template-002_html_8da050a6.gif" name="Shape50" alt="Shape50" align="left" width="134" height="134"/>
+
+<img src="template-002_html_4e152816.gif" name="Shape49" alt="Shape49" align="left" width="816" height="365"/>
+
+<img src="template-002_html_bd68ec7a.gif" name="Shape48" alt="Shape48" align="left" width="816" height="365"/>
+
+<img src="template-002_html_1ae965b3.gif" name="Shape47" alt="Shape47" align="left" width="816" height="781"/>
+<br/>
+
+</p>
+<p class="cjk" style="margin-top: 0cm; margin-left: 0cm; page-break-before: always">
+<img src="template-002_html_1ae965b3.gif" name="Shape85" alt="Shape85" align="left" width="816" height="781"/>
+<img src="template-002_html_bd68ec7a.gif" name="Shape86" alt="Shape86" align="left" width="816" height="365"/>
+<img src="template-002_html_4e152816.gif" name="Shape87" alt="Shape87" align="left" width="816" height="365"/>
+<img src="template-002_html_f1da0356.png" name="图片 36" align="left" width="18" height="18" border="0"/>
+<img src="template-002_html_7fbed673.gif" name="Shape88" alt="Shape88" align="left" width="134" height="134"/>
+<img src="template-002_html_1411d45b.gif" name="Shape89" alt="Shape89" align="left" width="122" height="61"/>
+<img src="template-002_html_a840a7d4.gif" name="Shape90" alt="Shape90" align="left" width="88" height="30"/>
+<img src="template-002_html_5f78f8b8.gif" name="Shape91" alt="Shape91" align="left" width="61" height="61"/>
+<img src="template-002_html_a079509a.gif" name="Shape92" alt="Shape92" align="left" width="124" height="149"/>
+<img src="template-002_html_8baadf47.png" name="图片 30" align="left" width="18" height="18" border="0"/>
+<img src="template-002_html_bc67f05e.png" name="图片 29" align="left" width="19" height="19" border="0"/>
+<img src="template-002_html_596abd9f.png" name="图片 28" align="left" width="18" height="17" border="0"/>
+<img src="template-002_html_188b49e6.png" name="图片 27" align="left" width="11" height="15" border="0"/>
+<img src="template-002_html_3014b970.png" name="图片 26" align="left" width="15" height="15" border="0"/>
+<img src="template-002_html_bc93b125.png" name="图片 25" align="left" width="15" height="15" border="0"/>
+<img src="template-002_html_607e25ea.png" name="图片 24" align="left" width="15" height="15" border="0"/>
+<img src="template-002_html_c09cf3f3.gif" name="Shape93" alt="Shape93" align="left" width="265" height="265"/>
+<span class="sd-abs-pos" style="position: absolute; top: 0.03cm; left: 0.2cm; width: 220px"><img src="template-002_html_e3690a74.gif" name="Shape98" alt="Shape98" align="left" width="220" height="138"/>
+</span><span id="Frame55" dir="ltr" style="position: absolute; top: 2.68cm; left: 2.67cm; width: 5.83cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 80%; margin-right: -0.04cm; margin-top: 0.28cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="7" style="font-size: 32pt"><b>Leighton
+	Henderson</b></font></font></font></font></font></p>
+	<p style="margin-top: 0.15cm; margin-left: 0.06cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="SourceSansPro-Semibold, sans-serif"><font size="4" style="font-size: 16pt"><b>Editorial
+	Photographer</b></font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.38cm; left: 13.19cm; width: 90px">
+<img src="template-002_html_6154412.gif" name="Shape99" alt="Shape99" align="left" width="90" height="20"/>
+</span>
+<span id="Frame56" dir="ltr" style="position: absolute; top: 3.03cm; left: 15.66cm; width: 2.39cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">+00
+	123 456 789</font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 1.26cm; left: 13.19cm; width: 134px">
+<img src="template-002_html_2cfe98e0.gif" name="Shape100" alt="Shape100" align="left" width="134" height="20"/>
+</span>
+<span id="Frame57" dir="ltr" style="position: absolute; top: 3.9cm; left: 15.66cm; width: 3.55cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><a href="mailto:yourmail@domain.com"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">yourmail@domain.com</font></font></font></a></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 2.11cm; left: 13.19cm; width: 129px">
+<img src="template-002_html_2c2481b8.gif" name="Shape101" alt="Shape101" align="left" width="129" height="20"/>
+</span>
+<span id="Frame58" dir="ltr" style="position: absolute; top: 4.76cm; left: 15.66cm; width: 3.43cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><a href="http://www.yourdomain.com/"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">www.yourdomain.com</font></font></font></a></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 2.98cm; left: 13.18cm; width: 139px">
+<img src="template-002_html_ff27bcf6.gif" name="Shape102" alt="Shape102" align="left" width="139" height="20"/>
+</span>
+<span id="Frame59" dir="ltr" style="position: absolute; top: 5.62cm; left: 15.65cm; width: 3.68cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font face="Source Sans Pro, sans-serif"><font size="2" style="font-size: 10pt">246
+	Coolidge Street, NYC</font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 9.69cm; left: 0.2cm; width: 90px">
+<img src="template-002_html_23c20ac7.gif" name="Shape103" alt="Shape103" align="left" width="90" height="31"/>
+</span>
+<span id="Frame60" dir="ltr" style="position: absolute; top: 12.34cm; left: 2.67cm; width: 2.38cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="4" style="font-size: 16pt"><b>Portfolio</b></font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 9.69cm; left: 14.2cm; width: 103px">
+<img src="template-002_html_7da6ea0d.gif" name="Shape104" alt="Shape104" align="left" width="103" height="31"/>
+</span>
+<span id="Frame61" dir="ltr" style="position: absolute; top: 12.34cm; left: 16.67cm; width: 2.72cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="4" style="font-size: 16pt"><b>2018-2019</b></font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 11.74cm; left: 6.19cm; width: 148px">
+<img src="template-002_html_4c073493.gif" name="Shape105" alt="Shape105" align="left" width="148" height="24"/>
+</span>
+<span id="Frame62" dir="ltr" style="position: absolute; top: 14.38cm; left: 8.66cm; width: 3.92cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>Project
+	Name</b></font></font></font><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: -1.0pt"><b>
+	</b></span></font></font></font><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>(2018)</b></font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.8cm; left: 6.19cm; width: 419px">
+<img src="template-002_html_43a2604e.gif" name="Shape106" alt="Shape106" align="left" width="419" height="80"/>
+</span>
+<span id="Frame63" dir="ltr" style="position: absolute; top: 15.45cm; left: 8.66cm; width: 11.08cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 159%; margin-right: 0.03cm; margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font size="1" style="font-size: 8pt">Vitae
+	justo eget magna fermentum iaculis eu non diam phasellus. Sapien et
+	ligula </font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">ullamcorper
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">malesuada</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">proin</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">libero</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">nunc</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">consequat</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">interdum.</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">Augue</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">lacus</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">viverra</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">vitae</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">congue</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">eu</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">consequat
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">ac</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">felis.</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">Quam</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">id</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">leo</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">in</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">vitae</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">turpis</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">massa</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">sed</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">elementum.</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">Pulvinar</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">neque</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">laoreet</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">suspendisse</font></font></font></font></p>
+	<p align="justify" style="margin-top: 0cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font size="1" style="font-size: 8pt">interdum
+	consectetur libero id faucibus.</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.75cm; left: 6.19cm; width: 148px">
+<img src="template-002_html_4c073493.gif" name="Shape107" alt="Shape107" align="left" width="148" height="24"/>
+</span>
+<span id="Frame64" dir="ltr" style="position: absolute; top: 19.39cm; left: 8.66cm; width: 3.92cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>Project
+	Name </b></font></font></font><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: -0.2pt"><b>(2019)</b></span></font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.81cm; left: 6.19cm; width: 419px">
+<img src="template-002_html_43a2604e.gif" name="Shape108" alt="Shape108" align="left" width="419" height="80"/>
+</span>
+<span id="Frame65" dir="ltr" style="position: absolute; top: 20.46cm; left: 8.66cm; width: 11.08cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 159%; margin-right: 0.03cm; margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font size="1" style="font-size: 8pt">Vitae
+	justo eget magna fermentum iaculis eu non diam phasellus. Sapien et
+	ligula </font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">ullamcorper
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">malesuada</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">proin</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">libero</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">nunc</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">consequat</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">interdum.</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">Augue</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">lacus</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">viverra</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">vitae</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">congue</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">eu</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">consequat
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">ac</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">felis.</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">Quam</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">id</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">leo</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">in</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">vitae</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">turpis</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">massa</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">sed</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">elementum.</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">Pulvinar</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">neque</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">laoreet</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">suspendisse</font></font></font></font></p>
+	<p align="justify" style="margin-top: 0cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font size="1" style="font-size: 8pt">interdum
+	consectetur libero id faucibus.</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 21.76cm; left: 6.19cm; width: 148px">
+<img src="template-002_html_4c073493.gif" name="Shape109" alt="Shape109" align="left" width="148" height="24"/>
+</span>
+<span id="Frame66" dir="ltr" style="position: absolute; top: 24.4cm; left: 8.66cm; width: 3.92cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0.04cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><b>Project
+	Name </b></font></font></font><font color="#66463b"><font face="Playfair Display, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: -0.2pt"><b>(2019)</b></span></font></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.82cm; left: 6.19cm; width: 419px">
+<img src="template-002_html_43a2604e.gif" name="Shape110" alt="Shape110" align="left" width="419" height="80"/>
+</span>
+<span id="Frame67" dir="ltr" style="position: absolute; top: 25.47cm; left: 8.66cm; width: 11.08cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 159%; margin-right: 0.03cm; margin-top: 0.02cm; margin-left: 0.04cm">
+	<font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font size="1" style="font-size: 8pt">Vitae
+	justo eget magna fermentum iaculis eu non diam phasellus. Sapien et
+	ligula </font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">ullamcorper
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">malesuada</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">proin</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">libero</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">nunc</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">consequat</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">interdum.</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">Augue</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">lacus</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">viverra</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">vitae</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">congue</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">eu</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">consequat
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">ac</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">felis.</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">Quam</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">id</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">leo</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">in</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">vitae</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">turpis</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">massa</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">sed</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">elementum.</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">Pulvinar</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">neque</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">laoreet</font></font><font color="#32363a"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">
+	</span></font></font><font color="#32363a"><font size="1" style="font-size: 8pt">suspendisse</font></font></font></font></p>
+	<p align="justify" style="margin-top: 0cm; margin-left: 0.04cm"><font face="SourceSansPro-Light, sans-serif"><font size="2" style="font-size: 11pt"><font color="#32363a"><font size="1" style="font-size: 8pt">interdum
+	consectetur libero id faucibus.</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -2.65cm; left: -2.47cm; width: 27px">
+<img src="template-002_html_e96f8885.gif" name="Shape111" alt="Shape111" align="left" width="26" height="15"/>
+</span>
+<span id="Frame68" dir="ltr" style="position: absolute; top: 0cm; left: 0cm; width: 0.7cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -2.65cm; left: 19.23cm; width: 27px">
+<img src="template-002_html_e96f8885.gif" name="Shape112" alt="Shape112" align="left" width="26" height="15"/>
+</span>
+<span id="Frame69" dir="ltr" style="position: absolute; top: 0cm; left: 21.7cm; width: 0.7cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 27.75cm; left: -2.07cm; width: 11px">
+<img src="template-002_html_99dbf445.gif" name="Shape113" alt="Shape113" align="left" width="11" height="11"/>
+</span>
+<span id="Frame70" dir="ltr" style="position: absolute; top: 30.4cm; left: 0.4cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 27.75cm; left: 19.23cm; width: 11px">
+<img src="template-002_html_99dbf445.gif" name="Shape114" alt="Shape114" align="left" width="11" height="11"/>
+</span>
+<span id="Frame71" dir="ltr" style="position: absolute; top: 30.4cm; left: 21.7cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+</span>
+<img src="template-002_html_d0adf55e.gif" name="Shape84" alt="Shape84" align="left" vspace="1" width="192" height="153"/>
+
+<img src="template-002_html_20183f7b.gif" name="Shape83" alt="Shape83" align="left" vspace="1" width="192" height="153"/>
+
+<img src="template-002_html_4da8eed8.gif" name="Shape82" alt="Shape82" align="left" vspace="1" width="192" height="153"/>
+<br/>
+
+</p>
+</body>
+</html>

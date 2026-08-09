@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Piash Ismail"/>
+	<meta name="created" content="2016-08-18T09:53:00"/>
+	<meta name="changedby" content="Piash Ismail"/>
+	<meta name="changed" content="2016-08-18T10:10:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 108%; margin-bottom: 0cm">
+<img src="template-018_html_8e903bc8.gif" name="Shape33" alt="Shape33" align="left" width="794" height="1126"/>
+<img src="template-018_html_11d2c2d1.gif" name="Shape34" alt="Shape34" align="left" width="304" height="1126"/>
+<img src="template-018_html_7d6ddb15.gif" name="Shape19" alt="Shape19" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-018_html_6f6f9729.gif" name="Shape21" alt="Shape21" align="left" hspace="1" vspace="1" width="11" height="17"/>
+<img src="template-018_html_7d6ddb15.gif" name="Shape22" alt="Shape22" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-018_html_26914ae3.gif" name="Shape23" alt="Shape23" align="left" vspace="1" width="17" height="17"/>
+<img src="template-018_html_7d6ddb15.gif" name="Shape24" alt="Shape24" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-018_html_e74cc7c7.gif" name="Shape25" alt="Shape25" align="left" hspace="1" vspace="1" width="15" height="11"/>
+<img src="template-018_html_7d6ddb15.gif" name="Shape18" alt="Shape18" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-018_html_739f89d4.gif" name="Shape26" alt="Shape26" align="left" hspace="1" width="14" height="14"/>
+<img src="template-018_html_35a1f197.gif" name="Shape17" alt="Shape17" align="left" hspace="1" vspace="1" width="199" height="1"/>
+<img src="template-018_html_35a1f197.gif" name="Shape31" alt="Shape31" align="left" hspace="1" vspace="1" width="199" height="1"/>
+<img src="template-018_html_156cbe3e.gif" name="Shape13" alt="Shape13" align="left" hspace="12" width="160" height="162"/>
+<img src="template-018_html_38d30bef.gif" name="Shape14" alt="Shape14" align="left" hspace="12" vspace="1" width="203" height="45"/>
+<span id="Frame10" dir="ltr" style="float: left; width: 5.36cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 107%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#ffffff"><font face="Roboto, serif"><font size="6" style="font-size: 25pt"><b>John
+	Smith</b></font></font></font></font></font></p>
+</span>
+<img src="template-018_html_7cb8bb44.gif" name="Shape15" alt="Shape15" align="left" hspace="12" width="203" height="33"/>
+
+<span id="Frame11" dir="ltr" style="float: left; width: 5.36cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 107%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#ffffff"><font face="Roboto, serif">Web
+	Developer</font></font></font></font></p>
+</span>
+<img src="template-018_html_62940f0.gif" name="Shape32" alt="Shape32" align="left" hspace="12" vspace="1" width="203" height="35"/>
+
+<span id="Frame18" dir="ltr" style="float: left; width: 5.36cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 105%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#ffffff"><font face="Roboto, serif"><font size="5" style="font-size: 18pt"><b>About
+	Me</b></font></font></font></font></font></p>
+	<p align="center" style="line-height: 105%; margin-bottom: 0.28cm"><font color="#ffffff">&nbsp;</font></p>
+</span>
+<img src="template-018_html_3df93da1.gif" name="Shape16" alt="Shape16" align="left" hspace="12" width="217" height="177"/>
+
+<span id="Frame12" dir="ltr" style="float: left; width: 5.75cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 105%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#bcbec0"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.1pt">Lorem
+	lectust empus id fringilla ut molestie ac nibh. Intege rornare lorem
+	 molestie pretium. liberosn ollicitudin est, porttitor amet shit
+	amet  Done cporttitor dolor  nisl molestie pretium dolor dolor shit
+	amet lorem ispum retfringilla. shitpr is on goetium ipsum 
+	felislibero citudinest to the center lorem ipsum  amet.</span></font></font></font></font></font></p>
+</span>
+<img src="template-018_html_18c4c8ac.gif" name="Shape27" alt="Shape27" align="left" hspace="12" vspace="1" width="204" height="40"/>
+
+<span id="Frame14" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 105%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#ffffff"><font face="Roboto, serif"><font size="5" style="font-size: 18pt"><b>Contact</b></font></font></font></font></font></p>
+</span>
+<img src="template-018_html_7c8fffde.gif" name="Shape28" alt="Shape28" align="left" hspace="12" vspace="1" width="204" height="32"/>
+
+<span id="Frame15" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 105%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#bcbec0"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">00
+	1234 567 889</font></font></font></font></font></p>
+</span>
+<img src="template-018_html_7c8fffde.gif" name="Shape29" alt="Shape29" align="left" hspace="12" vspace="1" width="204" height="32"/>
+
+<span id="Frame16" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 105%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#bcbec0"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">infoyoutname@gmail.com</font></font></font></font></font></p>
+</span>
+<img src="template-018_html_7c8fffde.gif" name="Shape30" alt="Shape30" align="left" hspace="12" vspace="1" width="204" height="32"/>
+
+<span id="Frame17" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 105%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#bcbec0"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">www.domainname.com</font></font></font></font></font></p>
+</span>
+<img src="template-018_html_6f460217.gif" name="Shape20" alt="Shape20" align="left" hspace="12" width="204" height="53"/>
+
+<span id="Frame13" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 105%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#bcbec0"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">223,
+	Your Street, Your City AB</font></font></font></font></font></p>
+	<p align="center" style="line-height: 105%; margin-bottom: 0cm"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#bcbec0"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">New
+	york, USA</font></font></font></font></font></p>
+</span>
+<img src="template-018_html_ba7353e.gif" name="Shape3" alt="Shape3" align="left" hspace="12" vspace="1" width="169" height="24"/>
+
+<img src="template-018_html_cb7b98a6.gif" name="Shape1" alt="Shape1" align="left" hspace="12" width="50" height="16"/>
+
+<span id="Frame1" dir="ltr" style="float: left; width: 1.31cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt">Sincerely</span></font></font></font></font></p>
+</span>
+<img src="template-018_html_7e034814.gif" name="Shape8" alt="Shape8" align="left" hspace="13" vspace="1" width="21" height="20"/>
+
+<span id="Frame7" dir="ltr" style="float: left; width: 0.55cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Roboto Medium, serif">TO:</font></font></font></p>
+</span>
+<img src="template-018_html_25e654d5.gif" name="Shape7" alt="Shape7" align="left" hspace="12" vspace="1" width="66" height="22"/>
+
+<span id="Frame6" dir="ltr" style="float: left; width: 1.74cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Roboto Medium, serif"><span style="letter-spacing: 0.5pt"><b>Smart
+	Mir</b></span></font></font></font></p>
+</span>
+<img src="template-018_html_16b86f65.gif" name="Shape5" alt="Shape5" align="left" hspace="12" vspace="1" width="148" height="34"/>
+
+<span id="Frame4" dir="ltr" style="float: left; width: 3.91cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#363636"><font face="Roboto, serif"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 0.7pt">Dear
+	Sir/Madam</span></font></font></font></font></p>
+</span>
+<img src="template-018_html_548dc93d.gif" name="Shape6" alt="Shape6" align="left" hspace="13" vspace="1" width="794" height="28"/>
+
+<span id="Frame5" dir="ltr" style="float: left; width: 3.41cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.5pt">General
+	Manager</span></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0cm"><font face="Calibri, serif"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.5pt">Expert
+	Design Company</span></font></font></font></font></p>
+</span>
+<img src="template-018_html_9bc8384d.gif" name="Shape10" alt="Shape10" align="left" hspace="12" vspace="1" width="31" height="31"/>
+
+<img src="template-018_html_7d2daf39.gif" name="Shape11" alt="Shape11" align="left" hspace="12" width="16" height="18"/>
+
+<img src="template-018_html_27f87156.gif" name="Shape12" alt="Shape12" align="left" hspace="12" vspace="1" width="131" height="37"/>
+
+<span id="Frame9" dir="ltr" style="float: left; width: 3.47cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Roboto, serif"><font size="5" style="font-size: 18pt">Cover
+	Letter</font></font></font></font></p>
+</span>
+<img src="template-018_html_8a6bc7df.gif" name="Shape2" alt="Shape2" align="left" hspace="13" vspace="1" width="62" height="20"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 1.65cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#363636"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt"><b>John
+	Smith</b></span></font></font></font></font></p>
+</span>
+<img src="template-018_html_90bc6bac.gif" name="Shape4" alt="Shape4" align="left" hspace="12" vspace="1" width="375" height="542"/>
+
+<span id="Frame3" dir="ltr" style="float: left; width: 9.91cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 0.53cm; margin-bottom: 0cm"><a name="_GoBack"></a>
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Lorem
+	tempus id fringilla ut molestie ac nibh. Integer ornare diam in
+	molestie pretium.consectetur adipiscing elit. Nulla lorem lectus,
+	tempus id fringilla ut molestie ac nibh. Integer ornare diam in
+	molestie pretium. consectetur adipiscing elit. Nulla lorem lectus
+	pretium.consectetur adipiscing elit.Nulla lorem lectus, tempus id
+	fringilla ut molestie ac nibh. Integer ornare diam in molestie
+	pretium. consectetur. consectetur adipiscing elit. Nulla lorem
+	lectus, tempus id fringilla ut molestie ac nibh. Integer ornare diam
+	in molestie  pretium. consectetur adipiscing elit. Nulla lorem
+	lectus.</font></font></font></font></font></p>
+	<p align="justify" style="line-height: 0.53cm; margin-top: 0.49cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Integer
+	ornare diam in molestie pretium.consectetur adipiscing elit. Nulla
+	lorem lectus, tempus id fringilla ut molestie ac nibh. Integer
+	ornare molestie ac nibh. Integer ornare diam in molestie pretium.
+	consectetur adipiscing elit Nulla lorem lectus.  tempus id fringilla
+	.  onsectetur adipiscing elit.Nulla lorem lectus, tempus id
+	fringilla ut molestie ac nibh. Integer ornare diam in molestie
+	pretium. </font></font></font></font></font>
+	</p>
+	<p align="justify" style="line-height: 0.53cm; margin-top: 0.49cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p align="justify" style="line-height: 0.53cm; margin-bottom: 0cm"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">consectetur.
+	consectetur adipiscing elit. Nulla lorem lectus, tempus id fringilla
+	ut molestie ac nibh. Integer ornare diam in molestie pretium.
+	consectetur. Integer ornare diam in molestie pretium. consectetur
+	adipiscing elit. Nulla lorem lectus pretium.consectetur adipiscing
+	elit.Nulla lorem lectus, tempus id fringilla ut molestie ac nibh.
+	Integer ornare diam in molestie.</font></font></font></font></font></p>
+</span>
+<img src="template-018_html_7cb8bb44.gif" name="Shape9" alt="Shape9" align="left" hspace="12" vspace="1" width="203" height="33"/>
+
+<span id="Frame8" dir="ltr" style="float: left; width: 5.36cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 107%; margin-bottom: 0.28cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">15,September,
+	2017</span></font></font></font></font></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

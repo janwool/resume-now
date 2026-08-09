@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Piash Ismail"/>
+	<meta name="created" content="2016-09-04T10:26:00"/>
+	<meta name="changedby" content="Piash Ismail"/>
+	<meta name="changed" content="2016-09-04T11:52:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 108%; margin-bottom: 0cm">
+<img src="template-030_html_d2f6274d.gif" name="Shape1" alt="Shape1" align="left" width="794" height="1122"/>
+<span id="textbox59" dir="ltr" style="float: left; width: 9.14cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Porttitor
+	amet massa Done cporttitor dolor et nisl molestie ium feliscon lore
+	ipsum tfringilla. delislibero</font></font></font></font></p>
+	<p style="line-height: 0.42cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</span>
+<span id="textbox58" dir="ltr" style="float: left; width: 9.14cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">ontrary
+	to popular belief, Lorem Ipsum is not simply </font></font></font></font>
+	</p>
+	<p style="line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">random
+	text. It has roots iece of classical Latin literature</font></font></font></font></p>
+	<p style="line-height: 0.42cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</span>
+<span id="textbox57" dir="ltr" style="float: left; width: 9.14cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Mmet
+	massa Done cporttitor dolor et nisl molestie eliscon lore 
+	tfringilla. lorem ipsum. ollcitudin est dolor. lorem ipsu</font></font></font></font></p>
+	<p style="line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">ontrary
+	to popular belief, Lorem Ipsum</font></font></font></font></p>
+	<p style="line-height: 0.42cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</span>
+<span id="textbox56" dir="ltr" style="float: left; width: 9.14cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Porttitor
+	amet massa Done cporttitor dolor et nisl molestie ium feliscon lore
+	ngilla. delislibero lorem ipsum. ollcitudin est dolor  time.ontrary
+	to popular lorem </font></font></font></font>
+	</p>
+	<p style="line-height: 0.42cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</span>
+<span id="textbox55" dir="ltr" style="float: left; width: 9.14cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Mmet
+	massa Done cporttitor dolor et nisl molestie ium lom mfeliscon lore 
+	tfringilla. bero em ipsum. Ollcitudin</font></font></font></font></font></p>
+	<p style="line-height: 0.42cm; margin-bottom: 0cm"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">est
+	dolor. ontrary to popular belief</font></font></font></font></font></p>
+</span>
+<span id="textbox54" dir="ltr" style="float: left; width: 5.13cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#373737"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>1234
+	Avenue, Strate, Melbourne</b></font></font></font></font></font></p>
+	<p style="line-height: 0.42cm; margin-bottom: 0cm"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#373737"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Australia
+	AB 223</b></font></font></font></font></font></p>
+</span>
+<span id="textbox53" dir="ltr" style="float: left; width: 6.44cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="7" style="font-size: 39pt"><b>WAULSON</b></font></font></font></font></p>
+</span>
+<span id="textbox52" dir="ltr" style="float: left; width: 3.2cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="7" style="font-size: 39pt">PAUL</font></font></font></font></p>
+</span>
+<span id="textbox51" dir="ltr" style="float: left; width: 4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="3" style="font-size: 12pt"><b>Web
+	Developer / Art</b></font></font></font></font></p>
+</span>
+<span id="textbox50" dir="ltr" style="float: left; width: 3.82cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#59595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">yourname22@gmail.com</font></font></font></font></p>
+</span>
+<span id="textbox49" dir="ltr" style="float: left; width: 3.65cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#59595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">www.domainname.com</font></font></font></font></p>
+</span>
+<span id="textbox48" dir="ltr" style="float: left; width: 2.93cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#59595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">+00
+	1234 567 889</font></font></font></font></p>
+</span>
+<span id="textbox47" dir="ltr" style="float: left; width: 2.82cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="4" style="font-size: 14pt"><b>EXPERIENCE</b></font></font></font></font></p>
+</span>
+<span id="textbox46" dir="ltr" style="float: left; width: 1.95cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">2013
+	- 2015</font></font></font></font></p>
+</span>
+<span id="textbox45" dir="ltr" style="float: left; width: 3.76cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt">Vison
+	Multitune.net</font></font></font></font></p>
+</span>
+<span id="textbox44" dir="ltr" style="float: left; width: 4.49cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#2e2e2e"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt"><b>Senior
+	Web Developer</b></font></font></font></font></p>
+</span>
+<span id="textbox43" dir="ltr" style="float: left; width: 1.95cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">2011
+	- 2013</font></font></font></font></p>
+</span>
+<span id="textbox42" dir="ltr" style="float: left; width: 3.65cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt"><b>Soft
+	Tech Lomited</b></font></font></font></font></p>
+</span>
+<span id="textbox41" dir="ltr" style="float: left; width: 4.15cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#2e2e2e"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt"><b>Lead
+	Web Developer</b></font></font></font></font></p>
+</span>
+<span id="textbox40" dir="ltr" style="float: left; width: 1.86cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">2008-
+	2011</font></font></font></font></p>
+</span>
+<span id="textbox39" dir="ltr" style="float: left; width: 4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt">Creative
+	Corporation</font></font></font></font></p>
+</span>
+<span id="textbox38" dir="ltr" style="float: left; width: 4.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#2e2e2e"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt"><b>Web
+	&amp; Graphic Designer</b></font></font></font></font></p>
+</span>
+<span id="textbox37" dir="ltr" style="float: left; width: 2.59cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="4" style="font-size: 14pt"><b>EDUCATION</b></font></font></font></font></p>
+</span>
+<span id="textbox36" dir="ltr" style="float: left; width: 1.95cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">2007
+	- 2012</font></font></font></font></p>
+</span>
+<span id="textbox35" dir="ltr" style="float: left; width: 3.13cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt">Asian
+	University</font></font></font></font></p>
+</span>
+<span id="textbox34" dir="ltr" style="float: left; width: 3.5cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#2e2e2e"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt"><b>Bachelors
+	Of Arts</b></font></font></font></font></p>
+</span>
+<span id="textbox33" dir="ltr" style="float: left; width: 1.95cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">2000
+	- 2006</font></font></font></font></p>
+</span>
+<span id="textbox32" dir="ltr" style="float: left; width: 3.04cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm"><a name="_GoBack"></a>
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt">Creative
+	School</font></font></font></font></p>
+</span>
+<span id="textbox31" dir="ltr" style="float: left; width: 6.24cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#2e2e2e"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt"><b>Higher
+	Secondary Examination</b></font></font></font></font></p>
+</span>
+<span id="textbox30" dir="ltr" style="float: left; width: 1.63cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="4" style="font-size: 14pt"><b>SKILLS</b></font></font></font></font></p>
+</span>
+<span id="textbox29" dir="ltr" style="float: left; width: 1.1cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Joomla</font></font></font></font></p>
+</span>
+<span id="textbox28" dir="ltr" style="float: left; width: 1.68cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Photoshop</font></font></font></font></p>
+</span>
+<span id="textbox27" dir="ltr" style="float: left; width: 1.04cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Jquery</font></font></font></font></p>
+</span>
+<span id="textbox26" dir="ltr" style="float: left; width: 0.99cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">HTML</font></font></font></font></p>
+</span>
+<span id="textbox25" dir="ltr" style="float: left; width: 1.71cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Wordpress</font></font></font></font></p>
+</span>
+<span id="textbox24" dir="ltr" style="float: left; width: 2.45cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt">Professional</font></font></font></font></p>
+</span>
+<span id="textbox23" dir="ltr" style="float: left; width: 1.37cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Innovate</font></font></font></font></p>
+</span>
+<span id="textbox22" dir="ltr" style="float: left; width: 1.74cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Hard
+	Work</font></font></font></font></p>
+</span>
+<span id="textbox21" dir="ltr" style="float: left; width: 2.45cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Communication</font></font></font></font></p>
+</span>
+<span id="textbox20" dir="ltr" style="float: left; width: 1.65cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Teamwork</font></font></font></font></p>
+</span>
+<span id="textbox19" dir="ltr" style="float: left; width: 1.52cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Creativity</font></font></font></font></p>
+</span>
+<span id="textbox18" dir="ltr" style="float: left; width: 1.72cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="3" style="font-size: 12pt">Personal</font></font></font></font></p>
+</span>
+<span id="textbox17" dir="ltr" style="float: left; width: 2.99cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Kelson Sans, serif"><font size="4" style="font-size: 14pt"><b>REFERENCES</b></font></font></font></font></p>
+</span>
+<span id="textbox16" dir="ltr" style="float: left; width: 2.21cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Jonathon
+	Deo</b></font></font></font></font></p>
+</span>
+<span id="textbox15" dir="ltr" style="float: left; width: 3.55cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71"> <font face="Calibri, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">dustinpaul@gmail.com</font></font></font></font></p>
+</span>
+<span id="textbox14" dir="ltr" style="float: left; width: 0.09cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">:</font></font></font></font></p>
+</span>
+<span id="textbox13" dir="ltr" style="float: left; width: 0.86cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Email</b></font></font></font></font></p>
+</span>
+<span id="textbox12" dir="ltr" style="float: left; width: 2.52cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71"> <font face="Calibri, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">+555
+	123 5566</font></font></font></font></p>
+</span>
+<span id="textbox11" dir="ltr" style="float: left; width: 0.09cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">:</font></font></font></font></p>
+</span>
+<span id="textbox10" dir="ltr" style="float: left; width: 1.01cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Phone</b></font></font></font></font></p>
+</span>
+<span id="textbox9" dir="ltr" style="float: left; width: 1.29cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Director</font></font></font></font></p>
+</span>
+<span id="textbox8" dir="ltr" style="float: left; width: 1.82cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#373737"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Jabin
+	Smith</b></font></font></font></font></p>
+</span>
+<span id="textbox7" dir="ltr" style="float: left; width: 3.91cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71"> <font face="Calibri, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">jenson
+	smith@gmail.com</font></font></font></font></p>
+</span>
+<span id="textbox6" dir="ltr" style="float: left; width: 0.09cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">:</font></font></font></font></p>
+</span>
+<span id="textbox5" dir="ltr" style="float: left; width: 0.86cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Email</b></font></font></font></font></p>
+</span>
+<span id="textbox4" dir="ltr" style="float: left; width: 2.73cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font color="#6d6e71"> <font face="Calibri, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">+123
+	5556 4455</font></font></font></font></p>
+</span>
+<span id="textbox3" dir="ltr" style="float: left; width: 0.09cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">:</font></font></font></font></p>
+</span>
+<span id="textbox2" dir="ltr" style="float: left; width: 1.01cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Phone</b></font></font></font></font></p>
+</span>
+<span id="textbox1" dir="ltr" style="float: left; width: 2.39cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt">Web
+	developer</font></font></font></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

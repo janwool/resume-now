@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>cv cover</title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Ze"/>
+	<meta name="created" content="2020-05-23T15:57:00"/>
+	<meta name="changedby" content="Ze"/>
+	<meta name="changed" content="2020-05-23T15:57:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Creator" content="Adobe Illustrator CC 23.0 (Windows)"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 1.59cm; margin-right: 2.72cm; margin-bottom: 0.49cm }
+		p { direction: ltr; widows: 0; margin-bottom: 0cm; orphans: 0; text-align: start; background: transparent }
+		p.western { font-family: "Open Sans", sans-serif; font-size: 9pt }
+		p.cjk { font-family: "Open Sans"; font-size: 9pt }
+		p.ctl { font-family: "Open Sans"; font-size: 9pt }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p class="cjk">
+<span class="sd-abs-pos" style="position: absolute; top: -0cm; left: -1.59cm; width: 794px"><img src="template-011_html_da981aa1.gif" name="Shape1" alt="Shape1" align="left" hspace="1" vspace="1" width="794" height="317"/>
+</span><span id="textbox2" dir="ltr" style="position: absolute; top: 4.57cm; left: 1.78cm; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 0.53cm">
+	<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font face="Georgia, serif"><font size="4" style="font-size: 14pt">GRAPHIC
+	DESIGNER</font></font></font></font></font></p>
+</span>
+<span id="textbox1" dir="ltr" style="position: absolute; top: 3.24cm; left: 1.78cm; width: 7.82cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 1.54cm">
+	<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font face="Poppins, sans-serif"><font size="7" style="font-size: 31pt"><b>Jessica
+	Tessy</b></font></font></font></font></font></p>
+</span><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.01cm"><br/>
+
+</p>
+<p class="cjk" style="margin-left: 1.95cm; margin-top: 0.17cm"><font face="Open Sans, sans-serif"><font color="#f4a24a"><font face="Arial, sans-serif"><span style="letter-spacing: -0.2pt">TO	</span></font></font><font color="#f4a24a"><font face="Arial, sans-serif">17
+June</font></font><font color="#f4a24a"><font face="Arial, sans-serif"><span style="letter-spacing: 0.2pt">
+</span></font></font><font color="#f4a24a"><font face="Arial, sans-serif">2016</font></font></font></p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.22cm; margin-left: 1.95cm"><font face="Open Sans, sans-serif"><font color="#f4a24a"><font face="Georgia, serif">Name</font></font></font></p>
+<p class="cjk" style="margin-right: 11.19cm; margin-left: 1.95cm; line-height: 137%; margin-top: 0.13cm">
+<font face="Open Sans, sans-serif"><font color="#f4a24a"><font face="Georgia, serif">HRD
+Company Address</font></font></font></p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.18cm; margin-left: 1.95cm"><font face="Open Sans, sans-serif"><font color="#444749"><font face="Open Sans SemiBold, sans-serif"><b>Sir/Madam</b></font></font></font></p>
+<p class="cjk" style="margin-top: 0cm"><br/>
+
+</p>
+<p class="cjk" align="justify" style="margin-right: 0.2cm; margin-left: 1.95cm; line-height: 114%">
+<font face="Open Sans, sans-serif"><font color="#444749">Lorem ipsum
+dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincid- unt ut laoreet dolore magna aliquam erat volutpat. Ut
+wisi enim ad minim veniam, quis nostrud exerci</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">tation</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">ullamcorper</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">suscipit</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">lobortis</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">nisl</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">ut</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">aliquip</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">ex</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">ea</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">commodo</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">consequat.</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">Duis</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">autem</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">vel eum iriure dolor in hendrerit
+in vulputate velit esse molestie</font><font color="#444749"><span style="letter-spacing: -0.4pt">
+</span></font><font color="#444749">consequat.</font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+</p>
+<p class="cjk" align="justify" style="margin-right: 0.2cm; margin-left: 1.95cm; line-height: 114%">
+<font face="Open Sans, sans-serif"><font color="#444749">vel</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">illum</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">dolore</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">eu</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">feugiat</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">nulla</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">facilisis</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">at</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">vero</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">eros</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">et</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">accumsan</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">et</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">iusto</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">odio</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">dignissim</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">qui</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">blandit praesent luptatum zzril
+delenit augue duis dolore te feugait nulla</font><font color="#444749"><span style="letter-spacing: -0.2pt">
+</span></font><font color="#444749">facilisi.</font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+</p>
+<p class="cjk" align="justify" style="margin-right: 0.2cm; margin-left: 1.95cm; line-height: 114%">
+<font face="Open Sans, sans-serif"><font color="#444749">Lorem</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">ipsum</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">dolor</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">sit</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">amet,</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">cons</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">ectetuer</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">adipiscing</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">elit,</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">sed</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">diam</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">nonummy</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">nibh</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">euismod</font><font color="#444749"><span style="letter-spacing: -0.3pt">
+</span></font><font color="#444749">tincid- unt ut laoreet dolore
+magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+ex ea commodo</font><font color="#444749"><span style="letter-spacing: -0.6pt">
+</span></font><font color="#444749">consequat.</font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+</p>
+<p class="cjk" align="justify" style="margin-left: 1.95cm"><font face="Open Sans, sans-serif"><font color="#444749">Lorem
+ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+nibh euismod tincid-</font></font></p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.01cm"><br/>
+
+</p>
+<p class="cjk" style="line-height: 0.31cm; margin-top: 0.14cm; margin-left: 2.02cm">
+<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#3d3d3d"><font face="Gotham Book, sans-serif"><font size="2" style="font-size: 9pt"><i>Sincerely</i></font></font></font></font></font></p>
+<p class="cjk" style="line-height: 1.5cm; margin-left: 1.83cm"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#3d3d3d"><font face="Embassy BT, sans-serif"><font size="7" style="font-size: 35pt">Jessica
+Tessy</font></font></font></font></font></p>
+<p class="cjk" style="margin-top: 0.06cm; margin-left: 2.02cm"><font face="Open Sans, sans-serif"><font color="#3d3d3d"><font face="Arial, sans-serif">JESSICA
+TESSY</font></font></font></p>
+</body>
+</html>

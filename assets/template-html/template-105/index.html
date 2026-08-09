@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="nancy"/>
+	<meta name="created" content="2018-12-12T02:49:00"/>
+	<meta name="changedby" content="K"/>
+	<meta name="changed" content="2018-12-12T03:13:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Company" content="Kingsoft"/>
+	<meta name="KSOProductBuildVer" content="2052-10.1.0.7698"/>
+	<meta name="KSORubyTemplateID" content="4"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 0; margin-bottom: 0.25cm; orphans: 0; line-height: 115%; text-align: justify; background: transparent }
+		p.western { font-size: 10pt }
+		p.cjk { font-size: 10pt }
+		p.ctl { font-size: 12pt }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" bgcolor="#f6f6f6" dir="ltr"><p class="cjk" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><img src="template-105_html_1ebe653d.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="257" height="10"/>
+<img src="template-105_html_1ebe653d.gif" name="Shape9" alt="Shape9" align="left" hspace="1" vspace="1" width="257" height="10"/>
+<img src="template-105_html_1ebe653d.gif" name="Shape10" alt="Shape10" align="left" hspace="1" vspace="1" width="257" height="10"/>
+<img src="template-105_html_1ebe653d.gif" name="Shape11" alt="Shape11" align="left" hspace="1" vspace="1" width="257" height="10"/>
+<img src="template-105_html_1ebe653d.gif" name="Shape12" alt="Shape12" align="left" hspace="1" vspace="1" width="257" height="10"/>
+<img src="template-105_html_1ebe653d.gif" name="Shape13" alt="Shape13" align="left" hspace="1" vspace="1" width="257" height="10"/>
+<img src="template-105_html_b5f6081d.gif" name="Shape20" alt="Shape20" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-105_html_b5f6081d.gif" name="Shape28" alt="Shape28" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-105_html_b5f6081d.gif" name="Shape36" alt="Shape36" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-105_html_a0c37279.gif" name="Shape58" alt="Shape58" align="left" hspace="1" vspace="1" width="305" height="1126"/>
+<img src="template-105_html_b20fdf1d.gif" name="Shape45" alt="Shape45" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-105_html_b3e6c523.gif" name="Shape24" alt="Shape24" align="left" width="347" height="1"/>
+<img src="template-105_html_b3e6c523.gif" name="Shape23" alt="Shape23" align="left" width="347" height="1"/>
+<img src="template-105_html_b22be49d.gif" name="Shape14" alt="Shape14" align="left" hspace="1" vspace="1" width="233" height="10"/>
+<img src="template-105_html_2d60962d.gif" name="Shape15" alt="Shape15" align="left" hspace="1" vspace="1" width="184" height="10"/>
+<img src="template-105_html_fc313bcd.gif" name="Shape16" alt="Shape16" align="left" hspace="1" vspace="1" width="147" height="10"/>
+<img src="template-105_html_7f7a449b.gif" name="Shape17" alt="Shape17" align="left" hspace="1" vspace="1" width="206" height="10"/>
+<img src="template-105_html_cfaa9647.gif" name="Shape18" alt="Shape18" align="left" hspace="1" vspace="1" width="125" height="10"/>
+<img src="template-105_html_cf1a0d31.gif" name="Shape19" alt="Shape19" align="left" hspace="1" vspace="1" width="227" height="10"/>
+<img src="template-105_html_18cb2504.gif" name="Shape21" alt="Shape21" align="left" hspace="1" width="18" height="18"/>
+<img src="template-105_html_a76779df.gif" name="Shape22" alt="Shape22" align="left" width="58" height="32"/>
+<img src="template-105_html_964a5ea.gif" name="Shape25" alt="Shape25" align="left" hspace="1" vspace="1" width="1" height="164"/>
+<img src="template-105_html_8b819147.gif" name="Shape26" alt="Shape26" align="left" hspace="1" vspace="1" width="8" height="8"/>
+<img src="template-105_html_352ba708.gif" name="Shape27" alt="Shape27" align="left" hspace="1" vspace="1" width="8" height="8"/>
+<img src="template-105_html_f8faa429.gif" name="Shape29" alt="Shape29" align="left" vspace="1" width="20" height="16"/>
+<img src="template-105_html_5eb65856.gif" name="Shape30" alt="Shape30" align="left" width="109" height="38"/>
+<img src="template-105_html_7436a3dd.gif" name="Shape31" alt="Shape31" align="left" hspace="1" vspace="1" width="1" height="353"/>
+<img src="template-105_html_8b819147.gif" name="Shape32" alt="Shape32" align="left" hspace="1" vspace="1" width="8" height="8"/>
+<img src="template-105_html_8b819147.gif" name="Shape33" alt="Shape33" align="left" hspace="1" vspace="1" width="8" height="8"/>
+<img src="template-105_html_8b819147.gif" name="Shape34" alt="Shape34" align="left" hspace="1" vspace="1" width="8" height="8"/>
+<img src="template-105_html_352ba708.gif" name="Shape35" alt="Shape35" align="left" hspace="1" vspace="1" width="8" height="8"/>
+<img src="template-105_html_2dec4e55.gif" name="Shape37" alt="Shape37" align="left" hspace="1" vspace="1" width="18" height="15"/>
+<img src="template-105_html_7794a59c.gif" name="Shape38" alt="Shape38" align="left" width="118" height="45"/>
+<img src="template-105_html_b20fdf1d.gif" name="Shape39" alt="Shape39" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-105_html_b20fdf1d.gif" name="Shape41" alt="Shape41" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-105_html_b20fdf1d.gif" name="Shape43" alt="Shape43" align="left" hspace="1" vspace="1" width="31" height="31"/>
+<img src="template-105_html_35a1f197.gif" name="Shape52" alt="Shape52" align="left" width="199" height="1"/>
+<img src="template-105_html_35a1f197.gif" name="Shape53" alt="Shape53" align="left" width="199" height="1"/>
+<img src="template-105_html_38d30bef.gif" name="Shape54" alt="Shape54" align="left" width="203" height="45"/>
+<img src="template-105_html_7cb8bb44.gif" name="Shape55" alt="Shape55" align="left" width="203" height="33"/>
+<img src="template-105_html_62940f0.gif" name="Shape56" alt="Shape56" align="left" width="203" height="35"/>
+<img src="template-105_html_53d5bba1.gif" name="Shape57" alt="Shape57" align="left" width="217" height="142"/>
+<img src="template-105_html_18c4c8ac.gif" name="Shape47" alt="Shape47" align="left" width="204" height="40"/>
+<img src="template-105_html_7c8fffde.gif" name="Shape48" alt="Shape48" align="left" width="204" height="32"/>
+<img src="template-105_html_7c8fffde.gif" name="Shape49" alt="Shape49" align="left" width="204" height="32"/>
+<img src="template-105_html_7c8fffde.gif" name="Shape50" alt="Shape50" align="left" width="204" height="32"/>
+<img src="template-105_html_6f460217.gif" name="Shape51" alt="Shape51" align="left" width="204" height="53"/>
+<img src="template-105_html_57e72cac.gif" name="Shape7" alt="Shape7" align="left" width="350" height="89"/>
+<img src="template-105_html_4018e9bf.gif" name="图片 0" alt="图片 0" align="left" hspace="1" vspace="1" width="163" height="163"/>
+<img src="template-105_html_57e72cac.gif" name="Shape6" alt="Shape6" align="left" width="350" height="89"/>
+<img src="template-105_html_57e72cac.gif" name="Shape5" alt="Shape5" align="left" width="350" height="89"/>
+<img src="template-105_html_4d76ea26.gif" name="Shape4" alt="Shape4" align="left" width="350" height="88"/>
+<img src="template-105_html_4d76ea26.gif" name="Shape3" alt="Shape3" align="left" width="350" height="88"/>
+<img src="template-105_html_1699d597.gif" name="Shape1" alt="Shape1" align="left" width="103" height="166"/>
+<img src="template-105_html_ff5f74a8.gif" name="Shape46" alt="Shape46" align="left" hspace="1" vspace="1" width="14" height="14"/>
+<img src="template-105_html_34ff2ec4.gif" name="Shape44" alt="Shape44" align="left" hspace="1" vspace="1" width="15" height="11"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 2.72cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 0.64cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Word
+	press</font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.64cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">HTML</font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.64cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Word</font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.64cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">PPT</font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.64cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Excel</font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.64cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Photoshop</font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.64cm"><br/>
+
+	</p>
+</span>
+<img src="template-105_html_9325cb8.gif" name="Shape42" alt="Shape42" align="left" hspace="1" vspace="1" width="17" height="17"/>
+
+<img src="template-105_html_4d76ea26.gif" name="Shape2" alt="Shape2" align="left" width="350" height="88"/>
+
+<img src="template-105_html_ce17f432.gif" name="Shape40" alt="Shape40" align="left" hspace="1" vspace="1" width="11" height="17"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 9.27cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 0.53cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><b>Bachelors
+	Of Arts </b></font></font></span></font><font color="#414042"><b>丨</b></font><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><b>Creative
+	School</b></font></font><font color="#414042"><font face="Roboto, serif"><b>
+	</b></font></font></span></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.53cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>Jan</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	20</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>00</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	- 20</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>04</b></font></font></font></span></font></p>
+	<p style="margin-top: 0.08cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Relevant
+	Coursework: Macroeconomic Theory, Micro-economic Theory, Principles
+	of Accounting.</font></font></font></span></font></font></p>
+</span>
+<span id="Frame3" dir="ltr" style="float: left; width: 9.27cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 0.53cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><b>Master
+	Of Science</b></font></span></font><b>丨</b><font face="Calibri, serif"><span lang="en-US"><font face="Roboto, serif"><b>Agrani
+	University </b></font></span></font></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.53cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>Aug</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	20</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>05</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	- </b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>Jul
+	</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>20</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>08</b></font></font></font></span></font></p>
+	<p style="margin-top: 0.08cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Major
+	Courses: International Economic Law, Accounting, Marketing,
+	International Finance, etc.</font></font></font></span></font></font></p>
+</span>
+<span id="Frame4" dir="ltr" style="float: left; width: 9.27cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 0.53cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><b>Internship</b></font></span></font><b>丨</b><font face="Calibri, serif"><span lang="en-US"><font face="Roboto, serif"><b>United
+	Securities </b></font></span></font></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.53cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>Apr</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	20</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>06</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	- </b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>Jan</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>20</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>07</b></font></font></font></span></font></p>
+	<p style="margin-top: 0.08cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Coordinated
+	affairs of the society including raising funds from corporate
+	sponsors for our society.</font></font></font></span></font></font></p>
+</span>
+<span id="Frame5" dir="ltr" style="float: left; width: 9.27cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 0.53cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><b>Assistant</b></font></span></font><b>丨</b><font face="Calibri, serif"><span lang="en-US"><font face="Roboto, serif"><b>Horizon
+	Market Research </b></font></span></font></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.53cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>Feb</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	20</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>07</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	- </b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>Jun</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	20</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>09</b></font></font></font></span></font></p>
+	<p style="margin-top: 0.08cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Totally
+	provided 20 positions for schoolmates; invited 8 enterprises to take
+	part in annual school recruitment.</font></font></font></span></font></font></p>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 9.27cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 0.53cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><b>Marketing
+	Manager</b></font></span></font><b>丨</b><font face="Calibri, serif"><span lang="en-US"><font face="Roboto, serif"><b>Bank
+	of China</b></font></span></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.53cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>J</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>a</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>n
+	201</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>1</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	- M</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>ar</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>
+	201</b></font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>6</b></font></font></font></span></font></p>
+	<p style="margin-top: 0.08cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Successfully
+	arranged and conducted phone and indoor interviews across the city.</font></font></font></span></font></font></p>
+</span>
+<span id="Frame7" dir="ltr" style="float: left; width: 9.27cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 0.53cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><b>Researcher</b></font></span></font><b>丨</b><font face="Calibri, serif"><span lang="en-US"><font face="Roboto, serif"><b>Daylight
+	(China)</b></font></span></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.53cm"><font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><b>Jun
+	2010 - May 2013</b></font></font></font></span></font></p>
+	<p style="margin-top: 0.08cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#6d6e71"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">Fill
+	in the bank confirmation according to the customer’s bank
+	details.Communicate with bank staff for related issues.</font></font></font></span></font></font></p>
+</span>
+<span id="Frame8" dir="ltr" style="float: left; width: 1.54cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="5" style="font-size: 18pt">Skills</font></font></font></span></font></p>
+</span>
+<span id="Frame9" dir="ltr" style="float: left; width: 2.88cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="5" style="font-size: 18pt">Education</font></font></font></span></font></p>
+</span>
+<span id="Frame10" dir="ltr" style="float: left; width: 3.14cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="5" style="font-size: 18pt">Experience</font></font></font></span></font></p>
+</span>
+<span id="Frame11" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #f6f6f6"><p align="center" style="margin-bottom: 0.28cm; line-height: 105%">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="5" style="font-size: 18pt"><b>Contact</b></font></font></font></span></font></font></p>
+</span>
+<span id="Frame12" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #f6f6f6"><p align="center" style="margin-bottom: 0.28cm; line-height: 105%">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">00
+	1234 567 889</font></font></font></span></font></font></p>
+</span>
+<span id="Frame13" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #f6f6f6"><p align="center" style="margin-bottom: 0.28cm; line-height: 105%"><a name="_GoBack"></a>
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">1906222627@qq.com</font></font></font></span></font></font></p>
+</span>
+<span id="Frame14" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #f6f6f6"><p align="center" style="margin-bottom: 0.28cm; line-height: 105%">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">www.domainname.com</font></font></font></span></font></font></p>
+</span>
+<span id="Frame15" dir="ltr" style="float: left; width: 5.4cm; border: none; padding: 0cm; background: #f6f6f6"><p align="center" style="margin-bottom: 0cm; line-height: 105%">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">223,
+	Your Street, Your City AB</font></font></font></span></font></font></p>
+	<p align="center" style="margin-bottom: 0cm; line-height: 105%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">New
+	</font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">York</font></font></font><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt">,
+	USA</font></font></font></span></font></font></p>
+</span>
+<span id="Frame16" dir="ltr" style="float: left; width: 5.36cm; border: none; padding: 0cm; background: #f6f6f6"><p align="center" style="margin-bottom: 0.28cm; line-height: 107%">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="6" style="font-size: 25pt"><b>John
+	Smith</b></font></font></font></span></font></font></p>
+</span>
+<span id="Frame17" dir="ltr" style="float: left; width: 5.36cm; border: none; padding: 0cm; background: #f6f6f6"><p align="center" style="margin-bottom: 0.28cm; line-height: 107%">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif">Web
+	Developer</font></font></span></font></font></p>
+</span>
+<span id="Frame18" dir="ltr" style="float: left; width: 5.36cm; border: none; padding: 0cm; background: #f6f6f6"><p align="center" style="margin-bottom: 0.28cm; line-height: 105%">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="5" style="font-size: 18pt"><b>About
+	Me</b></font></font></font></span></font></font></p>
+	<p align="center" style="margin-bottom: 0.28cm; line-height: 105%"><font color="#414042">&nbsp;</font></p>
+</span>
+<span id="Frame19" dir="ltr" style="float: left; width: 5.75cm; border: none; padding: 0cm; background: #f6f6f6"><p style="margin-bottom: 0.28cm; line-height: 105%">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.1pt">I’m
+	familiar to related regulations and institutions, thus able to
+	control the risk of bank operation.</span></font></font></font></span></font></font></p>
+	<p style="margin-bottom: 0.28cm; line-height: 105%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><font color="#414042"><font face="Roboto, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.1pt">Last
+	but not least, I’m always honest by sticking to my promise and
+	always willing to communicate with others or to help them with a
+	great sense of teamwork.</span></font></font></font></span></font></font></p>
+	<p style="margin-bottom: 0.28cm; line-height: 105%"><br/>
+<br/>
+
+	</p>
+</span><br/>
+
+</p>
+</body>
+</html>

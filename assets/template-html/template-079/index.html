@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="小王子"/>
+	<meta name="created" content="2018-12-12T05:14:00"/>
+	<meta name="changedby" content="nancy"/>
+	<meta name="changed" content="2018-12-12T05:39:55"/>
+	<meta name="KSOProductBuildVer" content="2052-10.1.0.7698"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { text-align: justify; widows: 0; orphans: 0; line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		p.western { font-family: "Calibri", serif; so-language: en-US; font-size: 10pt }
+		p.cjk { font-family: "宋体"; font-size: 10pt; so-language: zh-CN }
+		p.ctl { so-language: ar-SA; font-size: 12pt; font-family:  }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" bgcolor="#ffffff" dir="ltr"><p class="cjk" style="line-height: 100%; margin-bottom: 0cm">
+<img src="template-079_html_9c5fde6a.gif" name="Shape1" alt="Shape1" align="left" hspace="1" vspace="1" width="797" height="327"/>
+<br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm"><a name="_GoBack"></a>
+ <img src="template-079_html_273eb0bb.gif" name="Shape3" alt="Shape3" align="left" hspace="1" vspace="1" width="96" height="96"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 1.3cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font color="#000000">&nbsp;</font></p>
+</span>
+<img src="template-079_html_273eb0bb.gif" name="Shape5" alt="Shape5" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 1.3cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font color="#000000">&nbsp;</font></p>
+</span>
+<img src="template-079_html_273eb0bb.gif" name="Shape7" alt="Shape7" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<span id="Frame3" dir="ltr" style="float: left; width: 1.3cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font color="#000000">&nbsp;</font></p>
+</span>
+<img src="template-079_html_273eb0bb.gif" name="Shape11" alt="Shape11" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<span id="Frame5" dir="ltr" style="float: left; width: 1.3cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font color="#000000">&nbsp;</font></p>
+</span>
+<img src="template-079_html_273eb0bb.gif" name="Shape13" alt="Shape13" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<span id="Frame6" dir="ltr" style="float: left; width: 1.3cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font color="#000000">&nbsp;</font></p>
+</span>
+<img src="template-079_html_273eb0bb.gif" name="Shape9" alt="Shape9" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<span id="Frame4" dir="ltr" style="float: left; width: 1.3cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font color="#000000">&nbsp;</font></p>
+</span>
+<img src="template-079_html_59740a97.gif" name="Shape27" alt="Shape27" align="left" width="745" height="1"/>
+
+<img src="template-079_html_59740a97.gif" name="Shape25" alt="Shape25" align="left" width="745" height="1"/>
+
+<img src="template-079_html_4f04534d.gif" name="Shape26" alt="Shape26" align="left" hspace="1" vspace="1" width="115" height="25"/>
+
+<span id="Frame16" dir="ltr" style="float: left; width: 3.04cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-top: 0.04cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="3" style="font-size: 12pt"><b>EXPERIENCE
+	</b></font></span></font></font>
+	</p>
+</span>
+<img src="template-079_html_a70647bc.gif" name="Shape24" alt="Shape24" align="left" hspace="1" vspace="1" width="154" height="25"/>
+
+<span id="Frame15" dir="ltr" style="float: left; width: 2.61cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-top: 0.04cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="3" style="font-size: 12pt"><b>EDUCATION
+	      </b></font></span></font></font>
+	</p>
+</span>
+<img src="template-079_html_59740a97.gif" name="Shape23" alt="Shape23" align="left" width="745" height="1"/>
+
+<img src="template-079_html_59740a97.gif" name="Shape21" alt="Shape21" align="left" width="745" height="1"/>
+
+<img src="template-079_html_58133154.gif" name="Shape22" alt="Shape22" align="left" hspace="1" vspace="1" width="65" height="25"/>
+
+<span id="Frame14" dir="ltr" style="float: left; width: 1.71cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-top: 0.04cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="3" style="font-size: 12pt"><b>SKILLS</b></font></span></font></font></p>
+</span>
+<img src="template-079_html_89d7b100.gif" name="Shape20" alt="Shape20" align="left" vspace="1" width="116" height="25"/>
+
+<span id="Frame13" dir="ltr" style="float: left; width: 3.07cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-top: 0.04cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="3" style="font-size: 12pt"><b>REFERENCES</b></font></span></font></font></p>
+</span>
+<img src="template-079_html_366f0aa5.gif" name="Shape43" alt="Shape43" align="left" width="389" height="75"/>
+
+<span id="Frame30" dir="ltr" style="float: left; width: 10.29cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#ffffff"><font size="7" style="font-size: 40pt"><b>LILY
+	ALLEN</b></font></font></span></font></p>
+</span>
+<img src="template-079_html_56febab.gif" name="Shape38" alt="Shape38" align="left" width="162" height="53"/>
+
+<span id="Frame27" dir="ltr" style="float: left; width: 4.3cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.53cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#ffffff"><font size="3" style="font-size: 12pt">Phone
+	- </font></font></span></font>
+	</p>
+	<p style="line-height: 0.53cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#ffffff"><font size="3" style="font-size: 12pt">(+86)
+	138-0013-800</font></font></span></font></p>
+</span>
+<img src="template-079_html_9eae6b6e.gif" name="Shape37" alt="Shape37" align="left" width="197" height="54"/>
+
+<span id="Frame26" dir="ltr" style="float: left; width: 5.2cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.53cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#ffffff"><font size="3" style="font-size: 12pt">Email
+	- </font></font></span></font>
+	</p>
+	<p style="line-height: 0.53cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#ffffff"><font size="3" style="font-size: 12pt">1906222627@qq.com</font></font></span></font></p>
+</span>
+<img src="template-079_html_b4d4e0a1.gif" name="Shape41" alt="Shape41" align="left" hspace="1" vspace="1" width="2" height="58"/>
+
+<img src="template-079_html_bc46820e.gif" name="Shape39" alt="Shape39" align="left" width="202" height="49"/>
+
+<span id="Frame28" dir="ltr" style="float: left; width: 5.34cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.53cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#ffffff"><font size="3" style="font-size: 12pt">Address
+	- </font></font></span></font>
+	</p>
+	<p style="line-height: 0.53cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#ffffff"><font size="3" style="font-size: 12pt">Street
+	line City, ST 10003</font></font></span></font></p>
+</span>
+<img src="template-079_html_b4d4e0a1.gif" name="Shape40" alt="Shape40" align="left" hspace="1" vspace="1" width="2" height="58"/>
+
+<img src="template-079_html_9e8caf90.gif" name="Shape42" alt="Shape42" align="left" width="399" height="49"/>
+
+<span id="Frame29" dir="ltr" style="float: left; width: 10.29cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#ffffff"><font size="6" style="font-size: 24pt"><i>CRAPHIC
+	&amp; WEB DESIGNER</i></font></font></span></font></p>
+</span>
+<img src="template-079_html_cdb52a76.gif" name="Shape36" alt="Shape36" align="left" width="737" height="371"/>
+
+<span id="Frame25" dir="ltr" style="float: left; width: 19.51cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><b>JOB
+	TITLE, </b></font><font color="#000000">Company Name</font></span></font></p>
+	<p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">City,
+	state—2012-2015</font></span></font></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.21cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Participated
+	in international petroleum exploration and development of Chinese
+	oil group co., LTD. The annual audit program. Investigated new
+	prospects and created comprehensive call lists of real estate
+	prospects.</font></span></font></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.21cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Accomplishments:</font></span></font></font></p>
+	<ul>
+		<li><p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Designed
+		and wrote games for CDMA mobile phone</font></span></font></font></p></li>
+		<li><p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Cooperated
+		and intercommunicated with teammates to ensure quality </font></span></font></font>
+		</p></li>
+		<li><p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Solved
+		in a creative way one technical problem of displaying cartoon</font></span></font></font></p></li>
+		<li><p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Completed
+		2 projects and submitted</font></span></font></font></p></li>
+	</ul>
+	<p style="line-height: 0.46cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.46cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><b>JOB
+	TITLE, </b></font><font color="#000000">Company Name</font></span></font></p>
+	<p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">City,
+	state—2012-2015</font></span></font></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.21cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Participated
+	in international petroleum exploration and development of Chinese
+	oil group co., LTD. The annual audit program. Investigated new
+	prospects and created comprehensive call lists of real estate
+	prospects.</font></span></font></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.21cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Accomplishments:</font></span></font></font></p>
+	<ul>
+		<li><p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Designed
+		and wrote games for CDMA mobile phone</font></span></font></font></p></li>
+		<li><p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Cooperated
+		and intercommunicated with teammates to ensure quality </font></span></font></font>
+		</p></li>
+		<li><p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Solved
+		in a creative way one technical problem of displaying cartoon</font></span></font></font></p></li>
+		<li><p style="line-height: 0.46cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Completed
+		2 projects and submitted</font></span></font></font></p></li>
+	</ul>
+</span>
+<img src="template-079_html_83e5b5d8.gif" name="Shape35" alt="Shape35" align="left" width="737" height="84"/>
+
+<span id="Frame24" dir="ltr" style="float: left; width: 19.51cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><b>DIPLOMA</b></span></font></font></p>
+	<p style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">School
+	Name—2003-2005</font></span></font></font></p>
+	<p style="line-height: 0.49cm; margin-top: 0.21cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Bachelor
+	of Arts in Psychology and Legal Studies, Anticipated June 2013,Minor
+	in Business Institutions</font></span></font></font></p>
+</span>
+<img src="template-079_html_fed9d137.gif" name="Shape34" alt="Shape34" align="left" width="116" height="47"/>
+
+<span id="Frame23" dir="ltr" style="float: left; width: 3.06cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="2" style="font-size: 10pt">Dreamweaver
+	CC</font></font></span></font></p>
+</span>
+<img src="template-079_html_2020c2b2.gif" name="Shape2" alt="Shape2" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<img src="template-079_html_8377538e.gif" name="Shape15" alt="Shape15" align="left" width="55" height="28"/>
+
+<span id="Frame8" dir="ltr" style="float: left; width: 1.45cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="3" style="font-size: 12pt">80%</font></font></span></font></p>
+</span>
+<img src="template-079_html_90c9b12d.gif" name="Shape29" alt="Shape29" align="left" width="99" height="28"/>
+
+<span id="Frame18" dir="ltr" style="float: left; width: 2.63cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="2" style="font-size: 10pt">Photoshop
+	CC</font></font></span></font></p>
+</span>
+<img src="template-079_html_a2320480.gif" name="Shape4" alt="Shape4" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<img src="template-079_html_9cb12c74.gif" name="Shape14" alt="Shape14" align="left" width="65" height="28"/>
+
+<span id="Frame7" dir="ltr" style="float: left; width: 1.72cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="3" style="font-size: 12pt">100%</font></font></span></font></p>
+</span>
+<img src="template-079_html_849edbb2.gif" name="Shape31" alt="Shape31" align="left" width="90" height="28"/>
+
+<span id="Frame20" dir="ltr" style="float: left; width: 2.38cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="2" style="font-size: 10pt">InDesign
+	CC</font></font></span></font></p>
+</span>
+<img src="template-079_html_1da57373.gif" name="Shape30" alt="Shape30" align="left" width="90" height="47"/>
+
+<span id="Frame19" dir="ltr" style="float: left; width: 2.38cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="2" style="font-size: 10pt">Illustrator
+	CC</font></font></span></font></p>
+</span>
+<img src="template-079_html_2020c2b2.gif" name="Shape6" alt="Shape6" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<img src="template-079_html_8377538e.gif" name="Shape19" alt="Shape19" align="left" width="55" height="28"/>
+
+<span id="Frame12" dir="ltr" style="float: left; width: 1.45cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="3" style="font-size: 12pt">80%</font></font></span></font></p>
+</span>
+<img src="template-079_html_249fcd86.gif" name="Shape32" alt="Shape32" align="left" width="77" height="28"/>
+
+<span id="Frame21" dir="ltr" style="float: left; width: 2.03cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="2" style="font-size: 10pt">Keynote</font></font></span></font></p>
+</span>
+<img src="template-079_html_d5cdcf52.gif" name="Shape10" alt="Shape10" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<img src="template-079_html_22cbb122.gif" name="Shape12" alt="Shape12" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<img src="template-079_html_8377538e.gif" name="Shape17" alt="Shape17" align="left" width="55" height="28"/>
+
+<span id="Frame10" dir="ltr" style="float: left; width: 1.45cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="3" style="font-size: 12pt">99%</font></font></span></font></p>
+</span>
+<img src="template-079_html_8377538e.gif" name="Shape18" alt="Shape18" align="left" width="55" height="28"/>
+
+<span id="Frame11" dir="ltr" style="float: left; width: 1.45cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="3" style="font-size: 12pt">90%</font></font></span></font></p>
+</span>
+<img src="template-079_html_6b1fd1d8.gif" name="Shape33" alt="Shape33" align="left" width="56" height="28"/>
+
+<span id="Frame22" dir="ltr" style="float: left; width: 1.49cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="2" style="font-size: 10pt">C4D</font></font></span></font></p>
+</span>
+<img src="template-079_html_ff2557da.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="96" height="96"/>
+
+<img src="template-079_html_8377538e.gif" name="Shape16" alt="Shape16" align="left" width="55" height="28"/>
+
+<span id="Frame9" dir="ltr" style="float: left; width: 1.45cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#404040"><font size="3" style="font-size: 12pt">85%</font></font></span></font></p>
+</span>
+<img src="template-079_html_947e630e.gif" name="Shape28" alt="Shape28" align="left" width="737" height="37"/>
+
+<span id="Frame17" dir="ltr" style="float: left; width: 19.51cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.49cm; margin-top: 0.21cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font size="2" style="font-size: 10pt">Available
+	upon request</font></span></font></font></p>
+</span>
+<img src="template-079_html_53c654d7.gif" name="图片 17" alt="图片 17" align="left" hspace="11" vspace="11" width="161" height="161"/>
+
+</p>
+</body>
+</html>

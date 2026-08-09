@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Themedevisers"/>
+	<meta name="created" content="2017-01-28T04:15:00"/>
+	<meta name="changedby" content="PIASH"/>
+	<meta name="changed" content="2017-03-11T06:46:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 108%; margin-bottom: 0.28cm"><a name="_GoBack"></a>
+<span class="sd-abs-pos" style="position: absolute; top: 0cm; left: -0cm; width: 794px"><img src="template-053_html_6d016580.gif" name="Shape70" alt="Shape70" align="left" width="794" height="1122"/>
+</span><img src="template-053_html_138e6e06.gif" name="Shape51" alt="Shape51" align="left" hspace="12" width="220" height="1122"/>
+<img src="template-053_html_f86e3065.gif" name="Shape48" alt="Shape48" align="left" hspace="13" vspace="1" width="151" height="151"/>
+<img src="template-053_html_32b2ce27.gif" name="Shape52" alt="Shape52" align="left" hspace="12" vspace="1" width="144" height="144"/>
+<img src="template-053_html_1e0f076b.gif" name="Shape49" alt="Shape49" align="left" hspace="13" vspace="1" width="385" height="27"/>
+<span id="Frame30" dir="ltr" style="float: left; width: 10.18cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.49cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#515251"><font face="Lato, sans-serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 1.4pt"><b>WEB
+	&amp; GRAPHIC DESIGNER</b></span></font></font></font></font></p>
+</span>
+<img src="template-053_html_84f617ab.gif" name="Shape43" alt="Shape43" align="left" hspace="13" width="215" height="20"/>
+
+<span id="Frame25" dir="ltr" style="float: left; width: 5.69cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.6cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="5" style="font-size: 18pt"><span style="letter-spacing: 0.6pt">EXPERIENCE</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_84f617ab.gif" name="Shape12" alt="Shape12" align="left" hspace="13" width="215" height="20"/>
+
+<span id="Frame10" dir="ltr" style="float: left; width: 5.69cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.6cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="5" style="font-size: 18pt"><span style="letter-spacing: 0.6pt">SKILLS</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_84f617ab.gif" name="Shape11" alt="Shape11" align="left" hspace="13" width="215" height="20"/>
+
+<span id="Frame9" dir="ltr" style="float: left; width: 5.69cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.6cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="5" style="font-size: 18pt"><span style="letter-spacing: 0.6pt">EDUCATION</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_84f617ab.gif" name="Shape53" alt="Shape53" align="left" hspace="13" width="215" height="20"/>
+
+<span id="Frame32" dir="ltr" style="float: left; width: 5.69cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.6cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="5" style="font-size: 18pt"><span style="letter-spacing: 0.6pt">HOBBY</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_6989a0a1.gif" name="Shape42" alt="Shape42" align="left" hspace="13" vspace="1" width="231" height="15"/>
+
+<span id="Frame24" dir="ltr" style="float: left; width: 6.1cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">Works
+	In Lorem Ipsum</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_6c922297.gif" name="Shape47" alt="Shape47" align="left" hspace="13" vspace="1" width="500" height="45"/>
+
+<span id="Frame29" dir="ltr" style="float: left; width: 13.24cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 0.32cm; margin-bottom: 0.46cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.1pt">minim
+	veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+	nisl usat aliquip esxea enim ad minim veniam, quis nostrud exerci
+	tation ullamcorper suscipit lobortis nisl ut</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_9b296b5c.gif" name="Shape41" alt="Shape41" align="left" hspace="13" vspace="1" width="87" height="11"/>
+
+<span id="Frame23" dir="ltr" style="float: left; width: 2.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.32cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Roboto, serif"><font size="1" style="font-size: 8pt">2013
+	- 2015</font></font></font></font></p>
+</span>
+<img src="template-053_html_9b296b5c.gif" name="Shape40" alt="Shape40" align="left" hspace="13" vspace="1" width="87" height="11"/>
+
+<span id="Frame22" dir="ltr" style="float: left; width: 2.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.32cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Roboto, serif"><font size="1" style="font-size: 8pt">2013
+	- 2015</font></font></font></font></p>
+</span>
+<img src="template-053_html_9b296b5c.gif" name="Shape39" alt="Shape39" align="left" hspace="13" vspace="1" width="87" height="11"/>
+
+<span id="Frame21" dir="ltr" style="float: left; width: 2.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.32cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Roboto, serif"><font size="1" style="font-size: 8pt">2013
+	- 2015</font></font></font></font></p>
+</span>
+<img src="template-053_html_9b296b5c.gif" name="Shape38" alt="Shape38" align="left" hspace="13" vspace="1" width="87" height="11"/>
+
+<span id="Frame20" dir="ltr" style="float: left; width: 2.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.32cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Roboto, serif"><font size="1" style="font-size: 8pt">2013
+	- 2015</font></font></font></font></p>
+</span>
+<img src="template-053_html_9b296b5c.gif" name="Shape10" alt="Shape10" align="left" hspace="13" vspace="1" width="87" height="11"/>
+
+<span id="Frame8" dir="ltr" style="float: left; width: 2.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.32cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Roboto, serif"><font size="1" style="font-size: 8pt">2013
+	- 2015</font></font></font></font></p>
+</span>
+<img src="template-053_html_9b296b5c.gif" name="Shape9" alt="Shape9" align="left" hspace="13" vspace="1" width="87" height="11"/>
+
+<span id="Frame7" dir="ltr" style="float: left; width: 2.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.32cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Roboto, serif"><font size="1" style="font-size: 8pt">2013
+	- 2015</font></font></font></font></p>
+</span>
+<img src="template-053_html_6989a0a1.gif" name="Shape37" alt="Shape37" align="left" hspace="13" vspace="1" width="231" height="15"/>
+
+<span id="Frame19" dir="ltr" style="float: left; width: 6.1cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">Works
+	In Lorem Ipsum</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_744ee88c.gif" name="Shape46" alt="Shape46" align="left" hspace="12" vspace="1" width="500" height="51"/>
+
+<span id="Frame28" dir="ltr" style="float: left; width: 13.22cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 0.35cm; margin-bottom: 0.46cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.1pt">Lorem
+	ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+	nibh euismod nt ut laoreet dolore </span></font></font></font><font color="#595b5c"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.2pt">magna
+	aliquam eratvolutpat.  Lorem ipsum dolor sit amet, </span></font></font></font></font>
+	</p>
+</span>
+<img src="template-053_html_6989a0a1.gif" name="Shape36" alt="Shape36" align="left" hspace="13" vspace="1" width="231" height="15"/>
+
+<span id="Frame18" dir="ltr" style="float: left; width: 6.1cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">Works
+	In Lorem Ipsum</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_6989a0a1.gif" name="Shape35" alt="Shape35" align="left" hspace="13" vspace="1" width="231" height="15"/>
+
+<span id="Frame17" dir="ltr" style="float: left; width: 6.1cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">Works
+	In Lorem Ipsum</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_6989a0a1.gif" name="Shape8" alt="Shape8" align="left" hspace="13" vspace="1" width="231" height="15"/>
+
+<span id="Frame6" dir="ltr" style="float: left; width: 6.1cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">College
+	In Lorem Ipsum</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_5127aa05.gif" name="Shape7" alt="Shape7" align="left" hspace="12" vspace="1" width="500" height="30"/>
+
+<span id="Frame5" dir="ltr" style="float: left; width: 13.22cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 0.32cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.1pt">Lorem
+	ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+	nibh euismod  ncidunt ut laoreet dolore magna aliquam erat volutpat.
+	Ut wisi enim ad minim veniam, quis</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_c2a1b159.gif" name="Shape45" alt="Shape45" align="left" hspace="12" vspace="1" width="500" height="53"/>
+
+<span id="Frame27" dir="ltr" style="float: left; width: 13.22cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 0.35cm; margin-bottom: 0.46cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.1pt">Lorem
+	ipsum dolor sit amet, consectetuer adipiscing elit, sed diam eui
+	smod incidunt ut eet dolore magna aliquam erat volutpat. Ut wisi
+	enim ad euismod  incidunt ut laoreet uismod</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_48c8a4d5.gif" name="Shape44" alt="Shape44" align="left" hspace="12" vspace="1" width="500" height="43"/>
+
+<span id="Frame26" dir="ltr" style="float: left; width: 13.22cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 0.35cm; margin-bottom: 0.46cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.1pt">Lorem
+	ipsum doldor ssfit amedt, consectetuereuismod incidunt dffsst
+	laoreet dolore magna aliquam `at volutpat. Ut wisi enim adn cidunt
+	dffsst laoreet dolore magna aliquam `at</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_5127aa05.gif" name="Shape6" alt="Shape6" align="left" hspace="12" vspace="1" width="500" height="30"/>
+
+<span id="Frame4" dir="ltr" style="float: left; width: 13.22cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 0.32cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.1pt">Lorem
+	ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+	nibh euismod incidunt ut laoreet dolore magna aliquam erat volutpat.</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_6989a0a1.gif" name="Shape5" alt="Shape5" align="left" hspace="13" vspace="1" width="231" height="15"/>
+
+<span id="Frame3" dir="ltr" style="float: left; width: 6.1cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Roboto Medium, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">Creative
+	Lorem School &amp; College</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_9a97397b.gif" name="Shape54" alt="Shape54" align="left" hspace="13" width="63" height="12"/>
+
+<span id="Frame33" dir="ltr" style="float: left; width: 1.66cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.25cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><b>Cycling</b></font></font></font></font></p>
+</span>
+<img src="template-053_html_e8b8467d.gif" name="Shape55" alt="Shape55" align="left" hspace="12" width="84" height="12"/>
+
+<span id="Frame34" dir="ltr" style="float: left; width: 2.22cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.25cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><b>Photography</b></font></font></font></font></p>
+</span>
+<img src="template-053_html_2525da09.gif" name="Shape56" alt="Shape56" align="left" hspace="12" width="86" height="12"/>
+
+<span id="Frame35" dir="ltr" style="float: left; width: 2.28cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.25cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><b>Bowling
+	pins</b></font></font></font></font></p>
+</span>
+<img src="template-053_html_2525da09.gif" name="Shape57" alt="Shape57" align="left" hspace="12" width="86" height="12"/>
+
+<span id="Frame36" dir="ltr" style="float: left; width: 2.28cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.25cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><b>Swimming</b></font></font></font></font></p>
+</span>
+<img src="template-053_html_d90652af.gif" name="Shape58" alt="Shape58" align="left" hspace="12" width="58" height="12"/>
+
+<span id="Frame37" dir="ltr" style="float: left; width: 1.54cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.25cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><b>Music</b></font></font></font></font></p>
+</span>
+<img src="template-053_html_3f913e0b.gif" name="Shape59" alt="Shape59" align="left" hspace="12" width="24" height="25"/>
+
+<img src="template-053_html_2a9a14d5.gif" name="Shape60" alt="Shape60" align="left" hspace="12" width="32" height="20"/>
+
+<img src="template-053_html_85b443a2.gif" name="Shape61" alt="Shape61" align="left" hspace="12" width="25" height="25"/>
+
+<img src="template-053_html_beb57a3c.gif" name="Shape62" alt="Shape62" align="left" hspace="12" width="23" height="21"/>
+
+<img src="template-053_html_a2d67f73.gif" name="Shape63" alt="Shape63" align="left" hspace="12" width="26" height="24"/>
+
+<img src="template-053_html_41c09dde.gif" name="Shape34" alt="Shape34" align="left" hspace="12" vspace="1" width="10" height="17"/>
+
+<img src="template-053_html_41c09dde.gif" name="Shape13" alt="Shape13" align="left" hspace="12" vspace="1" width="10" height="17"/>
+
+<img src="template-053_html_41c09dde.gif" name="Shape4" alt="Shape4" align="left" hspace="12" vspace="1" width="10" height="17"/>
+
+<img src="template-053_html_41c09dde.gif" name="Shape64" alt="Shape64" align="left" hspace="12" vspace="1" width="10" height="17"/>
+
+<img src="template-053_html_1a8d043e.gif" name="Shape14" alt="Shape14" align="left" hspace="12" width="84" height="66"/>
+
+<span id="Frame11" dir="ltr" style="float: left; width: 2.22cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt">Wordpress</span></font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">HTML</span></font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#3b3a3a"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt">Photoshop</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_8f5691b1.gif" name="Shape15" alt="Shape15" align="left" hspace="12" vspace="1" width="175" height="8"/>
+
+<img src="template-053_html_fe3e51fa.gif" name="Shape16" alt="Shape16" align="left" hspace="12" width="132" height="9"/>
+
+<img src="template-053_html_8f5691b1.gif" name="Shape17" alt="Shape17" align="left" hspace="12" vspace="1" width="175" height="8"/>
+
+<img src="template-053_html_fe3e51fa.gif" name="Shape18" alt="Shape18" align="left" hspace="12" width="132" height="9"/>
+
+<img src="template-053_html_8f5691b1.gif" name="Shape19" alt="Shape19" align="left" hspace="12" vspace="1" width="175" height="8"/>
+
+<img src="template-053_html_fe3e51fa.gif" name="Shape20" alt="Shape20" align="left" hspace="12" width="132" height="9"/>
+
+<img src="template-053_html_8f5691b1.gif" name="Shape21" alt="Shape21" align="left" hspace="12" vspace="1" width="175" height="8"/>
+
+<img src="template-053_html_fe3e51fa.gif" name="Shape22" alt="Shape22" align="left" hspace="12" width="132" height="9"/>
+
+<img src="template-053_html_8f5691b1.gif" name="Shape23" alt="Shape23" align="left" hspace="12" vspace="1" width="175" height="8"/>
+
+<img src="template-053_html_fe3e51fa.gif" name="Shape24" alt="Shape24" align="left" hspace="12" width="132" height="9"/>
+
+<img src="template-053_html_8f5691b1.gif" name="Shape25" alt="Shape25" align="left" hspace="12" vspace="1" width="175" height="8"/>
+
+<img src="template-053_html_fe3e51fa.gif" name="Shape26" alt="Shape26" align="left" hspace="12" width="132" height="9"/>
+
+<img src="template-053_html_378b32c9.gif" name="Shape32" alt="Shape32" align="left" hspace="12" vspace="1" width="133" height="36"/>
+
+<span id="Frame16" dir="ltr" style="float: left; width: 3.52cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt">Senior</span></font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt">Web
+	Developer</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_378b32c9.gif" name="Shape31" alt="Shape31" align="left" hspace="12" vspace="1" width="133" height="36"/>
+
+<span id="Frame15" dir="ltr" style="float: left; width: 3.52cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Master</font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Web
+	Developer</font></font></font></font></p>
+</span>
+<img src="template-053_html_f4b6ffde.gif" name="Shape30" alt="Shape30" align="left" hspace="12" vspace="1" width="133" height="34"/>
+
+<span id="Frame14" dir="ltr" style="float: left; width: 3.52cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Master</font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Web
+	Developer</font></font></font></font></p>
+</span>
+<img src="template-053_html_f4b6ffde.gif" name="Shape29" alt="Shape29" align="left" hspace="12" vspace="1" width="133" height="34"/>
+
+<span id="Frame13" dir="ltr" style="float: left; width: 3.52cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Master</font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Web
+	Developer</font></font></font></font></p>
+</span>
+<img src="template-053_html_1a8d043e.gif" name="Shape28" alt="Shape28" align="left" hspace="12" width="84" height="66"/>
+
+<span id="Frame12" dir="ltr" style="float: left; width: 2.22cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt">MS
+	Word</span></font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt">InDesign</span></font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.35cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt">Illustrator</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_832b9164.gif" name="Shape2" alt="Shape2" align="left" hspace="12" vspace="1" width="102" height="34"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 2.69cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Bachelors</font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm"><font color="#ffffff">
+	<font face="Calibri, serif"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Of
+	Arts</font></font></font></font></p>
+</span>
+<img src="template-053_html_832b9164.gif" name="Shape1" alt="Shape1" align="left" hspace="12" vspace="1" width="102" height="34"/>
+
+<span id="Frame1" dir="ltr" style="float: left; width: 2.69cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Master</font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.42cm; margin-bottom: 0cm"><font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="2" style="font-size: 10pt">Design
+	Web</font></font></font></font></p>
+</span>
+<img src="template-053_html_149c9f5b.gif" name="Shape65" alt="Shape65" align="left" hspace="12" width="156" height="20"/>
+
+<span id="Frame38" dir="ltr" style="float: left; width: 4.13cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.6cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Roboto Medium, serif"><font size="5" style="font-size: 18pt"><span style="letter-spacing: -0.2pt">CONTACT</span></font></font></font></font></p>
+</span>
+<img src="template-053_html_d5ac6036.gif" name="Shape66" alt="Shape66" align="left" hspace="12" vspace="1" width="144" height="55"/>
+
+<span id="Frame39" dir="ltr" style="float: left; width: 3.8cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.28cm">
+	<font face="Calibri, serif"><font color="#e5e5e5"><font face="Roboto, serif"><font size="1" style="font-size: 8pt">+00
+	1234 567 88</font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.28cm"><font face="Calibri, serif"><font color="#e5e5e5"><font face="Roboto, serif"><font size="1" style="font-size: 8pt">123,
+	street, New York, USA</font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.28cm"><font face="Calibri, serif"><font color="#e5e5e5"><font face="Roboto, serif"><font size="1" style="font-size: 8pt">johnroauch@gmail.com</font></font></font></font></p>
+</span>
+<img src="template-053_html_9fda00e6.gif" name="Shape67" alt="Shape67" align="left" hspace="12" vspace="1" width="9" height="9"/>
+
+<img src="template-053_html_c2bf5d74.gif" name="Shape68" alt="Shape68" align="left" hspace="12" width="9" height="7"/>
+
+<img src="template-053_html_959e6e55.gif" name="Shape69" alt="Shape69" align="left" hspace="13" vspace="1" width="7" height="9"/>
+
+<img src="template-053_html_4ee99532.gif" name="Shape50" alt="Shape50" align="left" hspace="12" vspace="1" width="516" height="49"/>
+
+<span id="Frame31" dir="ltr" style="float: left; width: 13.65cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 1.38cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#595b5c"><font face="Lato Light, sans-serif"><font size="7" style="font-size: 40pt"><span style="letter-spacing: 1.4pt">ALEX
+	</span></font></font></font><font color="#3b3a3a"><font face="Lato, sans-serif"><font size="7" style="font-size: 40pt"><span style="letter-spacing: 1.4pt"><b>WILLIAMS</b></span></font></font></font></font></p>
+	<p style="letter-spacing: 1.4pt; line-height: 1.38cm; margin-bottom: 0.28cm">
+	<br/>
+<br/>
+
+	</p>
+	<p style="line-height: 1.38cm; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span><br/>
+<br/>
+
+</p>
+</body>
+</html>

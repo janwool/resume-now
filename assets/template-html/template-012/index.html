@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Ze"/>
+	<meta name="created" content="2020-05-28T15:35:00"/>
+	<meta name="changedby" content="Ze"/>
+	<meta name="changed" content="2020-05-28T15:35:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Company" content="Grizli777"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 2.96cm; margin-right: 2.96cm; margin-top: 2.75cm; margin-bottom: 0.49cm }
+		p { direction: ltr; widows: 0; orphans: 0; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+		a:link { color: #000080; text-decoration: underline }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr">
+<div id="TextSection" dir="ltr"><p style="margin-bottom: 0.35cm"><span class="sd-abs-pos" style="position: absolute; top: 15.67cm; left: 1.19cm; width: 216px"><img src="template-012_html_d9b1399b.png" name="图片 162" width="216" height="36" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.62cm; left: 7.7cm; width: 458px"><img src="template-012_html_c8c6d3bc.png" name="图片 160" width="458" height="36" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 10.32cm; left: 7.7cm; width: 458px"><img src="template-012_html_4d6fa7fa.png" name="图片 161" width="458" height="36" border="0"/>
+</span><img src="template-012_html_f7fab20.gif" name="Shape2" alt="Shape2" align="left" vspace="1" width="801" height="212"/>
+<img src="template-012_html_e8910b76.png" name="图片 187" align="left" width="492" height="138" border="0"/>
+<span class="sd-abs-pos" style="position: absolute; top: 17.15cm; left: 1.39cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 176" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.66cm; left: 1.39cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 175" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.73cm; left: 1.39cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 174" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 21.8cm; left: 1.39cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 173" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.87cm; left: 1.39cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 172" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.94cm; left: 1.39cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 171" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.01cm; left: 1.39cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 170" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 18.08cm; left: 1.39cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 169" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 10.32cm; left: 1.19cm; width: 216px"><img src="template-012_html_d9b1399b.png" name="图片 163" width="216" height="36" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 4.4cm; left: 3.5cm; width: 27px"><img src="template-012_html_80c502f7.gif" name="Shape7" alt="Shape7" align="left" width="27" height="27"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: -1.26cm; left: 4.51cm; width: 334px"><img src="template-012_html_2e964c47.gif" name="Shape5" alt="Shape5" align="left" vspace="1" width="334" height="21"/>
+</span><span id="Frame4" dir="ltr" style="position: absolute; top: 1.49cm; left: 7.48cm; width: 8.85cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.52cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#323031"><sub><font face="Montserrat, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 8.7pt">AXEL
+		MARTIAL</span></font></font></sub></font></font></p>
+		<p style="line-height: 0.52cm; margin-right: -0.11cm; margin-left: 0.04cm; margin-bottom: 0cm">
+		<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: -1.04cm; left: 1.73cm; width: 24px">
+	<img src="template-012_html_6c1ce17e.gif" name="Shape1" alt="Shape1" align="left" hspace="1" vspace="1" width="24" height="16"/>
+</span>
+	<span id="Frame1" dir="ltr" style="position: absolute; top: 1.72cm; left: 4.69cm; width: 0.64cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.4cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#414042"><sup><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt">A</font></font></sup></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 0.14cm; left: 2.74cm; width: 35px">
+	<img src="template-012_html_d93bbc7d.gif" name="Shape6" alt="Shape6" align="left" vspace="1" width="35" height="20"/>
+</span>
+	<span id="Frame5" dir="ltr" style="position: absolute; top: 2.89cm; left: 5.71cm; width: 0.94cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.4cm; margin-left: 0.04cm; margin-right: -0.09cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#414042"><sup><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt">M</font></font></sup></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 0.17cm; left: 4.18cm; width: 228px">
+	<img src="template-012_html_b0fe3484.gif" name="Shape4" alt="Shape4" align="left" width="228" height="13"/>
+</span>
+	<span id="Frame3" dir="ltr" style="position: absolute; top: 2.93cm; left: 7.14cm; width: 6.04cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.32cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#414042"><sub><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 3.0pt">GRAPHIC
+		DESIGNER </span></font></font></sub></font></font>
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 10.59cm; left: 5.48cm; width: 33px">
+	<img src="template-012_html_c4ba0ef7.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="33" height="37"/>
+</span>
+	<span id="Frame6" dir="ltr" style="position: absolute; top: 13.34cm; left: 8.45cm; width: 0.87cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+		<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2015</font></font></sup></font></p>
+		<p align="center" style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2017</font></font></sup></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 14.43cm; left: -1.34cm; width: 34px">
+	<img src="template-012_html_fffdce12.gif" name="Shape9" alt="Shape9" align="left" hspace="1" width="34" height="19"/>
+</span>
+	<span id="Frame7" dir="ltr" style="position: absolute; top: 17.19cm; left: 1.62cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">90<span style="letter-spacing: 1.4pt">
+		</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 14.53cm; left: 0.14cm; width: 76px">
+	<img src="template-012_html_c58a2da8.gif" name="Shape10" alt="Shape10" align="left" hspace="1" width="76" height="13"/>
+</span>
+	<span id="Frame8" dir="ltr" style="position: absolute; top: 17.28cm; left: 3.1cm; width: 2.01cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.31cm; margin-left: 0.04cm; margin-right: -0.08cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">INDESIG</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">N</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+		</span></font></font></font></font>
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 15.42cm; left: -1.36cm; width: 34px">
+	<img src="template-012_html_fffdce12.gif" name="Shape11" alt="Shape11" align="left" width="34" height="19"/>
+</span>
+	<span id="Frame9" dir="ltr" style="position: absolute; top: 18.17cm; left: 1.6cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">85<span style="letter-spacing: 1.4pt">
+		</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 15.51cm; left: 0.14cm; width: 95px">
+	<img src="template-012_html_fc18be5e.gif" name="Shape12" alt="Shape12" align="left" hspace="1" vspace="1" width="95" height="13"/>
+</span>
+	<span id="Frame10" dir="ltr" style="position: absolute; top: 18.26cm; left: 3.1cm; width: 2.5cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.31cm; margin-left: 0.04cm; margin-right: -0.08cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">PH</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">O</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.3pt">
+		</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">T</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.5pt">
+		</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">OSHO</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">P</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+		</span></font></font></font></font>
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 16.34cm; left: -1.34cm; width: 34px">
+	<img src="template-012_html_fffdce12.gif" name="Shape13" alt="Shape13" align="left" hspace="1" vspace="1" width="34" height="19"/>
+</span>
+	<span id="Frame11" dir="ltr" style="position: absolute; top: 19.09cm; left: 1.62cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">75<span style="letter-spacing: 1.4pt">
+		</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 16.43cm; left: 0.14cm; width: 103px">
+	<img src="template-012_html_d67bc07b.gif" name="Shape14" alt="Shape14" align="left" hspace="1" width="103" height="13"/>
+</span>
+	<span id="Frame12" dir="ltr" style="position: absolute; top: 19.18cm; left: 3.1cm; width: 2.72cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.31cm; margin-left: 0.04cm; margin-right: -0.08cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">ILLUSTR</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">A</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.8pt">
+		</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">T</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.5pt">
+		</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">O</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">R</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+		</span></font></font></font></font>
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 17.26cm; left: -1.34cm; width: 34px">
+	<img src="template-012_html_fffdce12.gif" name="Shape15" alt="Shape15" align="left" hspace="1" vspace="1" width="34" height="19"/>
+</span>
+	<span id="Frame13" dir="ltr" style="position: absolute; top: 20.01cm; left: 1.62cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">90<span style="letter-spacing: 1.4pt">
+		</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 17.35cm; left: 0.14cm; width: 40px">
+	<img src="template-012_html_81e16f75.gif" name="Shape16" alt="Shape16" align="left" hspace="1" width="40" height="13"/>
+</span>
+	<span id="Frame14" dir="ltr" style="position: absolute; top: 20.11cm; left: 3.1cm; width: 1.05cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.31cm; margin-left: 0.04cm; margin-right: -0.08cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">EXE</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">L</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+		</span></font></font></font></font>
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 18.2cm; left: -1.36cm; width: 34px">
+	<img src="template-012_html_fffdce12.gif" name="Shape17" alt="Shape17" align="left" width="34" height="19"/>
+</span>
+	<span id="Frame15" dir="ltr" style="position: absolute; top: 20.95cm; left: 1.6cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">60<span style="letter-spacing: 1.4pt">
+		</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 18.28cm; left: 0.14cm; width: 103px">
+	<img src="template-012_html_d67bc07b.gif" name="Shape18" alt="Shape18" align="left" hspace="1" width="103" height="13"/>
+</span>
+	<span id="Frame16" dir="ltr" style="position: absolute; top: 21.03cm; left: 3.1cm; width: 2.72cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.31cm; margin-left: 0.04cm; margin-right: -0.08cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">P</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">O</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.3pt">
+		</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">WERPOIN</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">T</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+		</span></font></font></font></font>
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 19.12cm; left: -1.37cm; width: 34px">
+	<img src="template-012_html_fffdce12.gif" name="Shape19" alt="Shape19" align="left" hspace="1" width="34" height="19"/>
+</span>
+	<span id="Frame17" dir="ltr" style="position: absolute; top: 21.87cm; left: 1.59cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">95<span style="letter-spacing: 1.4pt">
+		</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 19.2cm; left: 0.14cm; width: 48px">
+	<img src="template-012_html_ccbf2b8e.gif" name="Shape20" alt="Shape20" align="left" hspace="1" width="48" height="13"/>
+</span>
+	<span id="Frame18" dir="ltr" style="position: absolute; top: 21.95cm; left: 3.1cm; width: 1.28cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.31cm; margin-left: 0.04cm; margin-right: -0.08cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">W</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+		</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">OR</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">D</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+		</span></font></font></font></font>
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 20.06cm; left: -1.36cm; width: 34px">
+	<img src="template-012_html_fffdce12.gif" name="Shape21" alt="Shape21" align="left" vspace="1" width="34" height="19"/>
+</span>
+	<span id="Frame19" dir="ltr" style="position: absolute; top: 22.81cm; left: 1.6cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">70<span style="letter-spacing: 1.4pt">
+		</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 20.12cm; left: 0.14cm; width: 95px">
+	<img src="template-012_html_fc18be5e.gif" name="Shape22" alt="Shape22" align="left" hspace="1" vspace="1" width="95" height="13"/>
+</span>
+	<span id="Frame20" dir="ltr" style="position: absolute; top: 22.87cm; left: 3.1cm; width: 2.5cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.31cm; margin-left: 0.04cm; margin-right: -0.08cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">PH</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">O</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.3pt">
+		</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">T</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.5pt">
+		</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">OSHO</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">P</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+		</span></font></font></font></font>
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 21cm; left: -1.37cm; width: 34px">
+	<img src="template-012_html_fffdce12.gif" name="Shape23" alt="Shape23" align="left" hspace="1" width="34" height="19"/>
+</span>
+	<span id="Frame21" dir="ltr" style="position: absolute; top: 23.75cm; left: 1.59cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">90<span style="letter-spacing: 1.4pt">
+		</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 21.04cm; left: 0.14cm; width: 119px">
+	<img src="template-012_html_bc874260.gif" name="Shape24" alt="Shape24" align="left" hspace="1" vspace="1" width="119" height="13"/>
+</span>
+	<span id="Frame22" dir="ltr" style="position: absolute; top: 23.8cm; left: 3.1cm; width: 3.16cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.31cm; margin-left: 0.04cm; margin-right: -0.08cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">AFTE</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">R
+		 </font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.5pt">
+		</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.9pt">EFFECT</span></font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">S</font></font></font><font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt">
+		</span></font></font></font></font>
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 0.17cm; left: 10.26cm; width: 136px">
+	<img src="template-012_html_412e03f7.gif" name="Shape3" alt="Shape3" align="left" width="136" height="13"/>
+</span>
+	<span id="Frame2" dir="ltr" style="position: absolute; top: 2.93cm; left: 13.22cm; width: 3.61cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.32cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#414042"><sub><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 3.0pt">03/
+		09/2003 </span></font></font></sub></font></font>
+		</p>
+	</span><br/>
+<br/>
+
+	</p>
+	<p style="line-height: 0.49cm; margin-top: 0.17cm; margin-bottom: 0cm">
+	<img src="template-012_html_6caae3e0.png" name="图片 178" align="left" width="209" height="25" border="0"/>
+<img src="template-012_html_f190200b.png" name="图片 180" align="left" width="209" height="30" border="0"/>
+<img src="template-012_html_f190200b.png" name="图片 183" align="left" width="209" height="30" border="0"/>
+<img src="template-012_html_5f619f42.png" name="Picture 222" align="left" width="117" height="117" border="0"/>
+<img src="template-012_html_c119c4ff.png" name="Picture 208" align="left" width="22" height="21" border="0"/>
+<img src="template-012_html_c78b1565.png" name="Picture 207" align="left" width="22" height="21" border="0"/>
+<img src="template-012_html_a2d87099.png" name="Picture 206" align="left" width="23" height="21" border="0"/>
+<span class="sd-abs-pos" style="position: absolute; top: 0.51cm; left: 6.18cm; width: 100px"><img src="template-012_html_ebd83e6d.gif" name="Shape34" alt="Shape34" align="left" hspace="1" vspace="1" width="100" height="19"/>
+</span><span id="Frame31" dir="ltr" style="position: absolute; top: 4.18cm; left: 9.14cm; width: 2.65cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.47cm; margin-left: 0.04cm; margin-right: -0.1cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#414042"><sup><font face="Crimson Text, serif"><font size="3" style="font-size: 12pt"><i>Cv
+		/ Resume</i></font></font></sup></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 3.45cm; left: 4.8cm; width: 450px">
+	<img src="template-012_html_47b22f89.gif" name="Shape42" alt="Shape42" align="left" hspace="1" vspace="1" width="450" height="77"/>
+</span>
+	<span id="Frame38" dir="ltr" style="position: absolute; top: 7.12cm; left: 7.76cm; width: 11.9cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+		<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Estia
+		dolor magnihicid quam  volupta tusdaec eperum eos doluptas diant
+		esnem porestin cor seris con remolut pratio maximet prestibus sit
+		auditatus earum rempos a voluptat rectempos ut quassequias dem que
+		odigenis autem ne Xerum asit ea vel inullenducia consequ iatectat
+		apici iur?</font></font></sup></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 6.92cm; left: -1.59cm; width: 207px">
+	<img src="template-012_html_178c36e3.gif" name="Shape33" alt="Shape33" align="left" vspace="1" width="207" height="15"/>
+</span>
+	<span id="Frame30" dir="ltr" style="position: absolute; top: 10.58cm; left: 1.37cm; width: 5.47cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 6.9pt; line-height: 0.35cm; margin-bottom: 0cm">
+		<font color="#323031"><font face="Montserrat, serif"><font size="2" style="font-size: 9pt">CONTACT</font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 6.91cm; left: 5.15cm; width: 394px">
+	<img src="template-012_html_6218a885.gif" name="Shape31" alt="Shape31" align="left" width="394" height="15"/>
+</span>
+	<span id="Frame28" dir="ltr" style="position: absolute; top: 10.57cm; left: 8.12cm; width: 10.44cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 6.9pt; line-height: 0.35cm; margin-bottom: 0cm">
+		<font color="#323031"><font face="Montserrat, serif"><font size="2" style="font-size: 9pt">EDUCATION</font></font></font></p>
+		<p style="margin-bottom: 0.35cm"><br/>
+<br/>
+
+		</p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 8.19cm; left: 0.07cm; width: 141px">
+	<img src="template-012_html_d1205146.gif" name="Shape39" alt="Shape39" align="left" hspace="1" width="141" height="17"/>
+</span>
+	<span id="Frame35" dir="ltr" style="position: absolute; top: 11.85cm; left: 3.03cm; width: 3.73cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+		<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">012301230123</font></font></sup></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 8.24cm; left: 5.48cm; width: 33px">
+	<img src="template-012_html_91b0030f.gif" name="Shape40" alt="Shape40" align="left" hspace="1" vspace="1" width="32" height="37"/>
+</span>
+	<span id="Frame36" dir="ltr" style="position: absolute; top: 11.9cm; left: 8.45cm; width: 0.86cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+		<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2015</font></font></sup></font></p>
+		<p align="center" style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2017</font></font></sup></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 8.19cm; left: 6.9cm; width: 376px">
+	<img src="template-012_html_9ae37d89.gif" name="Shape45" alt="Shape45" align="left" width="376" height="45"/>
+</span>
+	<span id="Frame40" dir="ltr" style="position: absolute; top: 11.85cm; left: 9.87cm; width: 9.96cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+		<font color="#414042"><sup><font face="Crimson Text, serif"><b>Bachelor
+		<span style="letter-spacing: 0.4pt"> </span>of<span style="letter-spacing: 0.7pt">
+		</span>Creative<span style="letter-spacing: 2.2pt"> </span>Arts<span style="letter-spacing: 0.8pt">
+		</span>and<span style="letter-spacing: 1.2pt"> </span>Design</b></font></sup></font></p>
+		<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+		<font color="#414042"><font face="Crimson Text, serif"><i>University<span style="letter-spacing: -0.4pt">
+		</span>of Bright<span style="letter-spacing: -0.3pt">o</span>n<span style="letter-spacing: -0.3pt">
+		</span>/ L<span style="letter-spacing: -0.2pt">o</span>nd<span style="letter-spacing: -0.2pt">o</span>n
+		/ Ingland</i></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 9.09cm; left: 0.07cm; width: 141px">
+	<img src="template-012_html_542901b0.gif" name="Shape41" alt="Shape41" align="left" hspace="1" vspace="1" width="141" height="15"/>
+</span>
+	<span id="Frame37" dir="ltr" style="position: absolute; top: 12.75cm; left: 3.03cm; width: 3.73cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+		<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">youremailgmail.com</font></font></sup></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 9.64cm; left: 6.9cm; width: 376px">
+	<img src="template-012_html_d1900c0c.gif" name="Shape43" alt="Shape43" align="left" width="376" height="38"/>
+</span>
+	<span id="Frame39" dir="ltr" style="position: absolute; top: 13.3cm; left: 9.87cm; width: 9.96cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+		<font color="#414042"><sup><font face="Crimson Text, serif"><b>Master<span style="letter-spacing: 1.5pt">
+		</span>in<span style="letter-spacing: 0.9pt"> </span>Communication<span style="letter-spacing: 0.8pt">
+		</span>Sience</b></font></sup></font></p>
+		<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+		<font color="#414042"><font face="Crimson Text, serif"><i>Universita<span style="letter-spacing: -0.4pt">
+		</span>Per St<span style="letter-spacing: -0.4pt">r</span>an<span style="letter-spacing: 0.2pt">i</span>eri<span style="letter-spacing: -0.4pt">
+		d</span>i<span style="letter-spacing: -0.1pt"> </span>Perugia<span style="letter-spacing: -0.3pt">
+		</span>/ Perugia<span style="letter-spacing: -0.3pt"> </span>/
+		Ita<span style="letter-spacing: -0.7pt">l</span>y</i></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 10.01cm; left: 0.07cm; width: 141px">
+	<img src="template-012_html_f2830dde.gif" name="Shape38" alt="Shape38" align="left" hspace="1" vspace="1" width="141" height="21"/>
+</span>
+	<span id="Frame34" dir="ltr" style="position: absolute; top: 13.67cm; left: 3.03cm; width: 3.73cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+		<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">yourwebsite.com</font></font></sup></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 12.27cm; left: 5.15cm; width: 386px">
+	<img src="template-012_html_fd70a881.gif" name="Shape30" alt="Shape30" align="left" vspace="1" width="386" height="15"/>
+</span>
+	<span id="Frame27" dir="ltr" style="position: absolute; top: 15.94cm; left: 8.12cm; width: 10.21cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 6.9pt; line-height: 0.35cm; margin-bottom: 0cm">
+		<font color="#323031"><font face="Montserrat, serif"><font size="2" style="font-size: 9pt">EXPERIENCE</font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 12.32cm; left: -1.46cm; width: 199px">
+	<img src="template-012_html_350acc71.gif" name="Shape32" alt="Shape32" align="left" hspace="1" vspace="1" width="199" height="15"/>
+</span>
+	<span id="Frame29" dir="ltr" style="position: absolute; top: 15.98cm; left: 1.51cm; width: 5.26cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 6.9pt; line-height: 0.35cm; margin-bottom: 0cm">
+		<font color="#323031"><font face="Montserrat, serif"><font size="2" style="font-size: 9pt">SKILLS</font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 13.52cm; left: 5.48cm; width: 33px">
+	<img src="template-012_html_c4ba0ef7.gif" name="Shape26" alt="Shape26" align="left" hspace="1" vspace="1" width="33" height="37"/>
+</span>
+	<span id="Frame24" dir="ltr" style="position: absolute; top: 17.18cm; left: 8.45cm; width: 0.87cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+		<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2015</font></font></sup></font></p>
+		<p align="center" style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2017</font></font></sup></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 13.47cm; left: 6.9cm; width: 370px">
+	<img src="template-012_html_ce12b92f.gif" name="Shape25" alt="Shape25" align="left" vspace="1" width="370" height="122"/>
+</span>
+	<span id="Frame23" dir="ltr" style="position: absolute; top: 17.14cm; left: 9.87cm; width: 9.8cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+		<font color="#414042"><sup><font face="Crimson Text, serif"><b>Advertising
+		&amp; promotions  manager</b></font></sup></font></p>
+		<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+		<font color="#414042"><font face="Crimson Text, serif"><i>Lounge &amp;<span style="letter-spacing: -0.1pt">
+		</span>Lizard<span style="letter-spacing: -0.3pt"> </span>Developement<span style="letter-spacing: -0.6pt">
+		</span>/ 2015 - 2017</i></font></font></p>
+		<p style="line-height: 0.49cm; margin-top: 0.17cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">La
+		Iciissin  renis es essunt explaccabo. Lignatatquis magnima gnimus
+		dolesti voluptur?Ur? Ne pla as alicatenti doloribus non  con re que
+		pro imagnisquat ditia denissus.Et ideratibus aborero es consequas
+		ethjhjh.Picipit magnis autatis unt  esti optatus et re labo.</font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 17.43cm; left: 5.48cm; width: 33px">
+	<img src="template-012_html_c4ba0ef7.gif" name="Shape35" alt="Shape35" align="left" hspace="1" vspace="1" width="33" height="37"/>
+</span>
+	<span id="Frame32" dir="ltr" style="position: absolute; top: 21.09cm; left: 8.45cm; width: 0.87cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+		<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2014</font></font></sup></font></p>
+		<p align="center" style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2012</font></font></sup></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 17.38cm; left: 6.9cm; width: 376px">
+	<img src="template-012_html_7af97f63.gif" name="Shape37" alt="Shape37" align="left" vspace="1" width="376" height="124"/>
+</span>
+	<span id="Frame33" dir="ltr" style="position: absolute; top: 21.04cm; left: 9.87cm; width: 9.96cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+		<font color="#414042"><sup><font face="Crimson Text, serif"><b>Graphic<span style="letter-spacing: 2.1pt">
+		</span>and<span style="letter-spacing: 1.2pt"> </span>Web<span style="letter-spacing: 0.9pt">
+		</span>Designer</b></font></sup></font></p>
+		<p style="line-height: 100%; margin-left: 0.04cm; margin-right: -0.04cm; margin-top: 0.06cm; margin-bottom: 0cm">
+		<font face="Calibri, serif"><font color="#414042"><font face="Crimson Text, serif"><i>Pixel</i></font></font><font color="#414042"><font face="Crimson Text, serif"><span style="letter-spacing: -0.2pt"><i>
+		</i></span></font></font><font color="#414042"><font face="Crimson Text, serif"><i>Developement&amp;</i></font></font><font color="#414042"><font face="Crimson Text, serif"><span style="letter-spacing: -0.6pt"><i>
+		</i></span></font></font><font color="#414042"><font face="Crimson Text, serif"><i>/
+		L</i></font></font><font color="#414042"><font face="Crimson Text, serif"><span style="letter-spacing: -0.3pt"><i>o</i></span></font></font><font color="#414042"><font face="Crimson Text, serif"><i>nd</i></font></font><font color="#414042"><font face="Crimson Text, serif"><span style="letter-spacing: -0.2pt"><i>o</i></span></font></font><font color="#414042"><font face="Crimson Text, serif"><i>n
+		/ England / 2014 - 2017</i></font></font></font></p>
+		<p style="line-height: 0.49cm; margin-top: 0.17cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">La
+		Iciissin  renis es essunt explaccabo. Lignatatquis magnima gnimus
+		dolesti voluptur?Ur? Ne pla as alicatenti doloribus non  con re que
+		pro imagnisquat ditia denissus.Et ideratibus aborero es consequas
+		ethjhjh.Picipit magnis autatis unt  esti optatus et re labo.</font></font></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 21.55cm; left: 5.48cm; width: 33px">
+	<img src="template-012_html_c4ba0ef7.gif" name="Shape27" alt="Shape27" align="left" hspace="1" vspace="1" width="33" height="37"/>
+</span>
+	<span id="Frame25" dir="ltr" style="position: absolute; top: 25.21cm; left: 8.45cm; width: 0.87cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+		<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2010</font></font></sup></font></p>
+		<p align="center" style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2009</font></font></sup></font></p>
+	</span><span class="sd-abs-pos" style="position: absolute; top: 21.51cm; left: 6.9cm; width: 386px">
+	<img src="template-012_html_74345d97.gif" name="Shape28" alt="Shape28" align="left" hspace="1" vspace="1" width="386" height="133"/>
+</span>
+	<span id="Frame26" dir="ltr" style="position: absolute; top: 25.17cm; left: 9.87cm; width: 10.21cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+		<font color="#414042"><sup><font face="Crimson Text, serif"><b>Film<span style="letter-spacing: 1.5pt">
+		</span>&amp;<span style="letter-spacing: 0.4pt"> </span>video<span style="letter-spacing: 1.5pt">
+		</span>editor</b></font></sup></font></p>
+		<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+		<font color="#414042"><font face="Crimson Text, serif"><i>Tolles<span style="letter-spacing: -0.2pt">o</span>n
+		Design<span style="letter-spacing: -0.3pt"> </span>Developement<span style="letter-spacing: -0.6pt">
+		</span>/ L<span style="letter-spacing: -0.3pt">o</span>nd<span style="letter-spacing: -0.2pt">o</span>n
+		/ England</i></font></font></p>
+		<p style="line-height: 0.49cm; margin-top: 0.17cm; margin-bottom: 0cm">
+		<font color="#58595b"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">La
+		Iciissin  renis es essunt explaccabo. Lignatatquis magnima gnimus
+		dolesti voluptur?Ur? Ne pla as alicatenti doloribus non  con re que
+		pro imagnisquat ditia denissus.Et ideratibus aborero es consequas
+		ethjhjh.Picipit magnis autatis unt  esti optatus et re labo.</font></font></font></p>
+	</span>
+	<img src="template-012_html_12545446.gif" name="Shape44" alt="Shape44" align="left" hspace="1" vspace="1" width="6" height="79"/>
+
+	<img src="template-012_html_6affa966.png" name="Picture 202" align="left" width="12" height="12" border="0"/>
+
+	<img src="template-012_html_b451bbf4.gif" name="Shape36" alt="Shape36" align="left" hspace="1" vspace="1" width="1" height="407"/>
+
+	<img src="template-012_html_334bbc03.gif" name="Shape29" alt="Shape29" align="left" hspace="1" vspace="2" width="117" height="117"/>
+
+	<img src="template-012_html_6affa966.png" name="Image4" align="left" width="12" height="12" border="0"/>
+
+	<img src="template-012_html_6affa966.png" name="Image3" align="left" width="12" height="12" border="0"/>
+
+	<img src="template-012_html_6affa966.png" name="Image2" align="left" width="12" height="12" border="0"/>
+
+	<img src="template-012_html_6affa966.png" name="Picture 223" align="left" width="12" height="12" border="0"/>
+<br/>
+
+	</p>
+</div>
+<p style="margin-bottom: 0.35cm; page-break-before: always"><img src="template-012_html_f190200b.png" name="图片 83" align="left" width="209" height="30" border="0"/>
+<img src="template-012_html_42584247.png" name="Picture 224" align="left" width="33" height="34" border="0"/>
+<img src="template-012_html_b451bbf4.gif" name="Shape46" alt="Shape46" align="left" hspace="1" vspace="1" width="1" height="407"/>
+<img src="template-012_html_f190200b.png" name="图片 82" align="left" width="209" height="30" border="0"/>
+<img src="template-012_html_f190200b.png" name="图片 81" align="left" width="209" height="30" border="0"/>
+<img src="template-012_html_f190200b.png" name="图片 80" align="left" width="209" height="30" border="0"/>
+<img src="template-012_html_8638c8af.png" name="Picture 216" align="left" width="33" height="34" border="0"/>
+<img src="template-012_html_7ba37f41.png" name="Picture 217" align="left" width="33" height="34" border="0"/>
+<img src="template-012_html_a7ae181f.png" name="Picture 215" align="left" width="33" height="34" border="0"/>
+<img src="template-012_html_be911059.png" name="图片 96" align="left" width="209" height="25" border="0"/>
+<img src="template-012_html_f190200b.png" name="图片 97" align="left" width="209" height="30" border="0"/>
+<img src="template-012_html_f190200b.png" name="图片 93" align="left" width="209" height="30" border="0"/>
+<img src="template-012_html_f190200b.png" name="图片 99" align="left" width="209" height="30" border="0"/>
+<img src="template-012_html_f927807e.png" name="Picture 212" align="left" width="22" height="21" border="0"/>
+<img src="template-012_html_13676a22.png" name="Picture 211" align="left" width="22" height="21" border="0"/>
+<img src="template-012_html_ab940250.png" name="Picture 210" align="left" width="22" height="21" border="0"/>
+<img src="template-012_html_7aec7dbd.png" name="Picture 209" align="left" width="22" height="21" border="0"/>
+<img src="template-012_html_305a2b95.gif" name="Shape70" alt="Shape70" align="left" hspace="1" vspace="1" width="794" height="212"/>
+<img src="template-012_html_e8910b76.png" name="图片 104" align="left" width="492" height="138" border="0"/>
+<span class="sd-abs-pos" style="position: absolute; top: 22.6cm; left: 8.49cm; width: 34px"><img src="template-012_html_4c8d46d1.png" name="Image7" width="34" height="34" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 21.07cm; left: 7.63cm; width: 458px"><img src="template-012_html_c8c6d3bc.png" name="图片 54" width="458" height="36" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22cm; left: 1.13cm; width: 216px"><img src="template-012_html_d9b1399b.png" name="图片 56" width="216" height="36" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.5cm; left: 1.13cm; width: 216px"><img src="template-012_html_76d4f0e7.png" name="图片 58" width="216" height="36" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.15cm; left: 1.13cm; width: 216px"><img src="template-012_html_b629c46b.png" name="图片 57" width="216" height="36" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.15cm; left: 7.63cm; width: 458px"><img src="template-012_html_4d6fa7fa.png" name="图片 55" width="458" height="36" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.95cm; left: 1.36cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 78" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.6cm; left: 1.36cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 77" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 18.67cm; left: 1.36cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 76" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.74cm; left: 1.36cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 75" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.81cm; left: 1.36cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 74" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.88cm; left: 1.36cm; width: 209px"><img src="template-012_html_f190200b.png" name="图片 73" width="209" height="30" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.9cm; left: 6.6cm; width: 1px"><img src="template-012_html_9a50000.gif" name="Shape80" alt="Shape80" align="left" hspace="1" vspace="1" width="1" height="32"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.27cm; left: 6.6cm; width: 1px"><img src="template-012_html_9a50000.gif" name="Shape81" alt="Shape81" align="left" hspace="1" vspace="1" width="1" height="32"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.27cm; left: 12.17cm; width: 1px"><img src="template-012_html_9a50000.gif" name="Shape82" alt="Shape82" align="left" hspace="1" vspace="1" width="1" height="32"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.9cm; left: 12.18cm; width: 1px"><img src="template-012_html_9a50000.gif" name="Shape83" alt="Shape83" align="left" hspace="1" vspace="1" width="1" height="32"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: -1.05cm; left: 2cm; width: 13px"><img src="template-012_html_c3204cfe.gif" name="Shape84" alt="Shape84" align="left" hspace="1" vspace="1" width="13" height="16"/>
+</span><span id="Frame73" dir="ltr" style="position: absolute; top: 1.7cm; left: 4.96cm; width: 0.34cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.4cm; margin-left: 0.04cm; margin-right: -0.09cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#414042"><sup><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt">A</font></font></sup></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.3cm; left: 3.01cm; width: 15px">
+<img src="template-012_html_38e2007b.gif" name="Shape85" alt="Shape85" align="left" hspace="1" vspace="1" width="15" height="16"/>
+</span>
+<span id="Frame74" dir="ltr" style="position: absolute; top: 3.05cm; left: 5.97cm; width: 0.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.4cm; margin-left: 0.04cm; margin-right: -0.09cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#414042"><sup><font face="Montserrat Semi Bold, serif"><font size="2" style="font-size: 10pt">M</font></font></sup></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 1.35cm; left: 6.52cm; width: 77px">
+<img src="template-012_html_eac4b5a3.gif" name="Shape69" alt="Shape69" align="left" vspace="1" width="77" height="19"/>
+</span>
+<span id="Frame63" dir="ltr" style="position: absolute; top: 4.1cm; left: 9.49cm; width: 2.03cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.47cm; margin-left: 0.04cm; margin-right: -0.1cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#414042"><sup><font face="Crimson Text, serif"><font size="3" style="font-size: 12pt"><i>Cv
+	/ Resume</i></font></font></sup></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 4.68cm; left: -1.53cm; width: 200px">
+<img src="template-012_html_6aa7929e.gif" name="Shape65" alt="Shape65" align="left" hspace="1" vspace="1" width="200" height="15"/>
+</span>
+<span id="Frame59" dir="ltr" style="position: absolute; top: 7.43cm; left: 1.43cm; width: 5.29cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 6.9pt; line-height: 0.35cm; margin-bottom: 0cm">
+	<font color="#323031"><font face="Montserrat, serif"><font size="2" style="font-size: 9pt">SOCIAL</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 4.69cm; left: 5.15cm; width: 342px">
+<img src="template-012_html_ebff9b9d.gif" name="Shape64" alt="Shape64" align="left" hspace="1" vspace="1" width="342" height="15"/>
+</span>
+<span id="Frame58" dir="ltr" style="position: absolute; top: 7.44cm; left: 8.12cm; width: 9.05cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 6.9pt; line-height: 0.35cm; margin-bottom: 0cm">
+	<font color="#323031"><font face="Montserrat, serif"><font size="2" style="font-size: 9pt">EXPERIENCE
+	CONTINUED</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.91cm; left: 5.48cm; width: 33px">
+<img src="template-012_html_c4ba0ef7.gif" name="Shape86" alt="Shape86" align="left" hspace="1" vspace="1" width="33" height="37"/>
+</span>
+<span id="Frame75" dir="ltr" style="position: absolute; top: 8.66cm; left: 8.45cm; width: 0.87cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2012</font></font></sup></font></p>
+	<p align="center" style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2013</font></font></sup></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.95cm; left: 0.14cm; width: 137px">
+<img src="template-012_html_2b443ea5.gif" name="Shape75" alt="Shape75" align="left" hspace="1" width="137" height="20"/>
+</span>
+<span id="Frame68" dir="ltr" style="position: absolute; top: 8.7cm; left: 3.1cm; width: 3.62cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Skypeaadd<span style="letter-spacing: -0.1pt">r</span><span style="letter-spacing: normal">ess</span></font></font></sup></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.88cm; left: 6.9cm; width: 370px">
+<img src="template-012_html_c66f0eaf.gif" name="Shape50" alt="Shape50" align="left" vspace="1" width="370" height="117"/>
+</span>
+<span id="Frame44" dir="ltr" style="position: absolute; top: 8.63cm; left: 9.87cm; width: 9.8cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+	<font color="#414042"><sup><font face="Crimson Text, serif"><b>Advertising<span style="letter-spacing: 0.6pt">
+	</span>&amp;<span style="letter-spacing: 0.4pt"> </span>promotions <span style="letter-spacing: 0.6pt">
+	</span>manager</b></font></sup></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+	<font color="#414042"><font face="Crimson Text, serif"><i>Pixel<span style="letter-spacing: -0.2pt">
+	</span>Developement&amp;<span style="letter-spacing: -0.6pt"> </span>/
+	L<span style="letter-spacing: -0.3pt">o</span>nd<span style="letter-spacing: -0.2pt">o</span>n
+	/ England / 2012 - 2015</i></font></font></p>
+	<p style="line-height: 0.49cm; margin-top: 0.17cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">La
+	Iciissin  renis es essunt explaccabo. Lignatatquis magnima gnimus
+	dolesti voluptur?Ur? Ne pla as alicatenti doloribus non  con re que
+	pro imagnisquat ditia denissus.Et ideratibus aborero es consequas
+	ethjhjh.Picipit magnis autatis unt  esti optatus et re labo.</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.85cm; left: 0.14cm; width: 137px">
+<img src="template-012_html_2b443ea5.gif" name="Shape76" alt="Shape76" align="left" hspace="1" width="137" height="20"/>
+</span>
+<span id="Frame69" dir="ltr" style="position: absolute; top: 9.6cm; left: 3.1cm; width: 3.62cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.5pt">T</span>witeradd<span style="letter-spacing: -0.1pt">r</span>ess.com</font></font></sup></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.77cm; left: 0.14cm; width: 120px">
+<img src="template-012_html_5b377094.gif" name="Shape74" alt="Shape74" align="left" hspace="1" vspace="1" width="120" height="18"/>
+</span>
+<span id="Frame67" dir="ltr" style="position: absolute; top: 10.52cm; left: 3.1cm; width: 3.19cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Linkedinaccount.com</font></font></sup></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 8.68cm; left: 0.14cm; width: 122px">
+<img src="template-012_html_ec37ed19.gif" name="Shape73" alt="Shape73" align="left" hspace="1" vspace="1" width="122" height="21"/>
+</span>
+<span id="Frame66" dir="ltr" style="position: absolute; top: 11.44cm; left: 3.1cm; width: 3.22cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Facebookaddress.com</font></font></sup></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 9.7cm; left: 5.48cm; width: 33px">
+<img src="template-012_html_c4ba0ef7.gif" name="Shape49" alt="Shape49" align="left" hspace="1" width="33" height="37"/>
+</span>
+<span id="Frame43" dir="ltr" style="position: absolute; top: 12.45cm; left: 8.45cm; width: 0.87cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2009</font></font></sup></font></p>
+	<p align="center" style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2011</font></font></sup></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 9.66cm; left: 6.9cm; width: 370px">
+<img src="template-012_html_c66f0eaf.gif" name="Shape79" alt="Shape79" align="left" width="370" height="117"/>
+</span>
+<span id="Frame72" dir="ltr" style="position: absolute; top: 12.41cm; left: 9.87cm; width: 9.8cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+	<font color="#414042"><sup><font face="Crimson Text, serif"><b>Graphic<span style="letter-spacing: 2.1pt">
+	</span>and<span style="letter-spacing: 1.2pt"> </span>Web<span style="letter-spacing: 0.9pt">
+	</span>Designer</b></font></sup></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+	<font color="#414042"><font face="Crimson Text, serif"><i>Pixel<span style="letter-spacing: -0.2pt">
+	</span>Developement&amp;<span style="letter-spacing: -0.6pt"> </span>/
+	L<span style="letter-spacing: -0.3pt">o</span>nd<span style="letter-spacing: -0.2pt">o</span>n
+	/ England / 2012 - 2015</i></font></font></p>
+	<p style="line-height: 0.49cm; margin-top: 0.17cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">La
+	Iciissin  renis es essunt explaccabo. Lignatatquis magnima gnimus
+	dolesti voluptur?Ur? Ne pla as alicatenti doloribus non  con re que
+	pro imagnisquat ditia denissus.Et ideratibus aborero es consequas
+	ethjhjh.Picipit magnis autatis unt  esti optatus et re labo.</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 11.03cm; left: -1.46cm; width: 197px">
+<img src="template-012_html_7c1d0b4.gif" name="Shape63" alt="Shape63" align="left" vspace="1" width="197" height="15"/>
+</span>
+<span id="Frame57" dir="ltr" style="position: absolute; top: 13.78cm; left: 1.51cm; width: 5.22cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 6.9pt; line-height: 0.35cm; margin-bottom: 0cm">
+	<font color="#323031"><font face="Montserrat, serif"><font size="2" style="font-size: 9pt">EXPERTIZE</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.23cm; left: -1.3cm; width: 34px">
+<img src="template-012_html_fffdce12.gif" name="Shape87" alt="Shape87" align="left" hspace="1" vspace="1" width="34" height="19"/>
+</span>
+<span id="Frame76" dir="ltr" style="position: absolute; top: 14.99cm; left: 1.67cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">90<span style="letter-spacing: 1.4pt">
+	</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.33cm; left: 0.14cm; width: 133px">
+<img src="template-012_html_f20443d3.gif" name="Shape60" alt="Shape60" align="left" hspace="1" width="133" height="13"/>
+</span>
+<span id="Frame54" dir="ltr" style="position: absolute; top: 15.08cm; left: 3.11cm; width: 3.51cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">LAYOUT
+	</font></font></font>
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.22cm; left: -1.29cm; width: 34px">
+<img src="template-012_html_fffdce12.gif" name="Shape88" alt="Shape88" align="left" hspace="1" width="34" height="19"/>
+</span>
+<span id="Frame77" dir="ltr" style="position: absolute; top: 15.97cm; left: 1.68cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">85<span style="letter-spacing: 1.4pt">
+	</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.31cm; left: 0.22cm; width: 134px">
+<img src="template-012_html_8c627b95.gif" name="Shape59" alt="Shape59" align="left" hspace="1" width="134" height="15"/>
+</span>
+<span id="Frame53" dir="ltr" style="position: absolute; top: 16.06cm; left: 3.18cm; width: 3.54cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">LOGO
+	DESIGN</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.96cm; left: 5.48cm; width: 33px">
+<img src="template-012_html_c4ba0ef7.gif" name="Shape48" alt="Shape48" align="left" hspace="1" vspace="1" width="33" height="37"/>
+</span>
+<span id="Frame42" dir="ltr" style="position: absolute; top: 16.72cm; left: 8.45cm; width: 0.87cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2008</font></font></sup></font></p>
+	<p align="center" style="line-height: 0.49cm; margin-bottom: 0cm"><font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">2009</font></font></sup></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.93cm; left: 6.9cm; width: 370px">
+<img src="template-012_html_c66f0eaf.gif" name="Shape47" alt="Shape47" align="left" vspace="1" width="370" height="117"/>
+</span>
+<span id="Frame41" dir="ltr" style="position: absolute; top: 16.69cm; left: 9.87cm; width: 9.8cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+	<font color="#414042"><sup><font face="Crimson Text, serif"><b>Graphic<span style="letter-spacing: 2.1pt">
+	</span>and<span style="letter-spacing: 1.2pt"> </span>Web<span style="letter-spacing: 0.9pt">
+	</span>Designer</b></font></sup></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+	<font color="#414042"><font face="Crimson Text, serif"><i>Pixel<span style="letter-spacing: -0.2pt">
+	</span>Developement&amp;<span style="letter-spacing: -0.6pt"> </span>/
+	L<span style="letter-spacing: -0.3pt">o</span>nd<span style="letter-spacing: -0.2pt">o</span>n
+	/ England / 2012 - 2015</i></font></font></p>
+	<p style="line-height: 0.49cm; margin-top: 0.17cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">La
+	Iciissin  renis es essunt explaccabo. Lignatatquis magnima gnimus
+	dolesti voluptur?Ur? Ne pla as alicatenti doloribus non  con re que
+	pro imagnisquat ditia denissus.Et ideratibus aborero es consequas
+	ethjhjh.Picipit magnis autatis unt  esti optatus et re labo.</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.14cm; left: -1.28cm; width: 34px">
+<img src="template-012_html_fffdce12.gif" name="Shape89" alt="Shape89" align="left" vspace="1" width="34" height="19"/>
+</span>
+<span id="Frame78" dir="ltr" style="position: absolute; top: 16.89cm; left: 1.68cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">75<span style="letter-spacing: 1.4pt">
+	</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.23cm; left: 0.22cm; width: 134px">
+<img src="template-012_html_74399f68.gif" name="Shape58" alt="Shape58" align="left" hspace="1" width="134" height="13"/>
+</span>
+<span id="Frame52" dir="ltr" style="position: absolute; top: 16.98cm; left: 3.18cm; width: 3.54cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">BRANDING<span style="letter-spacing: -0.2pt">
+	</span></font></font></font>
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.06cm; left: -1.28cm; width: 34px">
+<img src="template-012_html_fffdce12.gif" name="Shape90" alt="Shape90" align="left" vspace="1" width="34" height="19"/>
+</span>
+<span id="Frame79" dir="ltr" style="position: absolute; top: 17.81cm; left: 1.68cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">90<span style="letter-spacing: 1.4pt">
+	</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.16cm; left: 0.22cm; width: 134px">
+<img src="template-012_html_74399f68.gif" name="Shape57" alt="Shape57" align="left" hspace="1" width="134" height="13"/>
+</span>
+<span id="Frame51" dir="ltr" style="position: absolute; top: 17.91cm; left: 3.18cm; width: 3.54cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">PACKAGING</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16cm; left: -1.29cm; width: 34px">
+<img src="template-012_html_fffdce12.gif" name="Shape91" alt="Shape91" align="left" hspace="1" width="34" height="19"/>
+</span>
+<span id="Frame80" dir="ltr" style="position: absolute; top: 18.75cm; left: 1.68cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">60<span style="letter-spacing: 1.4pt">
+	</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.08cm; left: 0.22cm; width: 134px">
+<img src="template-012_html_74399f68.gif" name="Shape56" alt="Shape56" align="left" hspace="1" width="134" height="13"/>
+</span>
+<span id="Frame50" dir="ltr" style="position: absolute; top: 18.83cm; left: 3.18cm; width: 3.54cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">WEB
+	 <span style="letter-spacing: -0.5pt"> </span>DESIGN<span style="letter-spacing: -0.2pt">
+	</span></font></font></font>
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.92cm; left: -1.29cm; width: 34px">
+<img src="template-012_html_fffdce12.gif" name="Shape92" alt="Shape92" align="left" hspace="1" vspace="1" width="34" height="19"/>
+</span>
+<span id="Frame81" dir="ltr" style="position: absolute; top: 19.67cm; left: 1.67cm; width: 0.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.43cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">95<span style="letter-spacing: 1.4pt">
+	</span><font size="2" style="font-size: 9pt">%</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17cm; left: 0.22cm; width: 134px">
+<img src="template-012_html_2fc520c7.gif" name="Shape55" alt="Shape55" align="left" hspace="1" width="134" height="16"/>
+</span>
+<span id="Frame49" dir="ltr" style="position: absolute; top: 19.75cm; left: 3.18cm; width: 3.54cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">PHO<span style="letter-spacing: -0.3pt">
+	</span>T<span style="letter-spacing: -0.5pt"> </span>O<span style="letter-spacing: -0.4pt">
+	</span>GRAPHY<span style="letter-spacing: -0.2pt"> </span></font></font></font>
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 18.6cm; left: 5.15cm; width: 406px">
+<img src="template-012_html_1d03be39.gif" name="Shape62" alt="Shape62" align="left" vspace="1" width="406" height="15"/>
+</span>
+<span id="Frame56" dir="ltr" style="position: absolute; top: 21.35cm; left: 8.11cm; width: 10.74cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 6.9pt; line-height: 0.35cm; margin-bottom: 0cm">
+	<font color="#323031"><font face="Montserrat, serif"><font size="2" style="font-size: 9pt">REFERENCES</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.53cm; left: -1.46cm; width: 197px">
+<img src="template-012_html_c8a47db3.gif" name="Shape61" alt="Shape61" align="left" vspace="1" width="197" height="16"/>
+</span>
+<span id="Frame55" dir="ltr" style="position: absolute; top: 22.28cm; left: 1.51cm; width: 5.22cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 6.9pt; line-height: 0.35cm; margin-bottom: 0cm">
+	<font color="#323031"><font face="Montserrat, serif"><font size="2" style="font-size: 9pt">HOBBY</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.95cm; left: 6.9cm; width: 147px">
+<img src="template-012_html_3fa81669.gif" name="Shape72" alt="Shape72" align="left" vspace="1" width="146" height="91"/>
+</span>
+<span id="Frame65" dir="ltr" style="position: absolute; top: 22.7cm; left: 9.87cm; width: 3.88cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+	<font color="#414042"><sup><font face="Crimson Text, serif"><b>Susan<span style="letter-spacing: 1.5pt">
+	</span>Dorns</b></font></sup></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+	<font color="#414042"><font face="Crimson Text, serif"><i>Senior
+	Designer</i></font></font></p>
+	<p style="line-height: 0.23cm; margin-top: 0.01cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt"><b>P
+	</b>: 012301230123<br/>
+<b>E</b> : <a href="mailto:susan@gmail.com">susan@gmail.com</a></font></font></sup></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.95cm; left: 12.68cm; width: 152px">
+<img src="template-012_html_86133930.gif" name="Shape78" alt="Shape78" align="left" hspace="1" vspace="1" width="152" height="80"/>
+</span>
+<span id="Frame71" dir="ltr" style="position: absolute; top: 22.7cm; left: 15.64cm; width: 4.02cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+	<font color="#414042"><sup><font face="Crimson Text, serif"><b>Susan<span style="letter-spacing: 1.5pt">
+	</span>Dorns</b></font></sup></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+	<font color="#414042"><font face="Crimson Text, serif"><i>Senior
+	Designer</i></font></font></p>
+	<p style="line-height: 0.23cm; margin-top: 0.01cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt"><b>P
+	</b>: 012301230123<br/>
+<b>E</b> : <a href="mailto:susan@gmail.com">susan@gmail.com</a></font></font></sup></font></p>
+	<p style="line-height: 0.23cm; margin-top: 0.01cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.83cm; left: 0.22cm; width: 134px">
+<img src="template-012_html_74399f68.gif" name="Shape54" alt="Shape54" align="left" hspace="1" vspace="1" width="134" height="13"/>
+</span>
+<span id="Frame48" dir="ltr" style="position: absolute; top: 23.58cm; left: 3.18cm; width: 3.54cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">BIC<span style="letter-spacing: -0.3pt">
+	</span>CY<span style="letter-spacing: -0.4pt"> </span>CLETTE<span style="letter-spacing: -0.2pt">
+	</span></font></font></font>
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 21.81cm; left: 0.22cm; width: 134px">
+<img src="template-012_html_74399f68.gif" name="Shape53" alt="Shape53" align="left" hspace="1" vspace="1" width="134" height="13"/>
+</span>
+<span id="Frame47" dir="ltr" style="position: absolute; top: 24.56cm; left: 3.18cm; width: 3.54cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">TRA<span style="letter-spacing: -0.6pt">
+	</span>VELLING<span style="letter-spacing: -0.2pt"> </span></font></font></font>
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.73cm; left: 0.22cm; width: 134px">
+<img src="template-012_html_74399f68.gif" name="Shape52" alt="Shape52" align="left" hspace="1" vspace="1" width="134" height="13"/>
+</span>
+<span id="Frame46" dir="ltr" style="position: absolute; top: 25.48cm; left: 3.18cm; width: 3.54cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">MO<span style="letter-spacing: -0.3pt">
+	</span>VIES<span style="letter-spacing: -0.2pt"> </span></font></font></font>
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.25cm; left: 6.9cm; width: 147px">
+<img src="template-012_html_f2b66111.gif" name="Shape71" alt="Shape71" align="left" width="146" height="108"/>
+</span>
+<span id="Frame64" dir="ltr" style="position: absolute; top: 26cm; left: 9.87cm; width: 3.88cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+	<font color="#414042"><sup><font face="Crimson Text, serif"><b>Susan<span style="letter-spacing: 1.5pt">
+	</span>Dorns</b></font></sup></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+	<font color="#414042"><font face="Crimson Text, serif"><i>Senior
+	Designer</i></font></font></p>
+	<p style="line-height: 0.23cm; margin-top: 0.01cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt"><b>P
+	</b>: 012301230123<br/>
+<b>E</b> : <a href="mailto:susan@gmail.com">susan@gmail.com</a></font></font></sup></font></p>
+	<p style="line-height: 100%; margin-right: -0.04cm; margin-left: 0.04cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.23cm; left: 12.68cm; width: 155px">
+<img src="template-012_html_30873c0c.gif" name="Shape77" alt="Shape77" align="left" hspace="1" width="155" height="81"/>
+</span>
+<span id="Frame70" dir="ltr" style="position: absolute; top: 25.98cm; left: 15.64cm; width: 4.11cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0cm">
+	<font color="#414042"><sup><font face="Crimson Text, serif"><b>Susan<span style="letter-spacing: 1.5pt">
+	</span>Dorns</b></font></sup></font></p>
+	<p style="line-height: 0.46cm; margin-top: 0.06cm; margin-bottom: 0cm">
+	<font color="#414042"><font face="Crimson Text, serif"><i>Senior
+	Designer</i></font></font></p>
+	<p style="line-height: 0.23cm; margin-top: 0.01cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="letter-spacing: 0.2pt; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#58595b"><sup><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt"><b>P
+	</b>: 012301230123<br/>
+<b>E</b> : <a href="mailto:susan@gmail.com">susan@gmail.com</a></font></font></sup></font></p>
+	<p style="line-height: 100%; margin-right: -0.04cm; margin-left: 0.04cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 23.66cm; left: 0.22cm; width: 134px">
+<img src="template-012_html_2fc520c7.gif" name="Shape51" alt="Shape51" align="left" hspace="1" vspace="1" width="134" height="16"/>
+</span>
+<span id="Frame45" dir="ltr" style="position: absolute; top: 26.41cm; left: 3.18cm; width: 3.54cm; border: none; padding: 0cm; background: #ffffff"><p style="letter-spacing: 0.9pt; line-height: 0.31cm; margin-bottom: 0cm">
+	<font color="#58595b"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt">DRA<span style="letter-spacing: -0.6pt">
+	</span>WING<span style="letter-spacing: -0.2pt"> </span></font></font></font>
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: -1.27cm; left: 4.51cm; width: 334px">
+<img src="template-012_html_2e964c47.gif" name="Shape68" alt="Shape68" align="left" width="334" height="21"/>
+</span>
+<span id="Frame62" dir="ltr" style="position: absolute; top: 1.48cm; left: 7.48cm; width: 8.85cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.52cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#323031"><sub><font face="Montserrat, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 8.7pt">AXEL
+	MARTIAL</span></font></font></sub></font></font></p>
+	<p style="line-height: 0.52cm; margin-right: -0.11cm; margin-left: 0.04cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.12cm; left: 4.15cm; width: 228px">
+<img src="template-012_html_b0fe3484.gif" name="Shape67" alt="Shape67" align="left" width="228" height="13"/>
+</span>
+<span id="Frame61" dir="ltr" style="position: absolute; top: 2.87cm; left: 7.11cm; width: 6.04cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.32cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#414042"><sub><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 3.0pt">GRAPHIC
+	DESIGNER </span></font></font></sub></font></font>
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.1cm; left: 10.31cm; width: 136px">
+<img src="template-012_html_412e03f7.gif" name="Shape66" alt="Shape66" align="left" width="136" height="13"/>
+</span>
+<span id="Frame60" dir="ltr" style="position: absolute; top: 2.85cm; left: 13.28cm; width: 3.61cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.32cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#414042"><sub><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 3.0pt">03/
+	09/2003 </span></font></font></sub></font></font>
+	</p>
+</span>
+<img src="template-012_html_6affa966.png" name="Image8" align="left" width="12" height="12" border="0"/>
+
+<img src="template-012_html_6affa966.png" name="Image10" align="left" width="12" height="12" border="0"/>
+
+<img src="template-012_html_6affa966.png" name="Image9" align="left" width="12" height="12" border="0"/>
+<span class="sd-abs-pos" style="position: absolute; top: 22.6cm; left: 14.08cm; width: 34px">
+<img src="template-012_html_4c8d46d1.png" name="Image6" width="34" height="34" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 25.95cm; left: 8.51cm; width: 34px">
+<img src="template-012_html_4c8d46d1.png" name="Image5" width="34" height="34" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 25.95cm; left: 14.08cm; width: 34px">
+<img src="template-012_html_4c8d46d1.png" name="Picture 201" width="34" height="34" border="0"/>
+</span><br/>
+<br/>
+
+</p>
+</body>
+</html>

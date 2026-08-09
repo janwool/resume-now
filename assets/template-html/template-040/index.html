@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Admin"/>
+	<meta name="created" content="2017-01-26T10:01:00"/>
+	<meta name="changedby" content="Admin"/>
+	<meta name="changed" content="2017-01-26T10:01:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 108%; margin-bottom: 0.28cm"><a name="_GoBack"></a>
+<span class="sd-abs-pos" style="position: absolute; top: 0cm; left: -0cm; width: 794px"><img src="template-040_html_f2a520cd.gif" name="Shape53" alt="Shape53" align="left" width="794" height="1122"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0cm; left: 0.01cm; width: 793px"><img src="template-040_html_54496da4.gif" name="Shape51" alt="Shape51" align="left" hspace="12" vspace="1" width="793" height="290"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 1.22cm; left: 1.2cm; width: 703px"><img src="template-040_html_bc0afdfe.gif" name="Shape52" alt="Shape52" align="left" hspace="12" vspace="1" width="703" height="1030"/>
+</span><img src="template-040_html_fcf10e2e.gif" name="Shape1" alt="Shape1" align="left" hspace="12" vspace="1" width="339" height="81"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 8.98cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 1.09cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="6" style="font-size: 30pt"><span style="letter-spacing: 2.8pt"><b>THOMAS</b></span></font></font></font></font></p>
+	<p style="line-height: 1.09cm; margin-bottom: 0.28cm"><font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="6" style="font-size: 30pt"><span style="letter-spacing: 2.8pt"><b>COLEMAN</b></span></font></font></font></font></p>
+</span>
+<img src="template-040_html_b281804.gif" name="Shape2" alt="Shape2" align="left" hspace="13" vspace="1" width="223" height="19"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 5.9cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">VFX
+	SUPERVISOR</font></font></font></font></p>
+</span>
+<img src="template-040_html_6b1fd1d8.gif" name="Shape3" alt="Shape3" align="left" hspace="12" vspace="1" width="98" height="16"/>
+
+<span id="Frame3" dir="ltr" style="float: left; width: 2.58cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">SOCIAL</font></font></font></font></p>
+</span>
+<img src="template-040_html_1a418bef.gif" name="Shape4" alt="Shape4" align="left" hspace="12" vspace="1" width="147" height="16"/>
+
+<span id="Frame4" dir="ltr" style="float: left; width: 3.89cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">GET
+	IN TOUCH</font></font></font></font></p>
+</span>
+<img src="template-040_html_c398fd53.gif" name="Shape5" alt="Shape5" align="left" hspace="13" vspace="1" width="189" height="16"/>
+
+<span id="Frame5" dir="ltr" style="float: left; width: 5cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Linkedin.com/thomascoleman</font></font></font></font></p>
+</span>
+<img src="template-040_html_5fea7e68.gif" name="Shape6" alt="Shape6" align="left" hspace="13" vspace="1" width="174" height="40"/>
+
+<span id="Frame6" dir="ltr" style="float: left; width: 4.62cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.49cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">219
+	West Hillcrest Court</font></font></font></font></p>
+	<p style="text-align: end; line-height: 0.49cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Utica,
+	NY 13501</font></font></font></font></p>
+</span>
+<img src="template-040_html_26ec2c40.gif" name="Shape7" alt="Shape7" align="left" hspace="12" vspace="1" width="190" height="19"/>
+
+<span id="Frame7" dir="ltr" style="float: left; width: 5.03cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 1.5pt"><b>EXPERIENCE</b></span></font></font></font></font></p>
+</span>
+<img src="template-040_html_ef994cfb.gif" name="Shape8" alt="Shape8" align="left" hspace="13" vspace="1" width="139" height="16"/>
+
+<span id="Frame8" dir="ltr" style="float: left; width: 3.67cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">2014-2018</font></font></font></font></p>
+</span>
+<img src="template-040_html_c5b43dd9.gif" name="Shape9" alt="Shape9" align="left" hspace="12" vspace="1" width="136" height="16"/>
+
+<span id="Frame9" dir="ltr" style="float: left; width: 3.61cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Anibrain</font></font></font></font></p>
+</span>
+<img src="template-040_html_bc9a756c.gif" name="Shape10" alt="Shape10" align="left" hspace="12" width="361" height="56"/>
+
+<span id="Frame10" dir="ltr" style="float: left; width: 9.57cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.49cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Sed
+	ut perspiciatis unde omnis iste natus error sit voluptaccusantium
+	doloremque laudantium, totam rem aperiam, eaque ipsa quae.</font></font></font></font></p>
+</span>
+<img src="template-040_html_398a2d74.gif" name="Shape11" alt="Shape11" align="left" hspace="12" vspace="1" width="155" height="15"/>
+
+<span id="Frame11" dir="ltr" style="float: left; width: 4.1cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 1.5pt"><b>INTEREST</b></span></font></font></font></font></p>
+</span>
+<img src="template-040_html_29ee2bee.gif" name="Shape12" alt="Shape12" align="left" hspace="12" vspace="1" width="236" height="17"/>
+
+<span id="Frame12" dir="ltr" style="float: left; width: 6.24cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">SENIOR
+	VFX SUPERVISOR</font></font></font></font></p>
+</span>
+<img src="template-040_html_2d71da6f.gif" name="Shape13" alt="Shape13" align="left" hspace="13" vspace="1" width="185" height="15"/>
+
+<span id="Frame13" dir="ltr" style="float: left; width: 4.89cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: 1.5pt"><b>REFERENCE</b></span></font></font></font></font></p>
+</span>
+<img src="template-040_html_ef994cfb.gif" name="Shape25" alt="Shape25" align="left" hspace="13" vspace="1" width="139" height="16"/>
+
+<span id="Frame14" dir="ltr" style="float: left; width: 3.67cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">2014-2018</font></font></font></font></p>
+</span>
+<img src="template-040_html_c5b43dd9.gif" name="Shape26" alt="Shape26" align="left" hspace="12" vspace="1" width="136" height="16"/>
+
+<span id="Frame15" dir="ltr" style="float: left; width: 3.61cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Anibrain</font></font></font></font></p>
+</span>
+<img src="template-040_html_ef994cfb.gif" name="Shape27" alt="Shape27" align="left" hspace="13" vspace="1" width="139" height="16"/>
+
+<span id="Frame16" dir="ltr" style="float: left; width: 3.67cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">2014-2018</font></font></font></font></p>
+</span>
+<img src="template-040_html_c5b43dd9.gif" name="Shape28" alt="Shape28" align="left" hspace="12" vspace="1" width="136" height="16"/>
+
+<span id="Frame17" dir="ltr" style="float: left; width: 3.61cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Anibrain</font></font></font></font></p>
+</span>
+<img src="template-040_html_ef994cfb.gif" name="Shape29" alt="Shape29" align="left" hspace="13" vspace="1" width="139" height="16"/>
+
+<span id="Frame18" dir="ltr" style="float: left; width: 3.67cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">2014-2018</font></font></font></font></p>
+</span>
+<img src="template-040_html_c5b43dd9.gif" name="Shape30" alt="Shape30" align="left" hspace="12" vspace="1" width="136" height="16"/>
+
+<span id="Frame19" dir="ltr" style="float: left; width: 3.61cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Anibrain</font></font></font></font></p>
+</span>
+<img src="template-040_html_bc9a756c.gif" name="Shape31" alt="Shape31" align="left" hspace="12" width="361" height="56"/>
+
+<span id="Frame20" dir="ltr" style="float: left; width: 9.57cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.49cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Sed
+	ut perspiciatis unde omnis iste natus error sit voluptaccusantium
+	doloremque laudantium, totam rem aperiam, eaque ipsa quae.</font></font></font></font></p>
+</span>
+<img src="template-040_html_29ee2bee.gif" name="Shape32" alt="Shape32" align="left" hspace="12" vspace="1" width="236" height="17"/>
+
+<span id="Frame21" dir="ltr" style="float: left; width: 6.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">SENIOR
+	VFX SUPERVISOR</font></font></font></font></p>
+</span>
+<img src="template-040_html_bc9a756c.gif" name="Shape33" alt="Shape33" align="left" hspace="12" width="361" height="56"/>
+
+<span id="Frame22" dir="ltr" style="float: left; width: 9.57cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.49cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Sed
+	ut perspiciatis unde omnis iste natus error sit voluptaccusantium
+	doloremque laudantium, totam rem aperiam, eaque ipsa quae.</font></font></font></font></p>
+</span>
+<img src="template-040_html_29ee2bee.gif" name="Shape34" alt="Shape34" align="left" hspace="12" vspace="1" width="236" height="17"/>
+
+<span id="Frame23" dir="ltr" style="float: left; width: 6.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">SENIOR
+	VFX SUPERVISOR</font></font></font></font></p>
+</span>
+<img src="template-040_html_bc9a756c.gif" name="Shape35" alt="Shape35" align="left" hspace="12" width="361" height="56"/>
+
+<span id="Frame24" dir="ltr" style="float: left; width: 9.57cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.49cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Sed
+	ut perspiciatis unde omnis iste natus error sit voluptaccusantium
+	doloremque laudantium, totam rem aperiam, eaque ipsa quae.</font></font></font></font></p>
+</span>
+<img src="template-040_html_29ee2bee.gif" name="Shape36" alt="Shape36" align="left" hspace="12" vspace="1" width="236" height="17"/>
+
+<span id="Frame25" dir="ltr" style="float: left; width: 6.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">SENIOR
+	VFX SUPERVISOR</font></font></font></font></p>
+</span>
+<img src="template-040_html_f43c33a2.gif" name="Shape37" alt="Shape37" align="left" hspace="12" width="165" height="16"/>
+
+<span id="Frame26" dir="ltr" style="float: left; width: 4.38cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">ALONZO
+	SPARKS</font></font></font></font></p>
+</span>
+<img src="template-040_html_f43c33a2.gif" name="Shape38" alt="Shape38" align="left" hspace="12" width="165" height="16"/>
+
+<span id="Frame27" dir="ltr" style="float: left; width: 4.38cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="2" style="font-size: 10pt">STEVEN
+	SIMPSON</font></font></font></font></p>
+</span>
+<img src="template-040_html_4dbf038c.gif" name="Shape39" alt="Shape39" align="left" hspace="12" vspace="1" width="101" height="16"/>
+
+<span id="Frame28" dir="ltr" style="float: left; width: 2.68cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">Director</font></font></font></font></p>
+</span>
+<img src="template-040_html_23bfaa39.gif" name="Shape40" alt="Shape40" align="left" hspace="13" vspace="1" width="127" height="16"/>
+
+<span id="Frame29" dir="ltr" style="float: left; width: 3.36cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">VFX
+	Supervisor</font></font></font></font></p>
+</span>
+<img src="template-040_html_4c6dabd.gif" name="Shape41" alt="Shape41" align="left" hspace="12" vspace="1" width="132" height="16"/>
+
+<span id="Frame30" dir="ltr" style="float: left; width: 3.5cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.8pt">P
+	-</span></font></font></font><font color="#464269"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">
+	</font></font></font><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">+1
+	202 555 0137</font></font></font></font></p>
+</span>
+<img src="template-040_html_e865a17.gif" name="Shape42" alt="Shape42" align="left" hspace="13" vspace="1" width="177" height="16"/>
+
+<span id="Frame31" dir="ltr" style="float: left; width: 4.68cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.8pt">E
+	-</span></font></font></font><font color="#464269"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">
+	</font></font></font><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">info@alonzosparks.com</font></font></font></font></p>
+</span>
+<img src="template-040_html_4c6dabd.gif" name="Shape43" alt="Shape43" align="left" hspace="12" vspace="1" width="132" height="16"/>
+
+<span id="Frame32" dir="ltr" style="float: left; width: 3.5cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.8pt">P
+	-</span></font></font></font><font color="#464269"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">
+	</font></font></font><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">+1
+	202 555 0105</font></font></font></font></p>
+</span>
+<img src="template-040_html_80abe804.gif" name="Shape44" alt="Shape44" align="left" hspace="12" vspace="1" width="183" height="16"/>
+
+<span id="Frame33" dir="ltr" style="float: left; width: 4.85cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#464269"><font face="Montserrat, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.8pt">E
+	-</span></font></font></font><font color="#464269"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">
+	</font></font></font><font color="#6d6e71"><font face="Fira Sans, sans-serif"><font size="1" style="font-size: 8pt">info@stevensimson.com</font></font></font></font></p>
+</span>
+<img src="template-040_html_ad9f6f75.gif" name="Shape50" alt="Shape50" align="left" hspace="12" width="31" height="24"/>
+
+<img src="template-040_html_dcf1e617.gif" name="Shape49" alt="Shape49" align="left" hspace="12" width="32" height="28"/>
+
+<img src="template-040_html_f7dea7b8.gif" name="Shape48" alt="Shape48" align="left" hspace="12" vspace="1" width="33" height="23"/>
+
+<img src="template-040_html_eeb3480a.gif" name="Shape47" alt="Shape47" align="left" hspace="12" width="40" height="20"/>
+
+<img src="template-040_html_5473cfa9.gif" name="Shape46" alt="Shape46" align="left" hspace="12" vspace="1" width="36" height="21"/>
+
+<img src="template-040_html_fbc89010.gif" name="Shape45" alt="Shape45" align="left" hspace="12" width="29" height="28"/>
+
+<img src="template-040_html_8df83d06.gif" name="Shape24" alt="Shape24" align="left" hspace="12" vspace="1" height="14"/>
+
+<img src="template-040_html_8df83d06.gif" name="Shape23" alt="Shape23" align="left" hspace="12" vspace="1" height="14"/>
+
+<img src="template-040_html_8df83d06.gif" name="Shape22" alt="Shape22" align="left" hspace="12" vspace="1" height="14"/>
+
+<img src="template-040_html_1cbfb02d.gif" name="Shape21" alt="Shape21" align="left" hspace="12" vspace="1" height="621"/>
+
+<img src="template-040_html_3ad0c3d6.gif" name="Shape20" alt="Shape20" align="left" hspace="13" vspace="1" width="360" height="1"/>
+
+<img src="template-040_html_3ad0c3d6.gif" name="Shape19" alt="Shape19" align="left" hspace="13" vspace="1" width="360" height="1"/>
+
+<img src="template-040_html_3ad0c3d6.gif" name="Shape18" alt="Shape18" align="left" hspace="13" vspace="1" width="360" height="1"/>
+
+<img src="template-040_html_12890fc1.gif" name="Shape17" alt="Shape17" align="left" hspace="14" vspace="1" width="179"/>
+
+<img src="template-040_html_23e2050d.gif" name="Shape16" alt="Shape16" align="left" hspace="15" vspace="1" width="179"/>
+
+<img src="template-040_html_2a4af6a2.gif" name="Shape15" alt="Shape15" align="left" hspace="14" vspace="1" width="360"/>
+
+<img src="template-040_html_e0d5c05e.gif" name="Shape14" alt="Shape14" align="left" hspace="13" vspace="1" width="45" height="1"/>
+<br/>
+<br/>
+
+</p>
+</body>
+</html>

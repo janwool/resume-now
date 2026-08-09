@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="小王子"/>
+	<meta name="created" content="2018-12-12T12:45:00"/>
+	<meta name="changedby" content="nancy"/>
+	<meta name="changed" content="2018-12-12T12:48:16"/>
+	<meta name="KSOProductBuildVer" content="2052-10.1.0.7698"/>
+	<meta name="KSORubyTemplateID" content="4"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { text-align: justify; widows: 0; orphans: 0; line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		p.western { font-family: "Calibri", serif; so-language: en-US; font-size: 10pt }
+		p.cjk { font-family: "宋体"; font-size: 10pt; so-language: zh-CN }
+		p.ctl { so-language: ar-SA; font-size: 12pt; font-family:  }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" bgcolor="#ffffff" dir="ltr"><p class="cjk" style="line-height: 100%; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm"><a name="_GoBack"></a>
+<img src="template-092_html_5a093835.gif" name="Shape21" alt="Shape21" align="left" width="274" height="22"/>
+<img src="template-092_html_90d60d51.gif" name="Shape20" alt="Shape20" align="left" width="303" height="22"/>
+<img src="template-092_html_4d29b54e.gif" name="Shape19" alt="Shape19" align="left" width="544" height="154"/>
+<img src="template-092_html_147c49aa.gif" name="Shape12" alt="Shape12" align="left" width="292" height="29"/>
+<img src="template-092_html_1ca37737.gif" name="Shape11" alt="Shape11" align="left" width="692" height="1"/>
+<img src="template-092_html_147c49aa.gif" name="Shape16" alt="Shape16" align="left" width="292" height="29"/>
+<img src="template-092_html_1ca37737.gif" name="Shape10" alt="Shape10" align="left" width="692" height="1"/>
+<img src="template-092_html_2351f48b.gif" name="Shape1" alt="Shape1" align="left" width="145" height="34"/>
+<spacer type="block" align="left" width="145" height="50"><img src="template-092_html_5144dfce.gif" name="Shape4" alt="Shape4" align="left" width="544" height="58"/>
+<img src="template-092_html_8f1db6de.gif" name="Shape2" alt="Shape2" align="left" width="544" height="34"/>
+<img src="template-092_html_147c49aa.gif" name="Shape15" alt="Shape15" align="left" width="292" height="29"/>
+<img src="template-092_html_147c49aa.gif" name="Shape13" alt="Shape13" align="left" width="292" height="29"/>
+<img src="template-092_html_2351f48b.gif" name="Shape3" alt="Shape3" align="left" width="145" height="34"/>
+<img src="template-092_html_1ca37737.gif" name="Shape9" alt="Shape9" align="left" width="692" height="1"/>
+<img src="template-092_html_2351f48b.gif" name="Shape18" alt="Shape18" align="left" width="145" height="34"/>
+<img src="template-092_html_1ca37737.gif" name="Shape7" alt="Shape7" align="left" width="692" height="1"/>
+<img src="template-092_html_7c2aa5b2.gif" name="Shape17" alt="Shape17" align="left" width="544" height="106"/>
+<img src="template-092_html_c484838.gif" name="Shape5" alt="Shape5" align="left" width="145" height="346"/>
+<img src="template-092_html_147c49aa.gif" name="Shape14" alt="Shape14" align="left" width="292" height="29"/>
+<img src="template-092_html_93303164.gif" name="Shape6" alt="Shape6" align="left" width="544" height="418"/>
+<img src="template-092_html_1ca37737.gif" name="Shape8" alt="Shape8" align="left" width="692" height="1"/>
+<span id="Frame2" dir="ltr" style="float: left; width: 14.39cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Tahoma, sans-serif">CSDN
+	BBS</font></span></font></font></p>
+</span>
+<spacer type="block" align="left" width="145" height="50">
+<span id="Frame4" dir="ltr" style="float: left; width: 14.39cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">English:
+	CET6</font></span></font></font></p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Computer:
+	NCRE certificate, Rank 3 (network technique)</font></span></font></font></p>
+</span>
+<span id="Frame5" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Tahoma, sans-serif">2013.03-2013.06</font></span></font></font></p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Tahoma, sans-serif">2012.07-2012.12</font></span></font></font></p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Tahoma, sans-serif">2011.09-2012.08</font></span></font></font></p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 14.39cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Verdana, sans-serif"><b>Qihang
+	Star Ltd., corporation	</b></font></font><font color="#000000"><font face="Verdana, sans-serif"><b>
+	    </b></font></font><font color="#000000"><font face="Verdana, sans-serif"><b>PHP
+	Development Engineer</b></font></font></span></font></p>
+	<ul>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Demonstrated
+		development and audit programming role using ClearCase, ClearQuest,
+		FTR, MetroWerks, Lint, ATT, and Code Warrior</font></span></font></font></p></li>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Completed
+		project deliverables for Change/Configuration Management and
+		Development Environment </font></span></font></font>
+		</p></li>
+	</ul>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Verdana, sans-serif"><b>Building
+	Unlimited	</b></font></font><font color="#000000"><font face="Verdana, sans-serif"><b>
+	                 </b></font></font><font color="#000000"><font face="Verdana, sans-serif"><b>Project
+	Leader </b></font></font></span></font>
+	</p>
+	<ul>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Delivered
+		three large web projects based on Microsoft Solutions Framework and
+		the Rational Unified Process </font></span></font></font>
+		</p></li>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Developed
+		web sites using ASP, client-side JavaScript, XML and XSL and
+		produced the graphical look using Adobe Photoshop</font></span></font></font></p></li>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Website:
+		http://www.dormforce.net/ </font></span></font></font>
+		</p></li>
+	</ul>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif"><b>CRM
+	 management system	Database &amp; Web Design</b></font></span></font></font></p>
+	<ul>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Analyzed
+		visualization of topological and spatial relationships</font></span></font></font></p></li>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Conducted
+		pilot experiments related to expertise and cognitive psychology</font></span></font></font></p></li>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Demonstrated
+		development and audit programming role using ClearCase, ClearQuest,
+		FTR, MetroWerks, Lint, ATT, and Code Warrior</font></span></font></font></p></li>
+	</ul>
+</span>
+<span id="Frame7" dir="ltr" style="float: left; width: 7.73cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif"><font size="2" style="font-size: 11pt"><b>TECHNICAL
+	SKILLS</b></font></font></span></font></font></p>
+</span>
+<span id="Frame8" dir="ltr" style="float: left; width: 7.73cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif"><font size="2" style="font-size: 11pt"><b>F2E
+	RELATED EXPERIENCE</b></font></font></span></font></font></p>
+</span>
+<span id="Frame9" dir="ltr" style="float: left; width: 7.73cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif"><font size="2" style="font-size: 11pt"><b>EDUCATION
+	BACKGOUND</b></font></font></span></font></font></p>
+</span>
+<span id="Frame10" dir="ltr" style="float: left; width: 7.73cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Tahoma, sans-serif"><font size="3" style="font-size: 12pt"><b>INTERESTS</b></font></font></span></font></font></p>
+</span>
+<span id="Frame11" dir="ltr" style="float: left; width: 7.73cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.49cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Tahoma, sans-serif"><font size="3" style="font-size: 12pt"><b>OTHER
+	SKILLS</b></font></font></span></font></font></p>
+</span>
+<span id="Frame12" dir="ltr" style="float: left; width: 14.39cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Verdana, sans-serif"><b>Jobs
+	University	</b></font></font><font color="#000000"><font face="Verdana, sans-serif"><b>
+	    </b></font></font><font color="#000000"><font face="Verdana, sans-serif"><b>Bachelor
+	of Science in Computer Science</b></font></font></span></font></p>
+	<ul>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">GPA:
+		3.6/4.0 </font></span></font></font>
+		</p></li>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">XX
+		Scholarships</font></span></font></font></p></li>
+		<li><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Shanghai
+		World Expo volunteer</font></span></font></font></p></li>
+	</ul>
+</span>
+<span id="Frame13" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Tahoma, sans-serif">2010.09-2014.06</font></span></font></font></p>
+</span>
+<span id="Frame14" dir="ltr" style="float: left; width: 14.39cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Assembler
+	Language: HTML, CSS, JS, C++, Flash/Flex, Silverlight, XML</font></span></font></font></p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Web
+	editor: Adobe Dreamweaver, Frontpage, CSSDesk, Drawter</font></span></font></font></p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Database
+	software: Oracle, SQL Sever, Access</font></span></font></font></p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Programming
+	software: Delphi, VC++</font></span></font></font></p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Operating
+	system: Windows, Linux, Unix, iOS</font></span></font></font></p>
+	<p style="text-align: start; line-height: 0.64cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif">Photoshop
+	certificate, Web designers certificate</font></span></font></font></p>
+</span>
+<span id="Frame15" dir="ltr" style="float: left; width: 8.02cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.46cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif"><font size="2" style="font-size: 11pt"><b>Objective</b></font></font></span></font><font size="2" style="font-size: 11pt"><b>：</b></font><font face="Calibri, serif"><span lang="en-US"><font face="Verdana, sans-serif"><font size="2" style="font-size: 11pt"><b>Front-end
+	Engineer</b></font></font></span></font></font></p>
+	<p style="text-align: end; line-height: 0.46cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Verdana, sans-serif">(+86)
+	138-00</font></font><font color="#000000"><font face="Verdana, sans-serif"><span lang="en-US">00</span></font></font><font color="#000000"><font face="Verdana, sans-serif">-8000</font></font></span></font></p>
+	<p style="text-align: end; line-height: 0.46cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Verdana, sans-serif"><span lang="en-US">1906222627</span></font></font><font color="#000000"><font face="Verdana, sans-serif">@</font></font><font color="#000000"><font face="Verdana, sans-serif"><span lang="en-US">qq</span></font></font><font color="#000000"><font face="Verdana, sans-serif">.com</font></font></span></font></p>
+	<p style="text-align: end; line-height: 0.46cm; margin-bottom: 0cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Verdana, sans-serif">wechat:</font></font><font color="#000000"><font face="Verdana, sans-serif">xiaowangzi</font></font></span></font></p>
+</span>
+<span id="Frame16" dir="ltr" style="float: left; width: 7.25cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Verdana, sans-serif"><font size="6" style="font-size: 22pt"><b>Aaron
+	</b></font></font></font><font color="#000000"><font face="Verdana, sans-serif"><font size="6" style="font-size: 22pt"><b>Fang</b></font></font></font></span></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

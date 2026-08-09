@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="小王子"/>
+	<meta name="created" content="2018-12-12T01:57:00"/>
+	<meta name="changedby" content="K"/>
+	<meta name="changed" content="2018-12-12T02:23:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="KSOProductBuildVer" content="2052-10.1.0.7698"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 0; margin-bottom: 0.25cm; orphans: 0; line-height: 115%; text-align: justify; background: transparent }
+		p.western { font-size: 10pt }
+		p.cjk { font-size: 10pt }
+		p.ctl { font-size: 11pt }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" bgcolor="#ffffff" dir="ltr"><p class="cjk" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><img src="template-102_html_15b0066d.gif" name="Shape21" alt="Shape21" align="left" hspace="1" width="59" height="32"/>
+<img src="template-102_html_4c09e53e.gif" name="Shape20" alt="Shape20" align="left" width="762" height="32"/>
+<img src="template-102_html_9400ae9f.gif" name="Shape22" alt="Shape22" align="left" width="132" height="132"/>
+<img src="template-102_html_7c9a6c1b.gif" name="Shape24" alt="Shape24" align="left" hspace="1" vspace="1" width="820" height="15"/>
+<img src="template-102_html_c8262d02.gif" name="Shape23" alt="Shape23" align="left" width="269" height="68"/>
+<img src="template-102_html_d29e375b.gif" name="Shape25" alt="Shape25" align="left" width="241" height="118"/>
+<span id="Frame12" dir="ltr" style="float: left; width: 7.12cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; margin-bottom: 0cm; line-height: 1.06cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#121c25"><font size="6" style="font-size: 30pt">SHAWN
+	XIAO </font></font></span></font>
+	</p>
+	<p style="text-align: start; margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#258bb1"><font size="2" style="font-size: 11pt">Objective:
+	Business Analyst</font></font><font color="#258bb1"><font size="2" style="font-size: 11pt">
+	</font></font></span></font>
+	</p>
+</span>
+<img src="template-102_html_27ee207b.gif" name="Shape4" alt="Shape4" align="left" hspace="1" vspace="1" width="19" height="19"/>
+
+<img src="template-102_html_c80adf21.gif" name="Shape3" alt="Shape3" align="left" hspace="1" vspace="1" width="19" height="19"/>
+
+<img src="template-102_html_45496959.gif" name="Shape19" alt="Shape19" align="left" width="200" height="33"/>
+
+<img src="template-102_html_522dc5d6.gif" name="Shape2" alt="Shape2" align="left" hspace="1" vspace="1" width="19" height="19"/>
+
+<img src="template-102_html_b1b0851f.gif" name="Shape1" alt="Shape1" align="left" hspace="1" vspace="1" width="19" height="19"/>
+
+<img src="template-102_html_c445de72.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="2" width="712" height="1"/>
+
+<img src="template-102_html_a2869dc4.gif" name="Shape9" alt="Shape9" align="left" width="731" height="269"/>
+
+<img src="template-102_html_45496959.gif" name="Shape16" alt="Shape16" align="left" width="200" height="33"/>
+
+<img src="template-102_html_45496959.gif" name="Shape10" alt="Shape10" align="left" width="200" height="33"/>
+
+<img src="template-102_html_c445de72.gif" name="Shape11" alt="Shape11" align="left" hspace="1" vspace="2" width="712" height="1"/>
+
+<img src="template-102_html_45496959.gif" name="Shape7" alt="Shape7" align="left" width="200" height="33"/>
+
+<img src="template-102_html_c445de72.gif" name="Shape17" alt="Shape17" align="left" hspace="1" vspace="2" width="712"/>
+
+<img src="template-102_html_bcfa2cac.gif" name="Shape6" alt="Shape6" align="left" width="731" height="72"/>
+
+<img src="template-102_html_4db03a9b.gif" name="Shape12" alt="Shape12" align="left" width="731" height="85"/>
+
+<img src="template-102_html_48cef474.gif" name="Shape5" alt="Shape5" align="left" hspace="1" vspace="2" width="712" height="1"/>
+
+<img src="template-102_html_7a14f15.gif" name="Shape15" alt="Shape15" align="left" width="731" height="67"/>
+
+<img src="template-102_html_48cef474.gif" name="Shape14" alt="Shape14" align="left" hspace="1" vspace="2" width="712"/>
+
+<img src="template-102_html_b2eba610.gif" name="Shape18" alt="Shape18" align="left" width="731" height="123"/>
+
+<img src="template-102_html_45496959.gif" name="Shape13" alt="Shape13" align="left" width="200" height="33"/>
+
+<span id="Frame1" dir="ltr" style="float: left; width: 19.35cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.64cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414141"><font size="2" style="font-size: 11pt"><b>2012.09-2016.06
+	              Sun Yat-sen University              Accounting
+	(Bachelor)         </b></font></font></span></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Western
+	economics, accounting computerization, marketing, intermediate
+	financial accounting, advanced financial accounting, international
+	finance.</font></font></span></font></p>
+</span>
+<img src="template-102_html_23e23486.jpg" name="图片 1" align="left" width="127" height="127" border="0"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 5.29cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><span style="text-transform: uppercase"><font color="#121c25"><font size="4" style="font-size: 14pt"><b>EDUCATION</b></font></font></span></span></font></p>
+</span>
+<span id="Frame3" dir="ltr" style="float: left; width: 19.35cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414141"><font size="2" style="font-size: 11pt"><b>2015.07-2015.09
+	              Bank of China                     Customer service    
+	                              </b></font></font></span></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt"><b>Job
+	description</b></font></font><font color="#808080"><font size="2" style="font-size: 11pt"><b>:</b></font></font></span></font></p>
+	<ul>
+		<li><p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Providing
+		custom service including 7*24 financial consultations, trading
+		assistants, Q&amp;As and customer cares through telephone and
+		internet.</font></font></span></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">In
+		the cases of which clients’ problems could not be solved online,
+		transfer the information to the back staff to settle, and track the
+		settlements before communicating with the clients.</font></font></span></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Abiding
+		the regulations and working closely with the operating
+		administration and other co-workers.</font></font></span></font></p></li>
+	</ul>
+	<p style="margin-top: 0.42cm; margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#414141"><font size="2" style="font-size: 11pt"><b>2015.07-2015.09
+	              Bank of China                     Customer service    
+	                              </b></font></font></span></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt"><b>Job
+	description</b></font></font><font color="#808080"><font size="2" style="font-size: 11pt"><b>:</b></font></font></span></font></p>
+	<ul>
+		<li><p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Providing
+		custom service including 7*24 financial consultations, trading
+		assistants, Q&amp;As and customer cares through telephone and
+		internet.</font></font></span></font></p></li>
+		<li><p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">In
+		the cases of which clients’ problems could not be solved online,
+		transfer the information to the back staff to settle, and track the
+		settlements before communicating with the clients.</font></font></span></font></p></li>
+	</ul>
+</span>
+<span id="Frame4" dir="ltr" style="float: left; width: 5.29cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><span style="text-transform: uppercase"><font color="#121c25"><font size="4" style="font-size: 14pt"><b>JOB
+	EXPERIENCE</b></font></font></span></span></font></p>
+</span>
+<span id="Frame5" dir="ltr" style="float: left; width: 19.35cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Qualification
+	Certificate of Junior Accountant </font></font></span></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Qualification
+	Certificate of Accounting Profession</font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Having
+	passed the English test of Certified Management Accountant (CMA)P1</font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Certificate
+	of Level 2 in National Computer Rank Examination</font></font></span></font></p>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 5.29cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><span style="text-transform: uppercase"><font color="#121c25"><font size="4" style="font-size: 14pt"><b>CERTIFICATE</b></font></font></span></span></font></p>
+</span>
+<span id="Frame7" dir="ltr" style="float: left; width: 19.35cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Being
+	familiar with accounting theory</font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Mastering
+	share option,futures and foreign currency hedge.</font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Mastering
+	risk management.</font></font></span></font></p>
+</span>
+<span id="Frame8" dir="ltr" style="float: left; width: 5.29cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><span style="text-transform: uppercase"><font color="#121c25"><font size="4" style="font-size: 14pt"><b>SPECIAL
+	SKILLS</b></font></font></span></span></font></p>
+</span>
+<span id="Frame9" dir="ltr" style="float: left; width: 19.35cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.49cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">I’m
+	familiar to related regulations and institutions, thus able to
+	control the risk of bank operation.</font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Consequently
+	my positive attitude and strong ability of learning led to my
+	outstanding academic achievement.</font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">With
+	a creative and dynamic mind, I’m keen on attending social practice
+	and volunteer work with a quality of hardworking and rigor.</font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.49cm"><font face="Calibri, serif"><span lang="en-US"><font color="#808080"><font size="2" style="font-size: 11pt">Last
+	but not least, I’m always honest by sticking to my promise and
+	always willing to communicate with others or to help them with a
+	great sense of teamwork.</font></font></span></font></p>
+</span>
+<span id="Frame10" dir="ltr" style="float: left; width: 5.29cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><span style="text-transform: uppercase"><font color="#121c25"><font size="4" style="font-size: 14pt"><b>ABOUT
+	ME</b></font></font></span></span></font></p>
+</span>
+<span id="Frame11" dir="ltr" style="float: left; width: 20.16cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: start; margin-bottom: 0cm; line-height: 100%">
+	<font color="#ffffff"><font face="Calibri, serif"><span lang="en-US"><font size="4" style="font-size: 14pt"><b>RESUME</b></font></span></font></font></p>
+</span>
+<spacer type="block" align="left" width="624" height="30">
+<span id="Frame13" dir="ltr" style="float: left; width: 6.37cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; margin-bottom: 0cm; line-height: 0.71cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#121c25"><font size="2" style="font-size: 11pt">August
+	10, 1982</font></font></span></font></p>
+	<p style="text-align: end; margin-bottom: 0cm; line-height: 0.71cm"><a name="_GoBack"></a>
+	<font face="Calibri, serif"><span lang="en-US"><font color="#121c25"><font size="2" style="font-size: 11pt">1380000000</font></font></span></font></p>
+	<p style="text-align: end; margin-bottom: 0cm; line-height: 0.71cm"><font face="Calibri, serif"><span lang="en-US"><font color="#121c25"><font size="2" style="font-size: 11pt">1906222627</font></font><font color="#121c25"><font size="2" style="font-size: 11pt">@</font></font><font color="#121c25"><font size="2" style="font-size: 11pt">qq</font></font><font color="#121c25"><font size="2" style="font-size: 11pt">.com</font></font></span></font></p>
+	<p style="text-align: end; margin-bottom: 0cm; line-height: 0.71cm"><font face="Calibri, serif"><span lang="en-US"><font color="#121c25"><font size="2" style="font-size: 11pt">Guangzhou,
+	Guangdong</font></font></span></font></p>
+</span><br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+</body>
+</html>

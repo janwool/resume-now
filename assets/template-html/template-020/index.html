@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="bilmaw creative"/>
+	<meta name="created" content="2017-05-12T13:46:00"/>
+	<meta name="changedby" content="Bill Mawhinney"/>
+	<meta name="changed" content="2017-10-04T12:28:00"/>
+	<meta name="description" content="© bilmaw creative"/>
+	<meta name="AppVersion" content="15.0000"/>
+	<meta name="Company" content="bilmaw creative"/>
+	<meta name="HyperlinkBase" content="https://creativemarket.com/bilmaw"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 1.55cm; margin-right: 1.55cm; margin-top: 1.55cm; margin-bottom: 1.76cm }
+		p { direction: ltr; widows: 2; margin-bottom: 0.25cm; orphans: 2; line-height: 115%; text-align: start; background: transparent }
+		p.western { font-family: "Muli Light", serif; font-size: 8pt }
+		p.cjk { font-size: 8pt }
+		p.ctl { font-size: 8pt }
+		h1 { margin-top: 0cm; margin-bottom: 0cm; line-height: 0.39cm; direction: ltr; letter-spacing: 1.5pt; text-align: start; orphans: 2; widows: 2; text-transform: uppercase; background: transparent }
+		h1.western { font-family: "Muli Black", serif; font-weight: bold; font-size: 10pt }
+		h1.cjk { font-size: 10pt; font-weight: bold }
+		h1.ctl { font-weight: bold; font-size: 10pt }
+		h1.title { letter-spacing: 0.5pt; font-size: 8pt }
+		strong.western { font-family: "Muli", serif; font-style: normal; font-weight: bold }
+		strong.cjk { font-weight: bold; font-style: normal }
+		strong.ctl { font-style: normal; font-weight: bold }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p class="cjk" style="line-height: 100%; margin-bottom: 0cm">
+<img src="template-020_html_bf9f6a54.gif" name="Shape1" alt="Shape1" align="left" hspace="1" vspace="1" width="735" height="1064"/>
+<img src="template-020_html_b175058e.png" name="Picture 121" align="left" width="15" height="15" border="0"/>
+<img src="template-020_html_381cb571.png" name="Picture 119" align="left" width="17" height="17" border="0"/>
+<img src="template-020_html_ec0fdd4.png" name="Picture 120" align="left" width="15" height="15" border="0"/>
+<br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm"><span class="sd-abs-pos" style="position: absolute; top: 5.16cm; left: 11.27cm; width: 135px"><img src="template-020_html_c6ca3042.gif" name="Shape11" alt="Shape11" align="left" hspace="1" vspace="1" width="135" height="28"/>
+</span><span id="Frame7" dir="ltr" style="position: absolute; top: 7.06cm; left: 11.27cm; width: 3.57cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk" style="text-align: end">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Job
+	Title /</span></font></font></h1>
+	<h1 class="cjk" style="text-align: end"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Profession</span></font></font></h1>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.12cm; left: 3.11cm; width: 443px">
+<img src="template-020_html_58794ce5.gif" name="Shape10" alt="Shape10" align="left" hspace="1" vspace="1" width="443" height="15"/>
+</span>
+<span id="Frame6" dir="ltr" style="position: absolute; top: 9.01cm; left: 3.11cm; width: 11.73cm; border: none; padding: 0cm; background: #ffffff"><h1 class="title">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">To
+	get in touch, write to yourname@email.com</span></font></font></h1>
+	<h1 class="title"><br/>
+
+	</h1>
+</span>
+<img src="template-020_html_24bc8d15.gif" name="Shape5" alt="Shape5" align="left" hspace="1" vspace="1" width="44" height="1"/>
+<span class="sd-abs-pos" style="position: absolute; top: 8.68cm; left: 3.11cm; width: 204px">
+<img src="template-020_html_5b070e39.gif" name="Shape7" alt="Shape7" align="left" hspace="1" vspace="1" width="204" height="132"/>
+</span>
+<span id="Frame4" dir="ltr" style="position: absolute; top: 10.57cm; left: 3.11cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Cover
+	LEtter</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">Mr
+	Smith</span></font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Position
+	in Company</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Company
+	Name</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">123
+	Street Name,&nbsp;</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Town/City,&nbsp;</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">State/County,&nbsp;</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Post/Zip
+	Code</span></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 13.71cm; left: 3.11cm; width: 441px">
+<img src="template-020_html_7b9c9acd.gif" name="Shape3" alt="Shape3" align="left" hspace="1" vspace="1" width="441" height="438"/>
+</span>
+<span id="Frame1" dir="ltr" style="position: absolute; top: 15.61cm; left: 3.11cm; width: 11.68cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Dear
+	Mr Smith,<br/>
+<br/>
+I wish to apply for the role of [Job Title],
+	currently being advertised. </span></font></font>
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Please
+	find enclosed my CV for your consideration. </span></font></font>
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">As
+	you can see from my attached CV, I have over [time period]
+	experience in the [Sector] industry, and I believe the knowledge and
+	skills built up during this time make me the right/perfect candidate
+	for the role.</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">In
+	my current role as a [job title] at [employer name], I have been
+	responsible for [Insert a quantifiable and notable achievement/s -
+	e.g. a x% increase in revenue], which when coupled with my
+	enthusiasm and dedication [insert skills relevant to the role –
+	usually found in the job description], has helped the business to
+	[measure of success].</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">I
+	am confident that I can bring this level of success with me to your
+	organisation and help [company name] build upon their reputation as
+	[state their position in market – learned through your research].
+	With my previous experience and expertise, I believe my contribution
+	will have an immediate impact on the business.</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Thank
+	you for your time and consideration. I look forward to meeting with
+	you to discuss my application further.</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Sincerely,</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000">Your
+	Name</font></strong></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.83cm; left: 3.07cm; width: 443px">
+<img src="template-020_html_c1ef9333.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="443"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.9cm; left: 2.38cm; width: 498px">
+<img src="template-020_html_ec79f2b0.gif" name="Shape4" alt="Shape4" align="left" hspace="1" vspace="1" width="498" height="14"/>
+</span>
+<span id="Frame2" dir="ltr" style="position: absolute; top: 2.8cm; left: 2.38cm; width: 13.17cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><font size="1" style="font-size: 7pt">telephone:</font></font></strong><font color="#000000"><font size="1" style="font-size: 7pt">
+	028 1234 5678&nbsp; &nbsp; &nbsp; |&nbsp; &nbsp; &nbsp; </font></font><strong class="western"><font color="#000000"><font size="1" style="font-size: 7pt">email:</font></font></strong><font color="#000000"><font size="1" style="font-size: 7pt"><b>
+	</b></font></font><font color="#000000"><font size="1" style="font-size: 7pt">yourname@email.com&nbsp;
+	&nbsp; &nbsp; |&nbsp; &nbsp; &nbsp; </font></font><strong class="western"><font color="#000000"><font size="1" style="font-size: 7pt">website:</font></font></strong><font color="#000000"><font size="1" style="font-size: 7pt"><b>
+	</b></font></font><font color="#000000"><font size="1" style="font-size: 7pt">www.yourwebsite.com</font></font></span></font></p>
+	<p align="center" style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 3.06cm; left: -0.01cm; width: 427px">
+<img src="template-020_html_3070a64f.gif" name="Shape9" alt="Shape9" align="left" hspace="1" vspace="1" width="426" height="115"/>
+</span>
+<span id="Frame5" dir="ltr" style="position: absolute; top: 4.96cm; left: -0.01cm; width: 11.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-transform: uppercase; letter-spacing: 1.5pt; line-height: 1.55cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Muli Black, serif"><font size="7" style="font-size: 43pt"><span lang="en-GB"><b>Your</b></span></font></font></font></p>
+	<p style="text-transform: uppercase; letter-spacing: 1.5pt; line-height: 1.55cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Muli Black, serif"><font size="7" style="font-size: 43pt"><span lang="en-GB"><b>Name</b></span></font></font></font></p>
+	<p style="text-transform: uppercase; letter-spacing: 1.5pt; line-height: 1.55cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 8.69cm; left: 9.39cm; width: 204px">
+<img src="template-020_html_5b070e39.gif" name="Shape6" alt="Shape6" align="left" hspace="1" vspace="1" width="204" height="132"/>
+</span>
+<span id="Frame3" dir="ltr" style="position: absolute; top: 10.58cm; left: 9.39cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">10
+	May 2020</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000">Your
+	Name</font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Your
+	Profession / Job Title</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">123
+	Street Name,&nbsp;</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Town/City,&nbsp;</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">State/County,&nbsp;</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Post/Zip
+	Code</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</span>
+<img src="template-020_html_31184443.gif" name="Shape2" alt="Shape2" align="left" hspace="1" vspace="1" width="59" height="59"/>
+
+<spacer type="block" align="left" width="74" height="74"><br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm"><a name="_GoBack"></a>
+<br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm; page-break-before: always">
+<img src="template-020_html_bf9f6a54.gif" name="Shape12" alt="Shape12" align="left" hspace="1" vspace="1" width="735" height="1064"/>
+<img src="template-020_html_b175058e.png" name="Picture 105" align="left" width="15" height="15" border="0"/>
+<img src="template-020_html_381cb571.png" name="Picture 103" align="left" width="17" height="17" border="0"/>
+<img src="template-020_html_ec0fdd4.png" name="Picture 104" align="left" width="15" height="15" border="0"/>
+<br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm"><span class="sd-abs-pos" style="position: absolute; top: 5.16cm; left: 11.27cm; width: 135px"><img src="template-020_html_c6ca3042.gif" name="Shape29" alt="Shape29" align="left" hspace="1" vspace="1" width="135" height="28"/>
+</span><span id="Frame21" dir="ltr" style="position: absolute; top: 7.06cm; left: 11.27cm; width: 3.57cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk" style="text-align: end">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Job
+	Title /</span></font></font></h1>
+	<h1 class="cjk" style="text-align: end"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Profession</span></font></font></h1>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.12cm; left: 3.11cm; width: 443px">
+<img src="template-020_html_58794ce5.gif" name="Shape28" alt="Shape28" align="left" hspace="1" vspace="1" width="443" height="15"/>
+</span>
+<span id="Frame20" dir="ltr" style="position: absolute; top: 9.01cm; left: 3.11cm; width: 11.73cm; border: none; padding: 0cm; background: #ffffff"><h1 class="title">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">To
+	get in touch, write to yourname@email.com</span></font></font></h1>
+	<h1 class="title"><br/>
+
+	</h1>
+</span>
+<img src="template-020_html_24bc8d15.gif" name="Shape26" alt="Shape26" align="left" hspace="1" vspace="1" width="44" height="1"/>
+<span class="sd-abs-pos" style="position: absolute; top: 0.9cm; left: 2.38cm; width: 498px">
+<img src="template-020_html_ec79f2b0.gif" name="Shape25" alt="Shape25" align="left" hspace="1" vspace="1" width="498" height="14"/>
+</span>
+<span id="Frame17" dir="ltr" style="position: absolute; top: 2.8cm; left: 2.38cm; width: 13.17cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><font size="1" style="font-size: 7pt">telephone:</font></font></strong><font color="#000000"><font size="1" style="font-size: 7pt">
+	028 1234 5678&nbsp; &nbsp; &nbsp; |&nbsp; &nbsp; &nbsp; </font></font><strong class="western"><font color="#000000"><font size="1" style="font-size: 7pt">email:</font></font></strong><font color="#000000"><font size="1" style="font-size: 7pt"><b>
+	</b></font></font><font color="#000000"><font size="1" style="font-size: 7pt">yourname@email.com&nbsp;
+	&nbsp; &nbsp; |&nbsp; &nbsp; &nbsp; </font></font><strong class="western"><font color="#000000"><font size="1" style="font-size: 7pt">website:</font></font></strong><font color="#000000"><font size="1" style="font-size: 7pt"><b>
+	</b></font></font><font color="#000000"><font size="1" style="font-size: 7pt">www.yourwebsite.com</font></font></span></font></p>
+	<p align="center" style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 3.06cm; left: -0.01cm; width: 427px">
+<img src="template-020_html_3070a64f.gif" name="Shape27" alt="Shape27" align="left" hspace="1" vspace="1" width="426" height="115"/>
+</span>
+<span id="Frame19" dir="ltr" style="position: absolute; top: 4.96cm; left: -0.01cm; width: 11.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-transform: uppercase; letter-spacing: 1.5pt; line-height: 1.55cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Muli Black, serif"><font size="7" style="font-size: 43pt"><span lang="en-GB"><b>Your</b></span></font></font></font></p>
+	<p style="text-transform: uppercase; letter-spacing: 1.5pt; line-height: 1.55cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Muli Black, serif"><font size="7" style="font-size: 43pt"><span lang="en-GB"><b>Name</b></span></font></font></font></p>
+	<p style="text-transform: uppercase; letter-spacing: 1.5pt; line-height: 1.55cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span>
+<img src="template-020_html_31184443.gif" name="Shape24" alt="Shape24" align="left" hspace="1" vspace="1" width="59" height="59"/>
+
+<spacer type="block" align="left" width="74" height="74"><span class="sd-abs-pos" style="position: absolute; top: 8.68cm; left: 3.11cm; width: 443px">
+<img src="template-020_html_18415275.gif" name="Shape23" alt="Shape23" align="left" hspace="1" vspace="1" width="443" height="87"/>
+</span>
+<span id="Frame16" dir="ltr" style="position: absolute; top: 10.57cm; left: 3.11cm; width: 11.73cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">About</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Use
+	this section as a quick introduction to who you are and why you
+	would be suitable for this position. Keep it brief and use the next
+	few pages for more details. Toritiumquos versped qui te dit optius
+	essiti non eniatur iscitio nsequid que dicat. Unt aut que consequos
+	doluptat et lam accupta adi ipsam quia sedit, sim facerib
+	ersperspere, te neceatur abor.</span></font></font></p>
+</span>
+<img src="template-020_html_24bc8d15.gif" name="Shape22" alt="Shape22" align="left" hspace="1" vspace="1" width="44" height="1"/>
+
+<img src="template-020_html_24bc8d15.gif" name="Shape21" alt="Shape21" align="left" hspace="1" vspace="1" width="44"/>
+<span class="sd-abs-pos" style="position: absolute; top: 12.93cm; left: 3.11cm; width: 204px">
+<img src="template-020_html_71419ca8.gif" name="Shape19" alt="Shape19" align="left" hspace="1" vspace="1" width="204" height="76"/>
+</span>
+<span id="Frame14" dir="ltr" style="position: absolute; top: 14.82cm; left: 3.11cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">2000
+	- 2003</span></font></strong></span></font></p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Course
+	Studied</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">University/College
+	Details</span></font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Brief
+	description of what you learned/studied while on your course.</span></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.93cm; left: 9.39cm; width: 204px">
+<img src="template-020_html_71419ca8.gif" name="Shape20" alt="Shape20" align="left" hspace="1" vspace="1" width="204" height="76"/>
+</span>
+<span id="Frame15" dir="ltr" style="position: absolute; top: 14.82cm; left: 9.39cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">1998
+	- 2000</span></font></strong></span></font></p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Course
+	Studied</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">University/College
+	Details</span></font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Brief
+	description of what you learned/studied while on your course.</span></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.81cm; left: 3.11cm; width: 204px">
+<img src="template-020_html_1e880a1c.gif" name="Shape16" alt="Shape16" align="left" hspace="1" vspace="1" width="204" height="147"/>
+</span>
+<span id="Frame11" dir="ltr" style="position: absolute; top: 18.71cm; left: 3.11cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">2014
+	- Present</span></font></strong></span></font></p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Company
+	Name</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">Position
+	Held</span></font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Us quatias exces eum ullum facearupient earunto ipsam rendant
+	volupta voluptatem ut molupta tiatiam eum enditas inctur mo
+	berunducia conserum.</span></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.15cm; left: 3.11cm; width: 443px">
+<img src="template-020_html_3b3ed36b.gif" name="Shape18" alt="Shape18" align="left" hspace="1" vspace="1" width="443" height="16"/>
+</span>
+<span id="Frame13" dir="ltr" style="position: absolute; top: 14.04cm; left: 3.11cm; width: 11.73cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Education</span></font></font></h1>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.05cm; left: 3.11cm; width: 443px">
+<img src="template-020_html_3b3ed36b.gif" name="Shape17" alt="Shape17" align="left" hspace="1" vspace="1" width="443" height="16"/>
+</span>
+<span id="Frame12" dir="ltr" style="position: absolute; top: 17.95cm; left: 3.11cm; width: 11.73cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Experience</span></font></font></h1>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.81cm; left: 9.39cm; width: 204px">
+<img src="template-020_html_1e880a1c.gif" name="Shape15" alt="Shape15" align="left" hspace="1" vspace="1" width="204" height="147"/>
+</span>
+<span id="Frame10" dir="ltr" style="position: absolute; top: 18.71cm; left: 9.39cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">2012
+	- 2014</span></font></strong></span></font></p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Company
+	Name</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">Position
+	Held</span></font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Mus, omnitatenia con et licillamus maion entecus doles rate
+	sunda qui beatini magnihitaes accusciis imolo quassume sincil
+	inctoris endunt verciis que vitassi.</span></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 21.45cm; left: 3.16cm; width: 204px">
+<img src="template-020_html_1e880a1c.gif" name="Shape13" alt="Shape13" align="left" hspace="1" vspace="1" width="204" height="147"/>
+</span>
+<span id="Frame8" dir="ltr" style="position: absolute; top: 23.34cm; left: 3.16cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000">2010
+	- 2012</font></strong></span></font></p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Company
+	Name</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">Position
+	Held</span></font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Ovitem acearchil ma ipidebist, si omnihit que nimpor am eos
+	andaese quatempos earum reperum am cullant, sus earum dis resciat
+	endaernatque liquas dolupta sim.</span></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 21.45cm; left: 9.39cm; width: 204px">
+<img src="template-020_html_1e880a1c.gif" name="Shape14" alt="Shape14" align="left" hspace="1" vspace="1" width="204" height="147"/>
+</span>
+<span id="Frame9" dir="ltr" style="position: absolute; top: 23.34cm; left: 9.39cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">2007
+	- 2010</span></font></strong></span></font></p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Company
+	Name</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">Position
+	Held</span></font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Doluptam laborporem quo molum faceraessi omnimus accum
+	voloriscidit enis molum int, totatur reped qui utati il molore
+	eossed et inullest ea nonsequam.</span></font></font></p>
+</span><br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm; page-break-before: always">
+<img src="template-020_html_bf9f6a54.gif" name="Shape30" alt="Shape30" align="left" hspace="1" vspace="1" width="735" height="1064"/>
+<img src="template-020_html_b175058e.png" name="Picture 32" align="left" width="15" height="15" border="0"/>
+<img src="template-020_html_381cb571.png" name="Picture 30" align="left" width="17" height="17" border="0"/>
+<img src="template-020_html_ec0fdd4.png" name="Picture 31" align="left" width="15" height="15" border="0"/>
+<br/>
+
+</p>
+<p class="cjk" style="line-height: 100%; margin-bottom: 0cm"><span class="sd-abs-pos" style="position: absolute; top: 5.16cm; left: 11.27cm; width: 135px"><img src="template-020_html_c6ca3042.gif" name="Shape49" alt="Shape49" align="left" hspace="1" vspace="1" width="135" height="28"/>
+</span><span id="Frame34" dir="ltr" style="position: absolute; top: 7.06cm; left: 11.27cm; width: 3.57cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk" style="text-align: end">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Job
+	Title /</span></font></font></h1>
+	<h1 class="cjk" style="text-align: end"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Profession</span></font></font></h1>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.12cm; left: 3.11cm; width: 443px">
+<img src="template-020_html_58794ce5.gif" name="Shape48" alt="Shape48" align="left" hspace="1" vspace="1" width="443" height="15"/>
+</span>
+<span id="Frame33" dir="ltr" style="position: absolute; top: 9.01cm; left: 3.11cm; width: 11.73cm; border: none; padding: 0cm; background: #ffffff"><h1 class="title">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">To
+	get in touch, write to yourname@email.com</span></font></font></h1>
+	<h1 class="title"><br/>
+
+	</h1>
+</span>
+<img src="template-020_html_24bc8d15.gif" name="Shape46" alt="Shape46" align="left" hspace="1" vspace="1" width="44" height="1"/>
+<span class="sd-abs-pos" style="position: absolute; top: 0.9cm; left: 2.38cm; width: 498px">
+<img src="template-020_html_ec79f2b0.gif" name="Shape45" alt="Shape45" align="left" hspace="1" vspace="1" width="498" height="14"/>
+</span>
+<span id="Frame30" dir="ltr" style="position: absolute; top: 2.8cm; left: 2.38cm; width: 13.17cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><font size="1" style="font-size: 7pt">telephone:</font></font></strong><font color="#000000"><font size="1" style="font-size: 7pt">
+	028 1234 5678&nbsp; &nbsp; &nbsp; |&nbsp; &nbsp; &nbsp; </font></font><strong class="western"><font color="#000000"><font size="1" style="font-size: 7pt">email:</font></font></strong><font color="#000000"><font size="1" style="font-size: 7pt"><b>
+	</b></font></font><font color="#000000"><font size="1" style="font-size: 7pt">yourname@email.com&nbsp;
+	&nbsp; &nbsp; |&nbsp; &nbsp; &nbsp; </font></font><strong class="western"><font color="#000000"><font size="1" style="font-size: 7pt">website:</font></font></strong><font color="#000000"><font size="1" style="font-size: 7pt"><b>
+	</b></font></font><font color="#000000"><font size="1" style="font-size: 7pt">www.yourwebsite.com</font></font></span></font></p>
+	<p align="center" style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 3.06cm; left: -0.01cm; width: 427px">
+<img src="template-020_html_3070a64f.gif" name="Shape47" alt="Shape47" align="left" hspace="1" vspace="1" width="426" height="115"/>
+</span>
+<span id="Frame32" dir="ltr" style="position: absolute; top: 4.96cm; left: -0.01cm; width: 11.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-transform: uppercase; letter-spacing: 1.5pt; line-height: 1.55cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Muli Black, serif"><font size="7" style="font-size: 43pt"><span lang="en-GB"><b>Your</b></span></font></font></font></p>
+	<p style="text-transform: uppercase; letter-spacing: 1.5pt; line-height: 1.55cm; margin-bottom: 0cm">
+	<font color="#000000"><font face="Muli Black, serif"><font size="7" style="font-size: 43pt"><span lang="en-GB"><b>Name</b></span></font></font></font></p>
+	<p style="text-transform: uppercase; letter-spacing: 1.5pt; line-height: 1.55cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+</span>
+<img src="template-020_html_31184443.gif" name="Shape44" alt="Shape44" align="left" hspace="1" vspace="1" width="59" height="59"/>
+
+<spacer type="block" align="left" width="74" height="74">
+<img src="template-020_html_24bc8d15.gif" name="Shape40" alt="Shape40" align="left" hspace="1" vspace="1" width="44"/>
+<span class="sd-abs-pos" style="position: absolute; top: 9.45cm; left: 3.11cm; width: 204px">
+<img src="template-020_html_1e880a1c.gif" name="Shape41" alt="Shape41" align="left" hspace="1" vspace="1" width="204" height="147"/>
+</span>
+<span id="Frame27" dir="ltr" style="position: absolute; top: 11.35cm; left: 3.11cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">2005
+	- 2007</span></font></strong></span></font></p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Company
+	Name</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">Position
+	Held</span></font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Us quatias exces eum ullum facearupient earunto ipsam rendant
+	volupta voluptatem ut molupta tiatiam eum enditas inctur mo
+	berunducia conserum.</span></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 8.67cm; left: 3.11cm; width: 443px">
+<img src="template-020_html_3b3ed36b.gif" name="Shape43" alt="Shape43" align="left" hspace="1" vspace="1" width="443" height="16"/>
+</span>
+<span id="Frame29" dir="ltr" style="position: absolute; top: 10.57cm; left: 3.11cm; width: 11.72cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Experience</span></font></font></h1>
+</span><span class="sd-abs-pos" style="position: absolute; top: 9.45cm; left: 9.34cm; width: 204px">
+<img src="template-020_html_1e880a1c.gif" name="Shape42" alt="Shape42" align="left" hspace="1" vspace="1" width="204" height="147"/>
+</span>
+<span id="Frame28" dir="ltr" style="position: absolute; top: 11.35cm; left: 9.34cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.39cm; margin-bottom: 0cm">
+	<font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">2003
+	- 2005</span></font></strong></span></font></p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Company
+	Name</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">Position
+	Held</span></font></strong></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Brief
+	description of the position and the responsibilities you had in this
+	post. Mus, omnitatenia con et licillamus maion entecus doles rate
+	sunda qui beatini magnihitaes accusciis imolo quassume sincil
+	inctoris endunt verciis que vitassi.</span></font></font></p>
+</span>
+<img src="template-020_html_24bc8d15.gif" name="Shape39" alt="Shape39" align="left" hspace="1" vspace="1" width="44"/>
+
+<img src="template-020_html_24bc8d15.gif" name="Shape38" alt="Shape38" align="left" hspace="1" vspace="1" width="44" height="1"/>
+
+<img src="template-020_html_24bc8d15.gif" name="Shape37" alt="Shape37" align="left" hspace="1" vspace="1" width="44" height="1"/>
+
+<img src="template-020_html_24bc8d15.gif" name="Shape36" alt="Shape36" align="left" hspace="1" vspace="1" width="44"/>
+<span class="sd-abs-pos" style="position: absolute; top: 14.49cm; left: 3.11cm; width: 204px">
+<img src="template-020_html_5b070e39.gif" name="Shape35" alt="Shape35" align="left" hspace="1" vspace="1" width="204" height="132"/>
+</span>
+<span id="Frame26" dir="ltr" style="position: absolute; top: 16.39cm; left: 3.11cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Statement</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">This
+	is a section where you describe your professional career. Let the
+	potential employer know why they would want to hire you. Mention
+	particular career highlights, collaborations or stepping stones to
+	where you are now as a professional.</span></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.07cm; left: 3.11cm; width: 204px">
+<img src="template-020_html_f3974c24.gif" name="Shape34" alt="Shape34" align="left" hspace="1" vspace="1" width="204" height="94"/>
+</span>
+<span id="Frame25" dir="ltr" style="position: absolute; top: 20.97cm; left: 3.11cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Expertise</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-left: 0.4cm; margin-top: 0.11cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<ul>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Expertise
+		1</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Expertise
+		2</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Expertise
+		3</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Expertise
+		4</span></font></font></p></li>
+	</ul>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.6cm; left: 3.11cm; width: 204px">
+<img src="template-020_html_15ff1972.gif" name="Shape33" alt="Shape33" align="left" hspace="1" vspace="1" width="204" height="105"/>
+</span>
+<span id="Frame24" dir="ltr" style="position: absolute; top: 24.5cm; left: 3.11cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Skills</span></font></font></h1>
+	<p style="margin-left: 0.4cm; line-height: 0.39cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<ul>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Skill
+		1</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Skill
+		2</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Skill
+		3</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Skill
+		4</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Skill
+		5</span></font></font></p></li>
+	</ul>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.49cm; left: 9.33cm; width: 204px">
+<img src="template-020_html_5ec68fc8.gif" name="Shape32" alt="Shape32" align="left" hspace="1" vspace="1" width="204" height="266"/>
+</span>
+<span id="Frame23" dir="ltr" style="position: absolute; top: 16.39cm; left: 9.33cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">References</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Reference
+	Name</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Job
+	Title</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">telephone:</span></font></strong><font color="#000000">
+	028 1234 5678</font></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">email:</span></font></strong><font color="#000000"><b>
+	</b></font><font color="#000000">name@company.com</font></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Reference
+	Name</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Job
+	Title</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">telephone:</span></font></strong><font color="#000000">
+	028 1234 5678</font></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">email:</span></font></strong><font color="#000000"><b>
+	</b></font><font color="#000000">name@company.com</font></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<h1 class="title"><font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Reference
+	Name</span></font></font></h1>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Job
+	Title</span></font></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">telephone:</span></font></strong><font color="#000000">
+	028 1234 5678</font></span></font></p>
+	<p style="line-height: 0.39cm; margin-bottom: 0cm"><font face="Muli Light, serif"><span lang="en-GB"><strong class="western"><font color="#000000"><span style="font-weight: normal">email:</span></font></strong><font color="#000000"><b>
+	</b></font><font color="#000000">name@company.com</font></span></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.6cm; left: 9.33cm; width: 204px">
+<img src="template-020_html_15ff1972.gif" name="Shape31" alt="Shape31" align="left" hspace="1" vspace="1" width="204" height="105"/>
+</span>
+<span id="Frame22" dir="ltr" style="position: absolute; top: 24.5cm; left: 9.33cm; width: 5.4cm; border: none; padding: 0cm; background: #ffffff"><h1 class="cjk">
+	<font color="#000000"><font face="Muli Black, serif"><span lang="en-GB">Hobbies
+	/ Interests</span></font></font></h1>
+	<p style="margin-left: 0.4cm; line-height: 0.39cm; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<ul>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Hobby
+		/ Interest 1</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Hobby
+		/ Interest 2</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Hobby
+		/ Interest 3</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Hobby
+		/ Interest 4</span></font></font></p></li>
+		<li><p style="line-height: 0.39cm; margin-top: 0.11cm; margin-bottom: 0cm">
+		<font color="#000000"><font face="Muli Light, serif"><span lang="en-GB">Hobby
+		/ Interest 5</span></font></font></p></li>
+	</ul>
+</span><br/>
+
+</p>
+</body>
+</html>

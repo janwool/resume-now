@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Billy Mawhinney"/>
+	<meta name="created" content="2014-11-29T14:53:00"/>
+	<meta name="changedby" content="Billy Mawhinney"/>
+	<meta name="changed" content="2014-11-30T16:38:00"/>
+	<meta name="AppVersion" content="14.0000"/>
+	<meta name="Company" content="bilmaw"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 1.53cm; margin-right: 1.53cm; margin-top: 1.52cm; margin-bottom: 2.66cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 100%; margin-bottom: 0cm"><a name="_GoBack"></a>
+<span class="sd-abs-pos" style="position: absolute; top: -1.52cm; left: -1.53cm; width: 794px"><img src="template-074_html_d3bbf615.gif" name="Shape1" alt="Shape1" align="left" hspace="1" vspace="1" width="794" height="1122"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.48cm; left: -0.04cm; width: 217px"><img src="template-074_html_2b62dbaa.gif" name="Shape2" alt="Shape2" align="left" vspace="1" width="217" height="720"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 26.27cm; left: -1.53cm; width: 794px"><img src="template-074_html_ff0b0f6e.gif" name="Shape4" alt="Shape4" align="left" hspace="1" width="794" height="72"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: -1.52cm; left: -1.53cm; width: 794px"><img src="template-074_html_6d745144.gif" name="Shape6" alt="Shape6" align="left" hspace="1" vspace="1" width="794" height="216"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 2.77cm; left: -0.03cm; width: 459px"><img src="template-074_html_11e39c68.gif" name="Shape14" alt="Shape14" align="left" hspace="1" vspace="1" width="459" height="32"/>
+</span><span id="Frame1" dir="ltr" style="position: absolute; top: 4.3cm; left: 1.5cm; width: 12.15cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; orphans: 0; line-height: 0.76cm; widows: 0">
+	<font color="#ff5991"><font face="Ubuntu-Light, serif"><font size="5" style="font-size: 18pt"><span lang="en-GB"><font color="#8d8e8d"><font face="Ubuntu Light, serif">Creative
+	Director</font></font></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.92cm; left: 6.11cm; width: 217px">
+<img src="template-074_html_e56e4242.gif" name="Shape16" alt="Shape16" align="left" hspace="1" vspace="1" width="216" height="204"/>
+</span>
+<span id="Frame3" dir="ltr" style="position: absolute; top: 8.44cm; left: 7.64cm; width: 5.73cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.38cm">
+	<font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>Name</b></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">	Jonathan
+	Edwards</font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>D.O.B</b></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">	4th
+	January 1982</font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>Address</b></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">	123
+	Street Name,</font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">	Town/City,</font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">	State/County,</font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">	Post/Zip
+	Code</font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>Phone</b></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">	028
+	1234 5678</font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>Email</b></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">	jonathan@gmail.com</font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>Website</b></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">	www.yourwebsite.com</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.26cm; left: 0.37cm; width: 188px">
+<img src="template-074_html_de3bddd.gif" name="Shape15" alt="Shape15" align="left" hspace="1" vspace="1" width="188" height="501"/>
+</span>
+<span id="Frame2" dir="ltr" style="position: absolute; top: 13.79cm; left: 1.91cm; width: 4.98cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 103%">
+	<font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">This
+	is a section where you describe your professional career. Let the
+	potential employer know why they would want to hire you. Use this
+	section for particular career highlights, collaborations or stepping
+	stones to where you are now as a professional.</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">Describe
+	yourself personally. Your goals, aspirations and why a particular
+	company should choose you as an employee. Use this section to
+	describe your hobbies and interests, show your potential employer
+	that you are a well-rounded individual.</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b>Sports
+	Clubs</b></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">Club
+	Name</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b>Organisations</b></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">Organisation
+	Name</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b>Volunteering</b></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">Where
+	you volunteered</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font color="#636463"><font face="Ubuntu, serif"><font size="4" style="font-size: 13pt"><span lang="en-GB"><b>AWARDS</b></span></font></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b>Your
+	Award 2007</b></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">Awarding
+	Body</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b>Your
+	Award 2007</b></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 103%"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">Awarding
+	Body</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.15cm; left: 1.87cm; width: 15px">
+<img src="template-074_html_796d206b.gif" name="Picture 4" width="15" height="21" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.2cm; left: 7.97cm; width: 19px">
+<img src="template-074_html_3052802b.gif" name="Picture 5" width="19" height="17" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.18cm; left: 14.12cm; width: 16px">
+<img src="template-074_html_9f1a28c8.gif" name="Picture 6" width="16" height="19" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.45cm; left: 7.97cm; width: 19px">
+<img src="template-074_html_1d3637e6.gif" name="Picture 8" width="19" height="16" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.69cm; left: 14.08cm; width: 19px">
+<img src="template-074_html_861e3db7.gif" name="Picture 9" width="19" height="19" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 18.28cm; left: 7.82cm; width: 30px">
+<img src="template-074_html_c2d61d80.gif" name="Picture 10" width="30" height="14" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.79cm; left: 8.02cm; width: 15px">
+<img src="template-074_html_272d7609.gif" name="Picture 11" width="15" height="18" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.36cm; left: 16.06cm; width: 72px">
+<img src="template-074_html_15167bb6.gif" name="Shape7" alt="Shape7" align="left" hspace="1" width="72" height="158"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.36cm; left: 16.06cm; width: 30px">
+<img src="template-074_html_c3b16cae.gif" name="Shape8" alt="Shape8" align="left" width="30" height="14"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.12cm; left: 16.06cm; width: 45px">
+<img src="template-074_html_7a25e636.gif" name="Shape9" alt="Shape9" align="left" hspace="1" width="45" height="14"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.89cm; left: 16.06cm; width: 58px">
+<img src="template-074_html_575dd0c1.gif" name="Shape10" alt="Shape10" align="left" hspace="1" width="58" height="14"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 18.65cm; left: 16.06cm; width: 64px">
+<img src="template-074_html_d7f82ce4.gif" name="Shape11" alt="Shape11" align="left" hspace="1" width="64" height="14"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 19.41cm; left: 16.06cm; width: 52px">
+<img src="template-074_html_52d0f079.gif" name="Shape12" alt="Shape12" align="left" width="52" height="14"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.17cm; left: 16.06cm; width: 39px">
+<img src="template-074_html_e4668fdd.gif" name="Shape13" alt="Shape13" align="left" hspace="1" width="39" height="14"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 4.18cm; left: -1.53cm; width: 794px">
+<img src="template-074_html_7688684.gif" name="Shape5" alt="Shape5" align="left" hspace="1" vspace="1" width="794" height="15"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 26.07cm; left: -1.53cm; width: 794px">
+<img src="template-074_html_bf9416ae.gif" name="Shape3" alt="Shape3" align="left" hspace="1" vspace="1" width="794" height="8"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 15.41cm; left: 7.64cm; width: 22px">
+<img src="template-074_html_62c40fdd.jpg" name="Picture 66" width="22" height="22" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.19cm; left: 7.64cm; width: 22px">
+<img src="template-074_html_aba162b0.png" name="Picture 67" width="22" height="22" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.95cm; left: 7.64cm; width: 22px">
+<img src="template-074_html_6edcc27d.png" name="Picture 68" width="22" height="22" border="0"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 8.37cm; left: 1.91cm; width: 188px">
+<img src="template-074_html_dd57032a.gif" name="Picture 2" width="188" height="187" border="0"/>
+</span>
+<span class="sd-abs-pos" style="position: absolute; top: -0.15cm; left: -0.03cm; width: 459px">
+<img src="template-074_html_782a06fe.gif" name="Shape48" alt="Shape48" align="left" hspace="1" vspace="1" width="459" height="103"/>
+</span>
+<span id="Frame27" dir="ltr" style="position: absolute; top: 1.38cm; left: 1.5cm; width: 12.15cm; border: none; padding: 0cm; background: #ffffff"><p style="text-transform: uppercase; widows: 0; orphans: 0; margin-bottom: 0cm; line-height: 100%">
+	<font color="#ffffff"><font face="Ubuntu-Medium, serif"><font size="7" style="font-size: 36pt"><span lang="en-GB"><font color="#ffffff"><font face="Ubuntu Medium, serif">JONATHAN</font></font></span></font></font></font></p>
+	<p style="line-height: 1.13cm; margin-bottom: 0cm"><font face="Cambria, serif"><font color="#ffffff"><font face="Ubuntu Medium, serif"><font size="7" style="font-size: 36pt">EDWARDS</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 0.44cm; left: 13.39cm; width: 173px">
+<img src="template-074_html_a9e2b027.gif" name="Shape36" alt="Shape36" align="left" hspace="1" vspace="1" width="173" height="120"/>
+</span>
+<span id="Frame19" dir="ltr" style="position: absolute; top: 1.97cm; left: 14.92cm; width: 4.57cm; border: none; padding: 0cm; background: #ffffff"><p style="orphans: 0; text-align: end; margin-bottom: 0cm; line-height: 0.38cm; widows: 0">
+	<font color="#ffffff"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font color="#ffffff"><font face="Ubuntu Light, serif">123
+	Street Name,</font></font></span></font></font></font></p>
+	<p style="orphans: 0; text-align: end; margin-bottom: 0cm; line-height: 0.38cm; widows: 0">
+	<font color="#ffffff"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font color="#ffffff"><font face="Ubuntu Light, serif">Town/City,</font></font></span></font></font></font></p>
+	<p style="orphans: 0; text-align: end; margin-bottom: 0cm; line-height: 0.38cm; widows: 0">
+	<font color="#ffffff"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font color="#ffffff"><font face="Ubuntu Light, serif">State/County,</font></font></span></font></font></font></p>
+	<p style="orphans: 0; text-align: end; margin-bottom: 0cm; line-height: 0.38cm; widows: 0">
+	<font color="#ffffff"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font color="#ffffff"><font face="Ubuntu Light, serif">Post/Zip
+	Code</font></font></span></font></font></font></p>
+	<p style="orphans: 0; text-align: end; margin-bottom: 0cm; line-height: 0.38cm; widows: 0">
+	<br/>
+
+	</p>
+	<p style="orphans: 0; text-align: end; margin-bottom: 0cm; line-height: 0.38cm; widows: 0">
+	<font color="#ffffff"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b><font color="#ffffff"><font face="Ubuntu, serif">T:</font></font></b><font color="#ffffff"><font face="Ubuntu Light, serif"><span style="font-weight: normal">
+	</span></font></font><font color="#ffffff"><font face="Ubuntu Light, serif">028
+	1234 5678</font></font></span></font></font></font></p>
+	<p style="orphans: 0; text-align: end; margin-bottom: 0cm; line-height: 0.38cm; widows: 0">
+	<font color="#ffffff"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b><font color="#ffffff"><font face="Ubuntu, serif">E:</font></font></b><font color="#ffffff"><font face="Ubuntu Light, serif">
+	jonathan@gmail.com</font></font></span></font></font></font></p>
+	<p style="text-align: end; margin-bottom: 0cm; line-height: 100%"><font face="Cambria, serif"><b><font color="#ffffff"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt">www.yourwebsite.com</font></font></font></b></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 26.72cm; left: 0.07cm; width: 211px">
+<img src="template-074_html_a72d2aa7.gif" name="Shape47" alt="Shape47" align="left" hspace="1" vspace="1" width="211" height="19"/>
+</span>
+<span id="Frame26" dir="ltr" style="position: absolute; top: 28.25cm; left: 1.61cm; width: 5.59cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><b><font color="#ffffff"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt">Website:
+	</font></font></font></b><font color="#ffffff"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">www.yourwebsite.com</span></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 26.72cm; left: 6.16cm; width: 212px">
+<img src="template-074_html_4146fc99.gif" name="Shape45" alt="Shape45" align="left" hspace="1" vspace="1" width="212" height="19"/>
+</span>
+<span id="Frame24" dir="ltr" style="position: absolute; top: 28.25cm; left: 7.7cm; width: 5.6cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>Phone:</b></font></font></font><font color="#ffffff"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">
+	028 1234 5678</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 26.72cm; left: 12.28cm; width: 212px">
+<img src="template-074_html_4146fc99.gif" name="Shape46" alt="Shape46" align="left" hspace="1" vspace="1" width="212" height="19"/>
+</span>
+<span id="Frame25" dir="ltr" style="position: absolute; top: 28.25cm; left: 13.81cm; width: 5.6cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>Email:
+	</b></font></font></font><font color="#ffffff"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">jonathan@gmail.com</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.33cm; left: 1.12cm; width: 173px">
+<img src="template-074_html_ecb21652.gif" name="Shape43" alt="Shape43" align="left" hspace="1" width="173" height="43"/>
+</span>
+<span id="Frame23" dir="ltr" style="position: absolute; top: 6.85cm; left: 2.65cm; width: 4.58cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#ffffff"><font face="Ubuntu-Medium, serif"><font size="4" style="font-size: 15pt"><span lang="en-GB"><font face="Ubuntu Medium, serif">ABOUT
+	ME</font></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.33cm; left: -0.03cm; width: 43px">
+<img src="template-074_html_ce79268c.gif" name="Shape44" alt="Shape44" align="left" width="43" height="43"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.33cm; left: 7.26cm; width: 173px">
+<img src="template-074_html_ecb21652.gif" name="Shape42" alt="Shape42" align="left" hspace="1" width="173" height="43"/>
+</span>
+<span id="Frame22" dir="ltr" style="position: absolute; top: 6.85cm; left: 8.79cm; width: 4.58cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Ubuntu Medium, serif"><font size="4" style="font-size: 15pt">PERSONAL</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.33cm; left: 6.11cm; width: 43px">
+<img src="template-074_html_ce79268c.gif" name="Shape41" alt="Shape41" align="left" width="43" height="43"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.33cm; left: 13.38cm; width: 173px">
+<img src="template-074_html_ecb21652.gif" name="Shape40" alt="Shape40" align="left" hspace="1" width="173" height="43"/>
+</span>
+<span id="Frame21" dir="ltr" style="position: absolute; top: 6.85cm; left: 14.91cm; width: 4.58cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Ubuntu Medium, serif"><font size="4" style="font-size: 15pt">EMPLOYMENT</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 5.33cm; left: 12.23cm; width: 43px">
+<img src="template-074_html_ce79268c.gif" name="Shape39" alt="Shape39" align="left" width="43" height="43"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 9.11cm; left: 12.23cm; width: 217px">
+<img src="template-074_html_e95e8f2f.gif" name="Shape38" alt="Shape38" align="left" vspace="1" width="217" height="1"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 6.74cm; left: 12.23cm; width: 216px">
+<img src="template-074_html_40864d85.gif" name="Shape37" alt="Shape37" align="left" vspace="1" width="216" height="21"/>
+</span>
+<span id="Frame20" dir="ltr" style="position: absolute; top: 8.26cm; left: 13.76cm; width: 5.72cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.38cm; orphans: 0; widows: 0">
+	<font color="#8ccbce"><font face="Ubuntu-Bold, serif"><font size="4" style="font-size: 13pt"><span lang="en-GB"><b><font color="#636463"><font face="Ubuntu, serif">CURRENT
+	POSITION</font></font></b></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.65cm; left: 12.23cm; width: 163px">
+<img src="template-074_html_7d9a4157.gif" name="Shape35" alt="Shape35" align="left" hspace="1" vspace="1" width="163" height="46"/>
+</span>
+<span id="Frame18" dir="ltr" style="position: absolute; top: 9.17cm; left: 13.76cm; width: 4.32cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b><font face="Ubuntu, serif">Creative
+	Director</font></b></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">Advertising
+	Agency</font></span></font></font></font></p>
+	<p style="line-height: 100%; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">New
+	York, USA</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 7.65cm; left: 16.67cm; width: 49px">
+<img src="template-074_html_2da2c9eb.gif" name="Shape34" alt="Shape34" align="left" hspace="1" vspace="1" width="49" height="46"/>
+</span>
+<span id="Frame17" dir="ltr" style="position: absolute; top: 9.17cm; left: 18.2cm; width: 1.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>2012-14</b></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 10.35cm; left: 12.23cm; width: 163px">
+<img src="template-074_html_b974b97c.gif" name="Shape33" alt="Shape33" align="left" hspace="1" width="163" height="160"/>
+</span>
+<span id="Frame16" dir="ltr" style="position: absolute; top: 11.87cm; left: 13.76cm; width: 4.32cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.38cm; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>UI
+	Designer</b></font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">Web
+	Design Company</font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">London,
+	UK</font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>Graphic
+	Designer</b></font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">Design
+	Company</font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">Milan,
+	Italy</font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>Junior
+	Designer</b></font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">Design
+	Company</font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">London,
+	UK</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 10.35cm; left: 16.67cm; width: 49px">
+<img src="template-074_html_27a10b2e.gif" name="Shape32" alt="Shape32" align="left" hspace="1" width="49" height="160"/>
+</span>
+<span id="Frame15" dir="ltr" style="position: absolute; top: 11.87cm; left: 18.2cm; width: 1.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>2010-12</b></font></font></font></p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>2007-10</b></font></font></font></p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>2005-07</b></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 9.42cm; left: 12.23cm; width: 216px">
+<img src="template-074_html_40864d85.gif" name="Shape31" alt="Shape31" align="left" vspace="1" width="216" height="21"/>
+</span>
+<span id="Frame14" dir="ltr" style="position: absolute; top: 10.94cm; left: 13.76cm; width: 5.72cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><font color="#636463"><font face="Ubuntu, serif"><font size="4" style="font-size: 13pt"><b>PREVIOUS
+	POSITIONS</b></font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.41cm; left: 12.23cm; width: 131px">
+<img src="template-074_html_244382f2.gif" name="Shape30" alt="Shape30" align="left" vspace="1" width="131" height="163"/>
+</span>
+<span id="Frame13" dir="ltr" style="position: absolute; top: 17.94cm; left: 13.76cm; width: 3.46cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">Adobe
+	Illustrator</font></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">Adobe
+	Photoshop</font></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">Adobe
+	InDesign</font></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">Microsoft
+	Office</font></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">HTML
+	(5)</font></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">CSS
+	(3)</font></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.84cm; left: 13.38cm; width: 173px">
+<img src="template-074_html_ecb21652.gif" name="Shape28" alt="Shape28" align="left" hspace="1" width="173" height="43"/>
+</span>
+<span id="Frame12" dir="ltr" style="position: absolute; top: 16.36cm; left: 14.91cm; width: 4.58cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Ubuntu Medium, serif"><font size="4" style="font-size: 15pt">SKILLS</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.84cm; left: 12.23cm; width: 43px">
+<img src="template-074_html_ce79268c.gif" name="Shape29" alt="Shape29" align="left" width="43" height="43"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.95cm; left: 6.11cm; width: 163px">
+<img src="template-074_html_c687e7ff.gif" name="Shape27" alt="Shape27" align="left" hspace="1" vspace="1" width="163" height="105"/>
+</span>
+<span id="Frame11" dir="ltr" style="position: absolute; top: 19.47cm; left: 7.64cm; width: 4.32cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.38cm; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>MA
+	Advertising</b></font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">University/College</font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">London,
+	UK</font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>BA
+	(Hons) Graphic Design</b></font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">University/College</font></font></font></p>
+	<p style="line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt">London,
+	UK</font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 17.95cm; left: 10.56cm; width: 49px">
+<img src="template-074_html_6be8fdd0.gif" name="Shape24" alt="Shape24" align="left" hspace="1" vspace="1" width="49" height="105"/>
+</span>
+<span id="Frame9" dir="ltr" style="position: absolute; top: 19.47cm; left: 12.09cm; width: 1.29cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm">
+	<font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>2003-05</b></font></font></font></p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p style="text-align: end; line-height: 0.38cm; margin-bottom: 0cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><b>2000-03</b></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.37cm; left: 7.26cm; width: 173px">
+<img src="template-074_html_ecb21652.gif" name="Shape25" alt="Shape25" align="left" hspace="1" width="173" height="43"/>
+</span>
+<span id="Frame10" dir="ltr" style="position: absolute; top: 17.89cm; left: 8.79cm; width: 4.58cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Ubuntu Medium, serif"><font size="4" style="font-size: 15pt">EDUCATION</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 16.37cm; left: 6.11cm; width: 43px">
+<img src="template-074_html_ce79268c.gif" name="Shape26" alt="Shape26" align="left" width="43" height="43"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.56cm; left: 7.26cm; width: 173px">
+<img src="template-074_html_ecb21652.gif" name="Shape23" alt="Shape23" align="left" hspace="1" width="173" height="43"/>
+</span>
+<span id="Frame8" dir="ltr" style="position: absolute; top: 14.08cm; left: 8.79cm; width: 4.58cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Ubuntu Medium, serif"><font size="4" style="font-size: 15pt">ONLINE</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 12.56cm; left: 6.11cm; width: 43px">
+<img src="template-074_html_ce79268c.gif" name="Shape22" alt="Shape22" align="left" width="43" height="43"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 14.13cm; left: 6.86cm; width: 188px">
+<img src="template-074_html_d1900c0c.gif" name="Shape21" alt="Shape21" align="left" hspace="1" vspace="1" width="188" height="76"/>
+</span>
+<span id="Frame7" dir="ltr" style="position: absolute; top: 15.65cm; left: 8.39cm; width: 4.98cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">behance.net/jonathan</font></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">facebook.com/jonathan</font></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; orphans: 0; line-height: 0.38cm; widows: 0">
+	<font color="#000000"><font face="Ubuntu-Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><font face="Ubuntu Light, serif">dribbble.com/jonathan</font></span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.53cm; left: 6.11cm; width: 188px">
+<img src="template-074_html_90f8025a.gif" name="Shape20" alt="Shape20" align="left" hspace="1" vspace="1" width="188" height="121"/>
+</span>
+<span id="Frame6" dir="ltr" style="position: absolute; top: 24.05cm; left: 7.64cm; width: 4.98cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.38cm">
+	<font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">Mr
+	Smith</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b>Position
+	in Company</b></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">Company
+	Name</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">123
+	Street Name, Town/City, State/County, Post/Zip Code</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">T:
+	</span></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">028
+	1234 5678</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">E:
+	</span></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">john.smith@gmail.com</span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 22.53cm; left: 12.21cm; width: 188px">
+<img src="template-074_html_90f8025a.gif" name="Shape19" alt="Shape19" align="left" hspace="1" vspace="1" width="188" height="121"/>
+</span>
+<span id="Frame5" dir="ltr" style="position: absolute; top: 24.05cm; left: 13.74cm; width: 4.98cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.38cm">
+	<font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">Mrs
+	Jones</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB"><b>Position
+	in Company</b></span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">Company
+	Name</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">123
+	Street Name, Town/City, State/County, Post/Zip Code</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><br/>
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">T:
+	</span></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">028
+	1234 5678</span></font></font></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.38cm"><font face="Cambria, serif"><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">E:
+	</span></font></font><font face="Ubuntu Light, serif"><font size="2" style="font-size: 9pt"><span lang="en-GB">jane.jones@gmail.com</span></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.94cm; left: 7.26cm; width: 404px">
+<img src="template-074_html_86bbd673.gif" name="Shape17" alt="Shape17" align="left" hspace="1" width="404" height="43"/>
+</span>
+<span id="Frame4" dir="ltr" style="position: absolute; top: 22.46cm; left: 8.79cm; width: 10.7cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Cambria, serif"><font color="#ffffff"><font face="Ubuntu Medium, serif"><font size="4" style="font-size: 15pt">REFERENCES</font></font></font></font></p>
+</span><span class="sd-abs-pos" style="position: absolute; top: 20.94cm; left: 6.11cm; width: 43px">
+<img src="template-074_html_ce79268c.gif" name="Shape18" alt="Shape18" align="left" width="43" height="43"/>
+</span>
+<br/>
+
+</p>
+</body>
+</html>

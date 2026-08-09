@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Rainbow Computer"/>
+	<meta name="created" content="2017-03-05T16:36:00"/>
+	<meta name="changedby" content="SR Computer"/>
+	<meta name="changed" content="2017-03-05T18:21:00"/>
+	<meta name="AppVersion" content="14.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 1cm; margin-right: 1cm; margin-top: 1cm; margin-bottom: 1.75cm }
+		p { direction: ltr; margin-bottom: 0.25cm; widows: 2; orphans: 2; text-align: start; line-height: 115%; background: transparent }
+		p.western { font-family: "Times New Roman", serif; font-size: 12pt }
+		p.cjk { font-family: "SimSun"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "Times New Roman"; font-size: 12pt }
+		a:link { color: #0000ff; text-decoration: underline }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#0000ff" vlink="#800000" dir="ltr"><p lang="zh-CN" class="cjk" style="line-height: 100%; margin-bottom: 0cm">
+<img src="template-027_html_9366330c.gif" name="Shape2" alt="Shape2" align="left" hspace="1" vspace="1" width="267" height="1123"/>
+<img src="template-027_html_b294a781.gif" name="Shape1" alt="Shape1" align="left" vspace="1" width="295" height="34"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 7.82cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>PROFESSIONAL
+	STATEMENT</b></span></font></font></span></font></p>
+</span><br/>
+
+</p>
+<p lang="zh-CN" class="cjk" style="line-height: 115%; margin-bottom: 0.35cm">
+<img src="template-027_html_e56e67a4.gif" name="Shape6" alt="Shape6" align="left" width="449" height="168"/>
+<span id="textbox3" dir="ltr" style="float: left; width: 10.96cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations passages of lorem Ipsum available but majority
+	combined with handful of model sentence pesetting industry lorem
+	Ipsum been which look even slightly Internet. It uses a dictionary
+	of over 2000</font></font></font></span></font></p>
+</span>
+<span id="textbox2" dir="ltr" style="float: left; width: 11.88cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">COMPANY
+	NAME</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	// 2011-2013</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations passages of lorem Ipsum available but the
+	majority have suffered alteration in some form, by injected humour,
+	or randomised words which look even slightly Internet. It uses a
+	dictionary of over 200 Latin words combined with handful of model
+	sentence pesetting industry lorem Ipsum been</font></font></font></span></font></p>
+</span>
+<span id="textbox1" dir="ltr" style="float: left; width: 7.89cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>GRAPHIC
+	DESIGNER &amp; WEB DEVELOPER</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_e56e67a4.gif" name="Shape7" alt="Shape7" align="left" width="449" height="168"/>
+
+<span id="Frame8" dir="ltr" style="float: left; width: 10.96cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations passages of lorem Ipsum available but majority
+	combined with handful of model sentence pesetting industry lorem
+	Ipsum been which look even slightly Internet. It uses a dictionary
+	of over 2000</font></font></font></span></font></p>
+</span>
+<span id="Frame7" dir="ltr" style="float: left; width: 11.88cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">COMPANY
+	NAME</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	// 2013-Present</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations passages of lorem Ipsum available but the
+	majority have suffered alteration in some form, by injected humour,
+	or randomised words which look even slightly Internet. It uses a
+	dictionary of over 200 Latin words combined with handful of model
+	sentence pesetting industry lorem Ipsum been</font></font></font></span></font></p>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 7.89cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>GRAPHIC
+	DESIGNER &amp; WEB DEVELOPER</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_a7cfe1e3.gif" name="Shape35" alt="Shape35" align="left" width="54" height="3"/>
+
+<img src="template-027_html_a7cfe1e3.gif" name="Shape36" alt="Shape36" align="left" width="54" height="3"/>
+
+<img src="template-027_html_dae249cd.gif" name="Shape28" alt="Shape28" align="left" width="296" height="2"/>
+
+<img src="template-027_html_528e329c.gif" name="Shape37" alt="Shape37" align="left" hspace="1" vspace="1" width="12" height="14"/>
+
+<img src="template-027_html_9766c35c.gif" name="Shape38" alt="Shape38" align="left" hspace="1" vspace="1" width="12" height="14"/>
+
+<img src="template-027_html_d77971ea.gif" name="Shape39" alt="Shape39" align="left" hspace="1" vspace="1" width="12" height="14"/>
+
+<img src="template-027_html_4371528d.gif" name="Shape40" alt="Shape40" align="left" vspace="1" width="5" height="6"/>
+
+<img src="template-027_html_67886f2.gif" name="Shape41" alt="Shape41" align="left" vspace="1" width="5" height="5"/>
+
+<img src="template-027_html_166a095e.gif" name="Shape42" alt="Shape42" align="left" vspace="1" width="5" height="6"/>
+
+<img src="template-027_html_fe2a138b.gif" name="Shape43" alt="Shape43" align="left" hspace="1" vspace="1" width="12" height="14"/>
+
+<img src="template-027_html_7c9ee1bd.gif" name="Shape44" alt="Shape44" align="left" vspace="1" width="5" height="6"/>
+
+<img src="template-027_html_4371528d.gif" name="Shape45" alt="Shape45" align="left" vspace="1" width="5" height="6"/>
+
+<img src="template-027_html_67886f2.gif" name="Shape46" alt="Shape46" align="left" vspace="1" width="5" height="5"/>
+
+<img src="template-027_html_870910db.gif" name="Shape29" alt="Shape29" align="left" width="230" height="2"/>
+
+<img src="template-027_html_fed3dab9.gif" name="Shape47" alt="Shape47" align="left" hspace="1" width="466" height="2"/>
+
+<img src="template-027_html_99c1f24.gif" name="Shape48" alt="Shape48" align="left" hspace="1" vspace="1" width="127" height="147"/>
+
+<img src="template-027_html_edb681e0.gif" name="Shape49" alt="Shape49" align="left" width="54" height="2"/>
+
+<img src="template-027_html_edb681e0.gif" name="Shape50" alt="Shape50" align="left" width="54" height="2"/>
+
+<img src="template-027_html_5788c9f.gif" name="Shape51" alt="Shape51" align="left" vspace="1" width="2" height="81"/>
+
+<img src="template-027_html_cbd53ad4.gif" name="Shape52" alt="Shape52" align="left" width="2" height="168"/>
+
+<img src="template-027_html_58e4ddd6.gif" name="Shape53" alt="Shape53" align="left" vspace="1" width="2" height="130"/>
+
+<img src="template-027_html_c5db95e0.gif" name="Shape54" alt="Shape54" align="left" width="2" height="64"/>
+
+<img src="template-027_html_46e747b3.gif" name="Shape55" alt="Shape55" align="left" vspace="1" width="72" height="83"/>
+
+<img src="template-027_html_a9169a30.gif" name="Shape56" alt="Shape56" align="left" vspace="1" width="72" height="79"/>
+
+<img src="template-027_html_bad2f0b3.gif" name="Shape57" alt="Shape57" align="left" vspace="1" width="72" height="83"/>
+
+<img src="template-027_html_9e0ec3a4.gif" name="Shape58" alt="Shape58" align="left" vspace="1" width="72" height="83"/>
+
+<img src="template-027_html_dfe23992.gif" name="Shape59" alt="Shape59" align="left" vspace="1" width="72" height="83"/>
+
+<img src="template-027_html_f7dbe3cc.gif" name="Shape12" alt="Shape12" align="left" width="67" height="73"/>
+
+<img src="template-027_html_9e14dd66.gif" name="Shape60" alt="Shape60" align="left" vspace="1" width="72" height="83"/>
+
+<img src="template-027_html_d1ac63b5.gif" name="Shape61" alt="Shape61" align="left" hspace="1" vspace="1" width="59" height="65"/>
+
+<img src="template-027_html_5346ae9b.gif" name="Shape62" alt="Shape62" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape63" alt="Shape63" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_acda92c1.gif" name="Shape64" alt="Shape64" align="left" hspace="1" width="168" height="10"/>
+
+<img src="template-027_html_6b8271ed.gif" name="Shape65" alt="Shape65" align="left" hspace="1" width="5" height="10"/>
+
+<img src="template-027_html_52598ad5.gif" name="Shape66" alt="Shape66" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape67" alt="Shape67" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_d4e1c897.gif" name="Shape68" alt="Shape68" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape69" alt="Shape69" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_c4a1a284.gif" name="Shape70" alt="Shape70" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape71" alt="Shape71" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_c4a1a284.gif" name="Shape72" alt="Shape72" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape73" alt="Shape73" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_b906645e.gif" name="Shape74" alt="Shape74" align="left" width="24" height="18"/>
+
+<img src="template-027_html_995b872a.gif" name="Shape75" alt="Shape75" align="left" width="38" height="44"/>
+
+<img src="template-027_html_ead43fa4.gif" name="Shape76" alt="Shape76" align="left" width="38" height="44"/>
+
+<img src="template-027_html_75bec1da.gif" name="Shape77" alt="Shape77" align="left" hspace="1" vspace="1" width="21" height="19"/>
+
+<img src="template-027_html_a2bbb770.gif" name="Shape78" alt="Shape78" align="left" width="38" height="44"/>
+
+<img src="template-027_html_c2a648d7.gif" name="Shape30" alt="Shape30" align="left" hspace="1" width="13" height="26"/>
+
+<img src="template-027_html_9baefe9.gif" name="Shape79" alt="Shape79" align="left" width="38" height="44"/>
+
+<img src="template-027_html_60594b03.gif" name="Shape31" alt="Shape31" align="left" width="20" height="22"/>
+
+<img src="template-027_html_b044d055.gif" name="Shape32" alt="Shape32" align="left" width="14" height="14"/>
+
+<img src="template-027_html_102b0950.gif" name="Shape80" alt="Shape80" align="left" vspace="1" width="22" height="26"/>
+
+<img src="template-027_html_c9091c4a.gif" name="Shape33" alt="Shape33" align="left" hspace="1" width="12" height="14"/>
+
+<img src="template-027_html_246b28a0.gif" name="Shape81" alt="Shape81" align="left" vspace="1" width="22" height="25"/>
+
+<img src="template-027_html_170f0782.gif" name="Shape34" alt="Shape34" align="left" width="14" height="14"/>
+
+<img src="template-027_html_246b28a0.gif" name="Shape82" alt="Shape82" align="left" vspace="1" width="22" height="25"/>
+
+<img src="template-027_html_b150f8fd.gif" name="Shape83" alt="Shape83" align="left" width="96" height="111"/>
+
+<img src="template-027_html_9bf0fb66.gif" name="Shape4" alt="Shape4" align="left" width="181" height="30"/>
+
+<span id="Frame3" dir="ltr" style="float: left; width: 4.79cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 1.0pt">Graphic
+	Designer</span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_36e4402c.gif" name="Shape24" alt="Shape24" align="left" vspace="1" width="129" height="34"/>
+
+<span id="Frame25" dir="ltr" style="float: left; width: 3.42cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>CONTACT</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_4a9a463.gif" name="Shape27" alt="Shape27" align="left" width="152" height="40"/>
+
+<span id="Frame28" dir="ltr" style="float: left; width: 4.01cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">060-0(875)-757-697</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">060-0(974)-775-699</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_b820f2a7.gif" name="Shape26" alt="Shape26" align="left" width="193" height="40"/>
+
+<span id="Frame27" dir="ltr" style="float: left; width: 5.11cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">luisebranlarawebsite.com</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">luisebranlaramail@gmail.co</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_442f7237.gif" name="Shape25" alt="Shape25" align="left" width="188" height="40"/>
+
+<span id="Frame26" dir="ltr" style="float: left; width: 4.97cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Street
+	Name, Town/City</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">State/Country,
+	Post/Zip Code</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_655831b0.gif" name="Shape3" alt="Shape3" align="left" vspace="1" width="200" height="77"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 5.29cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><font size="5" style="font-size: 20pt"><span style="letter-spacing: 2.0pt"><b>LUISE</b></span></font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><font size="5" style="font-size: 20pt"><span style="letter-spacing: 2.0pt"><b>BRANLARA</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_7b6487f2.gif" name="Shape23" alt="Shape23" align="left" vspace="1" width="168" height="34"/>
+
+<span id="Frame24" dir="ltr" style="float: left; width: 4.45cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>EXPERTIES</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape20" alt="Shape20" align="left" width="145" height="23"/>
+
+<span id="Frame21" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Adobe
+	Photoshop</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape22" alt="Shape22" align="left" width="145" height="23"/>
+
+<span id="Frame23" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Adobe
+	Illustrator</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape21" alt="Shape21" align="left" width="145" height="23"/>
+
+<span id="Frame22" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Adobe
+	InDesign</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape19" alt="Shape19" align="left" width="145" height="23"/>
+
+<span id="Frame20" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Microsoft
+	Word</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape18" alt="Shape18" align="left" width="145" height="23"/>
+
+<span id="Frame19" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Microsoft
+	Excel</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape17" alt="Shape17" align="left" width="145" height="23"/>
+
+<span id="Frame18" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Java
+	Script</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_247208a8.gif" name="Shape16" alt="Shape16" align="left" width="475" height="73"/>
+
+<span id="Frame17" dir="ltr" style="float: left; width: 12.57cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">suffered
+	alteration in some form, by injected humour, or randomised words
+	which </font></font></font></span></font>
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">alteration
+	in some form, by injected humour, or randomised words which don't
+	look even high Internet. It uses a dictionary of over 200 Latin
+	words, combined with a handful of model ntence pesetting industry.
+	Lorem Ipsum has been the industry's</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_afaeb91d.gif" name="Shape14" alt="Shape14" align="left" width="67" height="20"/>
+
+<span id="Frame15" dir="ltr" style="float: left; width: 1.77cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 6pt">CREATIVE</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_afaeb91d.gif" name="Shape15" alt="Shape15" align="left" width="67" height="20"/>
+
+<span id="Frame16" dir="ltr" style="float: left; width: 1.77cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 6pt">INNOVATE</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_afaeb91d.gif" name="Shape13" alt="Shape13" align="left" width="67" height="20"/>
+
+<span id="Frame14" dir="ltr" style="float: left; width: 1.77cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 6pt">CONCEPT</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_afaeb91d.gif" name="Shape11" alt="Shape11" align="left" width="67" height="20"/>
+
+<span id="Frame13" dir="ltr" style="float: left; width: 1.77cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 6pt">DESIGN</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_20d9bed6.gif" name="Shape10" alt="Shape10" align="left" vspace="1" width="134" height="34"/>
+
+<span id="Frame5" dir="ltr" style="float: left; width: 3.55cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>EDUCATION</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_3a9633da.gif" name="Shape8" alt="Shape8" align="left" width="449" height="103"/>
+
+<span id="Frame10" dir="ltr" style="float: left; width: 11.88cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">COLLAGE
+	NAME</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	// 2007-2009</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations of passages of lorem Ipsum availabl butthe
+	majority </font></font></font></span></font>
+	</p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">have
+	suffered alteration in some form, by injected humour, or randomised
+	words which don't handful of model sentence pesetting industry.
+	Lorem Ipsum has</font></font></font></span></font></p>
+</span>
+<span id="Frame9" dir="ltr" style="float: left; width: 6.8cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>DESIGN
+	&amp; DEVELOPMENT COURSE</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_3a9633da.gif" name="Shape9" alt="Shape9" align="left" width="449" height="103"/>
+
+<span id="Frame12" dir="ltr" style="float: left; width: 11.88cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">COLLAGE
+	NAME</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	// 2007-2009</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations of passages of lorem Ipsum availabl butthe
+	majority </font></font></font></span></font>
+	</p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">have
+	suffered alteration in some form, by injected humour, or randomised
+	words which don't handful of model sentence pesetting industry.
+	Lorem Ipsum has</font></font></font></span></font></p>
+</span>
+<span id="Frame11" dir="ltr" style="float: left; width: 6.8cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>DESIGN
+	&amp; DEVELOPMENT COURSE</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_a40bbd9b.gif" name="Shape5" alt="Shape5" align="left" vspace="1" width="199" height="34"/>
+
+<span id="Frame4" dir="ltr" style="float: left; width: 5.27cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>WORK
+	EXPERIENCE</b></span></font></font></span></font></p>
+</span><br/>
+<br/>
+
+</p>
+<p lang="zh-CN" class="cjk" style="line-height: 100%; margin-bottom: 0cm; page-break-before: always">
+<img src="template-027_html_2ec84e6f.gif" name="Shape84" alt="Shape84" align="left" hspace="1" width="267" height="1124"/>
+<br/>
+
+</p>
+<p lang="zh-CN" class="cjk" style="line-height: 115%; margin-bottom: 0.35cm"><a name="_GoBack"></a>
+<img src="template-027_html_e56e67a4.gif" name="Shape114" alt="Shape114" align="left" width="449" height="168"/>
+<span id="Frame69" dir="ltr" style="float: left; width: 10.96cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations passages of lorem Ipsum available but majority
+	combined with handful of model sentence pesetting industry lorem
+	Ipsum been which look even slightly Internet. It uses a dictionary
+	of over 2000</font></font></font></span></font></p>
+</span>
+<span id="Frame68" dir="ltr" style="float: left; width: 11.88cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">COMPANY
+	NAME</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	// 2009-2011</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations passages of lorem Ipsum available but the
+	majority have suffered alteration in some form, by injected humour,
+	or randomised words which look even slightly Internet. It uses a
+	dictionary of over 200 Latin words combined with handful of model
+	sentence pesetting industry lorem Ipsum been</font></font></font></span></font></p>
+</span>
+<span id="Frame67" dir="ltr" style="float: left; width: 7.89cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>GRAPHIC
+	DESIGNER &amp; WEB DEVELOPER</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_e56e67a4.gif" name="Shape115" alt="Shape115" align="left" width="449" height="168"/>
+
+<span id="Frame72" dir="ltr" style="float: left; width: 10.96cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations passages of lorem Ipsum available but majority
+	combined with handful of model sentence pesetting industry lorem
+	Ipsum been which look even slightly Internet. It uses a dictionary
+	of over 2000</font></font></font></span></font></p>
+</span>
+<span id="Frame71" dir="ltr" style="float: left; width: 11.88cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">COMPANY
+	NAME</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	// 2007-2009</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">There
+	are many variations passages of lorem Ipsum available but the
+	majority have suffered alteration in some form, by injected humour,
+	or randomised words which look even slightly Internet. It uses a
+	dictionary of over 200 Latin words combined with handful of model
+	sentence pesetting industry lorem Ipsum been</font></font></font></span></font></p>
+</span>
+<span id="Frame70" dir="ltr" style="float: left; width: 7.89cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>GRAPHIC
+	DESIGNER &amp; WEB DEVELOPER</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_c1e6757.gif" name="Shape128" alt="Shape128" align="left" vspace="1" width="217" height="14"/>
+
+<img src="template-027_html_c1e6757.gif" name="Shape129" alt="Shape129" align="left" vspace="1" width="217" height="14"/>
+
+<img src="template-027_html_c1e6757.gif" name="Shape130" alt="Shape130" align="left" vspace="1" width="217" height="14"/>
+
+<img src="template-027_html_c1e6757.gif" name="Shape131" alt="Shape131" align="left" vspace="1" width="217" height="14"/>
+
+<img src="template-027_html_9766c35c.gif" name="Shape132" alt="Shape132" align="left" hspace="1" vspace="1" width="12" height="14"/>
+
+<img src="template-027_html_cae4f069.gif" name="Shape133" alt="Shape133" align="left" hspace="1" vspace="1" width="12" height="13"/>
+
+<img src="template-027_html_928a0c31.gif" name="Shape134" alt="Shape134" align="left" hspace="1" vspace="1" width="12" height="14"/>
+
+<img src="template-027_html_f5d2cba5.gif" name="Shape135" alt="Shape135" align="left" hspace="1" vspace="1" width="12" height="14"/>
+
+<img src="template-027_html_ac0eb057.gif" name="Shape119" alt="Shape119" align="left" hspace="1" width="286" height="2"/>
+
+<img src="template-027_html_f1711cd9.gif" name="Shape118" alt="Shape118" align="left" width="308" height="2"/>
+
+<img src="template-027_html_1215f9a3.gif" name="Shape136" alt="Shape136" align="left" hspace="1" vspace="1" width="12" height="14"/>
+
+<img src="template-027_html_a7cfe1e3.gif" name="Shape137" alt="Shape137" align="left" width="54" height="3"/>
+
+<img src="template-027_html_a7cfe1e3.gif" name="Shape138" alt="Shape138" align="left" width="54" height="3"/>
+
+<img src="template-027_html_a7cfe1e3.gif" name="Shape139" alt="Shape139" align="left" width="54" height="3"/>
+
+<img src="template-027_html_a7cfe1e3.gif" name="Shape140" alt="Shape140" align="left" width="54" height="3"/>
+
+<img src="template-027_html_edb681e0.gif" name="Shape141" alt="Shape141" align="left" width="54" height="2"/>
+
+<img src="template-027_html_edb681e0.gif" name="Shape142" alt="Shape142" align="left" width="54" height="2"/>
+
+<img src="template-027_html_c0a59aa.gif" name="Shape143" alt="Shape143" align="left" hspace="1" vspace="1" width="12" height="13"/>
+
+<img src="template-027_html_7c9ee1bd.gif" name="Shape144" alt="Shape144" align="left" vspace="1" width="5" height="6"/>
+
+<img src="template-027_html_4371528d.gif" name="Shape145" alt="Shape145" align="left" vspace="1" width="5" height="6"/>
+
+<img src="template-027_html_f768398a.gif" name="Shape146" alt="Shape146" align="left" vspace="1" width="5" height="5"/>
+
+<img src="template-027_html_928a0c31.gif" name="Shape147" alt="Shape147" align="left" hspace="1" vspace="1" width="12" height="14"/>
+
+<img src="template-027_html_418bb32.gif" name="Shape148" alt="Shape148" align="left" vspace="1" width="5" height="5"/>
+
+<img src="template-027_html_7c9ee1bd.gif" name="Shape149" alt="Shape149" align="left" vspace="1" width="5" height="6"/>
+
+<img src="template-027_html_67c5f004.gif" name="Shape150" alt="Shape150" align="left" vspace="1" width="5" height="6"/>
+
+<img src="template-027_html_105181ba.gif" name="Shape151" alt="Shape151" align="left" width="120" height="2"/>
+
+<img src="template-027_html_cbd53ad4.gif" name="Shape152" alt="Shape152" align="left" width="2" height="168"/>
+
+<img src="template-027_html_58e4ddd6.gif" name="Shape153" alt="Shape153" align="left" width="2" height="130"/>
+
+<img src="template-027_html_57621bf8.gif" name="Shape154" alt="Shape154" align="left" vspace="1" width="2" height="41"/>
+
+<img src="template-027_html_57621bf8.gif" name="Shape155" alt="Shape155" align="left" vspace="1" width="2" height="41"/>
+
+<img src="template-027_html_57621bf8.gif" name="Shape156" alt="Shape156" align="left" vspace="1" width="2" height="41"/>
+
+<img src="template-027_html_52598ad5.gif" name="Shape157" alt="Shape157" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape158" alt="Shape158" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_52598ad5.gif" name="Shape159" alt="Shape159" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape160" alt="Shape160" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_4c172330.gif" name="Shape161" alt="Shape161" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape162" alt="Shape162" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_52598ad5.gif" name="Shape163" alt="Shape163" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape164" alt="Shape164" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_52598ad5.gif" name="Shape165" alt="Shape165" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_7f266df4.gif" name="Shape166" alt="Shape166" align="left" hspace="1" vspace="1" width="5" height="9"/>
+
+<img src="template-027_html_52598ad5.gif" name="Shape167" alt="Shape167" align="left" hspace="1" vspace="1" width="168" height="9"/>
+
+<img src="template-027_html_67c5abc6.gif" name="Shape168" alt="Shape168" align="left" hspace="1" vspace="1" width="6" height="9"/>
+
+<img src="template-027_html_a726bd1d.gif" name="Shape169" alt="Shape169" align="left" hspace="1" vspace="1" width="48" height="55"/>
+
+<img src="template-027_html_5617ae7d.gif" name="Shape170" alt="Shape170" align="left" hspace="1" vspace="1" width="48" height="55"/>
+
+<img src="template-027_html_ab282aa3.gif" name="Shape117" alt="Shape117" align="left" hspace="1" vspace="1" width="48" height="55"/>
+
+<img src="template-027_html_c1d54abe.gif" name="Shape171" alt="Shape171" align="left" hspace="1" vspace="1" width="48" height="55"/>
+
+<img src="template-027_html_c1d54abe.gif" name="Shape172" alt="Shape172" align="left" hspace="1" vspace="1" width="48" height="55"/>
+
+<img src="template-027_html_c4b78c.gif" name="Shape173" alt="Shape173" align="left" width="38" height="44"/>
+
+<img src="template-027_html_91b93010.gif" name="Shape174" alt="Shape174" align="left" vspace="1" width="22" height="16"/>
+
+<img src="template-027_html_d08bb545.gif" name="Shape175" alt="Shape175" align="left" width="38" height="44"/>
+
+<img src="template-027_html_38bfdf71.gif" name="Shape176" alt="Shape176" align="left" hspace="1" width="21" height="18"/>
+
+<img src="template-027_html_654e7d43.gif" name="Shape177" alt="Shape177" align="left" vspace="1" width="30" height="24"/>
+
+<img src="template-027_html_9cf02bd2.gif" name="Shape178" alt="Shape178" align="left" vspace="1" width="33" height="20"/>
+
+<img src="template-027_html_71bb19b7.gif" name="Shape179" alt="Shape179" align="left" width="27" height="27"/>
+
+<img src="template-027_html_dc59fe61.gif" name="Shape120" alt="Shape120" align="left" width="29" height="24"/>
+
+<img src="template-027_html_cae042e0.gif" name="Shape116" alt="Shape116" align="left" hspace="1" vspace="1" width="26" height="29"/>
+
+<img src="template-027_html_4bca6813.gif" name="Shape180" alt="Shape180" align="left" vspace="1" width="48" height="55"/>
+
+<img src="template-027_html_37dd4808.gif" name="Shape181" alt="Shape181" align="left" vspace="1" width="30" height="30"/>
+
+<img src="template-027_html_995b872a.gif" name="Shape182" alt="Shape182" align="left" width="38" height="44"/>
+
+<img src="template-027_html_97258abc.gif" name="Shape183" alt="Shape183" align="left" hspace="1" vspace="1" width="21" height="19"/>
+
+<img src="template-027_html_7c874004.gif" name="Shape184" alt="Shape184" align="left" width="38" height="44"/>
+
+<img src="template-027_html_b1e28eb1.gif" name="Shape121" alt="Shape121" align="left" vspace="1" width="22" height="19"/>
+
+<img src="template-027_html_7c874004.gif" name="Shape185" alt="Shape185" align="left" width="38" height="44"/>
+
+<img src="template-027_html_b7d02f.gif" name="Shape122" alt="Shape122" align="left" width="14" height="22"/>
+
+<img src="template-027_html_c8e8dc2a.gif" name="Shape186" alt="Shape186" align="left" width="38" height="44"/>
+
+<img src="template-027_html_7f37f93f.gif" name="Shape123" alt="Shape123" align="left" width="22" height="22"/>
+
+<img src="template-027_html_6e6f3995.gif" name="Shape187" alt="Shape187" align="left" width="22" height="26"/>
+
+<img src="template-027_html_da2753ed.gif" name="Shape124" alt="Shape124" align="left" width="7" height="14"/>
+
+<img src="template-027_html_1a182194.gif" name="Shape188" alt="Shape188" align="left" vspace="1" width="22" height="25"/>
+
+<img src="template-027_html_d731e82.gif" name="Shape125" alt="Shape125" align="left" vspace="1" width="14" height="11"/>
+
+<img src="template-027_html_dcfa50d0.gif" name="Shape189" alt="Shape189" align="left" width="22" height="26"/>
+
+<img src="template-027_html_436ea29f.gif" name="Shape126" alt="Shape126" align="left" vspace="1" width="15" height="9"/>
+
+<img src="template-027_html_813b8b52.gif" name="Shape190" alt="Shape190" align="left" vspace="1" width="22" height="26"/>
+
+<img src="template-027_html_8b8c4659.gif" name="Shape127" alt="Shape127" align="left" width="13" height="12"/>
+
+<img src="template-027_html_c927bea1.gif" name="Shape113" alt="Shape113" align="left" vspace="1" width="324" height="34"/>
+
+<span id="Frame65" dir="ltr" style="float: left; width: 8.57cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>WORKS
+	EXPERIENCE CONTINUE</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_7b6487f2.gif" name="Shape112" alt="Shape112" align="left" vspace="1" width="168" height="34"/>
+
+<span id="Frame64" dir="ltr" style="float: left; width: 4.45cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>PRO.
+	SKILLS</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape111" alt="Shape111" align="left" width="145" height="23"/>
+
+<span id="Frame63" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Programming</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape110" alt="Shape110" align="left" width="145" height="23"/>
+
+<span id="Frame62" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Communication</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape109" alt="Shape109" align="left" width="145" height="23"/>
+
+<span id="Frame61" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Team
+	Work</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape108" alt="Shape108" align="left" width="145" height="23"/>
+
+<span id="Frame60" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Leadership</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape107" alt="Shape107" align="left" width="145" height="23"/>
+
+<span id="Frame59" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Marketing</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_fcff976c.gif" name="Shape106" alt="Shape106" align="left" width="145" height="23"/>
+
+<span id="Frame58" dir="ltr" style="float: left; width: 3.84cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Management</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_7b6487f2.gif" name="Shape105" alt="Shape105" align="left" vspace="1" width="168" height="34"/>
+
+<span id="Frame57" dir="ltr" style="float: left; width: 4.45cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>AWARDS</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_625b1e0d.gif" name="Shape104" alt="Shape104" align="left" width="185" height="57"/>
+
+<span id="Frame56" dir="ltr" style="float: left; width: 4.9cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">DESIGN
+	AWARD</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Creative
+	Company, Colombia</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">11-13-2013</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_625b1e0d.gif" name="Shape103" alt="Shape103" align="left" width="185" height="57"/>
+
+<span id="Frame55" dir="ltr" style="float: left; width: 4.9cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">DESIGN
+	AWARD</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Creative
+	Company, Colombia</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">11-13-2013</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_625b1e0d.gif" name="Shape102" alt="Shape102" align="left" width="185" height="57"/>
+
+<span id="Frame54" dir="ltr" style="float: left; width: 4.9cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">DESIGN
+	AWARD</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Creative
+	Company, Colombia</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">11-13-2013</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_7b6487f2.gif" name="Shape101" alt="Shape101" align="left" vspace="1" width="168" height="34"/>
+
+<span id="Frame53" dir="ltr" style="float: left; width: 4.45cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>SOCIAL</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_a1cadd82.gif" name="Shape100" alt="Shape100" align="left" width="185" height="24"/>
+
+<span id="Frame52" dir="ltr" style="float: left; width: 4.9cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Luiseid/facebook.com</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_a1cadd82.gif" name="Shape99" alt="Shape99" align="left" width="185" height="24"/>
+
+<span id="Frame51" dir="ltr" style="float: left; width: 4.9cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Luiseid/twitter.com</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_a1cadd82.gif" name="Shape98" alt="Shape98" align="left" width="185" height="24"/>
+
+<span id="Frame50" dir="ltr" style="float: left; width: 4.9cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Luiseid/linkeding.com</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_a1cadd82.gif" name="Shape97" alt="Shape97" align="left" width="185" height="24"/>
+
+<span id="Frame49" dir="ltr" style="float: left; width: 4.9cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Luiseid/behance.com</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_25ce2027.gif" name="Shape96" alt="Shape96" align="left" vspace="1" width="166" height="34"/>
+
+<span id="Frame36" dir="ltr" style="float: left; width: 4.39cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>REFERENCES</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_5b996c80.gif" name="Shape95" alt="Shape95" align="left" width="433" height="62"/>
+
+<span id="Frame48" dir="ltr" style="float: left; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Street,
+	City, Country, Post Code</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">P
+	:</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	+60-5(688)-067</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">E
+	:</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	hismail@gmail.com</font></font></font></span></font></p>
+</span>
+<span id="Frame47" dir="ltr" style="float: left; width: 5.8cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Art
+	Director // Digital Art Media</font></font></font></span></font></p>
+</span>
+<span id="Frame46" dir="ltr" style="float: left; width: 3.83cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>JOHN
+	HARRIE</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_5b996c80.gif" name="Shape94" alt="Shape94" align="left" width="433" height="62"/>
+
+<span id="Frame45" dir="ltr" style="float: left; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Street,
+	City, Country, Post Code</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">P
+	:</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	+60-5(688)-067</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">E
+	:</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	hismail@gmail.com</font></font></font></span></font></p>
+</span>
+<span id="Frame44" dir="ltr" style="float: left; width: 5.8cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Art
+	Director // Digital Art Media</font></font></font></span></font></p>
+</span>
+<span id="Frame43" dir="ltr" style="float: left; width: 3.83cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>JOHN
+	HARRIE</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_5b996c80.gif" name="Shape93" alt="Shape93" align="left" width="433" height="62"/>
+
+<span id="Frame42" dir="ltr" style="float: left; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Street,
+	City, Country, Post Code</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">P
+	:</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	+60-5(688)-067</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">E
+	:</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	hismail@gmail.com</font></font></font></span></font></p>
+</span>
+<span id="Frame41" dir="ltr" style="float: left; width: 5.8cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Art
+	Director // Digital Art Media</font></font></font></span></font></p>
+</span>
+<span id="Frame40" dir="ltr" style="float: left; width: 3.83cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>JOHN
+	HARRIE</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_5b996c80.gif" name="Shape92" alt="Shape92" align="left" width="433" height="62"/>
+
+<span id="Frame39" dir="ltr" style="float: left; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Street,
+	City, Country, Post Code</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">P
+	:</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	+60-5(688)-067</font></font></font></span></font></p>
+	<p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">E
+	:</font></font></font><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	hismail@gmail.com</font></font></font></span></font></p>
+</span>
+<span id="Frame38" dir="ltr" style="float: left; width: 5.8cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Art
+	Director // Digital Art Media</font></font></font></span></font></p>
+</span>
+<span id="Frame37" dir="ltr" style="float: left; width: 3.83cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" class="cjk" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 1.2pt"><b>JOHN
+	HARRIE</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_e7e89d19.gif" name="Shape91" alt="Shape91" align="left" vspace="1" width="132" height="34"/>
+
+<span id="Frame35" dir="ltr" style="float: left; width: 3.48cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>INTEREST</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_fe6c9a5.gif" name="Shape90" alt="Shape90" align="left" width="70" height="24"/>
+
+<span id="Frame34" dir="ltr" style="float: left; width: 1.86cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Traveling</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_3dbd6254.gif" name="Shape89" alt="Shape89" align="left" width="68" height="24"/>
+
+<span id="Frame33" dir="ltr" style="float: left; width: 1.79cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Driving</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_52464c20.gif" name="Shape88" alt="Shape88" align="left" width="61" height="24"/>
+
+<span id="Frame32" dir="ltr" style="float: left; width: 1.62cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Gym</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_3dbd6254.gif" name="Shape87" alt="Shape87" align="left" width="68" height="24"/>
+
+<span id="Frame31" dir="ltr" style="float: left; width: 1.79cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Target</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_3dbd6254.gif" name="Shape86" alt="Shape86" align="left" width="68" height="24"/>
+
+<span id="Frame30" dir="ltr" style="float: left; width: 1.79cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Movies</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_4888e4d.gif" name="Shape85" alt="Shape85" align="left" width="69" height="24"/>
+
+<span id="Frame29" dir="ltr" style="float: left; width: 1.82cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Music</font></font></font></span></font></p>
+</span><br/>
+<br/>
+
+</p>
+<p lang="zh-CN" class="cjk" style="line-height: 100%; margin-bottom: 0cm; page-break-before: always">
+<img src="template-027_html_9366330c.gif" name="Shape205" alt="Shape205" align="left" hspace="1" vspace="1" width="267" height="1123"/>
+<img src="template-027_html_ae099b48.gif" name="Shape203" alt="Shape203" align="left" width="264" height="2"/>
+<img src="template-027_html_fed3dab9.gif" name="Shape206" alt="Shape206" align="left" hspace="1" vspace="1" width="466" height="2"/>
+<img src="template-027_html_99c1f24.gif" name="Shape207" alt="Shape207" align="left" hspace="1" vspace="1" width="127" height="147"/>
+<img src="template-027_html_edb681e0.gif" name="Shape208" alt="Shape208" align="left" width="54" height="2"/>
+<img src="template-027_html_edb681e0.gif" name="Shape209" alt="Shape209" align="left" width="54" height="2"/>
+<img src="template-027_html_a652e797.gif" name="Shape210" alt="Shape210" align="left" vspace="1" width="151" height="69"/>
+<img src="template-027_html_995b872a.gif" name="Shape211" alt="Shape211" align="left" width="38" height="44"/>
+<img src="template-027_html_28ef1aaa.gif" name="Shape204" alt="Shape204" align="left" width="20" height="22"/>
+<img src="template-027_html_b044d055.gif" name="Shape212" alt="Shape212" align="left" width="14" height="14"/>
+<img src="template-027_html_102b0950.gif" name="Shape213" alt="Shape213" align="left" vspace="1" width="22" height="26"/>
+<img src="template-027_html_c9091c4a.gif" name="Shape214" alt="Shape214" align="left" hspace="1" width="12" height="14"/>
+<img src="template-027_html_246b28a0.gif" name="Shape215" alt="Shape215" align="left" vspace="1" width="22" height="25"/>
+<img src="template-027_html_170f0782.gif" name="Shape216" alt="Shape216" align="left" width="14" height="14"/>
+<img src="template-027_html_246b28a0.gif" name="Shape217" alt="Shape217" align="left" vspace="1" width="22" height="25"/>
+<img src="template-027_html_9baefe9.gif" name="Shape218" alt="Shape218" align="left" width="38" height="44"/>
+<img src="template-027_html_60594b03.gif" name="Shape219" alt="Shape219" align="left" width="20" height="22"/>
+<img src="template-027_html_b150f8fd.gif" name="Shape220" alt="Shape220" align="left" width="96" height="111"/>
+<img src="template-027_html_9bf0fb66.gif" name="Shape197" alt="Shape197" align="left" width="181" height="30"/>
+<span id="Frame78" dir="ltr" style="float: left; width: 4.79cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 1.0pt">Graphic
+	Designer</span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_36e4402c.gif" name="Shape198" alt="Shape198" align="left" vspace="1" width="129" height="34"/>
+
+<span id="Frame79" dir="ltr" style="float: left; width: 3.42cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>CONTACT</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_4a9a463.gif" name="Shape199" alt="Shape199" align="left" width="152" height="40"/>
+
+<span id="Frame80" dir="ltr" style="float: left; width: 4.01cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">060-0(875)-757-697</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">060-0(974)-775-699</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_b820f2a7.gif" name="Shape200" alt="Shape200" align="left" width="193" height="40"/>
+
+<span id="Frame81" dir="ltr" style="float: left; width: 5.11cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">luisebranlarawebsite.com</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">luisebranlaramail@gmail.co</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_442f7237.gif" name="Shape201" alt="Shape201" align="left" width="188" height="40"/>
+
+<span id="Frame82" dir="ltr" style="float: left; width: 4.97cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Street
+	Name, Town/City</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">State/Country,
+	Post/Zip Code</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_655831b0.gif" name="Shape202" alt="Shape202" align="left" vspace="1" width="200" height="77"/>
+
+<span id="Frame83" dir="ltr" style="float: left; width: 5.29cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><font size="5" style="font-size: 20pt"><span style="letter-spacing: 2.0pt"><b>LUISE</b></span></font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#ffffff"><font face="Exo 2 Extra Bold, serif"><font size="5" style="font-size: 20pt"><span style="letter-spacing: 2.0pt"><b>BRANLARA</b></span></font></font></font></span></font></p>
+</span>
+<img src="template-027_html_d55fe42a.gif" name="Shape196" alt="Shape196" align="left" vspace="1" width="176" height="34"/>
+
+<span id="Frame77" dir="ltr" style="float: left; width: 4.66cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#007cb7"><font face="Exo 2 Extra Bold, serif"><span style="letter-spacing: 1.2pt"><b>COVER
+	LETTER</b></span></font></font></span></font></p>
+</span>
+<img src="template-027_html_f1053fbb.gif" name="Shape195" alt="Shape195" align="left" vspace="1" width="46" height="25"/>
+
+<span id="Frame76" dir="ltr" style="float: left; width: 1.22cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">To,</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_7c110cae.gif" name="Shape194" alt="Shape194" align="left" width="216" height="118"/>
+
+<span id="Frame75" dir="ltr" style="float: left; width: 5.72cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Michael
+	John</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Graphic
+	Designer &amp; Web Developer</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Creative
+	Design Company</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Google
+	Mountain View</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">1960
+	Street Parkway, America.</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">CA-09876541</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_1ca54844.gif" name="Shape193" alt="Shape193" align="left" width="158" height="118"/>
+
+<span id="Frame74" dir="ltr" style="float: left; width: 4.18cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Applying
+	Position for</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Creative
+	Director</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Reference
+	No.</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">APK-040986775379</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Date</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">13-January-2017</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_7511eaf4.gif" name="Shape192" alt="Shape192" align="left" vspace="1" width="91" height="25"/>
+
+<span id="Frame73" dir="ltr" style="float: left; width: 2.41cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Dear
+	Sir,</font></font></font></span></font></p>
+</span>
+<img src="template-027_html_4601b46.gif" name="Shape191" alt="Shape191" align="left" width="441" height="511"/>
+
+<span id="Frame66" dir="ltr" style="float: left; width: 11.68cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Donec
+	ante nunc, laoreet ac turpis ac, cursus aliquet dui. Duis posuere
+	erat vitae magna sollicitudin, vel consectetur lorem elementum.
+	Donec id mi nec elit cursus ornare eget non felis. Praesent sed
+	lacinia velit. Nullam at massa cursus, porttitor urna sagittis lorem</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Maecenas
+	tincidunt ullamcorper tortor non aliquam. Aenean ut lacinia felis.
+	Aenean at magna laoreet, tincidunt quam et, vestibulum mauris. Sed
+	blandit orci porttitor ligula porttitor, ut facilisis mi commodo.
+	Proin vehicula eu diam ut pharetra. Donec tempus accumsan diam
+	semper dapibus. Integer vel est dapibus, efficitur velit et,
+	porttitor arcu. Integer purus nisl, pharetra et tortor quis, viverra
+	rutrum sapien. </font></font></font></span></font>
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Morbi
+	volutpat convallis amet. Curabitur volutpat velit nibh, vel molestie
+	eros cursus in. Aliquam erat volutpat. Donec sollicitudin
+	ullamcorper ornare. In hac dictum mauris. Suspendisse quis
+	ullamcorper nibh. Proin volutpat mi sem, eu venenatis libero
+	tincidunt ac. Aenean dignissim odio sed elit vulputate pretium. </font></font></font></span></font>
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">porttitor
+	urna sagittis lorem cubilia pharetra et tortor quis, viverra rutrum
+	sapien</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Donec
+	ante nunc, laoreet ac turpis ac, cursus aliquet dui. Duis posuere
+	erat vitae magna sollicitudin, vel consectetur lorem elementum.
+	Donec id mi nec elit cursus ornare eget non felis. Praesent sed
+	lacinia velit. Nullam at massa cursus, porttitor urna sagittis
+	lorem.</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Maecenas
+	tincidunt ullamcorper tortor non aliquam. Aenean ut lacinia felis.
+	Aenean at magna laoreet, tincidunt quam et, vestibulum mauris. Sed
+	blandit orci porttitor ligula porttitor, ut facilisis mi commodo.
+	Proin vehicula eu diam ut pharetra. Donec tempus accumsan diam
+	semper dapibus. Integer vel est dapibus, efficitur velit et,
+	porttitor arcu. Integer purus nisl, pharetra et tortor quis, viverra
+	rutrum sapien. </font></font></font></span></font>
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Your</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 120%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#303836"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Sincerely,</font></font></font></span></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

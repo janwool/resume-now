@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="nancy"/>
+	<meta name="created" content="2018-12-12T05:14:00"/>
+	<meta name="changedby" content="K"/>
+	<meta name="changed" content="2018-12-12T05:47:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Company" content="Kingsoft"/>
+	<meta name="KSOProductBuildVer" content="2052-10.1.0.7698"/>
+	<style type="text/css">
+		@page { size: 20.9cm 29.6cm }
+		p { direction: ltr; widows: 0; margin-bottom: 0.25cm; orphans: 0; line-height: 115%; text-align: justify; background: transparent }
+		p.western { font-size: 10pt }
+		p.cjk { font-size: 10pt }
+		p.ctl { font-size: 12pt }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" bgcolor="#ffffff" dir="ltr"><p class="cjk" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><a name="_GoBack"></a>
+<br/>
+
+</p>
+<p class="cjk" style="margin-bottom: 0cm; line-height: 100%"><img src="template-081_html_861a1c1d.gif" name="Shape30" alt="Shape30" align="left" width="816" height="132"/>
+<img src="template-081_html_9fdc807f.gif" name="Shape13" alt="Shape13" align="left" hspace="1" vspace="1" width="283" height="1124"/>
+<img src="template-081_html_bcd3ef32.gif" name="Shape3" alt="Shape3" align="left" hspace="2" vspace="1" width="1" height="178"/>
+<img src="template-081_html_5a1a5fe0.gif" name="Shape4" alt="Shape4" align="left" hspace="2" vspace="1" width="1" height="378"/>
+<img src="template-081_html_78b1c65.png" name="Picture 46" align="left" width="61" height="61" border="0"/>
+<img src="template-081_html_5b39c7e7.gif" name="Shape14" alt="Shape14" align="left" hspace="1" vspace="1" width="17" height="32"/>
+<img src="template-081_html_c8a2ae7d.gif" name="Shape26" alt="Shape26" align="left" width="280" height="125"/>
+<img src="template-081_html_57fe1bf4.gif" name="Shape2" alt="Shape2" align="left" width="30" height="37"/>
+<img src="template-081_html_a75b3f89.gif" name="Shape1" alt="Shape1" align="left" width="28" height="44"/>
+<img src="template-081_html_11cb699d.gif" name="Shape40" alt="Shape40" align="left" width="252" height="34"/>
+<img src="template-081_html_2170d38a.gif" name="Shape39" alt="Shape39" align="left" width="209"/>
+<img src="template-081_html_e8e0626f.gif" name="Shape38" alt="Shape38" align="left" width="252" height="31"/>
+<img src="template-081_html_7601c9b8.png" name="Picture 48" align="left" width="32" height="32" border="0"/>
+<img src="template-081_html_a0c5ef38.gif" name="Shape37" alt="Shape37" align="left" width="252" height="173"/>
+<img src="template-081_html_2170d38a.gif" name="Shape36" alt="Shape36" align="left" width="209" height="1"/>
+<img src="template-081_html_b5aca836.gif" name="Shape35" alt="Shape35" align="left" width="252" height="30"/>
+<img src="template-081_html_8c136d5b.png" name="Picture 47" align="left" width="32" height="32" border="0"/>
+<img src="template-081_html_70815bc3.gif" name="Shape34" alt="Shape34" align="left" width="252" height="26"/>
+<img src="template-081_html_42f55e2d.gif" name="Shape10" alt="Shape10" align="left" hspace="1" vspace="1" width="165" height="13"/>
+<img src="template-081_html_3a25e4cd.gif" name="Shape9" alt="Shape9" align="left" hspace="1" vspace="1" height="13"/>
+<img src="template-081_html_70815bc3.gif" name="Shape33" alt="Shape33" align="left" width="252" height="26"/>
+<img src="template-081_html_42f55e2d.gif" name="Shape12" alt="Shape12" align="left" hspace="1" vspace="1" width="165" height="13"/>
+<img src="template-081_html_58ceae6e.gif" name="Shape11" alt="Shape11" align="left" hspace="1" vspace="1" width="1" height="13"/>
+<img src="template-081_html_70815bc3.gif" name="Shape32" alt="Shape32" align="left" width="252" height="26"/>
+<img src="template-081_html_42f55e2d.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="165" height="13"/>
+<img src="template-081_html_3a25e4cd.gif" name="Shape7" alt="Shape7" align="left" hspace="1" vspace="1" height="13"/>
+<img src="template-081_html_70815bc3.gif" name="Shape31" alt="Shape31" align="left" width="252" height="26"/>
+<img src="template-081_html_42f55e2d.gif" name="Shape6" alt="Shape6" align="left" hspace="1" vspace="1" width="165" height="13"/>
+<img src="template-081_html_c5d449ee.png" name="Picture 50" align="left" width="32" height="32" border="0"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 0.75cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#191919"><font size="4" style="font-size: 16pt">G</font></font></span></font></p>
+</span>
+<img src="template-081_html_931e300f.gif" name="Shape16" alt="Shape16" align="left" width="173" height="41"/>
+
+<img src="template-081_html_f422c7ca.gif" name="Shape17" alt="Shape17" align="left" width="453" height="96"/>
+
+<img src="template-081_html_b82323c.gif" name="Shape23" alt="Shape23" align="left" hspace="1" vspace="1" width="9" height="9"/>
+
+<img src="template-081_html_58ceae6e.gif" name="Shape5" alt="Shape5" align="left" hspace="1" vspace="1" width="1" height="13"/>
+
+<img src="template-081_html_17a9cf3a.gif" name="Shape21" alt="Shape21" align="left" width="207" height="31"/>
+
+<img src="template-081_html_5afc8aaf.gif" name="Shape22" alt="Shape22" align="left" width="396" height="169"/>
+
+<img src="template-081_html_be8d8893.gif" name="Shape15" alt="Shape15" align="left" width="434" height="1"/>
+
+<img src="template-081_html_43cac3c6.gif" name="Shape28" alt="Shape28" align="left" hspace="1" vspace="1" height="41"/>
+
+<img src="template-081_html_54013112.gif" name="Shape20" alt="Shape20" align="left" width="396" height="371"/>
+
+<img src="template-081_html_f2791bc8.gif" name="Shape27" alt="Shape27" align="left" width="183" height="54"/>
+
+<img src="template-081_html_2afe98fe.png" name="Picture 52" align="left" width="32" height="32" border="0"/>
+
+<img src="template-081_html_716dd44.gif" name="Shape25" alt="Shape25" align="left" width="183" height="31"/>
+
+<img src="template-081_html_b5c24161.png" name="Picture 49" align="left" width="32" height="32" border="0"/>
+
+<img src="template-081_html_a271e94.gif" name="Shape19" alt="Shape19" align="left" hspace="1" vspace="1" width="9" height="9"/>
+
+<img src="template-081_html_b82323c.gif" name="Shape24" alt="Shape24" align="left" hspace="1" vspace="1" width="9" height="9"/>
+
+<img src="template-081_html_1b838f5a.gif" name="Shape29" alt="Shape29" align="left" width="186" height="54"/>
+
+<img src="template-081_html_4f95d8d5.png" name="Picture 51" align="left" width="32" height="32" border="0"/>
+
+<img src="template-081_html_b82323c.gif" name="Shape18" alt="Shape18" align="left" hspace="1" vspace="1" width="9" height="9"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 0.79cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 100%">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#191919"><font size="4" style="font-size: 16pt">M</font></font></span></font></p>
+</span>
+<span id="Frame3" dir="ltr" style="float: left; width: 4.57cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.56cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 2.7pt">PROFILE</span></font></font></span></font></p>
+</span>
+<span id="Frame4" dir="ltr" style="float: left; width: 11.98cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.56cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#191919"><font size="2" style="font-size: 9pt">I
+	just work in that era, the financial professional to the only person
+	impression is abacus accounting,there is no certified public
+	accountants,and no one heard four,no financial director,this
+	position,there is no financial management,management accounting the
+	concept.</font></font></span></font></p>
+</span>
+<span id="Frame5" dir="ltr" style="float: left; width: 10.48cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><span style="letter-spacing: 1.9pt">BANK
+	ACCOUNTING</span></font><font color="#000000"><span style="letter-spacing: 1.9pt">
+	</span></font><font color="#000000"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>ELECTRIC
+	INVESTMENT </b></span></font></font></span></font>
+	</p>
+	<p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.7pt"><b>JAN
+	2009 – DEC 2010 </b></span></font></font></span></font>
+	</p>
+	<p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">Providing
+	custom service including 7*24 financial consultations, trading
+	assistants, Q&amp;As and customer cares through telephone and
+	internet.</span></font></font></span></font></p>
+	<ul>
+		<li><p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">Collect
+		newly issued tax legislation, regulations and circulars and analyze
+		them from technical perspectives.</span></font></font><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">
+		</span></font></font></span></font>
+		</p></li>
+		<li><p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">Conducts
+		research studies and analysis and provides professional opinions on
+		ambiguous and complex issues.</span></font></font></span></font></p></li>
+	</ul>
+	<p style="margin-top: 0.53cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><span style="letter-spacing: 1.9pt">CUSTOMER
+	SERVICE</span></font><font color="#000000"><span style="letter-spacing: 1.9pt">
+	</span></font><font color="#000000"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>TECHNOLOGY
+	NEWS AGENCY</b></span></font></font></span></font></p>
+	<p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.7pt"><b>JAN
+	2009 – DEC 2010 </b></span></font></font></span></font>
+	</p>
+	<p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">Responsible
+	to foreign deposit and interest calculations, computerized
+	accounting, printings of vouchers, bankbooks, deposit receipts.</span></font></font></span></font></p>
+	<ul>
+		<li><p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#3c3d3b"><font face="Verdana, sans-serif"><font size="1" style="font-size: 8pt"><span lang="en-US"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">Coordinated
+		and supported events or activities by senior planners and other
+		functional departments.</span></font></font></font></span></font></font></font></p></li>
+		<li><p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#3c3d3b"><font face="Verdana, sans-serif"><font size="1" style="font-size: 8pt"><span lang="en-US"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">Responsible
+		for the registration process for the meeting participants and
+		offered necessary instructions.</span></font></font></font></span></font></font></font></p></li>
+	</ul>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 5.49cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.56cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 2.7pt">EXPERIENCE</span></font></font></span></font></p>
+</span>
+<span id="Frame7" dir="ltr" style="float: left; width: 10.48cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 97%">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><span style="letter-spacing: 1.9pt">MASTER
+	OF ECONOMICS</span></font><font color="#000000"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>
+	NEW YORK UNIVERSITY</b></span></font></font></span></font></p>
+	<ul>
+		<li><p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#3c3d3b"><font face="Verdana, sans-serif"><font size="1" style="font-size: 8pt"><span lang="en-US"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">School
+		of Business, Major in Accounting, Top 10%. </span></font></font></font></span></font></font></font>
+		</p></li>
+		<li><p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#3c3d3b"><font face="Verdana, sans-serif"><font size="1" style="font-size: 8pt"><span lang="en-US"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">Pass
+		two exams of the CPA texts.</span></font></font></font></span></font></font></font></p></li>
+	</ul>
+	<p style="margin-top: 0.53cm; margin-bottom: 0cm; line-height: 97%"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><span style="letter-spacing: 1.9pt">BACHELOR
+	OF ADMINISTRATION</span></font><font color="#000000"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>
+	NEW YORK UNIVERSITY</b></span></font></font></span></font></p>
+	<ul>
+		<li><p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#3c3d3b"><font face="Verdana, sans-serif"><font size="1" style="font-size: 8pt"><span lang="en-US"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">Scholarship:Jialilian
+		Scholarship (2 among 110 students).</span></font></font></font></span></font></font></font></p></li>
+		<li><p style="margin-top: 0.18cm; margin-bottom: 0cm; line-height: 0.42cm">
+		<font color="#3c3d3b"><font face="Verdana, sans-serif"><font size="1" style="font-size: 8pt"><span lang="en-US"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">Major
+		Courses: Accounting Theory, Advanced Financial Accounting, M&amp;A
+		Research, Econometric, etc.</span></font></font></font></span></font></font></font></p></li>
+	</ul>
+</span>
+<span id="Frame8" dir="ltr" style="float: left; width: 4.83cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.56cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 2.7pt">EDUCATION</span></font></font></span></font></p>
+</span>
+<span id="Frame9" dir="ltr" style="float: left; width: 7.42cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 97%">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#191919"><font size="7" style="font-size: 35pt"><span style="letter-spacing: 6.8pt">MADISON</span></font></font></span></font></p>
+	<p align="center" style="margin-bottom: 0cm; line-height: 97%"><font face="Calibri, serif"><span lang="en-US"><font color="#191919"><font size="7" style="font-size: 35pt"><span style="letter-spacing: 6.8pt">GEORGE</span></font></font></span></font></p>
+</span>
+<span id="Frame10" dir="ltr" style="float: left; width: 4.84cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.56cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>LIEDSIN.COM/</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>MA</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>S</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>DISON</b></span></font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.56cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>+126
+	4267 187226</b></span></font></font></font></span></font></p>
+</span>
+<span id="Frame11" dir="ltr" style="float: left; width: 4.92cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-bottom: 0cm; line-height: 0.56cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>WWW.</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>MAD</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>DD</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>ISON</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>.COM</b></span></font></font></font></span></font></p>
+	<p style="margin-bottom: 0cm; line-height: 0.56cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>1906222627</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>@</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>QQ</b></span></font></font></font><font color="#000000"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>.com
+	</b></span></font></font></font></span></font>
+	</p>
+</span>
+<span id="Frame12" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#191919"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>PPT</b></span></font></font></font></span></font></p>
+</span>
+<span id="Frame13" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#191919"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>EXCEL</b></span></font></font></font></span></font></p>
+</span>
+<span id="Frame14" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#191919"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>WORD</b></span></font></font></font></span></font></p>
+</span>
+<span id="Frame15" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 0.42cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#191919"><font face="Open Sans Semibold, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt"><b>PHOTOSHOP</b></span></font></font></font></span></font></p>
+</span>
+<span id="Frame16" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 0.71cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 2.7pt">TECH
+	SKILLS</span></font></font></span></font></p>
+</span>
+<span id="Frame17" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 0.71cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.7pt"><b>INTERNET
+	WORKING </b></span></font></font></span></font>
+	</p>
+	<p align="center" style="margin-bottom: 0cm; line-height: 0.71cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.7pt"><b>WEB
+	DESIGN</b></span></font></font></span></font></p>
+	<p align="center" style="margin-bottom: 0cm; line-height: 0.71cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.7pt"><b>PROGRAMMING</b></span></font></font></span></font></p>
+	<p align="center" style="margin-bottom: 0cm; line-height: 0.71cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.7pt"><b>KNOWLEDGE
+	OF SPANISH</b></span></font></font></span></font></p>
+	<p align="center" style="margin-bottom: 0cm; line-height: 0.71cm"><font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.7pt"><b>PUBLIC
+	SPEAKING </b></span></font></font></span></font>
+	</p>
+</span>
+<span id="Frame18" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 0.71cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="4" style="font-size: 15pt"><span style="letter-spacing: 2.7pt">EXPERTISE</span></font></font></span></font></p>
+</span>
+<span id="Frame19" dir="ltr" style="float: left; width: 6.67cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="margin-bottom: 0cm; line-height: 0.71cm">
+	<font face="Calibri, serif"><span lang="en-US"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="letter-spacing: 2.9pt">WEB
+	DEVELOPER</span></font></font></span></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

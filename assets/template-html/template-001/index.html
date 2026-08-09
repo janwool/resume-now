@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Windows User"/>
+	<meta name="created" content="2019-12-03T07:31:00"/>
+	<meta name="changedby" content="mrze"/>
+	<meta name="changed" content="2020-04-30T07:44:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 23.33cm 32.03cm; margin: 2.54cm }
+		p { direction: ltr; widows: 2; text-align: start; line-height: 115%; margin-bottom: 0.25cm; orphans: 2; color: #000000; background: transparent }
+		p.western { font-family: "Calibri", sans-serif; so-language: en-US }
+		p.cjk { font-family: "Calibri" }
+		p.ctl { font-family: "Calibri" }
+		a:link { color: #0563c1; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" text="#000000" link="#0563c1" vlink="#800000" dir="ltr"><p class="cjk" style="margin-right: 20.79cm; margin-left: -2.54cm; line-height: 108%; margin-bottom: 0.28cm">
+<span class="sd-abs-pos" style="position: absolute; top: -2.54cm; left: -2.7cm; width: 886px"><img src="template-001_html_fbee2729.gif" name="Shape1" alt="Shape1" align="left" hspace="12" width="886" height="1210">
+  <br clear="left"/>
+</img>
+</span><span id="textbox11" dir="ltr" style="position: absolute; top: 3.5cm; left: 15.11cm; width: 15.94cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#fffefd"><font face="Open Sans Light, sans-serif"><font size="7" style="font-size: 69pt">NGUYEN</font></font></font></font></p>
+</span>
+<span id="textbox10" dir="ltr" style="position: absolute; top: 3.5cm; left: 17.8cm; width: 16.18cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#fffefd"><font face="Open Sans Light, sans-serif"><font size="7" style="font-size: 69pt">HECTOR</font></font></font><font color="#fffefd"><font face="Open Sans Light, sans-serif"><font size="7" style="font-size: 69pt"><span style="letter-spacing: -15.6pt">
+	</span></font></font></font></font>
+	</p>
+</span>
+<span id="textbox9" dir="ltr" style="position: absolute; top: 28.35cm; left: 7.39cm; width: 0.44cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><b>M</b></font></font></font></font></p>
+</span>
+<span id="textbox8" dir="ltr" style="position: absolute; top: 27.9cm; left: 7.4cm; width: 0.3cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><b>P</b></font></font></font></font></p>
+</span>
+<span id="textbox7" dir="ltr" style="position: absolute; top: 28.33cm; left: 8.03cm; width: 4.94cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">your@emailname.com</font></font></font></font></p>
+</span>
+<span id="textbox6" dir="ltr" style="position: absolute; top: 27.9cm; left: 8.03cm; width: 2.93cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">+123</font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">
+	</span></font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">456</font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">
+	</span></font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">789</font></font></font></font></p>
+</span>
+<span id="textbox5" dir="ltr" style="position: absolute; top: 2.34cm; left: -0.16cm; width: 6.34cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#f5f3f2"><font face="Open Sans, sans-serif"><font size="7" style="font-size: 48pt"><b>2020</b></font></font></font></font></p>
+</span>
+<span id="textbox4" dir="ltr" style="position: absolute; top: 28.47cm; left: 16.56cm; width: 6.15cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" align="center" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#3c4d5e"><font face="Lucien Schoenschriftv CAT, sans-serif"><font size="6" style="font-size: 28pt">Hector</font></font></font><font color="#3c4d5e"><font face="Lucien Schoenschriftv CAT, sans-serif"><font size="6" style="font-size: 28pt"><span style="letter-spacing: -1.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Lucien Schoenschriftv CAT, sans-serif"><font size="6" style="font-size: 28pt">Nguyen</font></font></font></font></p>
+</span>
+<span id="textbox3" dir="ltr" style="position: absolute; top: 27.61cm; left: 19.46cm; width: 2.47cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><b>REGARDS,</b></font></font></font></font></p>
+</span>
+<span id="textbox2" dir="ltr" style="position: absolute; top: 19.95cm; left: 15.8cm; width: 6.97cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="4" style="font-size: 16pt"><b>DEVELOPMENT</b></font></font></font><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="4" style="font-size: 16pt"><span style="letter-spacing: 1.0pt"><b>
+	</b></span></font></font></font><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="4" style="font-size: 16pt"><b>MANAGER</b></font></font></font></font></p>
+	<p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox1" dir="ltr" style="position: absolute; top: 21.9cm; left: 15.82cm; width: 5.53cm; border: none; padding: 0cm; background: #ffffff"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Lorem</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">ipsum</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">dolor</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">sit</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">amet,</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">consectetur</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">adipiscing</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">elit.</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Nullam</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">in</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">augue</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">neque.</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Donec</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">venenatis</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">orci</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">sapien,</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">a</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">blandit</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">ante</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">accumsan</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">quis.</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Etiam</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">sollicitudin</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">pretium.</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Nullam</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">in</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">augue</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">neque.</font></font></font><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.6pt">
+	</span></font></font></font></font>
+	</p>
+	<p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+	<p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+	<p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+	<p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+	<p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<img src="template-001_html_63d080d2.gif" name="Shape3" alt="Shape3" align="left" width="193" height="53"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 5.11cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0cm">
+	<font face="Calibri, sans-serif"><font color="#181717"><font face="Open Sans, sans-serif"><span lang="id-ID"><b>A</b></span></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span lang="id-ID"><b>
+	  </b></span></font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">4513</font></font></font><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><span lang="id-ID">
+	</span></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Duck</font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">
+	</span></font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Creek</font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">
+	</span></font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Road,</font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">
+	</span></font></font></font></font>
+	</p>
+	<p style="margin-left: 0.5cm; line-height: 108%; margin-bottom: 0cm">
+	<font face="Calibri, sans-serif"><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">California</font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.4pt">
+	</span></font></font></font><font color="#181717"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">94066</font></font></font></font></p>
+</span>
+<img src="template-001_html_287353ee.gif" name="Shape2" alt="Shape2" align="left" width="78" height="553"/>
+
+<span id="Frame1" dir="ltr" style="float: left; width: 14.62cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, sans-serif"><font color="#ffffff"><sup><font face="Open Sans, sans-serif"><font size="4" style="font-size: 16pt"><span style="letter-spacing: 15.0pt"><span lang="id-ID">CURRICULUM
+	VITAE</span></span></font></font></sup></font></font></p>
+</span><br/>
+<br/>
+
+</p>
+<div id="TextSection" dir="ltr" gutter="50" style="column-count: 2"><p class="cjk" style="line-height: 108%; margin-bottom: 0.28cm; page-break-before: always">
+	<img src="template-001_html_d7999246.gif" name="Shape50" alt="Shape50" align="left" vspace="1" width="728" height="697"/>
+<img src="template-001_html_fe7474f6.gif" name="Shape49" alt="Shape49" align="left" hspace="12" width="196" height="196"/>
+<img src="template-001_html_1d76ae2b.gif" name="Shape48" alt="Shape48" align="left" width="223" height="71"/>
+<span id="Frame30" dir="ltr" style="float: left; width: 5.9cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+		<font face="Calibri, sans-serif"><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="4" style="font-size: 16pt"><span lang="id-ID"><b>P</b></span></font></font></font><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="4" style="font-size: 16pt"><b>R
+		O F I L E</b></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_b8e6a0ef.gif" name="Shape47" alt="Shape47" align="left" width="355" height="141"/>
+
+	<span id="Frame29" dir="ltr" style="float: left; width: 9.41cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 115%; margin-bottom: 1.26cm">
+		<font face="Calibri, sans-serif"><font color="#3c4d5e"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Lorem
+		ipsum dolor sit amet, consectetur adipiscing elit. Nullam in augue
+		neque. Donec venenatis orci sapien, a blandit ante accumsan quis.
+		Etiam sollicitudin pretium. Nullam in augue neque. Lorem ipsum
+		dolor sit amet, consectetur adipiscing elit. Nullam in augue neque.
+		Donec venenatis orci sapien, a blandit ante accumsan quis. Etiam
+		sollicitudin pretium.</font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_1d76ae2b.gif" name="Shape46" alt="Shape46" align="left" width="223" height="71"/>
+
+	<span id="Frame28" dir="ltr" style="float: left; width: 5.9cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+		<font face="Calibri, sans-serif"><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="4" style="font-size: 16pt"><span lang="id-ID"><b>EDUCATION</b></span></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_c7a18d96.gif" name="Shape45" alt="Shape45" align="left" vspace="1" width="135" height="30"/>
+
+	<span id="Frame27" dir="ltr" style="float: left; width: 3.57cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.46cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Segoe UI, sans-serif"><font size="2" style="font-size: 10pt">2009
+		- 2013</font></font></font></font></p>
+		<p align="center" style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_8c5ff9fb.gif" name="Shape44" alt="Shape44" align="left" vspace="1" width="293" height="54"/>
+
+	<span id="Frame26" dir="ltr" style="float: left; width: 7.74cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.62cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Open Sans, sans-serif"><font size="3" style="font-size: 12pt"><b>UNIVERSITY
+		OF CAMBRIDGE</b></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_801ceb7d.gif" name="Shape43" alt="Shape43" align="left" width="355" height="53"/>
+
+	<span id="Frame25" dir="ltr" style="float: left; width: 9.41cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.54cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Lorem
+		ipsum dolor sit amet, consectetur adipiscing elit. Nullam</font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span lang="id-ID">
+		</span></font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">in
+		augue neque. Nullam in augue neque.</font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_c7a18d96.gif" name="Shape42" alt="Shape42" align="left" vspace="1" width="135" height="30"/>
+
+	<span id="Frame24" dir="ltr" style="float: left; width: 3.57cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.46cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt">20</font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><span lang="id-ID">13</span></font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt">
+		- 201</font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><span lang="id-ID">5</span></font></font></font></font></p>
+		<p align="center" style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_8c5ff9fb.gif" name="Shape41" alt="Shape41" align="left" vspace="1" width="293" height="54"/>
+
+	<span id="Frame23" dir="ltr" style="float: left; width: 7.74cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.62cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Open Sans, sans-serif"><font size="3" style="font-size: 12pt"><b>UNIVERSITY
+		OF CAMBRIDGE</b></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_1740ce91.gif" name="Shape38" alt="Shape38" align="left" width="381" height="65"/>
+
+	<span id="Frame20" dir="ltr" style="float: left; width: 10.07cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.51cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Lorem
+		ipsum dolor sit amet, consectetur adipiscing elit. Nullam</font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span lang="id-ID">
+		</span></font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">in
+		augue neque. dolor sit amet, consectetur adipiscing</font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_1d76ae2b.gif" name="Shape40" alt="Shape40" align="left" width="223" height="71"/>
+
+	<span id="Frame22" dir="ltr" style="float: left; width: 5.9cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.86cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Segoe UI, sans-serif"><font size="5" style="font-size: 18pt"><b>ACHIEVMENTS</b></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_43385228.gif" name="Shape39" alt="Shape39" align="left" width="385" height="104"/>
+
+	<span id="Frame21" dir="ltr" style="float: left; width: 10.19cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.48cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><b>Lorem
+		ipsum doloramet, consectetur adipiscing elit.</b></font></font></font></font></p>
+		<p style="widows: 0; line-height: 0.67cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><b>Etiam
+		sollicitudin pretium.</b></font></font></font></font></p>
+		<p style="widows: 0; line-height: 0.67cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><b>Nullam
+		in augue neque.</b></font></font></font></font></p>
+		<p style="widows: 0; line-height: 0.48cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><b>Lorem
+		ipsum dolor sit amet, consectetur adipiscing</b></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_37520baa.gif" name="Shape37" alt="Shape37" align="left" width="10" height="10"/>
+
+	<img src="template-001_html_37520baa.gif" name="Shape36" alt="Shape36" align="left" width="10" height="10"/>
+
+	<img src="template-001_html_37520baa.gif" name="Shape35" alt="Shape35" align="left" width="10" height="10"/>
+
+	<img src="template-001_html_37520baa.gif" name="Shape34" alt="Shape34" align="left" width="10" height="10"/>
+
+	<img src="template-001_html_eb6866ff.gif" name="Shape33" alt="Shape33" align="left" vspace="1" width="162" height="46"/>
+
+	<span id="Frame19" dir="ltr" style="float: left; width: 4.29cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+		<font face="Calibri, sans-serif"><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="4" style="font-size: 16pt"><span lang="id-ID"><b>SKILL</b></span></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_8d5ca258.gif" name="Shape32" alt="Shape32" align="left" width="133" height="38"/>
+
+	<span id="Frame18" dir="ltr" style="float: left; width: 3.51cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.73cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Analytics</font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_81ddf83e.gif" name="Shape31" alt="Shape31" align="left" width="108" height="8"/>
+
+	<img src="template-001_html_d465dffd.gif" name="Shape29" alt="Shape29" align="left" width="106" height="21"/>
+
+	<span id="Frame17" dir="ltr" style="float: left; width: 2.82cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.46cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Market
+		Analyst</font></font></font></font></p>
+		<p style="orphans: 0; line-height: 0.73cm; widows: 0; margin-bottom: 0cm">
+		<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_9497eb48.gif" name="Shape30" alt="Shape30" align="left" hspace="1" width="91" height="8"/>
+
+	<img src="template-001_html_8bbe4260.gif" name="Shape28" alt="Shape28" align="left" width="133" height="22"/>
+
+	<span id="Frame16" dir="ltr" style="float: left; width: 3.51cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.46cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Segoe UI, sans-serif"><font size="2" style="font-size: 10pt">Managing
+		Editor</font></font></font></font></p>
+		<p style="orphans: 0; line-height: 0.73cm; widows: 0; margin-bottom: 0cm">
+		<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_327271a4.gif" name="Shape27" alt="Shape27" align="left" hspace="1" width="123" height="8"/>
+
+	<img src="template-001_html_92a3a001.gif" name="Shape26" alt="Shape26" align="left" width="118" height="21"/>
+
+	<span id="Frame15" dir="ltr" style="float: left; width: 3.12cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.46cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Traffic
+		Acquisition</font></font></font></font></p>
+		<p style="orphans: 0; line-height: 0.73cm; widows: 0; margin-bottom: 0cm">
+		<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_81ddf83e.gif" name="Shape25" alt="Shape25" align="left" hspace="1" width="108" height="8"/>
+
+	<img src="template-001_html_8bbe4260.gif" name="Shape24" alt="Shape24" align="left" width="133" height="22"/>
+
+	<span id="Frame14" dir="ltr" style="float: left; width: 3.51cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.46cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Segoe UI, sans-serif"><font size="2" style="font-size: 10pt">SEO</font></font></font></font></p>
+		<p style="orphans: 0; line-height: 0.73cm; widows: 0; margin-bottom: 0cm">
+		<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_89666bd2.gif" name="Shape21" alt="Shape21" align="left" hspace="1" width="127" height="8"/>
+
+	<img src="template-001_html_8bbe4260.gif" name="Shape23" alt="Shape23" align="left" width="133" height="22"/>
+
+	<span id="Frame13" dir="ltr" style="float: left; width: 3.51cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.46cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Segoe UI, sans-serif"><font size="2" style="font-size: 10pt">Supply
+		Chain</font></font></font></font></p>
+		<p style="orphans: 0; line-height: 0.73cm; widows: 0; margin-bottom: 0cm">
+		<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_140c5014.gif" name="Shape20" alt="Shape20" align="left" hspace="1" width="95" height="8"/>
+
+	<img src="template-001_html_a5259e0f.gif" name="Shape22" alt="Shape22" align="left" width="153" height="52"/>
+
+	<span id="Frame12" dir="ltr" style="float: left; width: 4.04cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.46cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Segoe UI, sans-serif"><font size="2" style="font-size: 10pt">Associate
+		Src</font></font></font><font color="#3b6786"><font face="Segoe UI, sans-serif"><font size="2" style="font-size: 10pt"><span lang="id-ID">
+		 </span></font></font></font><font color="#3b6786"><font face="Segoe UI, sans-serif"><font size="2" style="font-size: 10pt">Manager</font></font></font></font></p>
+		<p style="orphans: 0; line-height: 0.73cm; widows: 0; margin-bottom: 0cm">
+		<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_6fd6861b.gif" name="Shape19" alt="Shape19" align="left" width="154" height="8"/>
+
+	<img src="template-001_html_93e0743a.gif" name="Shape18" alt="Shape18" align="left" hspace="1" width="59" height="8"/>
+
+	<img src="template-001_html_f064d4fb.gif" name="Shape17" alt="Shape17" align="left" hspace="1" width="27" height="8"/>
+
+	<img src="template-001_html_f3c1f0d4.gif" name="Shape16" alt="Shape16" align="left" hspace="1" width="49" height="8"/>
+
+	<img src="template-001_html_63ba5c48.gif" name="Shape15" alt="Shape15" align="left" hspace="1" width="35" height="8"/>
+
+	<img src="template-001_html_7d5548f2.gif" name="Shape14" alt="Shape14" align="left" width="67" height="8"/>
+
+	<img src="template-001_html_f3c1f0d4.gif" name="Shape13" alt="Shape13" align="left" hspace="1" width="49" height="8"/>
+
+	<img src="template-001_html_9775e0b7.gif" name="Shape10" alt="Shape10" align="left" width="247" height="71"/>
+
+	<span id="Frame9" dir="ltr" style="float: left; width: 6.53cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.86cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#3b6786"><font face="Segoe UI, sans-serif"><font size="5" style="font-size: 18pt"><span style="letter-spacing: 5.0pt"><span lang="id-ID"><b>EXPERIENCE</b></span></span></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_9775e0b7.gif" name="Shape12" alt="Shape12" align="left" width="247" height="71"/>
+
+	<span id="Frame11" dir="ltr" style="float: left; width: 6.53cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.86cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><b>Consectetur
+		Industries</b></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_1ff446b7.gif" name="Shape11" alt="Shape11" align="left" width="247" height="40"/>
+
+	<span id="Frame10" dir="ltr" style="float: left; width: 6.53cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.86cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><i>Assistant
+		Manager</i></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_eb7b08b2.gif" name="Shape7" alt="Shape7" align="left" width="318" height="105"/>
+
+	<span id="Frame6" dir="ltr" style="float: left; width: 8.43cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.53cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Lorem
+		ipsum dolor sit amet, consectetur</font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span lang="id-ID">
+		</span></font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">adipiscing
+		elit. Nullam in augue neque. Donec</font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span lang="id-ID">
+		</span></font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">venenatis
+		orci sapien, a blandit ante accumsan</font></font></font></font></p>
+		<p style="line-height: 0.53cm; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_9775e0b7.gif" name="Shape9" alt="Shape9" align="left" width="247" height="71"/>
+
+	<span id="Frame8" dir="ltr" style="float: left; width: 6.53cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.86cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><b>Consectetur
+		Industries</b></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_1ff446b7.gif" name="Shape8" alt="Shape8" align="left" width="247" height="40"/>
+
+	<span id="Frame7" dir="ltr" style="float: left; width: 6.53cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.86cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#4c6473"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><i>Assistant
+		Manager</i></font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<img src="template-001_html_eb7b08b2.gif" name="Shape6" alt="Shape6" align="left" width="318" height="105"/>
+
+	<span id="Frame5" dir="ltr" style="float: left; width: 8.43cm; border: none; padding: 0cm; background: #ffffff"><p style="widows: 0; line-height: 0.53cm; orphans: 0; margin-bottom: 0cm">
+		<font face="Calibri, sans-serif"><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">Lorem
+		ipsum dolor sit amet, consectetur</font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span lang="id-ID">
+		</span></font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">adipiscing
+		elit. Nullam in augue neque. Donec</font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span lang="id-ID">
+		</span></font></font></font><font color="#2b4e6f"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt">venenatis
+		orci sapien, a blandit ante accumsan</font></font></font></font></p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+		<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+		</p>
+	</span>
+	<table dir="ltr" align="left" width="732" cellpadding="30" cellspacing="0">
+		<col width="672"/>
+		<tr>
+			<td width="672" height="89" bgcolor="#4c6473" style="background: #4c6473; border: none; padding: 0cm"><p class="cjk" align="center" style="margin-left: 0.13cm">
+				<img src="template-001_html_9888de49.gif" name="Rectangle 2" alt="Rectangle 2" align="left" width="299" height="120"/>
+<span id="Frame4" dir="ltr" style="float: left; width: 7.92cm; border: none; padding: 0cm; background: #4c6473"><p style="margin-bottom: 0cm">
+					<font face="Calibri, sans-serif"><font color="#ffffff"><font face="Open Sans Light, sans-serif"><font size="6" style="font-size: 26pt">HECTOR</font></font></font></font></p>
+					<p><font face="Calibri, sans-serif"><font color="#ffffff"><font face="Open Sans Light, sans-serif"><font size="6" style="font-size: 26pt">NGUYEN</font></font></font></font></p>
+				</span>
+				<img src="template-001_html_f3d34a23.gif" name="Rectangle 3" alt="Rectangle 3" align="left" width="242" height="110"/>
+
+				<span id="Frame3" dir="ltr" style="float: left; width: 6.41cm; border: none; padding: 0cm; background: #4c6473"><p style="text-align: end; margin-bottom: 0cm">
+					<font face="Calibri, sans-serif"><font color="#0563c1"><a href="http://www.name@email.com"><font color="#ffffff"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span style="text-decoration: none"><b>www.name@email.com</b></span></font></font></font></a></font><font color="#ffffff"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span lang="id-ID"><b>
+					</b></span></font></font></font></font>
+					</p>
+					<p style="text-align: end; margin-bottom: 0cm"><font face="Calibri, sans-serif"><font color="#ffffff"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 9pt"><span lang="id-ID"><b>+366
+					226784315</b></span></font></font></font></font></p>
+					<p style="text-align: end; margin-bottom: 0cm"><font face="Calibri, sans-serif"><font color="#ffffff"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><span lang="id-ID"><b>River
+					Side Hill 3632, California, 522</b></span></font></font></font></font></p>
+					<p style="text-align: end; margin-bottom: 0cm"><font face="Calibri, sans-serif"><font color="#0563c1"><a href="http://www.name@linkedin.com"><font color="#ffffff"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><span lang="id-ID"><span style="text-decoration: none"><b>www.name@linkedin.com</b></span></span></font></font></font></a></font></font></p>
+					<p style="text-align: end; margin-bottom: 0cm"><font face="Calibri, sans-serif"><font color="#ffffff"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt"><span lang="id-ID"><b>www.carrreer.com/name</b></span></font></font></font></font></p>
+					<p style="text-align: end"><br/>
+
+					</p>
+				</span><br/>
+
+				</p>
+			</td>
+		</tr>
+	</table><br/>
+<br/>
+
+	</p>
+</div>
+</body>
+</html>

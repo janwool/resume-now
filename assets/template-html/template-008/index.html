@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Portofolio</title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Ze"/>
+	<meta name="created" content="2020-05-21T16:41:00"/>
+	<meta name="changedby" content="Ze"/>
+	<meta name="changed" content="2020-05-21T16:43:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Creator" content="Adobe Illustrator CC 23.0 (Windows)"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 2.93cm; margin-right: 0.85cm; margin-top: 0.49cm; margin-bottom: 0.49cm }
+		p { direction: ltr; widows: 0; margin-bottom: 0cm; orphans: 0; text-align: start; background: transparent }
+		p.western { font-family: "Open Sans", sans-serif; font-size: 9pt }
+		p.cjk { font-family: "Open Sans"; font-size: 9pt }
+		p.ctl { font-family: "Open Sans"; font-size: 9pt }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p class="cjk" align="center" style="margin-left: 1.07cm; line-height: 2.16cm; margin-right: 3.15cm; margin-top: 0.16cm">
+<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#f0f0f1"><font size="7" style="font-size: 48pt">R<img src="template-008_html_6317d785.gif" name="Shape1" alt="Shape1" align="left" hspace="1" width="297" height="358"/>
+<img src="template-008_html_2ccd71b8.gif" name="Shape2" alt="Shape2" align="left" hspace="1" width="794" height="206"/>
+ICARD
+CRUGER</font></font></font></font></p>
+<p class="cjk" align="center" style="line-height: 0.87cm; margin-right: 3.14cm; margin-left: 1.07cm">
+<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#f0f0f1"><font size="5" style="font-size: 21pt">Web
+Designer</font></font></font></font></p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0cm"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.18cm; margin-left: 0.2cm"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#2f3e4a"><font face="Open Sans SemiBold, sans-serif"><font size="4" style="font-size: 14pt"><b>PORTOFOLIO	PORTOFOLIO</b></font></font></font></font></font></p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.01cm"><img src="template-008_html_f7323ffd.gif" name="Shape3" alt="Shape3" align="left" hspace="1" vspace="1" width="297" height="239"/>
+<br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.18cm; margin-left: 6.9cm"><font face="Open Sans, sans-serif"><font color="#45413f"><font face="Open Sans SemiBold, sans-serif"><b>PROJECT
+NAME</b></font></font></font></p>
+<p class="cjk" style="margin-top: 0cm"><br/>
+
+</p>
+<p class="cjk" style="margin-left: 6.9cm; line-height: 114%; margin-right: 0.25cm">
+<font face="Open Sans, sans-serif"><font color="#45413f">Deﬁnition
+about your job. Lorem ipsum dolor sit amet, consectetuer adipiscing
+elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+aliquam sed diam nonummy nibh adipiscing elit dolor sit amet.</font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+</p>
+<p class="cjk" style="line-height: 114%; margin-right: 1.08cm; margin-left: 6.9cm">
+<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#45413f"><font size="2" style="font-size: 9pt"><i>Lorem
+ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+nibh euismod tincidunt ut</i></font></font></font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.18cm; text-align: end; margin-right: 0.2cm">
+<font face="Open Sans, sans-serif"><font color="#45413f">28 Agust
+2015</font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><img src="template-008_html_73813ecb.gif" name="Shape4" alt="Shape4" align="left" hspace="1" vspace="1" width="297" height="239"/>
+<br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.18cm; margin-left: 6.9cm"><font face="Open Sans, sans-serif"><font color="#45413f"><font face="Open Sans SemiBold, sans-serif"><b>PROJECT
+NAME</b></font></font></font></p>
+<p class="cjk" style="margin-top: 0cm"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0cm; margin-right: 0.25cm; margin-left: 6.9cm; line-height: 114%">
+<font face="Open Sans, sans-serif"><font color="#45413f">Deﬁnition
+about your job. Lorem ipsum dolor sit amet, consectetuer adipiscing
+elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+aliquam sed diam nonummy nibh adipiscing elit dolor sit amet.</font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+</p>
+<p class="cjk" style="line-height: 114%; margin-right: 1.08cm; margin-left: 6.9cm">
+<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#45413f"><font size="2" style="font-size: 9pt"><i>Lorem
+ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+nibh euismod tincidunt ut</i></font></font></font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.18cm; text-align: end; margin-right: 0.2cm">
+<font face="Open Sans, sans-serif"><font color="#45413f">15 March
+2016</font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><img src="template-008_html_559f3dd7.gif" name="Shape5" alt="Shape5" align="left" hspace="1" vspace="1" width="297" height="239"/>
+<br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.18cm; margin-left: 6.9cm"><font face="Open Sans, sans-serif"><font color="#45413f"><font face="Open Sans SemiBold, sans-serif"><b>PROJECT
+NAME</b></font></font></font></p>
+<p class="cjk" style="margin-top: 0cm"><br/>
+
+</p>
+<p class="cjk" style="margin-left: 6.9cm; line-height: 114%; margin-right: 0.25cm">
+<font face="Open Sans, sans-serif"><font color="#45413f">Deﬁnition
+about your job. Lorem ipsum dolor sit amet, consectetuer adipiscing
+elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+aliquam sed diam nonummy nibh adipiscing elit dolor sit amet.</font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 10pt">	</font></font></p>
+<p class="cjk" style="line-height: 114%; margin-top: 0cm; margin-right: 1.08cm; margin-left: 6.9cm">
+<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#45413f"><font size="2" style="font-size: 9pt"><i>Lorem
+ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+nibh euismod tincidunt ut</i></font></font></font></font></p>
+<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+</p>
+<p class="cjk" style="margin-top: 0.18cm; text-align: end; margin-right: 0.2cm">
+<font face="Open Sans, sans-serif"><font color="#45413f">0<img src="template-008_html_9fd79555.gif" name="Shape6" alt="Shape6" align="left" width="457" height="1"/>
+<img src="template-008_html_c0a7206d.gif" name="Shape7" alt="Shape7" align="left" hspace="1" width="297" height="47"/>
+<img src="template-008_html_9fd79555.gif" name="Shape8" alt="Shape8" align="left" width="457" height="1"/>
+4
+June 2017</font></font></p>
+</body>
+</html>

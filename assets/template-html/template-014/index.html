@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="piash ismail"/>
+	<meta name="created" content="2016-02-29T15:29:00"/>
+	<meta name="changedby" content="admin"/>
+	<meta name="changed" content="2016-02-29T16:29:00"/>
+	<meta name="AppVersion" content="15.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 108%; margin-bottom: 0cm">
+<img src="template-014_html_5ef8c72e.gif" name="Shape2" alt="Shape2" align="left" hspace="1" vspace="1" width="142" height="142"/>
+<span class="sd-abs-pos" style="position: absolute; top: 0cm; left: 0cm; width: 875px"><img src="template-014_html_70d86a2b.gif" name="Shape1" alt="Shape1" align="left" width="875" height="1121"/>
+</span><span id="textbox21" dir="ltr" style="position: absolute; top: 22.44cm; left: 8.75cm; width: 1.46cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#636466"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt">Sign</font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox20" dir="ltr" style="position: absolute; top: 12.16cm; left: 8.75cm; width: 10.92cm; border: none; padding: 0cm; background: #ffffff"><p align="justify" style="line-height: 108%; margin-bottom: 0.42cm">
+	<font color="#636466"><span style="letter-spacing: -0.1pt">     
+	</span></font><font face="Calibri, serif"><font color="#636466"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.1pt">Lorem
+	ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+	veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+	ea commodo consequat. Duis aute irure dolor in reprehenderit in
+	voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	Excepteur sint occaecat cupidatat non</span></font></font></font></font></p>
+	<p align="justify" style="line-height: 108%; margin-bottom: 0.42cm"><font color="#636466"><span style="letter-spacing: -0.1pt">
+	       <font face="Calibri, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt">proident,
+	sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
+	ut perspiciatis unde omnis iste natus error sit voluptatem
+	accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+	quae ab illo inventore veritatis et quasi architecto beatae vitae
+	dicta sunt explicabo.</font></font></font></span></font></p>
+	<p align="justify" style="line-height: 108%; margin-bottom: 0.42cm"><font color="#636466"><span style="letter-spacing: -0.1pt">
+	    <font face="Calibri, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt">Nemo
+	enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+	fugit, sed quia consequuntur magni dolores eos qui ratione
+	voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem</font></font></font></span></font></p>
+	<p align="justify" style="line-height: 108%; margin-bottom: 0.42cm"><font color="#636466"><span style="letter-spacing: -0.1pt">
+	  <font face="Calibri, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt">ipsum
+	quia dolor sit amet, consectetur, adipisci velit, sed quia non
+	numquam eius modi tempora incidunt ut labore et dolore magnam
+	aliquam quaerat voluptatem.</font></font></font></span></font></p>
+	<p align="justify" style="line-height: 108%; margin-bottom: 0.42cm"><font color="#636466"><span style="letter-spacing: -0.1pt">
+	<font face="Calibri, serif"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt">ipsum
+	quia dolor sit amet, consectetur, adipisci velit, sed quia non
+	numquam eius modi tempora incidunt ut labore et dolore magnam
+	aliquam quaerat voluptatem.</font></font></font></span></font></p>
+</span>
+<span id="textbox19" dir="ltr" style="position: absolute; top: 10.78cm; left: 8.75cm; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#636466"><font face="Lato, sans-serif"><font size="3" style="font-size: 12pt">Dear
+	Millan,</font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox18" dir="ltr" style="position: absolute; top: 9.51cm; left: 8.75cm; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#636466"><font face="Bebas Neue, serif"><font size="3" style="font-size: 12pt">24
+	february 2016</font></font></font></font></p>
+</span>
+<span id="textbox17" dir="ltr" style="position: absolute; top: 8.81cm; left: 8.75cm; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Bebas Neue Regular, serif"><font size="4" style="font-size: 15pt"><span style="letter-spacing: -0.2pt">DATE</span></font></font></font></font></p>
+</span>
+<span id="textbox16" dir="ltr" style="position: absolute; top: 6.88cm; left: 8.75cm; width: 5.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Bebas Neue Bold, sans-serif"><font size="4" style="font-size: 15pt"><span style="letter-spacing: -0.2pt"><b>COVER
+	LETTER</b></span></font></font></font></font></p>
+</span>
+<span id="textbox15" dir="ltr" style="position: absolute; top: 8.21cm; left: 1.24cm; width: 3.73cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="3" style="font-size: 12pt">Michel
+	Maxwell</font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox14" dir="ltr" style="position: absolute; top: 7.49cm; left: 1.24cm; width: 2.86cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="4" style="font-size: 15pt">From</font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox13" dir="ltr" style="position: absolute; top: 6.55cm; left: 1.24cm; width: 2.86cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="3" style="font-size: 12pt">John
+	Millan</font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<span id="textbox12" dir="ltr" style="position: absolute; top: 5.9cm; left: 1.24cm; width: 2.18cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="4" style="font-size: 15pt">To</font></font></font></font></p>
+</span>
+<span id="textbox11" dir="ltr" style="position: absolute; top: 3.85cm; left: 8.18cm; width: 4.38cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: 0.3pt"><b>GRAPHIC
+	&amp; WEB DESIGNER</b></span></font></font></font></font></p>
+</span>
+<span id="textbox10" dir="ltr" style="position: absolute; top: 2.54cm; left: 8.11cm; width: 9.2cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm"><a name="_GoBack"></a>
+	<font face="Calibri, serif"><font color="#58595b"><font face="Lato, sans-serif"><font size="6" style="font-size: 29pt"><b>MICHEL
+	MAXWELL</b></font></font></font></font></p>
+</span>
+<span id="textbox9" dir="ltr" style="position: absolute; top: 10.86cm; left: 2.15cm; width: 1.78cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">123
+	456 7891</font></font></font></font></p>
+</span>
+<span id="textbox8" dir="ltr" style="position: absolute; top: 10.53cm; left: 2.15cm; width: 0.79cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Phone</font></font></font></font></p>
+</span>
+<span id="textbox7" dir="ltr" style="position: absolute; top: 11.73cm; left: 2.15cm; width: 1.95cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">0112
+	651 0325</font></font></font></font></p>
+</span>
+<span id="textbox6" dir="ltr" style="position: absolute; top: 11.4cm; left: 2.15cm; width: 0.87cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Mobile</font></font></font></font></p>
+</span>
+<span id="textbox5" dir="ltr" style="position: absolute; top: 12.89cm; left: 2.15cm; width: 2.39cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">info@yourmail.com</font></font></font></font></p>
+</span>
+<span id="textbox4" dir="ltr" style="position: absolute; top: 12.56cm; left: 2.15cm; width: 0.55cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Mail</font></font></font></font></p>
+</span>
+<span id="textbox3" dir="ltr" style="position: absolute; top: 13.74cm; left: 2.15cm; width: 2.42cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">www.yourweb.com</font></font></font></font></p>
+</span>
+<span id="textbox2" dir="ltr" style="position: absolute; top: 13.41cm; left: 2.15cm; width: 0.6cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Web</font></font></font></font></p>
+</span>
+<span id="textbox1" dir="ltr" style="position: absolute; top: 14.62cm; left: 2.12cm; width: 3.64cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.32cm; margin-bottom: 0cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">14585
+	10th Ave</font></font></font></font></p>
+	<p style="line-height: 0.32cm; margin-bottom: 0cm"><font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Whitestone,
+	NY 11357-1701</font></font></font></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

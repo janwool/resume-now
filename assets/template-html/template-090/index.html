@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="小王子"/>
+	<meta name="created" content="2018-12-12T12:46:00"/>
+	<meta name="changedby" content="K"/>
+	<meta name="changed" content="2018-12-12T12:55:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="KSOProductBuildVer" content="2052-10.1.0.7698"/>
+	<meta name="KSORubyTemplateID" content="4"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; margin-top: 0.14cm; margin-bottom: 0cm; widows: 0; orphans: 0; text-align: start; margin-left: 0.04cm; background: transparent }
+		p.western { font-family: "Montserrat-Light", serif; font-size: 8pt }
+		p.cjk { font-family: "Montserrat-Light"; font-size: 8pt; so-language: en-US }
+		p.ctl { font-size: 8pt }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="zh-CN" link="#000080" vlink="#800000" bgcolor="#ffffff" dir="ltr"><p lang="en-US" class="cjk" style="margin-top: 0cm; margin-left: 0cm">
+<br/>
+
+</p>
+<p lang="en-US" class="cjk" style="margin-top: 0cm; margin-left: 0cm">
+<br/>
+
+</p>
+<p lang="en-US" class="cjk" style="margin-top: 0cm; margin-left: 0cm">
+<img src="template-090_html_30dbcdc4.gif" name="Shape7" alt="Shape7" align="left" width="643" height="86"/>
+<img src="template-090_html_48145e10.gif" name="Shape4" alt="Shape4" align="left" width="643" height="214"/>
+<img src="template-090_html_f7e1ba30.gif" name="Shape5" alt="Shape5" align="left" width="643" height="300"/>
+<img src="template-090_html_d9db4bdc.gif" name="Shape10" alt="Shape10" align="left" width="643" height="129"/>
+<img src="template-090_html_fadd5b9b.gif" name="Shape2" alt="Shape2" align="left" width="586" height="65"/>
+<img src="template-090_html_b7cd9a1c.gif" name="Shape1" alt="Shape1" align="left" width="249" height="38"/>
+<img src="template-090_html_6a5c9720.jpg" name="图片 0" align="left" width="85" height="120" border="0"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 6.6cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" class="cjk" style="margin-right: 0.03cm; margin-top: 0cm">
+	<font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="4" style="font-size: 16pt"><span style="letter-spacing: 0.9pt">SuYuwei</span></font></font></font></p>
+</span>
+<span id="Frame2" dir="ltr" style="float: left; width: 15.5cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" style="line-height: 0.56cm; margin-top: 0cm; margin-left: 0cm">
+	<font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Gender</font></font></font></font><font face="Calibri"><font size="2" style="font-size: 11pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt"><span lang="zh-CN">：</span></font></font></font></font><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">Female
+	                Date of birth</font></font></font></font><font face="Calibri"><font size="2" style="font-size: 11pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt"><span lang="zh-CN">：</span></font></font></font></font><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">March
+	5, 1993</font></font></font></font></span></font></p>
+	<p lang="en-US" style="line-height: 0.56cm; margin-top: 0cm; margin-left: 0cm"><a name="_GoBack"></a>
+	<font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Phone</span></font></font></font></font></font><font face="Calibri"><font size="2" style="font-size: 11pt"><font color="#414042"><span style="letter-spacing: 0.3pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt">：</font></font></font></font><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">1</font></font></span></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">5</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">8666688</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">88
+	          </span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+	</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Email</span></font></span></font></font></font></font></font><font face="Calibri"><font size="2" style="font-size: 11pt"><font color="#414042"><span style="letter-spacing: 0.3pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt">：</font></font></font></font><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">190622627@qq.com</font></font></font></font></span></font></p>
+	<p lang="en-US" style="line-height: 0.56cm; margin-top: 0cm; margin-left: 0cm">
+	<font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Address</font></font></font></font><font face="Calibri"><font size="2" style="font-size: 11pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt"><span lang="zh-CN">：</span></font></font></font></font><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">Room
+	1002</font></font></font></font><font face="Calibri"><font size="2" style="font-size: 11pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt"><span lang="zh-CN">，</span></font></font></font></font><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">Yunhai
+	Building</font></font></font></font><font face="Calibri"><font size="2" style="font-size: 11pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt"><span lang="zh-CN">，</span></font></font></font></font><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">Tianhe
+	District</font></font></font></font><font face="Calibri"><font size="2" style="font-size: 11pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt"><span lang="zh-CN">，</span></font></font></font></font><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">Guangzhou</font></font></font></font><font face="Calibri"><font size="2" style="font-size: 11pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt"><span lang="zh-CN">，</span></font></font></font></font><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">China</font></font></font></font></span></font></p>
+</span>
+<span id="Frame3" dir="ltr" style="float: left; width: 17.01cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" align="justify" style="line-height: 0.56cm; margin-top: 0cm">
+	<font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><span style="letter-spacing: 0.9pt"><b>EDUCATION</b></span></font></font></font></p>
+	<p align="justify" style="line-height: 0.56cm; letter-spacing: 0.9pt; margin-top: 0cm">
+	<br/>
+
+	</p>
+	<p lang="en-US" class="cjk" style="margin-left: 0cm; line-height: 0.56cm; margin-top: 0cm">
+	<font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>Xiamen
+	University</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt"><b>
+	</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">|
+	</font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">Master</span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">
+	 </span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+	                 Financial Management                      
+	</span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">2014/06-2018/07</span></font></font></font></p>
+	<ul>
+		<li><p lang="en-US" class="cjk" align="justify" style="line-height: 0.56cm; margin-top: 0cm; margin-right: 0.03cm">
+		<font face="Montserrat-Light, serif"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">GPA:
+		3.4/4.0</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+		   </span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+		Advanced technique skills in accounting</span></font></font></font></font></p></li>
+	</ul>
+	<p lang="en-US" class="cjk" align="justify" style="line-height: 0.56cm; margin-top: 0cm; margin-right: 0.03cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+	<p lang="en-US" class="cjk" style="margin-left: 0cm; line-height: 0.56cm; margin-top: 0cm">
+	<font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>Nanjing</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>
+	University</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt"><b>
+	</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">|
+	Undergraduate</font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">
+	    </span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+	      Political Economy                              
+	</span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">2010/10-2014/06</span></font></font></font></p>
+	<ul>
+		<li><p lang="en-US" class="cjk" align="justify" style="line-height: 0.56cm; margin-top: 0cm; margin-right: 0.03cm">
+		<font face="Montserrat-Light, serif"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Key
+		Courses: International Trade</font></font></font><font face="微软雅黑"><font size="2" style="font-size: 10pt">，</font></font><font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">Capital
+		Market</font></font></font><font face="微软雅黑"><font size="2" style="font-size: 10pt">，</font></font><font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">Corporate
+		Finance &amp; Investment</font></font></font><font face="微软雅黑"><font size="2" style="font-size: 10pt">，</font></font><font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">International
+		Finance</font></font></font><font face="微软雅黑"><font size="2" style="font-size: 10pt">，</font></font><font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">Economic
+		Theories &amp; Modern Banking</font></font></font></span></font></p></li>
+	</ul>
+</span>
+<span id="Frame4" dir="ltr" style="float: left; width: 17.01cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" align="justify" style="line-height: 0.56cm; margin-top: 0cm">
+	<font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><span style="letter-spacing: 0.9pt"><b>WORKING
+	</b></span></font><font face="微软雅黑, sans-serif"><span style="letter-spacing: 0.9pt"><b>EXPERIENCE</b></span></font><font face="微软雅黑, sans-serif"><span style="letter-spacing: -1.4pt"><b>
+	</b></span></font></font></font>
+	</p>
+	<p lang="en-US" align="justify" style="line-height: 0.56cm; letter-spacing: -1.4pt; margin-top: 0cm">
+	<br/>
+
+	</p>
+	<p lang="en-US" class="cjk" style="margin-left: 0cm; line-height: 0.56cm; margin-top: 0cm">
+	<font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt"><b>China
+	Construction Bank - Shanghai(Branch) </b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">|
+	</font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">Cashier</span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">
+	 </span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+	                                    </span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">2016/07-So
+	far</span></font></font></font></p>
+	<ul>
+		<li><p lang="en-US" class="cjk" align="justify" style="line-height: 0.56cm; margin-top: 0cm; margin-right: 0.03cm">
+		<font face="Montserrat-Light, serif"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">A</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">chieving
+		</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">89</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">%
+		customer capture rate by promoting brand programs such as Client
+		Track and warranty sales</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">.</span></font></font></font></font></p></li>
+		<li><p lang="en-US" class="cjk" align="justify" style="line-height: 0.56cm; margin-top: 0cm; margin-right: 0.03cm">
+		<font face="Montserrat-Light, serif"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Responsible
+		for providing excellent customer service by responding with a sense
+		of urgency to our customers’ needs while efficiently processing
+		sales transactions.</span></font></font></font></font></p></li>
+	</ul>
+	<p lang="en-US" class="cjk" align="justify" style="letter-spacing: 0.3pt; margin-top: 0cm; line-height: 0.56cm; margin-right: 0.03cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+	<p lang="en-US" class="cjk" style="margin-left: 0cm; line-height: 0.56cm; margin-top: 0cm">
+	<font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>C</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>hina</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>
+	</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>Huaxia</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>
+	B</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>ank</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>,
+	G</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>uangzhou</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>
+	B</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>ranch</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt"><b>
+	</b></span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">|
+	</font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.2pt">Market-Supporter</span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+	                          </span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">2012/05-2015/09</span></font></font><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+	                                           </span></font></font></font>
+	</p>
+	<ul>
+		<li><p lang="en-US" class="cjk" align="justify" style="line-height: 0.56cm; margin-top: 0cm; margin-right: 0.03cm">
+		<font face="Montserrat-Light, serif"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Adhering
+		to all company policies and procedures and ensure a safe working
+		environment.</span></font></font></font></font></p></li>
+		<li><p lang="en-US" class="cjk" align="justify" style="line-height: 0.56cm; margin-top: 0cm; margin-right: 0.03cm">
+		<font face="Montserrat-Light, serif"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Evaluate
+		the values of business loans and provide assistance for superiors
+		for decision-making</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">.</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+		</span></font></font></font></font>
+		</p></li>
+	</ul>
+</span>
+<span id="Frame5" dir="ltr" style="float: left; width: 17.01cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" align="justify" style="line-height: 0.56cm; margin-top: 0cm">
+	<font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><span style="letter-spacing: 0.9pt"><b>QUALIFICATION</b></span></font></font></font></p>
+	<p class="cjk" align="justify" style="margin-top: 0cm; letter-spacing: 0.3pt; line-height: 0.56cm; margin-right: 0.03cm; margin-left: 0cm">
+	<br/>
+
+	</p>
+	<ul>
+		<li><p lang="en-US" class="cjk" align="justify" style="line-height: 0.56cm; margin-top: 0cm; margin-right: 0.03cm">
+		<font face="Montserrat-Light, serif"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>CERTIFICATES:
+		</b></span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">Te</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">aching
+		certificate of high school; </span></font></font></font></font>
+		</p></li>
+		<li><p lang="en-US" class="cjk" align="justify" style="line-height: 0.56cm; margin-top: 0cm; margin-right: 0.03cm">
+		<font face="Montserrat-Light, serif"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt"><b>LANGUAGE
+		SKILLS:  </b></span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">CET6
+		</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">/
+		College English Test Band 6</span></font></font></font></font><font color="#414042"><span style="letter-spacing: 0.3pt"><font face="微软雅黑"><font size="2" style="font-size: 10pt"><span lang="zh-CN">，</span></font></font><font face="Montserrat-Light, serif"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt">Systematic
+		Study of Spanish</font></font></font></span></font></p></li>
+	</ul>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 17.01cm; border: none; padding: 0cm; background: #ffffff"><p lang="en-US" align="justify" style="line-height: 0.56cm; margin-top: 0cm">
+	<font face="Calibri, serif"><font size="2" style="font-size: 11pt"><font face="微软雅黑, sans-serif"><span style="letter-spacing: 0.9pt"><b>SELF-EVALUATION</b></span></font></font></font></p>
+	<p align="justify" style="line-height: 0.56cm; letter-spacing: 0.9pt; margin-top: 0cm">
+	<br/>
+
+	</p>
+	<p lang="en-US" class="cjk" align="justify" style="margin-right: 0.03cm; margin-top: 0cm; margin-left: 0cm; line-height: 0.56cm">
+	<font face="Montserrat-Light, serif"><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">A</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">
+	</span></font></font></font><font color="#414042"><font face="微软雅黑, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.3pt">dedicated
+	and reliable student pursuing a CPA designation with excellent
+	accounting knowledge and business background. Thrives in the
+	fast-paced environment with self-discipline and strong time
+	management. An organized team player with great attention to detail
+	and effective communication skills.</span></font></font></font></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Rainbow Computer"/>
+	<meta name="created" content="2017-08-03T05:49:00"/>
+	<meta name="changedby" content="SkyNet"/>
+	<meta name="changed" content="2017-08-03T19:55:00"/>
+	<meta name="AppVersion" content="14.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 1cm; margin-right: 1cm; margin-top: 1cm; margin-bottom: 1.75cm }
+		p { direction: ltr; margin-bottom: 0.25cm; widows: 2; orphans: 2; text-align: start; line-height: 115%; background: transparent }
+		p.western { font-family: "Times New Roman", serif; font-size: 12pt }
+		p.cjk { font-family: "SimSun"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "Times New Roman"; font-size: 12pt }
+		a:link { color: #0000ff; text-decoration: underline }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#0000ff" vlink="#800000" dir="ltr"><p lang="zh-CN" class="cjk" style="line-height: 100%; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="zh-CN" class="cjk" style="line-height: 115%; margin-bottom: 0.35cm">
+<img src="template-044_html_7ade44a6.gif" name="Shape8" alt="Shape8" align="left" vspace="1" width="681" height="2"/>
+<img src="template-044_html_2f59f6d5.gif" name="Shape9" alt="Shape9" align="left" vspace="1" width="37" height="4"/>
+<img src="template-044_html_2f59f6d5.gif" name="Shape10" alt="Shape10" align="left" vspace="1" width="37" height="4"/>
+<img src="template-044_html_7ade44a6.gif" name="Shape12" alt="Shape12" align="left" vspace="1" width="681" height="2"/>
+<img src="template-044_html_2f59f6d5.gif" name="Shape11" alt="Shape11" align="left" vspace="1" width="37" height="4"/>
+<img src="template-044_html_7ade44a6.gif" name="Shape31" alt="Shape31" align="left" vspace="1" width="681" height="2"/>
+<img src="template-044_html_2f59f6d5.gif" name="Shape32" alt="Shape32" align="left" vspace="1" width="37" height="4"/>
+<img src="template-044_html_7ade44a6.gif" name="Shape33" alt="Shape33" align="left" width="681" height="2"/>
+<img src="template-044_html_2f59f6d5.gif" name="Shape34" alt="Shape34" align="left" vspace="1" width="37" height="4"/>
+<img src="template-044_html_9dd94d01.gif" name="Shape35" alt="Shape35" align="left" hspace="1" vspace="1" width="2" height="165"/>
+<img src="template-044_html_9dd94d01.gif" name="Shape36" alt="Shape36" align="left" vspace="1" width="2" height="165"/>
+<img src="template-044_html_7d1597d7.gif" name="Shape37" alt="Shape37" align="left" hspace="1" vspace="1" width="79" height="4"/>
+<img src="template-044_html_c8fc3342.gif" name="Shape38" alt="Shape38" align="left" hspace="1" vspace="1" width="64" height="4"/>
+<img src="template-044_html_732be13d.gif" name="Shape39" alt="Shape39" align="left" hspace="1" vspace="1" width="79" height="3"/>
+<img src="template-044_html_1f04dcc3.gif" name="Shape40" alt="Shape40" align="left" hspace="1" vspace="1" width="64" height="3"/>
+<img src="template-044_html_7d1597d7.gif" name="Shape41" alt="Shape41" align="left" hspace="1" vspace="1" width="79" height="4"/>
+<img src="template-044_html_c8fc3342.gif" name="Shape42" alt="Shape42" align="left" hspace="1" vspace="1" width="64" height="4"/>
+<img src="template-044_html_7d1597d7.gif" name="Shape43" alt="Shape43" align="left" hspace="1" vspace="1" width="79" height="4"/>
+<img src="template-044_html_c8fc3342.gif" name="Shape44" alt="Shape44" align="left" hspace="1" vspace="1" width="64" height="4"/>
+<img src="template-044_html_7d1597d7.gif" name="Shape45" alt="Shape45" align="left" hspace="1" vspace="1" width="79" height="4"/>
+<img src="template-044_html_c8fc3342.gif" name="Shape46" alt="Shape46" align="left" hspace="1" vspace="1" width="64" height="4"/>
+<img src="template-044_html_7d1597d7.gif" name="Shape47" alt="Shape47" align="left" hspace="1" vspace="1" width="79" height="4"/>
+<img src="template-044_html_c8fc3342.gif" name="Shape48" alt="Shape48" align="left" hspace="1" vspace="1" width="64" height="4"/>
+<img src="template-044_html_7d1597d7.gif" name="Shape49" alt="Shape49" align="left" hspace="1" vspace="1" width="79" height="4"/>
+<img src="template-044_html_c8fc3342.gif" name="Shape50" alt="Shape50" align="left" hspace="1" vspace="1" width="64" height="4"/>
+<img src="template-044_html_7d1597d7.gif" name="Shape51" alt="Shape51" align="left" hspace="1" vspace="1" width="79" height="4"/>
+<img src="template-044_html_c8fc3342.gif" name="Shape52" alt="Shape52" align="left" hspace="1" vspace="1" width="64" height="4"/>
+<img src="template-044_html_7d1597d7.gif" name="Shape53" alt="Shape53" align="left" hspace="1" vspace="1" width="79" height="4"/>
+<img src="template-044_html_c8fc3342.gif" name="Shape54" alt="Shape54" align="left" hspace="1" vspace="1" width="64" height="4"/>
+<img src="template-044_html_3d328000.gif" name="Shape55" alt="Shape55" align="left" vspace="1" width="22" height="28"/>
+<img src="template-044_html_c6f3a490.gif" name="Shape56" alt="Shape56" align="left" width="31" height="19"/>
+<img src="template-044_html_cd878c81.gif" name="Shape57" alt="Shape57" align="left" vspace="1" width="23" height="20"/>
+<img src="template-044_html_7f490e97.gif" name="Shape58" alt="Shape58" align="left" hspace="1" vspace="1" width="28" height="21"/>
+<img src="template-044_html_fb9bd7a0.gif" name="Shape59" alt="Shape59" align="left" width="30" height="22"/>
+<img src="template-044_html_6922d707.gif" name="Shape60" alt="Shape60" align="left" width="21" height="21"/>
+<img src="template-044_html_4176ca24.gif" name="Shape61" alt="Shape61" align="left" vspace="1" width="31" height="17"/>
+<img src="template-044_html_4ae0dbd6.gif" name="Shape62" alt="Shape62" align="left" vspace="1" width="24" height="28"/>
+<img src="template-044_html_a4416468.gif" name="Shape63" alt="Shape63" align="left" width="24" height="15"/>
+<img src="template-044_html_89c776e3.gif" name="Shape64" alt="Shape64" align="left" vspace="1" width="23" height="19"/>
+<img src="template-044_html_4724faf1.gif" name="Shape65" alt="Shape65" align="left" hspace="1" vspace="1" width="26" height="26"/>
+<img src="template-044_html_1417e8f9.gif" name="Shape66" alt="Shape66" align="left" hspace="1" vspace="1" width="28" height="24"/>
+<img src="template-044_html_5371124c.gif" name="Shape67" alt="Shape67" align="left" vspace="1" width="11" height="11"/>
+<img src="template-044_html_2351fbb7.gif" name="Shape68" alt="Shape68" align="left" vspace="1" width="11" height="11"/>
+<img src="template-044_html_b0b53b03.gif" name="Shape30" alt="Shape30" align="left" width="12" height="9"/>
+<img src="template-044_html_2f59f6d5.gif" name="Shape7" alt="Shape7" align="left" vspace="1" width="37" height="4"/>
+<img src="template-044_html_30e4e629.gif" name="Shape2" alt="Shape2" align="left" width="315" height="43"/>
+<img src="template-044_html_230ac142.gif" name="Shape1" alt="Shape1" align="left" width="257" height="32"/>
+<img src="template-044_html_e34ece2d.gif" name="Shape29" alt="Shape29" align="left" width="225" height="36"/>
+<img src="template-044_html_47518536.gif" name="Shape28" alt="Shape28" align="left" vspace="1" width="198" height="54"/>
+<img src="template-044_html_76eb16e6.gif" name="Shape26" alt="Shape26" align="left" width="159" height="51"/>
+<img src="template-044_html_ff953e4c.gif" name="Shape27" alt="Shape27" align="left" width="455" height="87"/>
+<img src="template-044_html_f8869cd2.gif" name="Shape24" alt="Shape24" align="left" width="131" height="51"/>
+<img src="template-044_html_ff953e4c.gif" name="Shape25" alt="Shape25" align="left" width="455" height="87"/>
+<img src="template-044_html_56d039b8.gif" name="Shape21" alt="Shape21" align="left" width="103" height="37"/>
+<img src="template-044_html_ff953e4c.gif" name="Shape23" alt="Shape23" align="left" width="455" height="87"/>
+<img src="template-044_html_ac0bf6ee.gif" name="Shape20" alt="Shape20" align="left" width="103" height="38"/>
+<img src="template-044_html_ff953e4c.gif" name="Shape22" alt="Shape22" align="left" width="455" height="87"/>
+<img src="template-044_html_edf646fd.gif" name="Shape19" alt="Shape19" align="left" width="103" height="40"/>
+<img src="template-044_html_59114b25.gif" name="Shape13" alt="Shape13" align="left" width="131" height="35"/>
+<img src="template-044_html_7e356029.gif" name="Shape14" alt="Shape14" align="left" width="455" height="56"/>
+<img src="template-044_html_edf646fd.gif" name="Shape16" alt="Shape16" align="left" width="103" height="40"/>
+<img src="template-044_html_7e356029.gif" name="Shape15" alt="Shape15" align="left" width="455" height="56"/>
+<img src="template-044_html_edf646fd.gif" name="Shape17" alt="Shape17" align="left" width="103" height="40"/>
+<img src="template-044_html_59114b25.gif" name="Shape18" alt="Shape18" align="left" width="131" height="35"/>
+<img src="template-044_html_16aa238f.gif" name="Shape5" alt="Shape5" align="left" width="173" height="35"/>
+<img src="template-044_html_59114b25.gif" name="Shape6" alt="Shape6" align="left" width="131" height="35"/>
+<img src="template-044_html_10c9c42e.gif" name="Shape4" alt="Shape4" align="left" width="101" height="144"/>
+<span id="Frame1" dir="ltr" style="float: left; width: 6.8cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="2" style="font-size: 10pt">Graphic
+	Designer &amp; Photographer</font></font></font></span></font></p>
+</span>
+<img src="template-044_html_946b410d.gif" name="Shape3" alt="Shape3" align="left" width="213" height="144"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 8.34cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="5" style="font-size: 20pt"><span style="letter-spacing: 2.0pt">ROBERT
+	ANTHONI</span></font></font></font></span></font></p>
+</span>
+<span id="Frame3" dir="ltr" style="float: left; width: 5.63cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Havard
+	Russue</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><i>Position</i></font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">t.</font></font></font><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	+732 4793 246 2429</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">e.</font></font></font><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	havardrussumailhere@gmail.com</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 115%; margin-bottom: 0cm">
+	<br/>
+
+	</p>
+	<p lang="zh-CN" align="center" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">John
+	Doe</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><i>Position</i></font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">t.</font></font></font><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">+732
+	4793 246 2429</font></font></font></span></font></p>
+	<p lang="zh-CN" align="center" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">e.</font></font></font><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">
+	johndomailhere@gmail.com</font></font></font></span></font></p>
+</span>
+<span id="Frame4" dir="ltr" style="float: left; width: 2.67cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="text-align: end; line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Illustrator</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Photoshop</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">InDesign</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">PowerPoint</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">MS
+	Word</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">MS
+	Excel</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Java
+	Script</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Word
+	Press</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">HTML-5</font></font></font></span></font></p>
+</span>
+<span id="Frame5" dir="ltr" style="float: left; width: 4.58cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" align="center" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">REFERENCES</font></font></span></font></p>
+</span>
+<span id="Frame6" dir="ltr" style="float: left; width: 3.47cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">INTERESTS</font></font></span></font></p>
+</span>
+<span id="Frame7" dir="ltr" style="float: left; width: 3.47cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">EDUCATION</font></font></span></font></p>
+</span>
+<span id="Frame8" dir="ltr" style="float: left; width: 12.04cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Course
+	Study/School College</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">orci
+	tincidunt quam et, vestibulum mauris. Sed blandit orci porttitor
+	ligula  orttitor mauris. Sed blandit orci porttitor ligula
+	porttitor, facilisis aecenas incidunt</font></font></font></span></font></p>
+</span>
+<span id="Frame9" dir="ltr" style="float: left; width: 12.04cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Course
+	Study/School College</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">orci
+	tincidunt quam et, vestibulum mauris. Sed blandit orci porttitor
+	ligula  orttitor mauris. Sed blandit orci porttitor ligula
+	porttitor, facilisis aecenas incidunt</font></font></font></span></font></p>
+</span>
+<span id="Frame10" dir="ltr" style="float: left; width: 2.73cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">17-July-2013</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">May-2015</font></font></font></span></font></p>
+</span>
+<span id="Frame11" dir="ltr" style="float: left; width: 2.73cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">17-July-2013</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">May-2015</font></font></font></span></font></p>
+</span>
+<span id="Frame12" dir="ltr" style="float: left; width: 3.47cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">PRO.
+	SKILLS</font></font></span></font></p>
+</span>
+<span id="Frame13" dir="ltr" style="float: left; width: 2.73cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">17-July-2013</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">May-2015</font></font></font></span></font></p>
+</span>
+<span id="Frame14" dir="ltr" style="float: left; width: 2.73cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">17-July-2013</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">May-2015</font></font></font></span></font></p>
+</span>
+<span id="Frame15" dir="ltr" style="float: left; width: 2.73cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">17-July-2015</font></font></font></span></font></p>
+	<p lang="zh-CN" style="text-align: end; line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Present</font></font></font></span></font></p>
+</span>
+<span id="Frame16" dir="ltr" style="float: left; width: 12.04cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Graphic
+	Designer/Pixel Print Media</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font color="#2d2b2c">
+	<font face="Times New Roman, serif"><span lang="en-US"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">aenean
+	at magna  tincidunt quam et, vestibulum mauris. Sed blandit orci
+	porttitor lacinia felis. Aenean at magna laoreet, tincidunt quam
+	ulum mauris. Sed blandit orci tincidunt quam et, vestibulum mauris.
+	Sed blandit orci porttitor ligula  orttitor mauris. Sed blandit orci
+	porttitor ligula porttitor, facilisis aecenas incidunt</font></font></span></font></font></p>
+</span>
+<span id="Frame17" dir="ltr" style="float: left; width: 12.04cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">UI/UX
+	Designer/Creative Inc.</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font color="#2d2b2c">
+	<font face="Times New Roman, serif"><span lang="en-US"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">aenean
+	at magna  tincidunt quam et, vestibulum mauris. Sed blandit orci
+	porttitor lacinia felis. Aenean at magna laoreet, tincidunt quam
+	ulum mauris. Sed blandit orci tincidunt quam et, vestibulum mauris.
+	Sed blandit orci porttitor ligula  orttitor mauris. Sed blandit orci
+	porttitor ligula porttitor, facilisis aecenas incidunt</font></font></span></font></font></p>
+</span>
+<span id="Frame18" dir="ltr" style="float: left; width: 3.47cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">WORK</font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">EXPERIENCE</font></font></span></font></p>
+</span>
+<span id="Frame19" dir="ltr" style="float: left; width: 12.04cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Web
+	Development/Creative Company</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font color="#2d2b2c">
+	<font face="Times New Roman, serif"><span lang="en-US"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">aenean
+	at magna  tincidunt quam et, vestibulum mauris. Sed blandit orci
+	porttitor lacinia felis. Aenean at magna laoreet, tincidunt quam
+	ulum mauris. Sed blandit orci tincidunt quam et, vestibulum mauris.
+	Sed blandit orci porttitor ligula  orttitor mauris. Sed blandit orci
+	porttitor ligula porttitor, facilisis aecenas incidunt</font></font></span></font></font></p>
+</span>
+<span id="Frame20" dir="ltr" style="float: left; width: 4.21cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">PROFESSIONAL</font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">STATEMENT</font></font></span></font></p>
+</span>
+<span id="Frame21" dir="ltr" style="float: left; width: 12.04cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Maecenas
+	tincidunt ullamcorper tortor non aliquam. Aenean utiliti lacinia
+	felis aenean at magna  tincidunt quam et, vestibulum mauris. Sed
+	blandit orci porttitor lacinia felis. Aenean at magna laoreet,
+	tincidunt quam ulum mauris. Sed blandit orci tincidunt quam et,
+	vestibulum mauris. Sed blandit orci porttitor ligula  orttitor
+	mauris. Sed blandit orci porttitor ligula porttitor, facilisis
+	aecenas incidunt</font></font></font></span></font></p>
+</span>
+<span id="Frame22" dir="ltr" style="float: left; width: 5.24cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><i>+960-247-989-3963</i></font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><i>robertanthonimailid@gmail.com</i></font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><i>robertanthoniwebsite.com</i></font></font></font></span></font></p>
+</span>
+<span id="Frame23" dir="ltr" style="float: left; width: 5.94cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">123
+	Street Name, Town/City,</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">State/Country,
+	Post/Zip Code #5670</font></font></font></span></font></p>
+</span><br/>
+<br/>
+
+</p>
+<p lang="zh-CN" class="cjk" style="line-height: 100%; margin-bottom: 0cm; page-break-before: always"><a name="_GoBack"></a>
+<img src="template-044_html_87e16bb9.gif" name="Shape82" alt="Shape82" align="left" hspace="1" vspace="1" width="680" height="2"/>
+<img src="template-044_html_87e16bb9.gif" name="Shape83" alt="Shape83" align="left" hspace="1" vspace="1" width="680" height="2"/>
+<img src="template-044_html_87e16bb9.gif" name="Shape84" alt="Shape84" align="left" hspace="1" vspace="1" width="680" height="2"/>
+<img src="template-044_html_2f59f6d5.gif" name="Shape85" alt="Shape85" align="left" vspace="1" width="37" height="4"/>
+<img src="template-044_html_87e16bb9.gif" name="Shape86" alt="Shape86" align="left" hspace="1" width="680" height="2"/>
+<img src="template-044_html_2f59f6d5.gif" name="Shape87" alt="Shape87" align="left" vspace="1" width="37" height="4"/>
+<img src="template-044_html_dcf935f9.gif" name="Shape73" alt="Shape73" align="left" width="142" height="22"/>
+<img src="template-044_html_8da9a590.gif" name="Shape88" alt="Shape88" align="left" width="15" height="12"/>
+<img src="template-044_html_80f11276.gif" name="Shape89" alt="Shape89" align="left" width="15" height="14"/>
+<img src="template-044_html_370b0642.gif" name="Shape90" alt="Shape90" align="left" width="15" height="15"/>
+<img src="template-044_html_5371124c.gif" name="Shape91" alt="Shape91" align="left" vspace="1" width="11" height="11"/>
+<img src="template-044_html_2351fbb7.gif" name="Shape92" alt="Shape92" align="left" vspace="1" width="11" height="11"/>
+<img src="template-044_html_b0b53b03.gif" name="Shape81" alt="Shape81" align="left" width="12" height="9"/>
+<img src="template-044_html_30e4e629.gif" name="Shape80" alt="Shape80" align="left" width="315" height="43"/>
+<img src="template-044_html_230ac142.gif" name="Shape79" alt="Shape79" align="left" width="257" height="32"/>
+<img src="template-044_html_e34ece2d.gif" name="Shape78" alt="Shape78" align="left" width="225" height="36"/>
+<img src="template-044_html_47518536.gif" name="Shape77" alt="Shape77" align="left" vspace="1" width="198" height="54"/>
+<img src="template-044_html_76eb16e6.gif" name="Shape76" alt="Shape76" align="left" width="159" height="51"/>
+<img src="template-044_html_cec3c9e0.gif" name="Shape72" alt="Shape72" align="left" width="156" height="26"/>
+<img src="template-044_html_ff953e4c.gif" name="Shape75" alt="Shape75" align="left" width="455" height="87"/>
+<img src="template-044_html_49919dc0.gif" name="Shape74" alt="Shape74" align="left" width="455" height="489"/>
+<img src="template-044_html_67c1d991.gif" name="Shape71" alt="Shape71" align="left" width="167" height="26"/>
+<img src="template-044_html_18f3f5a2.gif" name="Shape69" alt="Shape69" align="left" width="143" height="276"/>
+<img src="template-044_html_8be8e055.gif" name="Shape70" alt="Shape70" align="left" width="171" height="26"/>
+<span id="Frame24" dir="ltr" style="float: left; width: 3.79cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">19-February-2017</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">To,</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">John
+	Harrie</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Managing
+	Director</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">123
+	Collins Street, Town/City,</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Australia,
+	CA-5678</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Position</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Chief
+	Designer</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Company</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Creative
+	Company</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Reference
+	No</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">23456789070678</font></font></font></span></font></p>
+</span>
+<span id="Frame25" dir="ltr" style="float: left; width: 4.53cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">instagramid.com/username</font></font></font></span></font></p>
+</span>
+<span id="Frame26" dir="ltr" style="float: left; width: 4.42cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">linkedingid.com/username</font></font></font></span></font></p>
+</span>
+<span id="Frame27" dir="ltr" style="float: left; width: 4.13cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">twitterid.com/username</font></font></font></span></font></p>
+</span>
+<span id="Frame28" dir="ltr" style="float: left; width: 12.04cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Dear
+	Sir,</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Maecenas
+	tincidunt ullamcorper tortor non aliquam. Aenean ut lacinia felis. </font></font></font></span></font>
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Integer
+	vel est dapibus, efficitur velit et, porttitor arcu. Integer purus
+	nisl, pharetra et tortor quis, viverra rutrum sapien. Morbi volutpat
+	convallis amet. Curabitur volutpat velit nibh, vel molestie eros
+	cursus in. volutpat mi sem, eu venenatis  bero tincidunt ac. Aenean
+	dignissim odio sed elit vulputate pretium. tincidunt  mcorper tortor
+	non aliquam. Aenean ut lacinia felis. Aenean at magna laoreet,
+	ullamcorper</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font color="#2d2b2c">
+	<font face="Times New Roman, serif"><span lang="en-US"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">tortor
+	non aliquam. Aenean ut lacinia felis. Aenean magna laoreet Integer
+	vel est habitasse platea dictumst Maecenas tincidunt ullamcorper
+	tortor non aliquam. Aenean ut lacinia felis. Integer vel est
+	dapibus, efficitur velit et, porttitor arcu. Integer purus nisl,
+	pharetra et tortor quis, iverra rutrum sapien. Morbi volutpat
+	convallis amet. Curabitur volutpat velit nibh, vel molestie eros
+	cursus in. volutpat mi sem, eu venenatis libero tincidunt ac. Aenean
+	dignissim odio sed elit vulputate rabitur volutpat velit nibh, vel
+	molestie eros cursus in. Aliquam erat sem, eu venenatis libero
+	tincidunt lestie eros cursus in. Aliquam erat sem, eu venenatis
+	libero tincidunt aenean dignissimpretium. commodo. Morbi volutpat
+	convallis amet. Curabitur volutpat velit nibh, vel molestie eros
+	cursus in. Aliquam erat sem, eu venenatis libero tincidunt ac.
+	ullamcorper tortor non aliquam. Aenean ut lacinia felis. Aenean
+	magna laoreet Integer vel est Morbi volutpat convallis amet.
+	Curabitur volutpat velit nibh, vel molestie eros cursus  Aliquam
+	erat volutpat. Donec sollicitudin ullamcorper ornare. In hac
+	habitasse platea dictumst</font></font></span></font></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Donec
+	ante nunc, laoreet ac turpis ac, cursus aliquet dui. Duis posuere
+	erat vitae magna sollicitudin, consectetur lorem elementum. Donec id
+	mi nec elit cursus ornare felis. pretium. tincidunt ullamcorper
+	tortor non aliquam. Aenean ut lacinia felis nteger purus nisl.</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><br/>
+
+	</p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Your</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Sincerely</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">Robert
+	Anthoni</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Graphic
+	Designer &amp; Photographer</font></font></font></span></font></p>
+</span>
+<span id="Frame29" dir="ltr" style="float: left; width: 12.04cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt">Maecenas
+	tincidunt ullamcorper tortor non aliquam. Aenean utiliti lacinia
+	felis aenean at magna  tincidunt quam et, vestibulum mauris. Sed
+	blandit orci porttitor lacinia felis. Aenean at magna laoreet,
+	tincidunt quam ulum mauris. Sed blandit orci tincidunt quam et,
+	vestibulum mauris. Sed blandit orci porttitor ligula  orttitor
+	mauris. Sed blandit orci porttitor ligula porttitor, facilisis
+	aecenas incidunt</font></font></font></span></font></p>
+</span>
+<span id="Frame30" dir="ltr" style="float: left; width: 4.21cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">PROFESSIONAL</font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif">STATEMENT</font></font></span></font></p>
+</span>
+<span id="Frame31" dir="ltr" style="float: left; width: 5.24cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><i>+960-247-989-3963</i></font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><i>robertanthonimailid@gmail.com</i></font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="1" style="font-size: 8pt"><i>robertanthoniwebsite.com</i></font></font></font></span></font></p>
+</span>
+<span id="Frame32" dir="ltr" style="float: left; width: 5.94cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">123
+	Street Name, Town/City,</font></font></font></span></font></p>
+	<p lang="zh-CN" style="line-height: 115%; margin-bottom: 0cm"><font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="1" style="font-size: 8pt">State/Country,
+	Post/Zip Code #5670</font></font></font></span></font></p>
+</span>
+<span id="Frame33" dir="ltr" style="float: left; width: 6.8cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway, sans-serif"><font size="2" style="font-size: 10pt">Graphic
+	Designer &amp; Photographer</font></font></font></span></font></p>
+</span>
+<span id="Frame34" dir="ltr" style="float: left; width: 8.34cm; border: none; padding: 0cm; background: #ffffff"><p lang="zh-CN" style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Times New Roman, serif"><span lang="en-US"><font color="#2d2b2c"><font face="Raleway Bold, serif"><font size="5" style="font-size: 20pt"><span style="letter-spacing: 2.0pt">ROBERT
+	ANTHONI</span></font></font></font></span></font></p>
+</span><br/>
+
+</p>
+</body>
+</html>

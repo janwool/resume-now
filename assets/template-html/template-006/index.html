@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>cv cover letter</title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="Ze"/>
+	<meta name="created" content="2020-05-11T15:45:00"/>
+	<meta name="changedby" content="Ze"/>
+	<meta name="changed" content="2020-05-11T15:57:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Creator" content="Adobe Illustrator CC 23.0 (Windows)"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 2.26cm; margin-right: 2.79cm }
+		p { direction: ltr; widows: 0; margin-bottom: 0cm; orphans: 0; text-align: start; background: transparent }
+		p.western { font-family: "Open Sans", sans-serif; font-size: 9pt }
+		p.cjk { font-family: "Open Sans"; font-size: 9pt }
+		p.ctl { font-family: "Open Sans"; font-size: 9pt }
+		a:link { color: #000080; text-decoration: underline }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr">
+<div id="TextSection" dir="ltr"><p class="cjk"><img src="template-006_html_7dc62ba5.png" name="Picture 18" align="left" width="754" height="283" border="0"/>
+<img src="template-006_html_6357bca7.gif" name="Shape1" alt="Shape1" align="left" hspace="1" vspace="1" width="126" height="301"/>
+<img src="template-006_html_4c1c45ea.gif" name="Shape2" alt="Shape2" align="left" hspace="1" width="669" height="290"/>
+<br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+</div>
+<div id="Section1" dir="ltr" gutter="3" style="column-count: 2"><p class="cjk" style="line-height: 1.68cm; margin-top: 0.08cm; margin-left: 5.15cm">
+	<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font face="Poppins, sans-serif"><font size="7" style="font-size: 36pt"><b>J<img src="template-006_html_717453d2.gif" name="Shape3" alt="Shape3" align="left" vspace="1" width="171" height="214"/>
+AMES</b></font></font></font></font></font></p>
+	<p class="cjk" style="line-height: 1.68cm; margin-left: 5.15cm"><font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#ffffff"><font face="Poppins Light, sans-serif"><font size="7" style="font-size: 36pt">B<img src="template-006_html_c0993243.gif" name="Shape4" alt="Shape4" align="left" hspace="1" vspace="1" width="40" height="66"/>
+<img src="template-006_html_38446d03.gif" name="Shape5" alt="Shape5" align="left" width="271"/>
+ROWN</font></font></font></font></font></p>
+	<p class="cjk" style="margin-top: 0.33cm; margin-left: 5.89cm"><font face="Open Sans, sans-serif"><font color="#ffffff"><font face="Poppins Light, sans-serif">+<img src="template-006_html_90335452.png" name="Picture 12" align="left" width="19" height="19" border="0"/>
+62
+	85777545212</font></font></font></p>
+	<p class="cjk" style="margin-right: 0.42cm; margin-left: 5.89cm; line-height: 127%; margin-top: 0.15cm">
+	<font face="Open Sans, sans-serif"><font color="#ffffff"><font face="Poppins Light, sans-serif"><a href="mailto:youremail@here.com">y</a><img src="template-006_html_322dbfba.png" name="Picture 11" align="left" width="19" height="19" border="0"/>
+<a href="mailto:youremail@here.com"></a><img src="template-006_html_55786e6f.png" name="Picture 10" align="left" width="19" height="19" border="0"/>
+<a href="mailto:youremail@here.com">ouremail@here.com</a>
+	Linked.account</font></font></font></p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-top: 0.01cm"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 2.13cm"><font face="Open Sans, sans-serif"><font color="#ffffff"><font face="Poppins Light, sans-serif">C<img src="template-006_html_2d790b4c.png" name="Picture 17" align="left" width="9" height="9" border="0"/>
+<img src="template-006_html_72dfb026.png" name="Picture 16" align="left" width="9" height="9" border="0"/>
+<img src="template-006_html_2d790b4c.png" name="Picture 15" align="left" width="9" height="9" border="0"/>
+<img src="template-006_html_2d790b4c.png" name="Picture 14" align="left" width="9" height="9" border="0"/>
+<img src="template-006_html_32547140.gif" name="Shape6" alt="Shape6" align="left" hspace="1" vspace="1" width="2" height="8"/>
+RAETIVE
+	DESIGNER</font></font></font></p>
+</div>
+<div id="Section2" dir="ltr"><p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-top: 0.01cm"><br/>
+
+	</p>
+</div>
+<div id="Section3" dir="ltr" gutter="209" style="column-count: 3"><p class="cjk" style="margin-top: 0.18cm; margin-left: 0.19cm">
+	<font face="Open Sans, sans-serif"><font color="#3d3d3d"><font face="Open Sans SemiBold, sans-serif"><b>TO</b></font></font></font></p>
+	<p class="cjk" style="margin-top: 0.06cm; margin-left: 0.19cm"><font face="Open Sans, sans-serif"><font color="#3d3d3d">Name</font></font></p>
+	<p class="cjk" style="margin-top: 0.06cm; margin-left: 0.19cm"><span class="sd-abs-pos" style="position: absolute; top: 0.87cm; left: 0.01cm; width: 610px"><img src="template-006_html_8df161cd.gif" name="Shape7" alt="Shape7" align="left" hspace="1" vspace="1" width="610" height="1"/>
+</span><span class="sd-abs-pos" style="position: absolute; top: 1.37cm; left: 0.01cm; width: 610px"><img src="template-006_html_8df161cd.gif" name="Shape8" alt="Shape8" align="left" hspace="1" vspace="1" width="610" height="1"/>
+</span><font face="Open Sans, sans-serif"><font color="#3d3d3d">HRD
+	Company</font></font></p>
+	<p class="cjk" style="margin-left: 0.19cm"><font face="Open Sans, sans-serif"><font color="#3d3d3d"><font face="Open Sans SemiBold, sans-serif"><b>FROM</b></font></font></font></p>
+	<p class="cjk" style="margin-top: 0.06cm; margin-right: 0.04cm; margin-left: 0.19cm; line-height: 114%">
+	<font face="Open Sans, sans-serif"><font color="#3d3d3d">James Brown
+	Creative Designer</font></font></p>
+	<p class="cjk" style="margin-left: 0.19cm"><font face="Open Sans, sans-serif"><font color="#3d3d3d"><font face="Open Sans SemiBold, sans-serif"><b>07
+	March 2016</b></font></font></font></p>
+</div>
+<div id="Section4" dir="ltr"><p class="cjk"><span class="sd-abs-pos" style="position: absolute; top: 19.77cm; left: -2.23cm; width: 793px"><img src="template-006_html_2cd53f7c.gif" name="Shape9" alt="Shape9" align="left" hspace="1" vspace="1" width="793" height="28"/>
+</span><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-top: 0.01cm"><br/>
+
+	</p>
+	<p class="cjk" style="margin-left: 5.12cm"><font face="Open Sans, sans-serif"><font color="#3d3d3d"><font face="Open Sans SemiBold, sans-serif"><b>Dear
+	Sir/Madam</b></font></font></font></p>
+	<p class="cjk" style="margin-top: 0cm"><br/>
+
+	</p>
+	<p class="cjk" align="justify" style="margin-top: 0cm; margin-right: 0.19cm; margin-left: 5.12cm; line-height: 114%">
+	<font face="Open Sans, sans-serif"><font color="#3d3d3d">Lorem ipsum
+	dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">nibh</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">euismod</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">tincidunt</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">ut</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">laoreet</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">dolore</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">magna</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">aliquam</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">erat volutpat. Ut wisi enim ad
+	minim veniam, quis nostrud exerci tation ullamcorper suscipit
+	lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
+	iriure dolor in hendrerit in vulputate velit esse molestie</font><font color="#3d3d3d"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#3d3d3d">consequat.</font></font></p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+	<p class="cjk" align="justify" style="margin-right: 0.19cm; margin-left: 5.12cm; line-height: 114%">
+	<font face="Open Sans, sans-serif"><font color="#3d3d3d">Lorem ipsum
+	dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">nibh</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">euismod</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">tincidunt</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">ut</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">laoreet</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">dolore</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">magna</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">aliquam</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">erat volutpat. Ut wisi enim ad
+	minim</font><font color="#3d3d3d"><span style="letter-spacing: -0.2pt">
+	</span></font><font color="#3d3d3d">veniam.</font></font></p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+	<p class="cjk" align="justify" style="margin-right: 0.19cm; margin-left: 5.12cm; line-height: 114%">
+	<font face="Open Sans, sans-serif"><font color="#3d3d3d">quis
+	nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+	ex ea commodo consequat.</font></font></p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+	<p class="cjk" align="justify" style="margin-right: 0.19cm; margin-left: 5.12cm; line-height: 114%">
+	<font face="Open Sans, sans-serif"><font color="#3d3d3d">Lorem ipsum
+	dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">nibh</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">euismod</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">tincidunt</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">ut</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">laoreet</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">dolore</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">magna</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">aliquam</font><font color="#3d3d3d"><span style="letter-spacing: -0.3pt">
+	</span></font><font color="#3d3d3d">erat volutpat. Ut wisi enim ad
+	minim veniam, quis nostrud exerci tation ullamcorper suscipit
+	lobortis</font><font color="#3d3d3d"><span style="letter-spacing: -0.1pt">
+	</span></font><font color="#3d3d3d">nisl.</font></font></p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk"><br/>
+
+	</p>
+	<p class="cjk" style="margin-top: 0.02cm"><br/>
+
+	</p>
+	<p class="cjk" style="line-height: 1.88cm; margin-top: 0.17cm; margin-left: 4.79cm">
+	<span class="sd-abs-pos" style="position: absolute; top: -0.04cm; left: 5.12cm; width: 47px"><img src="template-006_html_d459e7c8.gif" name="Shape10" alt="Shape10" align="left" hspace="1" width="47" height="16"/>
+</span><span id="Frame1" dir="ltr" style="position: absolute; top: 20.59cm; left: 7.38cm; width: 1.23cm; border: none; padding: 0cm; background: #ffffff"><p>
+		<font face="Open Sans, sans-serif"><font size="2" style="font-size: 11pt"><font color="#3d3d3d"><font size="2" style="font-size: 9pt"><i>Sincerely</i></font></font></font></font></p>
+	</span><font face="Open Sans, sans-serif"><font size="2"><font color="#3d3d3d"><font face="Starcity Script, sans-serif"><font size="6"><i>James
+	Brown</i></font></font></font></font></font>
+	</p>
+	<p class="cjk" style="margin-left: 5.12cm; line-height: 0.42cm"><font face="Open Sans, sans-serif"><font color="#3d3d3d"><font face="Open Sans SemiBold, sans-serif"><b>JAMES
+	BROWN</b></font></font></font></p>
+</div>
+</body>
+</html>

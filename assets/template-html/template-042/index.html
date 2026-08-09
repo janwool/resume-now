@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta name="viewport" content="width=794, initial-scale=1">
+<style id="first-draft-editor">
+  html { width: 794px; min-height: 1122px; margin: 0; background: #fff; }
+  body { width: 794px; min-height: 1122px; margin: 0; overflow: hidden; outline: none; background: #fff; }
+  body:focus { outline: none; }
+  img { pointer-events: none !important; user-select: none !important; }
+  .sd-abs-pos, .sd-abs-pos img { z-index: 0 !important; }
+  [data-edit-block] { position: relative !important; z-index: 3 !important; cursor: text; caret-color: #0071e3; transition: outline-color .15s ease, background .15s ease; }
+  [data-edit-block]:hover { outline: 2px dashed rgba(0,113,227,.58); outline-offset: 2px; background: rgba(255,255,255,.1); }
+  [data-edit-block]:focus { outline: 2px solid #0071e3; outline-offset: 2px; background: rgba(255,255,255,.16); }
+</style>
+<script id="first-draft-editor-script">
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.contentEditable = 'false';
+  var candidates = document.querySelectorAll('p');
+  var index = 0;
+  var editableBlocks = [];
+  candidates.forEach(function (block) {
+    if (!block.innerText || !block.innerText.trim()) return;
+    block.contentEditable = 'true';
+    block.spellcheck = true;
+    block.dataset.editBlock = 'edit-' + (++index);
+    editableBlocks.push({ id: block.dataset.editBlock, text: block.innerText });
+    block.addEventListener('focus', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'selection', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+    block.addEventListener('input', function () {
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: block.dataset.editBlock, text: block.innerText }, '*');
+    });
+  });
+  window.addEventListener('message', function (event) {
+    var message = event.data || {};
+    if (message.source !== 'first-draft-builder' || message.type !== 'update') return;
+    var target = document.querySelector('[data-edit-block="' + message.id + '"]');
+    if (target) {
+      target.innerText = message.text;
+      window.parent.postMessage({ source: 'first-draft-template', type: 'changed', id: message.id, text: target.innerText }, '*');
+    }
+  });
+  window.parent.postMessage({ source: 'first-draft-template', type: 'ready', count: index, blocks: editableBlocks }, '*');
+});
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)"/>
+	<meta name="author" content="PIASH"/>
+	<meta name="created" content="2016-12-31T07:42:00"/>
+	<meta name="changedby" content="Themedevisers"/>
+	<meta name="changed" content="2016-12-31T08:27:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm }
+		p { direction: ltr; widows: 2; orphans: 2; margin-bottom: 0.25cm; text-align: start; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body contenteditable="true" spellcheck="true" lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 108%; margin-bottom: 0.28cm"><a name="_GoBack"></a>
+<spacer type="block" align="left" width="794" height="1138"><img src="template-042_html_898e4d45.gif" name="Shape101" alt="Shape101" align="left" hspace="12" width="275" height="1120"/>
+<img src="template-042_html_85bdb0c3.gif" name="Shape103" alt="Shape103" align="left" hspace="12" width="275" height="276"/>
+<img src="template-042_html_40f72e44.gif" name="Shape102" alt="Shape102" align="left" hspace="12" vspace="1" width="73" height="17"/>
+<span id="Frame61" dir="ltr" style="float: left; width: 1.94cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><b>Cycling</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_ece870e7.gif" name="Shape1" alt="Shape1" align="left" hspace="12" vspace="1" width="311" height="51"/>
+
+<span id="Frame1" dir="ltr" style="float: left; width: 8.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#7e8185"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Porttitor
+	amet massa.Done cporttitor dolor et nisl molestie  ium feliscon lore
+	 ipsum dolor tfringilla. lorem lorem ipsum. ollcitudin est dolor
+	time. Done cporttitor dolor kiren</font></font></font></font></p>
+</span>
+<img src="template-042_html_ece870e7.gif" name="Shape2" alt="Shape2" align="left" hspace="12" vspace="1" width="311" height="51"/>
+
+<span id="Frame2" dir="ltr" style="float: left; width: 8.24cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#7e8185"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Porttitor
+	amet massa Done cporttitor dolor et nisl molestie ium feliscon lore 
+	ipsum dolor tfringilla. lorem lorem ipsum. ollcitudin est dolor
+	time.</font></font></font></font></p>
+</span>
+<img src="template-042_html_ece870e7.gif" name="Shape3" alt="Shape3" align="left" hspace="12" vspace="1" width="311" height="51"/>
+
+<span id="Frame3" dir="ltr" style="float: left; width: 8.24cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#7e8185"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Porttitor
+	amet massa Done cporttitor dolor et nisl molestie ium feliscon lore 
+	ipsum dolor tfringilla. lorem lorem ipsum. ollcitudin est dolor
+	time. Done cporttitor</font></font></font></font></p>
+</span>
+<img src="template-042_html_8289f165.gif" name="Shape9" alt="Shape9" align="left" hspace="12" vspace="1" width="81" height="20"/>
+
+<span id="Frame4" dir="ltr" style="float: left; width: 2.15cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato Black, sans-serif"><font size="3" style="font-size: 13pt"><span style="letter-spacing: 0.6pt"><b>HOBBIES</b></span></font></font></font></font></p>
+</span>
+<img src="template-042_html_11c5e43a.gif" name="Shape12" alt="Shape12" align="left" hspace="13" vspace="1" width="194" height="18"/>
+
+<span id="Frame5" dir="ltr" style="float: left; width: 5.15cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>CERTIFICATE
+	OF WEB TRAINIG</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_2bb5311.gif" name="Shape13" alt="Shape13" align="left" hspace="12" vspace="1" width="190" height="20"/>
+
+<span id="Frame6" dir="ltr" style="float: left; width: 5.03cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>BECHELOR
+	OF ART DIRECTOR</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_6436e685.gif" name="Shape14" alt="Shape14" align="left" hspace="12" vspace="1" width="223" height="16"/>
+
+<span id="Frame7" dir="ltr" style="float: left; width: 5.91cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>HIGHER
+	SECENDERY EXAMINITION</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_317e3ac7.gif" name="Shape17" alt="Shape17" align="left" hspace="12" vspace="1" width="109" height="21"/>
+
+<span id="Frame8" dir="ltr" style="float: left; width: 2.89cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato Black, sans-serif"><font size="3" style="font-size: 13pt"><span style="letter-spacing: 0.5pt"><b>EDUCATION</b></span></font></font></font></font></p>
+</span>
+<img src="template-042_html_6b1fd1d8.gif" name="Shape18" alt="Shape18" align="left" hspace="13" vspace="1" width="98" height="16"/>
+
+<span id="Frame9" dir="ltr" style="float: left; width: 2.61cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt"><b>WEB
+	TECH LTD</b></span></font></font></font></font></p>
+</span>
+<img src="template-042_html_70ea3089.gif" name="Shape19" alt="Shape19" align="left" hspace="13" width="147" height="18"/>
+
+<span id="Frame10" dir="ltr" style="float: left; width: 3.88cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>SOFT
+	DESIGN STUDIOS</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_d7dc3b30.gif" name="Shape22" alt="Shape22" align="left" hspace="13" vspace="1" width="112" height="22"/>
+
+<span id="Frame11" dir="ltr" style="float: left; width: 2.97cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato Black, sans-serif"><font size="3" style="font-size: 13pt"><span style="letter-spacing: 0.6pt"><b>EXPERIENCE</b></span></font></font></font></font></p>
+</span>
+<img src="template-042_html_291054c2.gif" name="Shape24" alt="Shape24" align="left" hspace="13" vspace="1" width="165" height="20"/>
+
+<span id="Frame12" dir="ltr" style="float: left; width: 4.36cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#58595b"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>DEV
+	CREATIVE SOLUTION</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_17b67516.gif" name="Shape25" alt="Shape25" align="left" hspace="13" vspace="1" width="109" height="18"/>
+
+<span id="Frame13" dir="ltr" style="float: left; width: 2.88cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.2pt">www.kevinsmith.com</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_9fda44ad.gif" name="Shape28" alt="Shape28" align="left" hspace="13" vspace="1" width="82" height="18"/>
+
+<span id="Frame14" dir="ltr" style="float: left; width: 2.17cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.2pt">+
+	2521 564 558</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_b239df88.gif" name="Shape31" alt="Shape31" align="left" hspace="13" vspace="1" width="82" height="14"/>
+
+<span id="Frame15" dir="ltr" style="float: left; width: 2.17cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.2pt">+
+	1234 567 889</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_45d57ebb.gif" name="Shape34" alt="Shape34" align="left" hspace="12" vspace="1" width="129" height="16"/>
+
+<span id="Frame16" dir="ltr" style="float: left; width: 3.41cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.2pt">kevinsmith123@mail.com</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_8c39d019.gif" name="Shape36" alt="Shape36" align="left" hspace="13" vspace="1" width="272" height="17"/>
+
+<span id="Frame17" dir="ltr" style="float: left; width: 7.2cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.2pt">Home
+	Address, Road # 45 City Town, Country # 5566</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_15dbd0f5.gif" name="Shape41" alt="Shape41" align="left" hspace="12" vspace="1" width="112" height="19"/>
+
+<span id="Frame18" dir="ltr" style="float: left; width: 2.97cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#414042"><font face="Lato Black, sans-serif"><font size="3" style="font-size: 13pt"><span style="letter-spacing: 0.7pt"><b>STATEMENT</b></span></font></font></font></font></p>
+</span>
+<img src="template-042_html_301d77d1.gif" name="Shape42" alt="Shape42" align="left" hspace="13" vspace="1" width="180" height="16"/>
+
+<span id="Frame19" dir="ltr" style="float: left; width: 4.77cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><b>Web
+	developer, Design mate LTD</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_27fd7317.gif" name="Shape43" alt="Shape43" align="left" hspace="13" vspace="1" width="169" height="16"/>
+
+<span id="Frame20" dir="ltr" style="float: left; width: 4.47cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><b>Phone:</b></font></font></font><font color="#ffffff">
+	</font><font color="#dcddde"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">+123
+	5556 4455</font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<img src="template-042_html_1ce96a9a.gif" name="Shape44" alt="Shape44" align="left" hspace="13" vspace="1" width="89" height="13"/>
+
+<span id="Frame21" dir="ltr" style="float: left; width: 2.34cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 9pt"><b>JENSON
+	SMITH</b></font></font></font></font></p>
+	<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+	</p>
+</span>
+<img src="template-042_html_135abf27.gif" name="Shape45" alt="Shape45" align="left" hspace="12" vspace="1" width="161" height="16"/>
+
+<span id="Frame22" dir="ltr" style="float: left; width: 4.27cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><b>Director,
+	Matrix media limited</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_7f954147.gif" name="Shape46" alt="Shape46" align="left" hspace="13" vspace="1" width="103" height="14"/>
+
+<span id="Frame23" dir="ltr" style="float: left; width: 2.72cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Black, sans-serif"><font size="2" style="font-size: 9pt"><b>MD
+	DUSTIN PAUL</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_3b82887c.gif" name="Shape61" alt="Shape61" align="left" hspace="12" vspace="1" width="56" height="16"/>
+
+<span id="Frame24" dir="ltr" style="float: left; width: 1.48cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#e6e7e8"><font face="Lato Semibold, sans-serif"><font size="1" style="font-size: 8pt">wordpress</font></font></font></font></p>
+</span>
+<img src="template-042_html_d893ec44.gif" name="Shape62" alt="Shape62" align="left" hspace="12" vspace="1" width="36" height="14"/>
+
+<span id="Frame25" dir="ltr" style="float: left; width: 0.95cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#e6e7e8"><font face="Lato Semibold, sans-serif"><font size="1" style="font-size: 8pt">joomla</font></font></font></font></p>
+</span>
+<img src="template-042_html_fe27bbaa.gif" name="Shape63" alt="Shape63" align="left" hspace="12" vspace="1" width="51" height="12"/>
+
+<span id="Frame26" dir="ltr" style="float: left; width: 1.36cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#e6e7e8"><font face="Lato Semibold, sans-serif"><font size="1" style="font-size: 8pt">illustrator</font></font></font></font></p>
+</span>
+<img src="template-042_html_f408ac78.gif" name="Shape64" alt="Shape64" align="left" hspace="12" vspace="1" width="57" height="14"/>
+
+<span id="Frame27" dir="ltr" style="float: left; width: 1.52cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#e6e7e8"><font face="Lato Semibold, sans-serif"><font size="1" style="font-size: 8pt">photoshop</font></font></font></font></p>
+</span>
+<img src="template-042_html_289a98e1.gif" name="Shape65" alt="Shape65" align="left" hspace="12" vspace="1" width="34" height="13"/>
+
+<span id="Frame28" dir="ltr" style="float: left; width: 0.9cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#e6e7e8"><font face="Lato Semibold, sans-serif"><font size="1" style="font-size: 8pt">html</font></font></font><font color="#e6e7e8"><font face="Lato Semibold, sans-serif"><font size="1" style="font-size: 8pt"><b>
+	5</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_4b3819cf.gif" name="Shape66" alt="Shape66" align="left" hspace="12" vspace="1" width="43" height="13"/>
+
+<span id="Frame29" dir="ltr" style="float: left; width: 1.14cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Heavy, sans-serif"><font size="2" style="font-size: 9pt"><b>Dribble:</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_8270b16f.gif" name="Shape67" alt="Shape67" align="left" hspace="12" vspace="1" width="49" height="16"/>
+
+<span id="Frame30" dir="ltr" style="float: left; width: 1.3cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Heavy, sans-serif"><font size="2" style="font-size: 9pt"><b>Linkedin:</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_a8f001ee.gif" name="Shape68" alt="Shape68" align="left" hspace="13" vspace="1" width="119" height="17"/>
+
+<span id="Frame31" dir="ltr" style="float: left; width: 3.14cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#dcddde"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">dribble.com/username</font></font></font></font></p>
+</span>
+<img src="template-042_html_cd8166c5.gif" name="Shape69" alt="Shape69" align="left" hspace="12" vspace="1" width="123" height="15"/>
+
+<span id="Frame32" dir="ltr" style="float: left; width: 3.26cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#dcddde"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">linkedin.com/username</font></font></font></font></p>
+</span>
+<img src="template-042_html_93fd52ac.gif" name="Shape70" alt="Shape70" align="left" hspace="12" vspace="1" width="56" height="13"/>
+
+<span id="Frame33" dir="ltr" style="float: left; width: 1.47cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Heavy, sans-serif"><font size="2" style="font-size: 9pt"><b>Facebook:</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_5ccca404.gif" name="Shape71" alt="Shape71" align="left" hspace="13" vspace="1" width="131" height="15"/>
+
+<span id="Frame34" dir="ltr" style="float: left; width: 3.46cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#dcddde"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">facebook.com/username</font></font></font></font></p>
+</span>
+<img src="template-042_html_cb7b98a6.gif" name="Shape72" alt="Shape72" align="left" hspace="12" vspace="1" width="50" height="16"/>
+
+<span id="Frame35" dir="ltr" style="float: left; width: 1.31cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Heavy, sans-serif"><font size="2" style="font-size: 9pt"><b>Behance:</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_578f76b8.gif" name="Shape74" alt="Shape74" align="left" hspace="12" vspace="1" width="122" height="15"/>
+
+<span id="Frame36" dir="ltr" style="float: left; width: 3.22cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#dcddde"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">behance.net/username</font></font></font></font></p>
+</span>
+<img src="template-042_html_299670ad.gif" name="Shape77" alt="Shape77" align="left" hspace="13" vspace="1" width="181" height="20"/>
+
+<span id="Frame37" dir="ltr" style="float: left; width: 4.79cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Semibold, sans-serif"><font size="3" style="font-size: 12pt"><b>Web
+	Design &amp; Developer</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_2e96403d.gif" name="Shape78" alt="Shape78" align="left" hspace="12" vspace="1" width="302" height="34"/>
+
+<span id="Frame38" dir="ltr" style="float: left; width: 7.99cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#feffff"><font face="Lato Black, sans-serif"><font size="6" style="font-size: 22pt"><span style="letter-spacing: 1.6pt"><b>WILLIAM
+	KLEIMAN</b></span></font></font></font></font></p>
+</span>
+<img src="template-042_html_b13ab15.gif" name="Shape79" alt="Shape79" align="left" hspace="13" vspace="1" width="463" height="70"/>
+
+<span id="Frame39" dir="ltr" style="float: left; width: 12.25cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.46cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#7e8185"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">My
+	Name Is Morrison Jamie lorem empus id fringilla molestie ornare diam
+	in olestie ipsum etium rosn ollicitudin est, porttitor amet hitmassa
+	Done cporttitor dolor shit dolor kiren lorem nisl molestie pretium
+	etfring. is the shitp lorem ipcum retiumci amet is tudinest.moles
+	tium lorem olestie pretium apaza all the rosen.  fringilla lorem
+	ipsum .</font></font></font></font></p>
+</span>
+<img src="template-042_html_ece870e7.gif" name="Shape80" alt="Shape80" align="left" hspace="12" vspace="1" width="311" height="51"/>
+
+<span id="Frame40" dir="ltr" style="float: left; width: 8.24cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#7e8185"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Porttitor
+	amet massa Done cporttitor dolor et nisl molestie ium feliscon lore 
+	ipsum dolor tfringilla. lorem lorem ipsum. ollcitudin est dolor
+	time.</font></font></font></font></p>
+</span>
+<img src="template-042_html_ece870e7.gif" name="Shape81" alt="Shape81" align="left" hspace="12" vspace="1" width="311" height="51"/>
+
+<span id="Frame41" dir="ltr" style="float: left; width: 8.24cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#7e8185"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Porttitor
+	amet massa Done cporttitor dolor et nisl molestie ium feliscon lore 
+	ipsum dolor tfringilla. lorem lorem ipsum. ollcitudin est dolor
+	time. Done cporttitor</font></font></font></font></p>
+</span>
+<img src="template-042_html_ece870e7.gif" name="Shape82" alt="Shape82" align="left" hspace="12" vspace="1" width="311" height="51"/>
+
+<span id="Frame42" dir="ltr" style="float: left; width: 8.24cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 0.42cm; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#7e8185"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">Porttitor
+	amet massa Done cporttitor dolor et nisl molestie ium feliscon lore 
+	ipsum dolor tfringilla. lorem lorem ipsum. ollcitudin est dolor
+	time. Done cporttitor</font></font></font></font></p>
+</span>
+<img src="template-042_html_271dde9a.gif" name="Shape83" alt="Shape83" align="left" hspace="12" vspace="1" width="160" height="16"/>
+
+<span id="Frame43" dir="ltr" style="float: left; width: 4.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.1pt"><b>Email:</b></span></font></font></font><font color="#ffffff"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.1pt">
+	</span></font></font></font><font color="#dcddde"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.1pt">jenson
+	smith@gmail.com</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_271dde9a.gif" name="Shape84" alt="Shape84" align="left" hspace="12" vspace="1" width="160" height="16"/>
+
+<span id="Frame44" dir="ltr" style="float: left; width: 4.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.1pt"><b>Email:</b></span></font></font></font><font color="#ffffff"><font face="Lato, sans-serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.1pt">
+	</span></font></font></font><font color="#dcddde"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.1pt">dustinpaul@gmail.com</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_96678946.gif" name="Shape85" alt="Shape85" align="left" hspace="13" vspace="1" width="67" height="17"/>
+
+<span id="Frame45" dir="ltr" style="float: left; width: 1.77cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><b>Music</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_40f72e44.gif" name="Shape86" alt="Shape86" align="left" hspace="12" vspace="1" width="73" height="17"/>
+
+<span id="Frame46" dir="ltr" style="float: left; width: 1.94cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><b>Swimming</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_40f72e44.gif" name="Shape87" alt="Shape87" align="left" hspace="12" vspace="1" width="73" height="17"/>
+
+<span id="Frame47" dir="ltr" style="float: left; width: 1.94cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><b>Bowling
+	pins</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_40f72e44.gif" name="Shape88" alt="Shape88" align="left" hspace="12" vspace="1" width="73" height="17"/>
+
+<span id="Frame48" dir="ltr" style="float: left; width: 1.94cm; border: none; padding: 0cm; background: #ffffff"><p align="center" style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><b>Photography</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_c83c1a1f.gif" name="Shape89" alt="Shape89" align="left" hspace="12" width="141" height="18"/>
+
+<span id="Frame49" dir="ltr" style="float: left; width: 3.74cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt"><b>Lead
+	 Web Designer</b></span></font></font></font></font></p>
+</span>
+<img src="template-042_html_c83c1a1f.gif" name="Shape90" alt="Shape90" align="left" hspace="12" width="141" height="18"/>
+
+<span id="Frame50" dir="ltr" style="float: left; width: 3.74cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt"><b>Senior
+	</b></span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt"><b>Web</b></span></font></font></font><font color="#6b6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt"><b>
+	</b></span></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: 0.1pt"><b>Designer</b></span></font></font></font></font></p>
+</span>
+<img src="template-042_html_e256f707.gif" name="Shape91" alt="Shape91" align="left" hspace="13" vspace="1" width="115" height="14"/>
+
+<span id="Frame51" dir="ltr" style="float: left; width: 3.04cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">2013
+	- 2015</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_c83c1a1f.gif" name="Shape92" alt="Shape92" align="left" hspace="12" width="141" height="18"/>
+
+<span id="Frame52" dir="ltr" style="float: left; width: 3.74cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Lead
+	</b></font></font></font><font color="#6d6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Web</b></font></font></font><font color="#6b6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>
+	Designer</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_e256f707.gif" name="Shape93" alt="Shape93" align="left" hspace="13" vspace="1" width="115" height="14"/>
+
+<span id="Frame53" dir="ltr" style="float: left; width: 3.04cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">2010
+	- 2013</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_e256f707.gif" name="Shape94" alt="Shape94" align="left" hspace="13" vspace="1" width="115" height="14"/>
+
+<span id="Frame54" dir="ltr" style="float: left; width: 3.04cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">2007
+	- 2009</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_8f986756.gif" name="Shape95" alt="Shape95" align="left" hspace="12" width="141" height="16"/>
+
+<span id="Frame55" dir="ltr" style="float: left; width: 3.74cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>University
+	of Lorem</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_e256f707.gif" name="Shape96" alt="Shape96" align="left" hspace="13" vspace="1" width="115" height="14"/>
+
+<span id="Frame56" dir="ltr" style="float: left; width: 3.04cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">2007
+	- 2009</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_e256f707.gif" name="Shape97" alt="Shape97" align="left" hspace="13" vspace="1" width="115" height="14"/>
+
+<span id="Frame57" dir="ltr" style="float: left; width: 3.04cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">2010
+	- 2013</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_e256f707.gif" name="Shape98" alt="Shape98" align="left" hspace="13" vspace="1" width="115" height="14"/>
+
+<span id="Frame58" dir="ltr" style="float: left; width: 3.04cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6d6e71"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><span style="letter-spacing: 0.7pt">2007
+	- 2009</span></font></font></font></font></p>
+</span>
+<img src="template-042_html_8f986756.gif" name="Shape99" alt="Shape99" align="left" hspace="12" width="141" height="16"/>
+
+<span id="Frame59" dir="ltr" style="float: left; width: 3.74cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Name
+	of university</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_c5702cd4.gif" name="Shape100" alt="Shape100" align="left" hspace="13" width="137" height="16"/>
+
+<span id="Frame60" dir="ltr" style="float: left; width: 3.62cm; border: none; padding: 0cm; background: #ffffff"><p style="text-align: end; line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#6b6e71"><font face="Lato, sans-serif"><font size="2" style="font-size: 10pt"><b>Name
+	of university</b></font></font></font></font></p>
+</span>
+<img src="template-042_html_31ba89e2.gif" name="Shape76" alt="Shape76" align="left" hspace="12" width="418" height="83"/>
+
+<img src="template-042_html_ef879ff.gif" name="Shape75" alt="Shape75" align="left" hspace="12" width="22" height="3"/>
+
+<img src="template-042_html_6f053172.gif" name="Shape73" alt="Shape73" align="left" hspace="12" vspace="1" width="191" height="1"/>
+
+<img src="template-042_html_ea25c749.gif" name="Shape60" alt="Shape60" align="left" hspace="12" width="168" height="7"/>
+
+<img src="template-042_html_ea25c749.gif" name="Shape59" alt="Shape59" align="left" hspace="12" width="168" height="7"/>
+
+<img src="template-042_html_533ac30b.gif" name="Shape58" alt="Shape58" align="left" hspace="12" width="189" height="7"/>
+
+<img src="template-042_html_533ac30b.gif" name="Shape57" alt="Shape57" align="left" hspace="12" width="189" height="7"/>
+
+<img src="template-042_html_ea25c749.gif" name="Shape56" alt="Shape56" align="left" hspace="12" width="168" height="7"/>
+
+<img src="template-042_html_533ac30b.gif" name="Shape55" alt="Shape55" align="left" hspace="12" width="189" height="7"/>
+
+<img src="template-042_html_ea25c749.gif" name="Shape54" alt="Shape54" align="left" hspace="12" vspace="1" width="168" height="7"/>
+
+<img src="template-042_html_533ac30b.gif" name="Shape53" alt="Shape53" align="left" hspace="12" width="189" height="7"/>
+
+<img src="template-042_html_ea25c749.gif" name="Shape52" alt="Shape52" align="left" hspace="12" width="168" height="7"/>
+
+<img src="template-042_html_533ac30b.gif" name="Shape51" alt="Shape51" align="left" hspace="12" width="189" height="7"/>
+
+<img src="template-042_html_ef879ff.gif" name="Shape50" alt="Shape50" align="left" hspace="12" width="22" height="3"/>
+
+<img src="template-042_html_6f053172.gif" name="Shape49" alt="Shape49" align="left" hspace="12" vspace="1" width="191" height="1"/>
+
+<img src="template-042_html_ef879ff.gif" name="Shape48" alt="Shape48" align="left" hspace="12" width="22" height="3"/>
+
+<img src="template-042_html_6f053172.gif" name="Shape47" alt="Shape47" align="left" hspace="12" vspace="1" width="191" height="1"/>
+
+<img src="template-042_html_ef879ff.gif" name="Shape40" alt="Shape40" align="left" hspace="12" width="22" height="3"/>
+
+<img src="template-042_html_ea2b3c8f.gif" name="Shape39" alt="Shape39" align="left" hspace="12" vspace="1" width="456" height="1"/>
+
+<img src="template-042_html_46603aff.gif" name="Shape38" alt="Shape38" align="left" hspace="12" width="11" height="17"/>
+
+<img src="template-042_html_1f397e7f.gif" name="Shape37" alt="Shape37" align="left" hspace="12" width="20" height="21"/>
+
+<img src="template-042_html_6442a1d6.gif" name="Shape35" alt="Shape35" align="left" hspace="12" width="14" height="10"/>
+
+<img src="template-042_html_1f397e7f.gif" name="Shape33" alt="Shape33" align="left" hspace="12" width="20" height="21"/>
+
+<img src="template-042_html_fc540a30.gif" name="Shape32" alt="Shape32" align="left" hspace="12" width="14" height="14"/>
+
+<img src="template-042_html_1f397e7f.gif" name="Shape30" alt="Shape30" align="left" hspace="12" width="20" height="21"/>
+
+<img src="template-042_html_8ed16708.gif" name="Shape29" alt="Shape29" align="left" hspace="12" width="15" height="12"/>
+
+<img src="template-042_html_1f397e7f.gif" name="Shape27" alt="Shape27" align="left" hspace="12" width="20" height="21"/>
+
+<img src="template-042_html_be7dffa8.gif" name="Shape26" alt="Shape26" align="left" hspace="12" width="14" height="14"/>
+
+<img src="template-042_html_1f397e7f.gif" name="Shape23" alt="Shape23" align="left" hspace="12" width="20" height="21"/>
+
+<img src="template-042_html_ef879ff.gif" name="Shape21" alt="Shape21" align="left" hspace="12" width="22" height="3"/>
+
+<img src="template-042_html_ea2b3c8f.gif" name="Shape20" alt="Shape20" align="left" hspace="12" vspace="1" width="456" height="1"/>
+
+<img src="template-042_html_ef879ff.gif" name="Shape16" alt="Shape16" align="left" hspace="12" width="22" height="3"/>
+
+<img src="template-042_html_ea2b3c8f.gif" name="Shape15" alt="Shape15" align="left" hspace="12" vspace="1" width="456" height="1"/>
+
+<img src="template-042_html_ef879ff.gif" name="Shape11" alt="Shape11" align="left" hspace="12" width="22" height="3"/>
+
+<img src="template-042_html_ea2b3c8f.gif" name="Shape10" alt="Shape10" align="left" hspace="12" vspace="1" width="456" height="1"/>
+
+<img src="template-042_html_b0785282.gif" name="Shape8" alt="Shape8" align="left" hspace="12" width="23" height="20"/>
+
+<img src="template-042_html_f30db67a.gif" name="Shape7" alt="Shape7" align="left" hspace="12" vspace="1" width="26" height="24"/>
+
+<img src="template-042_html_9d163543.gif" name="Shape6" alt="Shape6" align="left" hspace="12" width="26" height="24"/>
+
+<img src="template-042_html_de2ce5d0.gif" name="Shape5" alt="Shape5" align="left" hspace="12" width="33" height="20"/>
+
+<img src="template-042_html_42f99811.gif" name="Shape4" alt="Shape4" align="left" hspace="12" width="24" height="24"/>
+<br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><img src="template-042_html_9a4d895d.gif" name="Shape105" alt="Shape105" align="left" hspace="13" vspace="1" width="122" height="20"/>
+<span id="Frame63" dir="ltr" style="float: left; width: 3.23cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Black, sans-serif"><font size="3" style="font-size: 13pt"><b>FOLLOW
+	ME</b></font></font></font></font></p>
+</span><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><img src="template-042_html_64f1097.gif" name="Shape106" alt="Shape106" align="left" hspace="12" vspace="1" width="81" height="19"/>
+<span id="Frame64" dir="ltr" style="float: left; width: 2.15cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Black, sans-serif"><font size="3" style="font-size: 13pt"><b>SKILLS</b></font></font></font></font></p>
+</span><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><img src="template-042_html_c35fea36.gif" name="Shape107" alt="Shape107" align="left" hspace="13" width="119" height="20"/>
+<span id="Frame65" dir="ltr" style="float: left; width: 3.14cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#ffffff"><font face="Lato Black, sans-serif"><font size="3" style="font-size: 13pt"><b>REFERENCE</b></font></font></font></font></p>
+</span><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><img src="template-042_html_27fd7317.gif" name="Shape108" alt="Shape108" align="left" hspace="13" vspace="1" width="169" height="16"/>
+<span id="Frame66" dir="ltr" style="float: left; width: 4.47cm; border: none; padding: 0cm; background: #ffffff"><p style="line-height: 108%; margin-bottom: 0.28cm">
+	<font face="Calibri, serif"><font color="#dcddde"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt"><b>Phone:</b></font></font></font><font color="#dcddde"><font face="Lato, sans-serif"><font size="1" style="font-size: 8pt">
+	+555 123 5566</font></font></font></font></p>
+</span><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+<p style="line-height: 108%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+</body>
+</html>
