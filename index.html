@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://resume-now.online/assets/template-previews/template-001.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>Free Resume Builder — Edit Online | ResumeNowOnline</title>
-    <link rel="stylesheet" href="styles.css?v=40" />
+    <link rel="stylesheet" href="styles.css?v=41" />
     <link rel="manifest" href="site.webmanifest" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ResumeNowOnline Free Resume Builder","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://resume-now.online/","description":"Build and edit a resume online for free using 105 professional templates.","offers":[{"@type":"Offer","name":"Online resume editing","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Three PDF downloads","price":"5","priceCurrency":"USD"}],"publisher":{"@type":"Organization","name":"ResumeNowOnline","url":"https://resume-now.online/","logo":"https://resume-now.online/assets/brand/resume-now-mark-v2-512.png"}}</script>
     <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-v2-32.png" />    <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon-v2.png" />  </head>
@@ -29,59 +29,127 @@
         <a class="button button--primary button--small nav-action" href="builder.html">Edit for free</a>
       </header>
 
-      <main>
-        <section class="hero-home">
-          <span class="free-eyebrow animate-in">Free to edit · 3 downloads for $5</span>
-          <h1 class="animate-in">Build your resume online for free.</h1>
-          <p class="animate-in animate-delay-1">Choose from 105 professional resume templates and edit every detail for free. Get three PDF downloads for one $5 payment—no subscription.</p>
-          <div class="hero-actions animate-in animate-delay-2">
-            <a class="button button--primary" href="resume-templates/">Explore templates</a>
-            <a class="button button--outline" href="builder.html">Edit for free</a>
+      <main class="home-main">
+        <section class="home-hero-v2 container">
+          <div class="home-hero-copy">
+            <span class="home-kicker animate-in"><i></i>Free to create and edit</span>
+            <h1 class="animate-in animate-delay-1">A better resume,<br /><em>without the busywork.</em></h1>
+            <p class="animate-in animate-delay-2">Choose a professionally designed template, edit the complete resume in your browser, and pay only when you are ready to download.</p>
+            <div class="home-hero-actions animate-in animate-delay-3">
+              <a class="button button--primary home-primary-cta" href="resume-templates/">Choose a free template <span>→</span></a>
+              <a class="home-demo-link" href="#editor-preview"><span class="play-dot">▶</span> See how the editor works</a>
+            </div>
+            <div class="home-hero-facts animate-in animate-delay-3" aria-label="Pricing summary">
+              <span><strong>105</strong> original templates</span>
+              <span><strong>$0</strong> to edit and preview</span>
+              <span><strong>$5</strong> for 3 PDF downloads</span>
+            </div>
           </div>
 
-          <div class="resume-stage animate-in animate-delay-3" aria-label="Featured resume templates">
-            <a class="floating-resume floating-resume--left" href="template-detail.html?template=strategist&color=black"><img src="(118)/黑色/flat resume A4.jpg" alt="Black resume template" /></a>
-            <a class="floating-resume" href="template-detail.html?template=operator&color=blue"><img src="(118)/蓝色/flat resume A4.jpg" alt="Blue resume template" /></a>
-            <a class="floating-resume floating-resume--right" href="template-detail.html?template=consultant&color=cyan"><img src="(118)/青色/flat resume A4.jpg" alt="Cyan resume template" /></a>
+          <div class="home-hero-gallery animate-in animate-delay-2" aria-label="Resume template preview">
+            <div class="hero-gallery-glow"></div>
+            <a class="hero-paper hero-paper--back" href="resume-templates/modern-timeline-resume-template/"><img src="assets/template-previews/template-007.jpg" alt="Modern Timeline resume template" /></a>
+            <a class="hero-paper hero-paper--side" href="resume-templates/elegant-two-column-resume-template/"><img src="assets/template-previews/template-008.jpg" alt="Elegant Two-Column resume template" /></a>
+            <a class="hero-paper hero-paper--front" href="resume-templates/clean-business-resume-template/"><img src="assets/template-previews/template-004.jpg" alt="Clean Business resume template" /></a>
+            <div class="hero-edit-pill"><span class="hero-cursor">↖</span><div><strong>Click to edit</strong><small>Directly on the resume</small></div></div>
+            <div class="hero-price-pill"><span>PDF</span><strong>3 downloads · $5</strong></div>
           </div>
         </section>
 
-        <section class="format-strip" id="how-it-works" aria-label="Template benefits">
-          <div class="format-item"><svg class="icon" viewBox="0 0 24 24"><path d="M5 2h10l4 4v16H5z"/><path d="M15 2v5h5M8 11h8M8 15h8M8 19h5"/></svg><span>Print-ready PDF export</span></div>
-          <div class="format-item"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg><span>ATS-friendly</span></div>
-          <div class="format-item"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6z"/><path d="M15 2v4h4"/></svg><span>Free to edit</span></div>
+        <section class="home-proof container" aria-label="Product benefits">
+          <div><svg class="icon" viewBox="0 0 24 24"><path d="M4 20V4h16v16zM8 8h8M8 12h8M8 16h5"/></svg><span><strong>Edit the whole resume</strong><small>Text, images and supported elements</small></span></div>
+          <div><svg class="icon" viewBox="0 0 24 24"><path d="M5 2h10l4 4v16H5zM15 2v5h5"/></svg><span><strong>Keep every template page</strong><small>One page, two pages, or more</small></span></div>
+          <div><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18M17 7.5c0-1.7-2-3-5-3s-5 1.3-5 3 2 3 5 3 5 1.3 5 3-2 3-5 3-5-1.3-5-3"/></svg><span><strong>No surprise subscription</strong><small>One transparent $5 purchase</small></span></div>
         </section>
 
-        <section class="home-templates container">
-          <div class="section-row">
-            <h2>Find your format.</h2>
-            <div class="carousel-controls"><button class="round-control" aria-label="Previous templates">‹</button><button class="round-control" aria-label="Next templates">›</button></div>
+        <section class="home-template-section container">
+          <div class="home-section-head">
+            <div><span class="home-kicker">Start with a design</span><h2>Find a resume that<br />feels like you.</h2></div>
+            <div class="home-section-intro"><p>From restrained business layouts to expressive portfolio resumes, every design opens as the real template in the editor.</p><a href="resume-templates/">Browse all 105 templates →</a></div>
           </div>
+          <nav class="home-category-links" aria-label="Resume template categories">
+            <a href="resume-templates/ats/">ATS-friendly</a><a href="resume-templates/professional/">Professional</a><a href="resume-templates/minimal/">Minimal</a><a href="resume-templates/modern/">Modern</a><a href="resume-templates/creative/">Creative</a><a href="resume-templates/executive/">Executive</a>
+          </nav>
           <div class="home-card-grid" id="featuredTemplateGrid">
-            <article class="template-card">
-              <a class="template-thumb" href="template-detail.html?template=strategist&color=black"><img src="(118)/黑色/flat resume A4.jpg" alt="The Strategist template" /></a>
-              <div class="template-meta"><div><h3>The Strategist</h3><p>Edit template →</p></div><button class="heart" aria-label="Save The Strategist"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button><span>Edit free</span></div>
-            </article>
-            <article class="template-card">
-              <a class="template-thumb" href="template-detail.html?template=operator&color=blue"><img src="(118)/蓝色/flat resume A4.jpg" alt="The Operator template" /></a>
-              <div class="template-meta"><div><h3>The Operator</h3><p>Edit template →</p></div><button class="heart" aria-label="Save The Operator"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button><span>Edit free</span></div>
-            </article>
-            <article class="template-card">
-              <a class="template-thumb" href="template-detail.html?template=storyteller&color=green"><img src="(118)/绿色/flat resume A4.jpg" alt="The Storyteller template" /></a>
-              <div class="template-meta"><div><h3>The Storyteller</h3><p>Edit template →</p></div><button class="heart" aria-label="Save The Storyteller"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button><span>Edit free</span></div>
-            </article>
-            <article class="template-card">
-              <a class="template-thumb" href="template-detail.html?template=consultant&color=cyan"><img src="(118)/青色/flat resume A4.jpg" alt="The Consultant template" /></a>
-              <div class="template-meta"><div><h3>The Consultant</h3><p>Edit template →</p></div><button class="heart" aria-label="Save The Consultant"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button><span>Edit free</span></div>
-            </article>
+            <article class="template-card"><a class="template-thumb" href="resume-templates/heritage-executive-resume-template/"><img src="assets/template-previews/template-001.jpg" alt="Heritage Executive Resume Template" /></a><div class="template-meta"><div><h3>Heritage Executive</h3><p>Executive format</p></div><span>Edit free</span></div></article>
+            <article class="template-card"><a class="template-thumb" href="resume-templates/editorial-photographer-resume-template/"><img src="assets/template-previews/template-002.jpg" alt="Editorial Photographer Resume Template" /></a><div class="template-meta"><div><h3>Editorial Photographer</h3><p>Creative format</p></div><span>Edit free</span></div></article>
+            <article class="template-card"><a class="template-thumb" href="resume-templates/contemporary-profile-resume-template/"><img src="assets/template-previews/template-003.jpg" alt="Contemporary Profile Resume Template" /></a><div class="template-meta"><div><h3>Contemporary Profile</h3><p>Professional format</p></div><span>Edit free</span></div></article>
+            <article class="template-card"><a class="template-thumb" href="resume-templates/clean-business-resume-template/"><img src="assets/template-previews/template-004.jpg" alt="Clean Business Resume Template" /></a><div class="template-meta"><div><h3>Clean Business</h3><p>Minimal format</p></div><span>Edit free</span></div></article>
           </div>
+        </section>
+
+        <section class="home-editor-story" id="editor-preview">
+          <div class="container home-editor-inner">
+            <div class="home-editor-copy">
+              <span class="home-kicker home-kicker--light">Built for direct editing</span>
+              <h2>Your resume stays<br />your resume.</h2>
+              <p>We do not reduce a template to a few colors. The editor loads the complete original design and lets you work directly on its pages.</p>
+              <ul>
+                <li><i>01</i><span><strong>Select what you want to change</strong>Click text or a supported visual element on the resume.</span></li>
+                <li><i>02</i><span><strong>Edit with context</strong>The relevant controls appear beside the selected element.</span></li>
+                <li><i>03</i><span><strong>Review every page</strong>All pages remain visible in one continuous workspace.</span></li>
+              </ul>
+              <a class="button button--light" href="builder.html?template=template-004">Try the editor free</a>
+            </div>
+            <div class="editor-window" aria-label="Resume editor interface preview">
+              <div class="editor-window-bar"><div><i></i><i></i><i></i></div><span>Clean Business · Editor</span><small>Saved</small></div>
+              <div class="editor-window-body">
+                <div class="editor-canvas-preview"><img src="assets/template-previews/template-004.jpg" alt="Resume inside the online editor" /><span class="editor-selection"><b>WORK EXPERIENCE</b><em></em></span></div>
+                <aside class="editor-tools-preview"><span>TEXT</span><h3>Work Experience</h3><label>Font size<div>12 <small>pt</small></div></label><label>Alignment<div class="align-icons">≡ &nbsp; ≣ &nbsp; ≡</div></label><label>Spacing<div class="mock-slider"><i></i></div></label><button>Done</button></aside>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-steps container" id="how-it-works">
+          <div class="home-section-head home-section-head--center"><div><span class="home-kicker">Three simple steps</span><h2>From template to finished resume.</h2></div><p>No setup fee, no subscription decision, and no payment wall while you are still editing.</p></div>
+          <div class="home-step-grid">
+            <article><span>1</span><div class="step-visual step-visual--templates"><i></i><i></i><i></i></div><h3>Choose your template</h3><p>Browse 105 real resume designs and preview every included page.</p></article>
+            <article><span>2</span><div class="step-visual step-visual--edit"><i>Aa</i><b>jonathon Smith</b><em>✦</em></div><h3>Edit directly online</h3><p>Replace sample content, upload a photo where supported, and refine the layout.</p></article>
+            <article><span>3</span><div class="step-visual step-visual--download"><i>PDF</i><b>↓</b><small>3 remaining</small></div><h3>Download when ready</h3><p>Pay $5 once and receive three PDF download credits in your account.</p></article>
+          </div>
+        </section>
+
+        <section class="home-feature-mosaic container">
+          <article class="feature-panel feature-panel--large"><div><span class="home-kicker">Flexible by design</span><h2>A library, not a single look.</h2><p>Minimal, executive, modern, creative, photo-led, one-page and multi-page designs—all built from the original template collection.</p><a href="resume-templates/">Explore the library →</a></div><div class="feature-stack"><img src="assets/template-previews/template-009.jpg" alt="Creative Director resume template" /><img src="assets/template-previews/template-010.jpg" alt="Minimal Corporate resume template" /></div></article>
+          <article class="feature-panel feature-panel--price"><span class="home-kicker home-kicker--light">Simple pricing</span><p class="price-zero">$0</p><h3>to build, edit, and preview</h3><div class="price-divider"><span>When you are ready</span></div><p class="price-five">$5 <small>for 3 PDF downloads</small></p><a href="pricing.html">See pricing details →</a></article>
+          <article class="feature-panel feature-panel--promise"><span class="promise-icon">↻</span><h3>No subscription loop.</h3><p>Your download purchase is a one-time payment. We do not turn a resume export into a recurring plan.</p><a href="product.html">What the pack includes →</a></article>
+        </section>
+
+        <section class="home-guides container">
+          <div class="home-section-head">
+            <div><span class="home-kicker">Write with more confidence</span><h2>Good design needs<br />good content.</h2></div>
+            <div class="home-section-intro"><p>Use our practical guides and job-specific examples to decide what belongs on the page.</p><a href="career-advice/">View all career advice →</a></div>
+          </div>
+          <div class="home-guide-grid">
+            <a href="career-advice/how-to-write-a-resume/"><span>Complete guide · 8 min</span><h3>How to write a resume in 2026</h3><p>Seven practical steps from job description to final proofread.</p><i>01</i></a>
+            <a href="career-advice/ats-friendly-resume/"><span>Resume format · 6 min</span><h3>Make your resume easier to parse</h3><p>Clear headings, readable structure, useful keywords, and honest limits.</p><i>02</i></a>
+            <a href="resume-examples/"><span>15 career paths</span><h3>Resume examples by job title</h3><p>Role-specific skills, structure guidance, and stronger bullet patterns.</p><i>03</i></a>
+          </div>
+        </section>
+
+        <section class="home-faq container">
+          <div class="home-faq-title"><span class="home-kicker">Before you begin</span><h2>Questions,<br />answered.</h2><p>Everything important about editing, templates, and downloads.</p></div>
+          <div class="home-faq-list">
+            <details open><summary>Is the resume builder really free to use?<span>+</span></summary><p>Yes. Choosing a template, editing the complete resume, and previewing your work are free. Payment is required only when you want to download the finished PDF.</p></details>
+            <details><summary>What do I receive for $5?<span>+</span></summary><p>One purchase adds three PDF download credits to your account. It is not a subscription and does not renew automatically.</p></details>
+            <details><summary>Will the editor use the actual template?<span>+</span></summary><p>Yes. The editor opens the selected template with all available pages and its original visual layout—not just a matching theme color.</p></details>
+            <details><summary>Can I upload a profile photo?<span>+</span></summary><p>Photo upload is available when the selected template contains a supported photo element. You can also adjust its crop and position.</p></details>
+            <details><summary>Which file format can I download?<span>+</span></summary><p>The current download product is a print-ready PDF. We do not currently advertise Word or Google Docs export.</p></details>
+          </div>
+        </section>
+
+        <section class="home-final-cta container">
+          <div><span>105 templates. Free to edit.</span><h2>Your next resume<br />starts here.</h2><p>Pick a design now. Pay only when the PDF is ready.</p><a class="button button--light" href="resume-templates/">Choose my template <b>→</b></a></div>
+          <div class="final-cta-papers"><img src="assets/template-previews/template-012.jpg" alt="Professional blue resume template" /><img src="assets/template-previews/template-013.jpg" alt="Classic executive resume template" /></div>
         </section>
       </main>
 
       <footer class="site-footer">
-        <div class="container footer-main">
+        <div class="container footer-main home-footer-main">
           <div class="footer-brand"><a class="brand" href="index.html"><img class="brand-icon" src="assets/brand/resume-now-mark-v2-64.png" alt="" width="25" height="25" />ResumeNowOnline</a><p>Edit your résumé for free. Pay once when you are ready to download.</p><a href="mailto:support@resume-now.online">support@resume-now.online</a></div>
           <div class="footer-column"><strong>Product</strong><a href="templates.html">Templates</a><a href="builder.html">Free editor</a><a href="product.html">Resume Export Pack</a><a href="pricing.html">Pricing</a></div>
+          <div class="footer-column"><strong>Resources</strong><a href="career-advice/">Career advice</a><a href="resume-examples/">Resume examples</a><a href="resume-format/">Resume formats</a><a href="cv-templates/">CV templates</a></div>
           <div class="footer-column"><strong>Company</strong><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refunds.html">Refund Policy</a></div>
         </div>
         <div class="container footer-bottom"><span>© 2026 ResumeNowOnline</span><span>Secure payments by Creem · No subscription</span></div>
