@@ -1,0 +1,13 @@
+{
+  "name": "resume-now",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "bash tools/build_cloudflare_dist.sh",
+    "deploy": "npm run build && wrangler deploy",
+    "dev": "npm run build && wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

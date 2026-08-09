@@ -11,3 +11,8 @@ assets/template-overlays/
 # Unused editable design source; the exported web assets are tracked.
 *.psd
 *.ai
+
+# Local Cloudflare build output and tooling.
+dist/
+node_modules/
+.wrangler/
