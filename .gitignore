@@ -12,7 +12,7 @@ assets/template-overlays/
 *.psd
 *.ai
 
-# Local Cloudflare build output and tooling.
-dist/
+# Local Cloudflare tooling. The verified dist/ output is tracked so Workers
+# Builds can deploy even when no separate build command is configured.
 node_modules/
 .wrangler/
