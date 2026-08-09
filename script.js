@@ -131,11 +131,16 @@ async function loadAccount(force = false) {
 
 loadAccount();
 
+function templatePublicUrl(template) {
+  if (window.location.protocol === "file:") return `template-detail.html?template=${encodeURIComponent(template.id)}`;
+  return `/resume-templates/${encodeURIComponent(template.slug)}/`;
+}
+
 function templateCardMarkup(template, catalog = true) {
   const categories = escapeHTML(template.category || "professional");
   const cardClass = catalog ? "template-card catalog-card" : "template-card";
   return `<article class="${cardClass}" data-name="${escapeHTML(`${template.name} ${template.subtitle}`)}" data-category="${categories}">
-    <a class="template-thumb" href="template-detail.html?template=${encodeURIComponent(template.id)}"><img src="${escapeHTML(template.preview)}" alt="${escapeHTML(template.name)} preview" loading="lazy" /></a>
+    <a class="template-thumb" href="${templatePublicUrl(template)}"><img src="${escapeHTML(template.preview)}" alt="${escapeHTML(template.name)} preview" loading="lazy" /></a>
     <div class="template-meta"><div><h3>${escapeHTML(template.name)}</h3><p>${escapeHTML(template.subtitle)}</p></div><button class="heart" aria-label="Save ${escapeHTML(template.name)}"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button><span>Edit free</span></div>
   </article>`;
 }

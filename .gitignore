@@ -17,3 +17,4 @@ assets/template-overlays/
 node_modules/
 .wrangler/
 .dev.vars
+tmp/
