@@ -9,6 +9,8 @@ import re
 from datetime import date
 from pathlib import Path
 
+from role_guides import ROLE_GUIDES
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
@@ -25,6 +27,7 @@ def load_templates():
 
 
 TEMPLATES = load_templates()
+TEMPLATE_BY_ID = {template["id"]: template for template in TEMPLATES}
 
 
 CATEGORIES = {
@@ -164,26 +167,6 @@ GUIDES = {
 }
 
 
-JOBS = {
-    "software-engineer": ("Software Engineer Resume Example", ["Software development", "System design", "Testing", "Cloud platforms", "Cross-functional delivery"], ["Reduced API latency by 38% by redesigning caching and database access patterns.", "Led migration of twelve services to automated deployment with zero planned downtime.", "Raised critical-path test coverage from 61% to 89% and cut regression incidents."]),
-    "product-manager": ("Product Manager Resume Example", ["Product strategy", "Roadmapping", "User research", "Analytics", "Stakeholder alignment"], ["Defined onboarding roadmap that increased activation by 17% over two quarters.", "Synthesized forty customer interviews into a prioritized enterprise feature plan.", "Aligned design, engineering, and sales around measurable quarterly outcomes."]),
-    "project-manager": ("Project Manager Resume Example", ["Project planning", "Risk management", "Budgeting", "Vendor coordination", "Executive reporting"], ["Delivered a multi-region platform rollout three weeks ahead of schedule.", "Introduced risk reviews that reduced late milestone changes by 31%.", "Managed a $1.8M program across four vendors and six internal teams."]),
-    "data-analyst": ("Data Analyst Resume Example", ["SQL", "Data visualization", "Experiment analysis", "Forecasting", "Data quality"], ["Built a retention dashboard used in weekly decisions by five product teams.", "Identified checkout friction that informed a change worth 9% more conversions.", "Automated recurring reporting and saved analysts twenty hours each month."]),
-    "accountant": ("Accountant Resume Example", ["Financial reporting", "Reconciliation", "Month-end close", "Tax compliance", "ERP systems"], ["Shortened month-end close from eight business days to five.", "Reconciled 140 accounts and resolved a six-figure historical discrepancy.", "Standardized expense controls across three business units."]),
-    "financial-analyst": ("Financial Analyst Resume Example", ["Financial modeling", "Forecasting", "Variance analysis", "Scenario planning", "Executive presentations"], ["Built a scenario model that guided a $4M capacity investment.", "Improved quarterly forecast accuracy by 12 percentage points.", "Translated operating variances into actions for regional leaders."]),
-    "marketing-manager": ("Marketing Manager Resume Example", ["Campaign strategy", "Demand generation", "Content", "Marketing analytics", "Team leadership"], ["Launched an integrated campaign that generated $2.1M in qualified pipeline.", "Reduced paid acquisition cost by 24% through creative and audience testing.", "Built a quarterly content program with sales and subject-matter experts."]),
-    "sales-representative": ("Sales Representative Resume Example", ["Prospecting", "Discovery", "Negotiation", "CRM", "Account growth"], ["Finished at 124% of annual quota across a mid-market territory.", "Created a discovery framework that raised qualified opportunity rate by 16%.", "Expanded twelve existing accounts through needs-led proposals."]),
-    "administrative-assistant": ("Administrative Assistant Resume Example", ["Calendar management", "Travel coordination", "Documentation", "Office operations", "Confidentiality"], ["Coordinated complex calendars for four leaders across three time zones.", "Introduced a travel workflow that reduced booking changes by 27%.", "Organized board materials and maintained accurate confidential records."]),
-    "customer-service": ("Customer Service Resume Example", ["Customer support", "Case management", "De-escalation", "Product knowledge", "Quality assurance"], ["Maintained a 96% satisfaction score across more than 1,500 cases.", "Created help-center content that reduced repeat questions by 14%.", "Coached six new representatives on de-escalation and case documentation."]),
-    "graphic-designer": ("Graphic Designer Resume Example", ["Visual design", "Brand systems", "Typography", "Adobe Creative Suite", "Creative collaboration"], ["Created a modular campaign system used across nine markets.", "Cut production time by 30% by building reusable design components.", "Partnered with marketing to refresh a product launch across web and print."]),
-    "teacher": ("Teacher Resume Example", ["Curriculum planning", "Classroom management", "Assessment", "Family communication", "Differentiated instruction"], ["Improved grade-level reading proficiency by 18 percentage points.", "Designed differentiated lessons for a class of thirty-two learners.", "Led a teaching team that aligned assessment and intervention plans."]),
-    "nurse": ("Registered Nurse Resume Example", ["Patient care", "Clinical assessment", "Care coordination", "Patient education", "Electronic health records"], ["Coordinated safe care for up to six acute patients per shift.", "Improved discharge education compliance through a standardized checklist.", "Precepted eight new nurses on unit procedures and documentation."]),
-    "executive-assistant": ("Executive Assistant Resume Example", ["Executive support", "Complex scheduling", "Board coordination", "Events", "Operational judgment"], ["Managed priorities and scheduling for a CEO and two senior executives.", "Coordinated quarterly board meetings, materials, and follow-up actions.", "Planned a 180-person leadership event within budget and timeline."]),
-    "student-internship": ("Student Internship Resume Example", ["Coursework", "Projects", "Research", "Communication", "Learning agility"], ["Analyzed survey data for a capstone project and presented recommendations.", "Coordinated a student event attended by 240 participants.", "Built a working prototype with a four-person interdisciplinary team."]),
-    "engineering": ("Engineering Resume Example", ["Engineering design", "Technical analysis", "Testing", "Quality", "Cross-functional delivery"], ["Redesigned a critical assembly and reduced unit failure rate by 23%.", "Planned verification testing across eighteen operating conditions and documented corrective actions.", "Coordinated manufacturing and supplier changes that cut lead time by eleven days."]),
-}
-
-
 def esc(value):
     return html.escape(str(value), quote=True)
 
@@ -218,7 +201,7 @@ def page(title, description, path, body, schemas, image="/assets/template-previe
         {"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "name": "ResumeNowOnline", "url": SITE + "/", "publisher": {"@id": SITE + "/#organization"}, "inLanguage": "en"},
     ]
     schema_blocks = "".join(f'<script type="application/ld+json">{schema_json(item)}</script>' for item in [*global_schemas, *schemas])
-    return f"""<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>{esc(title)}</title><meta name=\"description\" content=\"{esc(description)}\"><meta name=\"robots\" content=\"{robots}\"><meta name=\"author\" content=\"ResumeNowOnline Editorial Team\"><meta name=\"theme-color\" content=\"#f5f5f7\"><link rel=\"canonical\" href=\"{canonical}\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:site_name\" content=\"ResumeNowOnline\"><meta property=\"og:title\" content=\"{esc(title)}\"><meta property=\"og:description\" content=\"{esc(description)}\"><meta property=\"og:url\" content=\"{canonical}\"><meta property=\"og:image\" content=\"{SITE}{image}\"><meta property=\"og:image:width\" content=\"1200\"><meta property=\"og:image:height\" content=\"630\"><meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"{esc(title)}\"><meta name=\"twitter:description\" content=\"{esc(description)}\"><meta name=\"twitter:image\" content=\"{SITE}{image}\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/assets/brand/favicon-v2-32.png\"><link rel=\"apple-touch-icon\" href=\"/assets/brand/apple-touch-icon-v2.png\"><link rel=\"stylesheet\" href=\"/styles.css?v=42\">{schema_blocks}</head><body class=\"seo-page\">{header()}<main>{body}</main>{footer()}{extra_body}</body></html>"""
+    return f"""<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>{esc(title)}</title><meta name=\"description\" content=\"{esc(description)}\"><meta name=\"robots\" content=\"{robots}\"><meta name=\"author\" content=\"ResumeNowOnline Editorial Team\"><meta name=\"theme-color\" content=\"#f5f5f7\"><link rel=\"canonical\" href=\"{canonical}\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:site_name\" content=\"ResumeNowOnline\"><meta property=\"og:title\" content=\"{esc(title)}\"><meta property=\"og:description\" content=\"{esc(description)}\"><meta property=\"og:url\" content=\"{canonical}\"><meta property=\"og:image\" content=\"{SITE}{image}\"><meta property=\"og:image:width\" content=\"1200\"><meta property=\"og:image:height\" content=\"630\"><meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"{esc(title)}\"><meta name=\"twitter:description\" content=\"{esc(description)}\"><meta name=\"twitter:image\" content=\"{SITE}{image}\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/assets/brand/favicon-v2-32.png\"><link rel=\"apple-touch-icon\" href=\"/assets/brand/apple-touch-icon-v2.png\"><link rel=\"stylesheet\" href=\"/styles.css?v=43\">{schema_blocks}</head><body class=\"seo-page\">{header()}<main>{body}</main>{footer()}{extra_body}</body></html>"""
 
 
 def breadcrumb(items):
@@ -317,28 +300,91 @@ def generate_advice():
     path = "/career-advice/"
     crumb, crumb_schema = breadcrumb([("Home", "/"), ("Career advice", path)])
     cards = "".join(f'<article class="seo-guide-card"><span>Resume guide</span><h2><a href="/career-advice/{slug}/">{esc(data["title"])}</a></h2><p>{esc(data["description"])}</p><a class="seo-text-link" href="/career-advice/{slug}/">Read the guide →</a></article>' for slug, data in GUIDES.items())
-    body = f'''<div class="seo-shell">{crumb}<section class="seo-listing-hero"><span class="seo-kicker">Clear, practical advice</span><h1>Resume and Career Advice</h1><p class="seo-lede">Learn how to write, format, tailor, and review a resume with guidance designed for real applications.</p></section><section><div class="seo-guide-grid">{cards}</div></section><section class="seo-final-cta"><span>Ready to apply it?</span><h2>Start with a resume template.</h2><p>Edit every page and download the finished PDF for free.</p><a class="button button--light" href="/resume-templates/">Explore templates</a></section></div>'''
+    body = f'''<div class="seo-shell">{crumb}<section class="seo-listing-hero"><span class="seo-kicker">Clear, practical advice</span><h1>Resume and Career Advice</h1><p class="seo-lede">Learn how to write, format, tailor, and review a resume with guidance designed for real applications.</p></section><section class="seo-profession-feature"><div><span class="seo-kicker">Guides by profession</span><h2>Write for the work you actually do.</h2><p>Recruiters look for different evidence in nursing, software, finance, sales, education, logistics, and skilled trades. Browse role-specific guidance for section order, skills, metrics, and achievement bullets.</p><a class="button button--primary" href="/career-advice/resume-guides-by-profession/">Browse profession guides</a></div><div class="seo-industry-list"><a href="/career-advice/resume-guides-by-profession/#technology">Technology</a><a href="/career-advice/resume-guides-by-profession/#healthcare">Healthcare</a><a href="/career-advice/resume-guides-by-profession/#finance">Finance</a><a href="/career-advice/resume-guides-by-profession/#education">Education</a><a href="/career-advice/resume-guides-by-profession/#logistics-and-transportation">Logistics</a><a href="/career-advice/resume-guides-by-profession/#skilled-trades">Skilled trades</a></div></section><section><div class="seo-section-heading"><span>Resume fundamentals</span><h2>Guidance for every application</h2></div><div class="seo-guide-grid">{cards}</div></section><section class="seo-final-cta"><span>Ready to apply it?</span><h2>Start with a resume template.</h2><p>Edit every page and download the finished PDF for free.</p><a class="button button--light" href="/resume-templates/">Explore templates</a></section></div>'''
     write_route(path, page("Resume Writing and Career Advice | ResumeNowOnline", "Practical resume writing guides covering formats, summaries, skills, bullet points, ATS readability, length, and cover letters.", path, body, [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Resume and Career Advice", "url": SITE + path}, crumb_schema]))
+
+
+def compact_template_card(template):
+    return f'''<article class="seo-role-template"><a href="/resume-templates/{esc(template["slug"])}/"><img src="/{esc(template["preview"])}" alt="{esc(template["name"])} preview" loading="lazy" width="180" height="240"></a><div><strong>{esc(template["name"].replace(" Resume Template", ""))}</strong><a href="/builder.html?template={esc(template["id"])}">Use this template →</a></div></article>'''
+
+
+def generate_profession_hub():
+    path = "/career-advice/resume-guides-by-profession/"
+    crumb, crumb_schema = breadcrumb([("Home", "/"), ("Career advice", "/career-advice/"), ("Resume guides by profession", path)])
+    industries = {}
+    for slug, data in ROLE_GUIDES.items():
+        industries.setdefault(data["industry"], []).append((slug, data))
+    industry_notes = {
+        "Technology": "Show systems, tools, scale, and the decisions behind reliable delivery.",
+        "Product and Program Management": "Connect prioritization, coordination, risk, and tradeoffs with measurable outcomes.",
+        "Finance": "Make accuracy, scope, controls, forecasts, and decision support easy to verify.",
+        "Marketing and Sales": "Tie audience and customer work to qualified demand, revenue, retention, or account growth.",
+        "Administration and Operations": "Demonstrate judgment, organization, discretion, and the volume of work kept on track.",
+        "Customer Service": "Balance service volume and speed with quality, resolution, and customer outcomes.",
+        "Creative": "Explain the system, brief, collaboration, and production impact behind the portfolio work.",
+        "Education": "Show subject expertise, learning outcomes, classroom practice, and community contribution.",
+        "Healthcare": "Lead with active credentials, clinical setting, patient population, safety, and verified scope.",
+        "Early Career": "Translate coursework, projects, part-time work, and campus leadership into useful evidence.",
+        "Engineering and Construction": "State discipline, project scale, requirements, safety, verification, schedule, and cost.",
+        "Logistics and Transportation": "Make licenses, equipment, throughput, accuracy, safety, and service reliability visible.",
+        "Skilled Trades": "Put license level, systems, safe workmanship, troubleshooting, and project context near the top.",
+        "Hospitality": "Show the service setting, pace, accuracy, guest experience, sales judgment, and teamwork.",
+    }
+    sections = []
+    item_list = []
+    position = 0
+    for industry, entries in industries.items():
+        anchor = re.sub(r"[^a-z0-9]+", "-", industry.lower()).strip("-")
+        cards = []
+        for slug, data in entries:
+            position += 1
+            url = f"/resume-examples/{slug}/"
+            cards.append(f'''<article class="seo-profession-card"><span>{esc(data["industry"])}</span><h3><a href="{url}">{esc(data["role"])} resume guide</a></h3><p>{esc(data["priorities"][0])}, {esc(data["priorities"][1].lower())}, and evidence that fits the role.</p><a href="{url}">How to write it →</a></article>''')
+            item_list.append({"@type": "ListItem", "position": position, "url": SITE + url, "name": f'{data["role"]} resume guide'})
+        sections.append(f'''<section class="seo-industry-section" id="{anchor}"><div class="seo-industry-heading"><span>{esc(industry)}</span><h2>{esc(industry)} resume guides</h2><p>{esc(industry_notes[industry])}</p></div><div class="seo-profession-grid">{"".join(cards)}</div></section>''')
+    chips = "".join(f'<a href="#{re.sub(r"[^a-z0-9]+", "-", industry.lower()).strip("-")}">{esc(industry)}</a>' for industry in industries)
+    body = f'''<div class="seo-shell">{crumb}<section class="seo-listing-hero"><span class="seo-kicker">Resume advice by occupation</span><h1>How to Write a Resume for Your Profession</h1><p class="seo-lede">Choose your field to see the experience, skills, metrics, credentials, and achievement examples recruiters expect in that kind of resume.</p></section><nav class="seo-chip-nav seo-chip-nav--wrap" aria-label="Industries">{chips}</nav><section class="seo-editorial"><h2>Use the guide as a framework.</h2><div><p>Each profession values different evidence. A nurse needs clear licensure and clinical scope. A software engineer needs systems and production outcomes. A sales representative needs quota, segment, and pipeline context.</p><p>Keep every claim true. Replace the sample numbers and bullets with your own work, then tailor the first half of the resume to the job description.</p></div></section>{"".join(sections)}<section class="seo-final-cta"><span>Free resume builder</span><h2>Turn the guidance into a finished resume.</h2><p>Choose a template, edit every page, and download the PDF for free.</p><a class="button button--light" href="/resume-templates/">Choose a template</a></section></div>'''
+    schemas = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Resume Guides by Profession", "description": "Role-specific resume writing guides covering skills, metrics, credentials, summaries, and achievement examples.", "url": SITE + path}, {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": item_list}, crumb_schema]
+    write_route(path, page("Resume Guides by Profession | ResumeNowOnline", "Learn how to write a resume for technology, healthcare, finance, education, logistics, skilled trades, hospitality, and more.", path, body, schemas))
 
 
 def generate_jobs():
     hub_path = "/resume-examples/"
     hub_crumb, hub_schema = breadcrumb([("Home", "/"), ("Resume examples", hub_path)])
     hub_cards = []
-    for slug, (title, skills, bullets) in JOBS.items():
+    item_list = []
+    for position, (slug, data) in enumerate(ROLE_GUIDES.items(), 1):
         path = f"/resume-examples/{slug}/"
-        role = title.replace(" Resume Example", "")
-        desc = f"Use this {role.lower()} resume example to plan your summary, skills, and achievement-led work experience, then edit a matching template online."
+        role = data["role"]
+        title = f"How to Write a {role} Resume"
+        desc = f"Write a stronger {role.lower()} resume with role-specific structure, skills, metrics, summary guidance, and achievement bullet examples."
         crumb, crumb_schema = breadcrumb([("Home", "/"), ("Resume examples", hub_path), (title, path)])
-        bullets_html = "".join(f"<li>{esc(item)}</li>" for item in bullets)
-        skills_html = "".join(f"<li>{esc(item)}</li>" for item in skills)
-        faq, faq_schema = faq_markup([(f"What should a {role.lower()} resume include?", f"Lead with relevant {skills[0].lower()} experience, use clear achievement bullets, and tailor skills to the actual job description."), ("Can I copy these bullet points?", "Use them as structural examples, then replace every claim and number with evidence from your own experience."), ("Which format should I use?", "Reverse chronological format works for most candidates; a combination format can help foreground relevant projects or transferable skills.")])
-        body = f'''<div class="seo-shell seo-article-shell">{crumb}<header class="seo-article-hero"><span class="seo-kicker">Role-specific resume example</span><h1>{esc(title)}</h1><p class="seo-lede">Build a focused {esc(role.lower())} resume by leading with relevant evidence, using the language of the role, and making your impact easy to scan.</p><div class="seo-actions"><a class="button button--primary" href="/resume-templates/">Choose a template</a><a class="button button--outline" href="#example">See example bullets</a></div></header><div class="seo-article-layout"><aside><strong>Core skills</strong><ul>{skills_html}</ul><a class="seo-side-cta" href="/career-advice/how-to-write-a-resume/">Resume writing guide →</a></aside><article class="seo-prose"><section><h2>How to structure a {esc(role.lower())} resume</h2><p>Use a concise headline and summary to establish your level and specialty. Follow with recent experience in reverse chronological order, giving the most space to work that resembles the target role. Add skills that can be verified by the bullets, projects, education, or certifications.</p></section><section id="example"><h2>{esc(role)} resume bullet examples</h2><p>Use the pattern and level of specificity below, but never copy facts that are not yours.</p><ul>{bullets_html}</ul></section><section><h2>Skills to consider</h2><p>Prioritize the skills requested by the employer when your own experience supports them.</p><ul>{skills_html}</ul></section><section><h2>Tailor the first half of the page</h2><p>Match the target title, reorder your strongest evidence, and use the employer’s normal terminology naturally. Remove unrelated details before reducing font size or margins.</p></section>{faq}</article></div></div>'''
+        priorities = "".join(f'<div><i>{index}</i><strong>{esc(item)}</strong></div>' for index, item in enumerate(data["priorities"], 1))
+        skills = "".join(f"<li>{esc(item)}</li>" for item in data["skills"])
+        metrics = "".join(f'<div><strong>{esc(label)}</strong><p>{esc(copy.capitalize())}</p></div>' for label, copy in data["metrics"])
+        bullets = "".join(f"<li>{esc(item)}</li>" for item in data["bullets"])
+        recruiter_list = "".join(f"<li>{esc(item)}</li>" for item in data["priorities"])
+        mistake_list = "".join(f"<li>{esc(item)}</li>" for item in data["mistakes"])
+        recommended = [TEMPLATE_BY_ID[item] for item in data["templates"] if item in TEMPLATE_BY_ID]
+        template_cards = "".join(compact_template_card(template) for template in recommended)
+        hero_template = recommended[0] if recommended else TEMPLATES[3]
+        faq_items = [
+            (f"What should a {role.lower()} resume include?", f"Lead with {data['priorities'][0].lower()}, show relevant {data['skills'][0].lower()} experience in context, and use achievement bullets that explain scope and outcome."),
+            (f"What skills belong on a {role.lower()} resume?", f"Prioritize skills from the target job that you can prove in experience, projects, education, or credentials. Useful examples include {', '.join(item.lower() for item in data['skills'][:4])}."),
+            ("Can I use the example numbers and bullet points?", "No. The examples demonstrate structure and specificity. Replace every action, number, tool, and result with evidence that is true for your own work."),
+            ("Which resume format should I use?", "Reverse chronological format works for most candidates. Use a combination format when projects or transferable skills need more emphasis, but keep dates and work history clear."),
+        ]
+        faq, faq_schema = faq_markup(faq_items)
+        toc = "".join(f'<a href="#{anchor}">{label}</a>' for anchor, label in [("recruiter-priorities", "What recruiters need"), ("summary", "Resume summary"), ("structure", "Resume structure"), ("skills", "Skills to include"), ("metrics", "Useful metrics"), ("examples", "Bullet examples"), ("mistakes", "Common mistakes"), ("templates", "Recommended templates")])
+        body = f'''<div class="seo-shell seo-role-shell">{crumb}<header class="seo-role-hero"><div><span class="seo-kicker">{esc(data["industry"])} resume guide · Updated {TODAY[:4]}</span><h1>{esc(title)}</h1><p class="seo-lede">{esc(data["intro"])}</p><div class="seo-actions"><a class="button button--primary" href="/builder.html?template={esc(hero_template["id"])}">Build this resume free</a><a class="button button--outline" href="#examples">See bullet examples</a></div></div><a class="seo-role-preview" href="/resume-templates/{esc(hero_template["slug"])}/" aria-label="View recommended {esc(hero_template["name"])}"><img src="/{esc(hero_template["preview"])}" alt="{esc(hero_template["name"])} preview" width="360" height="510"></a></header><div class="seo-role-layout"><aside><strong>On this page</strong>{toc}<a class="seo-side-cta" href="/career-advice/resume-guides-by-profession/">All profession guides →</a></aside><article class="seo-role-article"><section class="seo-role-card" id="recruiter-priorities"><div class="seo-role-heading"><span>Start with the hiring decision</span><h2>What recruiters need to see</h2><p>The first half of the page should establish role fit before the reader reaches older experience.</p></div><div class="seo-priority-grid">{priorities}</div></section><section class="seo-role-card" id="summary"><div class="seo-role-heading"><span>Example</span><h2>{esc(role)} resume summary</h2><p>Use this as a pattern for level, scope, specialty, and evidence. Do not copy facts that are not yours.</p></div><blockquote class="seo-summary-example">{esc(data["summary"])}</blockquote></section><section class="seo-role-card" id="structure"><div class="seo-role-heading"><span>Recommended order</span><h2>How to structure the resume</h2></div><ol class="seo-structure-list"><li><strong>Contact details and target title.</strong> Use the normal title from the job posting and provide working contact links.</li><li><strong>Focused summary.</strong> Establish your level, setting, specialty, and one representative outcome.</li><li><strong>Recent relevant experience.</strong> Use reverse chronological order and give the most space to work that resembles the target role.</li><li><strong>Role-specific skills.</strong> Keep a scannable list, then prove the important skills in bullets.</li><li><strong>Education and credentials.</strong> {esc(data["credentials"])}</li></ol></section><section class="seo-role-card" id="skills"><div class="seo-role-heading"><span>Use only what you can support</span><h2>Skills to include</h2><p>Match the employer's terminology when it accurately describes your experience.</p></div><ul class="seo-skill-chips">{skills}</ul></section><section class="seo-role-card" id="metrics"><div class="seo-role-heading"><span>Evidence ideas</span><h2>Useful metrics for a {esc(role.lower())} resume</h2><p>Numbers should clarify scope or change. They do not need to be revenue figures.</p></div><div class="seo-metric-grid">{metrics}</div></section><section class="seo-role-card" id="examples"><div class="seo-role-heading"><span>Writing patterns</span><h2>{esc(role)} resume bullet examples</h2><p>Adapt the action, context, and result to your own verified work.</p></div><ul class="seo-bullet-examples">{bullets}</ul></section><section class="seo-role-compare" id="mistakes"><div><span class="seo-positive">Look for</span><h2>Strong signals</h2><ul>{recruiter_list}</ul></div><div><span class="seo-negative">Avoid</span><h2>Common mistakes</h2><ul>{mistake_list}</ul></div></section><section class="seo-role-card" id="templates"><div class="seo-role-heading"><span>Free to edit and download</span><h2>Recommended resume templates</h2><p>These layouts keep the hierarchy clear while giving role-specific evidence enough room.</p></div><div class="seo-role-template-grid">{template_cards}</div></section>{faq}<section class="seo-final-cta seo-role-cta"><span>Build your {esc(role.lower())} resume</span><h2>Start with a complete template.</h2><p>Edit every page and download the finished PDF for free.</p><a class="button button--light" href="/builder.html?template={esc(hero_template["id"])}">Create my resume</a></section></article></div></div>'''
         article_schema = {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": desc, "datePublished": ARTICLE_PUBLISHED, "dateModified": TODAY, "mainEntityOfPage": SITE + path, "author": {"@type": "Organization", "name": "ResumeNowOnline Editorial Team"}, "publisher": {"@id": SITE + "/#organization"}}
-        write_route(path, page(branded_title(f"{title}: Skills and Examples"), desc, path, body, [article_schema, crumb_schema, faq_schema]))
-        hub_cards.append(f'<article class="seo-guide-card"><span>Resume example</span><h2><a href="{path}">{esc(title)}</a></h2><p>Structure, skills, and achievement bullet examples for {esc(role.lower())} applications.</p><a class="seo-text-link" href="{path}">View example →</a></article>')
-    hub_body = f'''<div class="seo-shell">{hub_crumb}<section class="seo-listing-hero"><span class="seo-kicker">Examples for {len(JOBS)} career paths</span><h1>Resume Examples by Job Title</h1><p class="seo-lede">Browse professional resume examples, skills, and achievement bullet patterns for your target role, then build a tailored resume with any editable template.</p></section><section class="seo-editorial"><h2>Use resume examples as patterns, not scripts</h2><div><p>A useful sample resume shows the expected level of specificity, section order, and language for a role. Replace every claim, metric, and skill with evidence that is true for you.</p><p>After drafting, compare the first half of your resume with the job description. A reader should be able to see the connection without hunting for it.</p></div></section><div class="seo-guide-grid">{"".join(hub_cards)}</div></div>'''
-    write_route(hub_path, page("Resume Examples and Samples by Job Title | ResumeNowOnline", f"Browse resume examples for {len(JOBS)} popular job titles with role-specific skills, structure guidance, and achievement bullet examples.", hub_path, hub_body, [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Resume Examples by Job Title", "url": SITE + hub_path}, hub_schema]))
+        howto_schema = {"@context": "https://schema.org", "@type": "HowTo", "name": title, "description": desc, "step": [{"@type": "HowToStep", "position": index, "name": name, "text": text} for index, (name, text) in enumerate([("Choose a target", f"Use the normal {role.lower()} title from the job posting."), ("Write a focused summary", "State your level, setting, specialty, and one verified result."), ("Add relevant experience", "Use reverse chronological order and achievement-led bullets."), ("Select skills", "Include relevant skills you can support with evidence."), ("Review and export", "Check facts, reading order, page endings, and links before downloading the PDF.")], 1)]}
+        write_route(path, page(branded_title(f"{title}: Examples and Guide"), desc, path, body, [article_schema, howto_schema, crumb_schema, faq_schema], image="/" + hero_template["preview"]))
+        hub_cards.append(f'<article class="seo-guide-card"><span>{esc(data["industry"])}</span><h2><a href="{path}">{esc(role)} resume guide</a></h2><p>Role-specific structure, skills, metrics, summary guidance, and achievement examples.</p><a class="seo-text-link" href="{path}">Read the guide →</a></article>')
+        item_list.append({"@type": "ListItem", "position": position, "url": SITE + path, "name": f"{role} resume guide"})
+    hub_body = f'''<div class="seo-shell">{hub_crumb}<section class="seo-listing-hero"><span class="seo-kicker">Guides for {len(ROLE_GUIDES)} career paths</span><h1>Resume Examples by Job Title</h1><p class="seo-lede">See what recruiters need from your profession, then use role-specific summaries, skills, metrics, and achievement patterns to write your own resume.</p></section><section class="seo-editorial"><h2>Use examples as patterns, not scripts.</h2><div><p>Each guide explains the evidence that matters for the role. Replace every sample action, metric, credential, and result with facts from your own work.</p><p>After drafting, compare the first half of the resume with the job description. The connection should be clear without keyword stuffing.</p></div></section><div class="seo-guide-grid">{"".join(hub_cards)}</div><section class="seo-final-cta"><span>Free from start to finish</span><h2>Choose a template and write your version.</h2><p>Edit every page and download the finished PDF for free.</p><a class="button button--light" href="/resume-templates/">Browse templates</a></section></div>'''
+    list_schema = {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": item_list}
+    write_route(hub_path, page("Resume Examples and Writing Guides by Job | ResumeNowOnline", f"Browse resume examples and writing guides for {len(ROLE_GUIDES)} job titles with role-specific skills, metrics, summaries, and achievement bullets.", hub_path, hub_body, [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Resume Examples by Job Title", "url": SITE + hub_path}, list_schema, hub_schema]))
 
 
 def generate_core_pages():
@@ -393,11 +439,11 @@ def generate_ats_checker():
 
 
 def generate_support_files():
-    routes = ["/", "/resume-builder/", "/resume-templates/", "/resume-examples/", "/ats-resume-checker/", "/career-advice/", "/cv-maker/", "/cv-templates/", "/resume-format/", "/cv-format/", "/resume-pdf/", "/pricing.html", "/product.html", "/contact.html", "/privacy.html", "/terms.html", "/refunds.html"]
+    routes = ["/", "/resume-builder/", "/resume-templates/", "/resume-examples/", "/ats-resume-checker/", "/career-advice/", "/career-advice/resume-guides-by-profession/", "/cv-maker/", "/cv-templates/", "/resume-format/", "/cv-format/", "/resume-pdf/", "/pricing.html", "/product.html", "/contact.html", "/privacy.html", "/terms.html", "/refunds.html"]
     routes += [f'/resume-templates/{t["slug"]}/' for t in TEMPLATES]
     routes += [f"/resume-templates/{slug}/" for slug in CATEGORIES if any(slug in template_tags(t) for t in TEMPLATES)]
     routes += [f"/career-advice/{slug}/" for slug in GUIDES]
-    routes += [f"/resume-examples/{slug}/" for slug in JOBS]
+    routes += [f"/resume-examples/{slug}/" for slug in ROLE_GUIDES]
     unique = list(dict.fromkeys(routes))
     urls = "".join(f"<url><loc>{SITE}{route}</loc><lastmod>{TODAY}</lastmod><changefreq>{'weekly' if route in ('/', '/resume-templates/') else 'monthly'}</changefreq><priority>{'1.0' if route == '/' else '0.9' if route == '/resume-templates/' else '0.8' if '/resume-templates/' in route else '0.7'}</priority></url>" for route in unique)
     (DIST / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>', encoding="utf-8")
@@ -412,6 +458,7 @@ def main():
     generate_categories()
     generate_template_pages()
     generate_advice()
+    generate_profession_hub()
     generate_jobs()
     generate_core_pages()
     generate_resume_builder()
