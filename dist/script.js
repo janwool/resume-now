@@ -93,7 +93,7 @@ function accountReturnUrl() {
 function renderAccountAccess() {
   let link = $("#globalAccountLink");
   const target = accountState.authenticated ? "account.html" : `account.html?next=${encodeURIComponent(accountReturnUrl())}`;
-  const label = accountState.authenticated ? `${accountState.user.name.split(" ")[0]} · ${accountState.user.downloadCredits || 0}` : "Sign in";
+  const label = accountState.authenticated ? accountState.user.name.split(" ")[0] : "Sign in";
   if (!link && mainNav) {
     link = document.createElement("a");
     link.id = "globalAccountLink";
@@ -235,7 +235,7 @@ if (productMainImage) {
   $("#productSubtitle").textContent = selectedTemplate.subtitle;
   $("#breadcrumbTemplate").textContent = selectedTemplate.name;
   $("#productTagline").textContent = importedSelectedTemplate ? "An original template from your complete collection." : `${selectedTemplate.tagline} Free to make your own.`;
-  $("#productDescription").textContent = importedSelectedTemplate ? selectedTemplate.description : `${selectedTemplate.description} Edit it free, then get 3 PDF downloads for $5.`;
+  $("#productDescription").textContent = importedSelectedTemplate ? selectedTemplate.description : `${selectedTemplate.description} Edit every section and download the finished PDF for free.`;
   document.title = `${selectedTemplate.name} — ResumeNowOnline`;
   const descriptionMeta = $('meta[name="description"]');
   if (descriptionMeta && importedSelectedTemplate) descriptionMeta.content = selectedTemplate.description;
@@ -806,113 +806,10 @@ function updateZoom() {
 $("#zoomIn")?.addEventListener("click", () => { zoom = Math.min(120, zoom + 10); updateZoom(); });
 $("#zoomOut")?.addEventListener("click", () => { zoom = Math.max(70, zoom - 10); updateZoom(); });
 
-const downloadModal = $("#downloadModal");
-const paymentConfig = {
-  provider: "Creem",
-  priceUsd: 5,
-  downloadsPerPurchase: 3,
-  ...(window.firstDraftPaymentConfig || {}),
-};
-
-function getDownloadCredits() {
-  return accountState.authenticated ? Math.max(0, Number(accountState.user?.downloadCredits) || 0) : 0;
-}
-
-function updateDownloadUI() {
-  const remaining = getDownloadCredits();
-  const topLabel = $("#downloadButtonLabel");
-  const action = $("#payDownload");
-  const status = $("#downloadCreditStatus");
-  if (topLabel) topLabel.textContent = remaining ? `Download PDF · ${remaining} left` : `${paymentConfig.downloadsPerPurchase} downloads · $${paymentConfig.priceUsd}`;
-  if (action) action.textContent = !accountState.authenticated ? "Sign in to purchase" : remaining ? `Download PDF · ${remaining} remaining` : `Pay $${paymentConfig.priceUsd} with ${paymentConfig.provider}`;
-  if (status) status.innerHTML = !accountState.authenticated
-    ? `<span>Save downloads to your account</span><strong>Sign in</strong>`
-    : remaining
-    ? `<span>Your download balance</span><strong>${remaining} of ${paymentConfig.downloadsPerPurchase} left</strong>`
-    : `<span>${paymentConfig.downloadsPerPurchase}-download pack</span><strong>$${Number(paymentConfig.priceUsd).toFixed(2)}</strong>`;
-  downloadModal?.classList.toggle("has-credits", remaining > 0);
-}
-
-async function exportResumeAsPdf() {
-  const remaining = getDownloadCredits();
-  if (!remaining) return false;
-  const result = await apiRequest("/api/downloads/claim", {
-    method: "POST",
-    body: JSON.stringify({ templateId: selectedTemplateKey }),
-  });
-  accountState.user.downloadCredits = result.remaining;
-  renderAccountAccess();
-  updateDownloadUI();
-  setDownloadModal(false);
-  showToast(`PDF export opened · ${result.remaining} download${result.remaining === 1 ? "" : "s"} left`);
+$("#downloadPdf")?.addEventListener("click", () => {
+  showToast("Opening your free PDF export");
   requestAnimationFrame(() => window.print());
-  return true;
-}
-
-async function syncCreditsAfterCheckout() {
-  const action = $("#payDownload");
-  if (action) action.textContent = "Confirming payment…";
-  for (let attempt = 0; attempt < 15; attempt += 1) {
-    await new Promise((resolve) => setTimeout(resolve, attempt ? 1000 : 350));
-    await loadAccount(true);
-    if (getDownloadCredits() > 0) {
-      updateDownloadUI();
-      setDownloadModal(true);
-      showToast(`${getDownloadCredits()} PDF downloads are ready`);
-      return;
-    }
-  }
-  updateDownloadUI();
-  showToast("Payment received. Your downloads will appear shortly.");
-}
-
-function clearPaymentReturnParams() {
-  const url = new URL(window.location.href);
-  ["payment", "checkout_id", "order_id", "customer_id", "product_id"].forEach((key) => url.searchParams.delete(key));
-  window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
-}
-
-function setDownloadModal(open) {
-  if (!downloadModal) return;
-  loadAccount(true).then(updateDownloadUI);
-  downloadModal.classList.toggle("open", open);
-  downloadModal.setAttribute("aria-hidden", String(!open));
-  document.body.classList.toggle("download-open", open);
-}
-$("#downloadPdf")?.addEventListener("click", () => setDownloadModal(true));
-$$("[data-close-download]").forEach((button) => button.addEventListener("click", () => setDownloadModal(false)));
-$("#payDownload")?.addEventListener("click", async (event) => {
-  const action = event.currentTarget;
-  action.disabled = true;
-  try {
-    await loadAccount(true);
-    if (!accountState.authenticated) {
-      window.location.assign(`account.html?next=${encodeURIComponent(accountReturnUrl())}`);
-      return;
-    }
-    if (await exportResumeAsPdf()) return;
-    action.textContent = "Opening secure checkout…";
-    const checkout = await apiRequest("/api/checkout", { method: "POST", body: "{}" });
-    window.location.assign(checkout.checkoutUrl);
-  } catch (error) {
-    showToast(error.message);
-  } finally {
-    action.disabled = false;
-    updateDownloadUI();
-  }
 });
-window.addEventListener("load", () => {
-  const returnedFromPayment = pageParams.get("payment") === "success" || pageParams.has("checkout_id");
-  loadAccount(true).then(() => {
-    updateDownloadUI();
-    if (returnedFromPayment) {
-      clearPaymentReturnParams();
-      syncCreditsAfterCheckout();
-    }
-  });
-});
-updateDownloadUI();
-document.addEventListener("keydown", (event) => { if (event.key === "Escape") setDownloadModal(false); });
 $("#previewButton")?.addEventListener("click", () => {
   $(".builder-sidebar--left")?.classList.toggle("preview-hidden");
   $(".builder-sidebar--right")?.classList.toggle("preview-hidden");

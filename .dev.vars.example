@@ -1,4 +1,2 @@
-CREEM_API_KEY=creem_test_your_api_key
-CREEM_PRODUCT_ID=prod_your_test_product_id
-CREEM_WEBHOOK_SECRET=your_webhook_signing_secret
-CREEM_TEST_MODE=true
+# No local secrets are required for free resume editing or PDF export.
+# Add service-specific secrets here only when introducing a new server feature.

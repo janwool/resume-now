@@ -3,13 +3,10 @@
   "name": "resume-now",
   "main": "worker.js",
   "compatibility_date": "2026-08-08",
-  "vars": {
-    "CREEM_TEST_MODE": "true",
-    "CREEM_PRODUCT_ID": "prod_4rMvovCkBiYL9B4RqyvEk1"
-  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
+    "run_worker_first": true,
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "none"
   },

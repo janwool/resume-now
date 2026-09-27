@@ -281,7 +281,7 @@ def main() -> int:
             "name": name,
             "slug": seo_slug(name),
             "subtitle": subtitle,
-            "description": f"Use this free editable {name.lower()} for international job applications. Customize every section online and get 3 PDF downloads for $5.",
+            "description": f"Use this free editable {name.lower()} for international job applications. Customize every section and download the finished PDF for free.",
             "category": category,
             "source": rel,
             "preview": f"assets/template-previews/{template_id}.jpg",

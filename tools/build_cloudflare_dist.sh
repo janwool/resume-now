@@ -13,7 +13,7 @@ rm -rf "$DEPLOY_DIR"
 mkdir -p "$DEPLOY_DIR/assets/template-previews" "$DEPLOY_DIR/assets/brand" "$DEPLOY_DIR/assets"
 
 cp "$PROJECT_DIR"/*.html "$DEPLOY_DIR/"
-cp "$PROJECT_DIR/styles.css" "$PROJECT_DIR/script.js" "$PROJECT_DIR/account.js" "$PROJECT_DIR/payment-config.js" "$PROJECT_DIR/template-manifest.js" "$PROJECT_DIR/template-overlays.js" "$DEPLOY_DIR/"
+cp "$PROJECT_DIR/styles.css" "$PROJECT_DIR/script.js" "$PROJECT_DIR/account.js" "$PROJECT_DIR/template-manifest.js" "$PROJECT_DIR/template-overlays.js" "$DEPLOY_DIR/"
 cp -R "$PROJECT_DIR/assets/template-pages" "$DEPLOY_DIR/assets/template-pages"
 cp "$PROJECT_DIR/assets/brand"/*.png "$DEPLOY_DIR/assets/brand/"
 

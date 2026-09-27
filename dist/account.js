@@ -31,7 +31,6 @@ function showDashboard(user) {
   accountDashboard.hidden = false;
   document.querySelector("#dashboardName").textContent = `Hello, ${user.name.split(" ")[0]}`;
   document.querySelector("#dashboardEmail").textContent = user.email;
-  document.querySelector("#dashboardCredits").textContent = String(user.downloadCredits || 0);
   document.querySelector("#continueEditing").href = safeNext;
 }
 
@@ -46,7 +45,7 @@ function selectTab(tab) {
   document.querySelector("#loginForm").hidden = tab !== "login";
   document.querySelector("#registerForm").hidden = tab !== "register";
   document.querySelector("#authTitle").textContent = tab === "login" ? "Welcome back" : "Create your account";
-  document.querySelector("#authSubtitle").textContent = tab === "login" ? "Sign in to access your downloads." : "Start editing free. Pay only when you export.";
+  document.querySelector("#authSubtitle").textContent = tab === "login" ? "Sign in to continue editing." : "Create an optional account. Editing and PDF downloads are free.";
   authError.textContent = "";
 }
 

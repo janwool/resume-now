@@ -4,6 +4,21 @@ const SESSION_SECONDS = 60 * 60 * 24 * 30;
 const PASSWORD_ITERATIONS = 210000;
 const DOWNLOADS_PER_ORDER = 3;
 
+const permanentRedirects = new Map([
+  ["/index.html", "/"],
+  ["/templates.html", "/resume-templates/"],
+  ["/career-advice.html", "/career-advice/"],
+  ["/template-detail.html", "/resume-templates/"],
+  ["/free-resume-builder/", "/resume-builder/"],
+  ["/resume-maker/", "/resume-builder/"],
+  ["/online-resume-maker/", "/resume-builder/"],
+  ["/resume-creator/", "/resume-builder/"],
+  ["/create-resume/", "/resume-builder/"],
+  ["/resume-checker/", "/ats-resume-checker/"],
+  ["/resume-ats-checker/", "/ats-resume-checker/"],
+  ["/resume-score-checker/", "/ats-resume-checker/"],
+]);
+
 const responseHeaders = {
   "content-type": "application/json; charset=utf-8",
   "cache-control": "no-store",
@@ -317,8 +332,8 @@ async function handleApi(request, env) {
     if (pathname === "/api/auth/login" && request.method === "POST") return login(request, env);
     if (pathname === "/api/auth/logout" && request.method === "POST") return logout(request, env);
     if (pathname === "/api/me" && request.method === "GET") return me(request, env);
-    if (pathname === "/api/checkout" && request.method === "POST") return createCheckout(request, env);
-    if (pathname === "/api/downloads/claim" && request.method === "POST") return claimDownload(request, env);
+    if (pathname === "/api/checkout" && request.method === "POST") return apiError("Paid downloads are no longer available. PDF export is free in the editor.", 410, "checkout_retired");
+    if (pathname === "/api/downloads/claim" && request.method === "POST") return apiError("Download credits are no longer required. PDF export is free in the editor.", 410, "credits_retired");
     if (pathname === "/api/webhooks/creem" && request.method === "POST") return creemWebhook(request, env);
     return apiError("API route not found.", 404, "not_found");
   } catch (error) {
@@ -330,7 +345,18 @@ async function handleApi(request, env) {
 
 export default {
   async fetch(request, env) {
-    const pathname = new URL(request.url).pathname;
+    const requestUrl = new URL(request.url);
+    const pathname = requestUrl.pathname;
+    const forwardedProtocol = request.headers.get("x-forwarded-proto");
+    if (forwardedProtocol === "http") {
+      requestUrl.protocol = "https:";
+      return Response.redirect(requestUrl.toString(), 301);
+    }
+    const redirectPath = permanentRedirects.get(pathname);
+    if (redirectPath) {
+      requestUrl.pathname = redirectPath;
+      return Response.redirect(requestUrl.toString(), 301);
+    }
     if (pathname.startsWith("/api/")) return handleApi(request, env);
     const assetResponse = await env.ASSETS.fetch(request);
     const headers = new Headers(assetResponse.headers);
